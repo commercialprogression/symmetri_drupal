@@ -1,0 +1,255 @@
+/**
+ * @file
+ * Menu component.
+ */
+@import "../base/variables";
+
+.compro-hamburger-panel {
+  display: none;
+  -webkit-box-flex: 1;
+  -webkit-flex: auto;
+  -moz-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  text-align: left;
+
+  > .content {
+    display: none;
+  }
+
+  &.open {
+    background-color: rgba($color-prim-30, .9);
+    color: $color-bg;
+    margin-left: -185px;
+    padding: 0 0 spx(1.6) spx(2);
+
+    > .content {
+      display: block;
+    }
+
+    a:link,
+    a:visited {
+      color: inherit;
+    }
+  }
+
+  @media all and (max-width: 1225px) {
+    display: block;
+  }
+}
+
+.compro-superfish {
+  li.menu-item--expanded {
+    position: relative;
+
+    > ul {
+      background-color: rgba($color-tert, .95);
+      display: none;
+      left: 0;
+      min-width: 14em;
+      position: absolute;
+      text-align: left;
+      top: 70%;
+      z-index: 99;
+
+      a {
+        border-bottom: 1px solid;
+        display: block;
+        padding: spx(1.6) spx(3.2);
+
+        &:last-child {
+          border-bottom: 0 none;
+        }
+      }
+    }
+
+    &:hover,
+    &.sfHover {
+      > ul {
+        display: block;
+      }
+    }
+  }
+}
+
+.hamburger {
+  float: right;
+  padding: spx(1.6) spx(2) spx(1);
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &-inner,
+  &-inner::before,
+  &-inner::after {
+    background-color: $color-bg;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+ul.menu {
+  list-style: none outside;
+  padding: 0;
+
+  a {
+    &[href*="tel:"] {
+      cursor: text;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  a:active,
+  a.is-active,
+  .menu-item--active-trail a {
+    font-weight: 700;
+  }
+
+  > li {
+    display: inline-block;
+
+    > a {
+      display: inline-block;
+      padding: spx(1.6) spx(3) spx(1.6) spx(0);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.cta--in-menu {
+        background-color: $color-sec;
+        font-weight: 600;
+        padding: spx(1.6) spx(4);
+
+        &:hover {
+          background-color: $color-sec-30;
+        }
+
+        @media all and (max-width: 780px) {
+          padding: spx(1.6);
+        }
+      }
+
+      &.divider-left {
+        border-left: 1px solid $color-bg;
+        padding-left: spx(3);
+
+        @media all and (max-width: 1330px) {
+          padding-left: spx(1.6);
+        }
+        @media all and (max-width: 1130px) {
+          border-left: 0 none;
+          padding: spx(1.6);
+
+          &::before {
+            clear: both;
+            content: '';
+            display: table;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  &--main {
+    .menu {
+      > li {
+        > a {
+          padding: spx(1.6) spx(3) spx(1.6) spx(0);
+
+          @media all and (max-width: 1330px) {
+            padding: spx(1.6) spx(1.6) spx(1.6) spx(0);
+          }
+          @media all and (max-width: 1130px) {
+            display: block;
+            padding: spx(1.6);
+          }
+        }
+
+        @media all and (max-width: 1130px) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &--utility {
+    .menu {
+      > li {
+        > a {
+          padding: spx(1.6) spx(3) spx(1.6) spx(0);
+
+          @media all and (max-width: 780px) {
+            padding: spx(1.6);
+          }
+        }
+      }
+    }
+
+    @media all and (max-width: 780px) {
+      font-size: .75em;
+    }
+  }
+}
+
+.sf {
+  &-arrows {
+    .sf-with-ul {
+      &::after {
+        border: spx(.5) solid transparent;
+        border-top-color: rgba($color-bg, 0.8);
+        content: '';
+        display: inline-block;
+        height: 0;
+        margin: spx(-.4) 0 0 spx(.5);
+        position: absolute;
+        top: 50%;
+        width: 0;
+      }
+    }
+
+    .sfHover {
+      .sf-with-ul {
+        &::after {
+          margin-top: -.6em;
+          -moz-transform: rotate(180deg);
+          -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+          -o-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+
+.utility-and-nav {
+  color: $color-bg;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: right;
+  text-transform: uppercase;
+
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+
+  .inner {
+    max-width: inherit;
+  }
+
+  &.js-hamburgered {
+    @media all and (max-width: 1225px) {
+      display: none;
+    }
+  }
+}

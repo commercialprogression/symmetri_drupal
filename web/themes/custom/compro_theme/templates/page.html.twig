@@ -1,0 +1,23 @@
+<div class="page layout-container">
+  <header{{ attributes.addClass(splash_classes) }}>
+    <div class="top-bar display--flex flex-wrap--nowrap compro-headroom">
+      {{ page.header }}
+      <div class="utility-and-nav compro-hamburger flex--auto">
+        {{ page.utility }}
+        {{ page.nav }}
+      </div>
+    </div>
+    {{ page.splash }}
+  </header>
+  <main role="main">
+    <a id="main-content" tabindex="-1"></a>
+    {{ page.pre_content }}
+    <div class="content-and-sidebar">
+      {{ page.content_top }}
+      {{ page.content }}
+      {{ page.content_bottom }}
+    </div>
+    {{ page.post_content }}
+  </main>
+  {{ page.footer }}
+</div>

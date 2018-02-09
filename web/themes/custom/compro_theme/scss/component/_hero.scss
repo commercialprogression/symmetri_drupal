@@ -1,0 +1,82 @@
+/**
+ * @file
+ * Style for heroes at the top of pages.
+ */
+@import "../base/variables";
+
+.hero {
+  &-priority {
+    &--low {
+      min-height: 45vh;
+
+      .region-splash {
+        font-size: 1.86vw;
+
+        @media all and (max-width: 1000px) {
+          font-size: 1em;
+        }
+      }
+
+      @media all and (max-width: 960px) {
+        min-height: inherit;
+      }
+    }
+  }
+}
+
+.splash-header {
+  background-color: $color-text;
+  color: $color-bg;
+  font-weight: 400;
+  min-height: 57vh;
+  padding: 0 0 spx(12);
+
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  &.colorscheme {
+    &-primary {
+      background-color: $color-prim-10;
+    }
+
+    &-secondary {
+      background-color: $color-sec-10;
+    }
+
+    &-tertiary {
+      background-color: $color-tert-10;
+    }
+  }
+
+  h1 {
+    font-size: 1.292em;
+    font-weight: 700;
+  }
+
+  .region-splash {
+    font-size: 3.55vw;
+
+    p {
+      font-size: 24px;
+    }
+
+    @media all and (max-width: 1000px) {
+      font-size: 1em;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &:not(.has-field-image) {
+    min-height: inherit;
+  }
+
+  @media all and (max-width: 960px) {
+    min-height: inherit;
+  }
+}

@@ -1,0 +1,69 @@
+/**
+ * @file
+ * Style for tabs.
+ */
+@import "../base/variables";
+
+ul.tabs {
+  border-bottom: 1px solid;
+  border-color: #ccc;
+  list-style: none;
+  margin: 20px 0;
+  overflow: hidden;
+  padding: 0 0 0 1em;
+
+  > li {
+    border-color: #ccc;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    display: block;
+    float: left;
+    margin: 0 1em 0 0;
+
+    > a {
+      color: #024;
+      display: inline-block;
+      padding: 0.5em 1em;
+      text-decoration: none;
+      -moz-transition: background-color 0.3s ease-out;
+      -o-transition: background-color 0.3s ease-out;
+      -webkit-transition: background-color 0.3s ease-out;
+      transition: background-color 0.3s ease-out;
+
+      &:hover {
+        background: #0ae;
+        color: #fff;
+      }
+
+      &.active {
+        background: #079ac4;
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 550px) {
+  ul.tabs {
+    border: 1px solid #ccc;
+    font-size: 0.8em;
+    padding: 0;
+
+    > li {
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+      border-radius: 0;
+      border-width: 0 0 1px;
+      float: none;
+      margin: 0;
+
+      &:last-child {
+        border-width: 0;
+      }
+
+      > a {
+        display: block;
+      }
+    }
+  }
+}

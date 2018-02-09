@@ -1,0 +1,46 @@
+name: Compro Theme
+type: theme
+base theme: classy
+description: Commercial Progression's theme base
+screenshot: images/optimized/screenshot.png
+core: 8.x
+ckeditor_stylesheets:
+  - css/base.css
+libraries:
+#  - compro_theme/animate
+#  - compro_theme/autotrack
+#  - compro_theme/details
+#  - compro_theme/hamburger
+#  - compro_theme/headroom
+#  - compro_theme/hoverIntent
+#  - compro_theme/slick
+#  - compro_theme/superfish
+#  - compro_theme/tippyjs
+  - compro_theme/global-styling
+regions:
+  page_top: Page top
+  header: Header
+  utility: Utility
+  nav: Nav
+  splash: Splash
+  pre_content: Pre-content
+  content_top: Content top
+  content: Content
+  content_bottom: Content bottom
+  post_content: Post-content
+  footer: Footer
+  page_bottom: Page bottom
+features:
+  - logo
+  - favicon
+settings:
+  compro_theme_disable_core_css: 0
+stylesheets-remove:
+  - 'core/assets/vendor/normalize-css/normalize.css'
+  - 'core/themes/classy/css/components/details.css'
+  - 'core/themes/classy/css/components/form.css'
+  - 'core/themes/classy/css/components/item-list.css'
+  - 'core/themes/classy/css/components/menu.css'
+  - 'core/themes/classy/css/components/messages.css'
+  - 'core/themes/classy/css/components/pager.css'
+  - 'core/themes/stable/css/system/components/clearfix.module.css'

@@ -1,0 +1,57 @@
+/**
+ * @file
+ * Style for sticky headers at the top of pages.
+ */
+@import "../base/variables";
+
+.headroom {
+  left: 0;
+  position: fixed;
+  right: 0;
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  will-change: transform;
+  z-index: 100;
+
+  &--not-top {
+    &:not(.headroom--unpinned) {
+      background-color: rgba($color-prim, .95);
+      -webkit-transform: translateY(0%);
+      -moz-transform: translateY(0%);
+      -ms-transform: translateY(0%);
+      -o-transform: translateY(0%);
+      transform: translateY(0%);
+    }
+
+    &:not(.headroom--pinned) {
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+      transform: translateY(-100%);
+    }
+  }
+
+  &--pinned {
+    background-color: rgba($color-prim, .95);
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  &--top {
+    background-color: transparent;
+  }
+
+  &--unpinned {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}

@@ -1,0 +1,391 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the compro_theme theme.
+ */
+
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Unicode;
+use Drupal\Core\Template\Attribute;
+use Drupal\node\Entity\Node;
+use Drupal\entity;
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ */
+function compro_theme_preprocess_html(&$vars) {
+  // Get classes out of the twig.
+  if (!isset($vars['body_classes'])) {
+    $vars['body_classes'] = [];
+  }
+
+  // Logged-in body class.
+  if (isset($vars['logged_in']) && $vars['logged_in']) {
+    $vars['body_classes'][] = 'user-logged-in';
+  }
+
+  // Offline body class.
+  if (isset($vars['db_offline']) && $vars['db_offline']) {
+    $vars['body_classes'][] = 'db-offline';
+  }
+
+  // Root path body class.
+  $vars['body_classes'][] = (isset($vars['root_path']) && !$vars['root_path']) ? 'path-frontpage' : Html::cleanCssIdentifier('path-' . $vars['root_path']);
+
+  // Node type body class.
+  if (isset($vars['node_type']) && $vars['node_type']) {
+    $vars['body_classes'][] = Html::cleanCssIdentifier('node--type-' . $vars['node_type']);
+  }
+
+  // Perform operations based on page context (node, term, etc.).
+  $parameters = \Drupal::routeMatch()->getParameters()->all();
+  if (isset($parameters['node'])) {
+    $node = $parameters['node'];
+
+    // D7-style body class by nid.
+    $vars['body_classes'][] = Html::cleanCssIdentifier('node--nid-' . $node->id());
+  }
+
+  if (isset($parameters['taxonomy_term'])) {
+    // Ensure the taxonomy term is consistent, depending on path.
+    if (gettype($parameters['taxonomy_term']) === 'string') {
+      $term = Term::load($parameters['taxonomy_term']);
+    }
+    else {
+      $term = $parameters['taxonomy_term'];
+    }
+
+    $vars['body_classes'][] = Html::cleanCssIdentifier('page--vocabulary-' . $term->bundle());
+  }
+}
+
+/**
+* Implements hook_preprocess_page() for PAGE document templates.
+*/
+function compro_theme_preprocess_page(&$vars) {
+  $vars['splash_classes'] = [
+    'splash-header',
+  ];
+}
+
+/**
+ * Implements hook_preprocess_region().
+ */
+function compro_theme_preprocess_region(&$vars) {
+  $vars['html_tag'] = 'div';
+  $vars['classes'] = [
+    Html::cleanCssIdentifier('region'),
+    Html::cleanCssIdentifier('region-' . $vars['region']),
+  ];
+
+  switch ($vars['region']) {
+    case 'footer':
+      $vars['html_tag'] = 'footer';
+
+      break;
+    case 'header':
+      $vars['html_tag'] = 'header';
+
+      break;
+    case 'sidebar_first':
+    case 'sidebar_second':
+      $vars['html_tag'] = 'aside';
+
+      break;
+  }
+}
+
+/**
+* Implements hook_preprocess_node().
+*/
+function compro_theme_preprocess_node(&$vars) {
+  $node = $vars['node'];
+
+  $vars['classes'] = [
+    Html::cleanCssIdentifier('node'),
+    Html::cleanCssIdentifier('node--type-' . $node->bundle()),
+    Html::cleanCssIdentifier('node--view-mode-' . $vars['view_mode']),
+  ];
+  if ($node->isPromoted()) {
+    $vars['classes'][] = Html::cleanCssIdentifier('node--promoted');
+  }
+  if ($node->isSticky()) {
+    $vars['classes'][] = Html::cleanCssIdentifier('node--sticky');
+  }
+  if (!$node->isPublished()) {
+    $vars['classes'][] = Html::cleanCssIdentifier('node--unpublished');
+  }
+
+  switch ($node->bundle()) {
+    case 'page':
+      // Something by content type.
+      break;
+  }
+
+  // Any field_style_... fields print as CSS classes.
+  $where = &$vars['attributes']['class'];
+  _compro_theme_entity_style_classes($vars, $node, $where);
+}
+
+/**
+ * Implements hook_preprocess_taxonomy_term().
+ */
+function compro_theme_preprocess_taxonomy_term(&$vars) {
+  $term = $vars['term'];
+
+  $vars['classes'] = [
+    Html::cleanCssIdentifier('taxonomy-term'),
+    Html::cleanCssIdentifier('vocabulary-' . $term->bundle()),
+  ];
+
+  $vars['attributes']['id'] = Html::cleanCssIdentifier('taxonomy-term-' . $term->id());
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ */
+function compro_theme_preprocess_eck_entity(&$vars) {
+  $entity = $vars['entity']['#entity'];
+  $type = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
+  $view_mode = $vars['entity']['#view_mode'];
+
+  $vars['attributes']['class'] = array(
+    Html::cleanCssIdentifier('eck-entity'),
+    Html::cleanCssIdentifier('entity-type-' . $type),
+    Html::cleanCssIdentifier('entity-bundle-' . $bundle),
+    Html::cleanCssIdentifier('view-mode-' . $view_mode),
+    Html::cleanCssIdentifier('entity-' . $bundle . '-' . $entity->id()),
+  );
+
+  // Style classes by bundle (where unambiguous).
+  switch ($bundle) {
+    case 'column':
+      $vars['attributes']['class'][] = 'display--flex';
+      $vars['attributes']['class'][] = 'flex-direction--column';
+
+      break;
+
+    case 'row':
+      $vars['attributes']['class'][] = 'display--flex';
+      $vars['attributes']['class'][] = 'flex-direction--row';
+
+      break;
+  }
+
+  $where = &$vars['attributes']['class'];
+  _compro_theme_entity_style_classes($vars, $entity, $where);
+}
+
+/**
+ * Implements hook_preprocess_block().
+ */
+function compro_theme_preprocess_block(&$vars) {}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function compro_theme_preprocess_field(&$vars) {
+  $vars['wrapped'] = TRUE;
+  $vars['html_tag'] = 'div';
+  $vars['classes'] = [
+    'field',
+    Html::cleanCssIdentifier('field-name--' . $vars['field_name']),
+    Html::cleanCssIdentifier('field-type--' . $vars['field_type']),
+    Html::cleanCssIdentifier('field-label--' . $vars['label_display']),
+  ];
+
+  // Class the field formatter.
+  if (isset($vars['element']['#formatter'])) {
+    $vars['classes'][] = Html::cleanCssIdentifier('field-formatter--' . $vars['element']['#formatter']);
+  }
+
+  // Title tag classes.
+  $vars['title_classes'] = [
+    'field-label',
+  ];
+  if (isset($vars['label_display']) && $vars['label_display'] === 'visually_hidden') {
+    $vars['title_classes'][] = 'visually-hidden';
+  }
+
+  // Whether the field should be wrapped or not.
+  if (
+    in_array($vars['field_type'], [
+      'entity_reference',
+      'entity_reference_revisions',
+      'image',
+      'link',
+    ])
+    || $vars['field_name'] === 'field_longtext'
+  ) {
+    $vars['wrapped'] = FALSE;
+  }
+
+  if ($vars['field_name'] === 'title') {
+    $vars['html_tag'] = 'h2';
+  }
+}
+
+/**
+ * Implements hook_preprocess_views_view().
+ */
+function compro_theme_preprocess_views_view(&$vars) {
+  $vars['classes'] = [
+    'view',
+    Html::cleanCssIdentifier('view-' . $vars['id']),
+    Html::cleanCssIdentifier('view-id-' . $vars['id']),
+    Html::cleanCssIdentifier('view-display-id-' . $vars['display_id']),
+  ];
+
+  if (isset($vars['dom_id']) && Unicode::strlen($vars['dom_id'])) {
+    $vars['classes'][] = Html::cleanCssIdentifier('js-view-dom-id-' . $vars['dom_id']);
+  }
+
+  // Set separate attribute arrays for the content, header, and footer.
+  $vars['header_attributes'] = new Attribute([
+    'class' => [
+      'view-header',
+    ],
+  ]);
+  $vars['filters_attributes'] = new Attribute([
+    'class' => [
+      'view-filters',
+    ],
+  ]);
+  $vars['attachment_before_attributes'] = new Attribute([
+    'class' => [
+      'attachment',
+      'attachment-before',
+    ],
+  ]);
+  $vars['content_attributes']['class'][] = 'view-content';
+  $vars['empty_attributes'] = new Attribute([
+    'class' => [
+      'view-empty',
+    ],
+  ]);
+  $vars['attachment_after_attributes'] = new Attribute([
+    'class' => [
+      'attachment',
+      'attachment-after',
+    ],
+  ]);
+  $vars['footer_attributes'] = new Attribute([
+    'class' => [
+      'view-footer',
+    ],
+  ]);
+  $vars['feed_icons_attributes'] = new Attribute([
+    'class' => [
+      'feed-icons',
+    ],
+  ]);
+
+  // Class out by view id.
+  switch ($vars['id']) {
+    case 'location':
+      $vars['classes'][] = 'text-transform--uppercase';
+      $vars['header_attributes']['class'][] = 'text-align--left';
+      $vars['content_attributes']['class'][] = 'display--flex';
+      $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+      $vars['content_attributes']['class'][] = 'justify-content--space-around';
+  }
+}
+
+/**
+ * Implements hook_preprocess_pager().
+ */
+function compro_theme_preprocess_pager(&$vars) {
+  if (isset($vars['items']['previous']['text'])) {
+    $vars['items']['previous']['text'] = '‹ Previous';
+  }
+
+  if (isset($vars['items']['next']['text'])) {
+    $vars['items']['next']['text'] = 'Next ›';
+  }
+}
+
+/**
+ * Implements hook_preprocess_input().
+ */
+function compro_theme_preprocess_input(&$vars) {
+  $vars['button'] = FALSE;
+
+  if (isset($vars['attributes']['type']) && in_array($vars['attributes']['type'], [
+    'button',
+    'reset',
+    'submit',
+  ])) {
+    $vars['button'] = TRUE;
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function compro_theme_theme_suggestions_field_alter(&$suggestions, $vars) {
+  // Allow templates by field formatter.
+  if (isset($vars['element']['#formatter'])) {
+    $suggestions[] = 'field-formatter--' . $vars['element']['#formatter'];
+  }
+}
+
+/**
+ * Helper function to add classes to the entity.
+ * @param $vars
+ */
+function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
+  $fields = $entity->getFieldDefinitions();
+  foreach ($fields as $name => $definition) {
+    if (Unicode::substr($name, 0, 11) === 'field_style') {
+      // field_style_... values as classes (typically _classes.scss)
+
+      // Handle different field types, mainly boolean and list_string
+      $type = $definition->getType();
+      if ($type === 'boolean') {
+        // Make an array of on/off values.
+        $settings = $definition->getSettings();
+        $switch_vals = [
+          $settings['off_label'],
+          $settings['on_label'],
+        ];
+      }
+
+      $value = $entity->get($name)->getValue();
+      foreach ($value as $key => $val) {
+        if (Unicode::strlen($val['value']) >= 2) {
+          $where[] = Html::cleanCssIdentifier($val['value']);
+        }
+        else {
+          if ($type === 'boolean') {
+            $where[] = Html::cleanCssIdentifier($switch_vals[$val['value']]);
+          }
+        }
+      }
+    }
+    else {
+      if (Unicode::substr($name, 0, 11) === 'field_image') {
+        // Whether an image is present (especially for backgrounds).
+
+        $value = $entity->get($name)->getValue();
+        if (isset($value[0]['target_id'])) {
+          $where[] = Html::cleanCssIdentifier('has-' . $name);
+        }
+      }
+      else {
+        if (Unicode::substr($name, 0, 10) === 'field_data') {
+          $data_attr = Unicode::substr($name, 11);
+          $value = $entity->get($name)->getValue();
+          foreach ($value as $key => $val) {
+            if (isset($val['value'])) {
+              $vars['attributes'][Html::cleanCssIdentifier('data-' . $data_attr)] = $val['value'];
+            }
+          }
+        }
+      }
+    }
+  }
+}

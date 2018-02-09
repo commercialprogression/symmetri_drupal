@@ -1,0 +1,28 @@
+{
+  "name": "compro_theme",
+  "version": "0.2.0",
+  "devDependencies": {
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "grunt": "^1.0.0",
+    "grunt-contrib-sass": "^0.8.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-stylelint": "^0.9.0",
+    "sass-lint": "^1.12.1",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0"
+  },
+  "scripts": {
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "dependencies": {
+    "grunt-eslint": "^20.1.0",
+    "install-peerdeps": "^1.4.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0",
+    "stylelint-selector-bem-pattern": "^2.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+icons:
+  version: 1.x
+  css:
+    theme:
+      icons/compro_custom.css: {}
+
+neg_icons:
+  version: 1.x
+  css:
+    theme:
+      icons/compro_custom_neg.css: {}
+
+back_to_top:
+  version: 1.x
+  css:
+    component:
+      back_to_top/back_to_top.css: {}
+  js:
+    back_to_top/back_to_top.js: {}
+  dependencies:
+    - core/jquery

@@ -1,0 +1,36 @@
+/**
+ * @file
+ * Style for the Card entity type.
+ */
+@import "../base/variables";
+
+.card-text-focal {
+  &--center {
+    > .inner {
+      left: spx(1);
+      right: spx(1);
+    }
+  }
+
+  &--left {
+    > .inner {
+      left: spx(1);
+      right: 35%;
+
+      @media all and (max-width: 1440px) {
+        right: spx(1);
+      }
+    }
+  }
+
+  &--right {
+    > .inner {
+      left: 35%;
+      right: spx(1);
+
+      @media all and (max-width: 1440px) {
+        left: spx(1);
+      }
+    }
+  }
+}

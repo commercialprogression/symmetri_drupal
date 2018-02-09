@@ -1,0 +1,30 @@
+/**
+ * @file
+ * Style for the skip link.
+ */
+@import "../base/variables";
+
+.skip-hide {
+  background: $color-prim-40;
+  position: relative;
+  text-align: center;
+
+  a {
+    color: $color-sec-99;
+    display: block;
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    padding: spx(1);
+    position: absolute;
+    top: auto;
+    width: 1px;
+
+    &:focus {
+      height: auto;
+      outline: 0 none;
+      position: static;
+      width: auto;
+    }
+  }
+}

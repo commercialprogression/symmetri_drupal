@@ -1,0 +1,88 @@
+/**
+ * @file
+ * Main layout for the theme.
+ */
+/**
+ * @file
+ * Variables for reuse throughout the theme.
+ */
+/**
+ * Common settings.
+ */
+/**
+ * Colors.
+ *
+ * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ */
+/* Main settings. */
+/* Stateful colors. */
+/* Utility colors.
+ * The trailing number is luminosity: 1 is darkest, 99 is lightest.
+ * Rather than match hex codes from the comps exactly, just use the closest one of these.
+ */
+/**
+ * Functions.
+ */
+/* stylelint-disable */
+/* stylelint-enable */
+main {
+  min-height: 37vh; }
+
+.block-inverted-logo-block {
+  margin: 0 10px 10px 0;
+  max-width: 150px; }
+  @media all and (max-width: 700px) {
+    .block-inverted-logo-block {
+      margin: 0 auto 10px; } }
+.block-system-branding-block {
+  margin: 16px 70px 16px 20px;
+  max-width: 240px;
+  min-width: 185px; }
+  @media all and (max-width: 1090px) {
+    .block-system-branding-block {
+      margin: 16px 20px; } }
+  @media all and (max-width: 225px) {
+    .block-system-branding-block {
+      min-width: inherit; } }
+
+.entity-bundle-column {
+  margin: 0 20px 0 0; }
+  @media all and (max-width: 1023px) {
+    .entity-bundle-column {
+      /* This mq matches to where display--flex begins wrapping. */
+      min-width: 270px; } }
+  @media all and (max-width: 615px) {
+    .entity-bundle-column {
+      margin: 0 0 40px; } }
+.entity-bundle-row {
+  margin: 0 -20px 0 0; }
+  @media all and (max-width: 615px) {
+    .entity-bundle-row {
+      margin: 0; } }
+.entity-bundle-stripe {
+  padding: 20px 20px; }
+  .entity-bundle-stripe > .inner {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 40px 0; }
+  .entity-bundle-stripe.container--no-pad > .inner {
+    padding: 0; }
+
+.page {
+  text-align: center; }
+
+.region > .inner {
+  margin: 0 auto;
+  max-width: 1440px; }
+.region-content-top {
+  position: relative;
+  z-index: 3; }
+.region-content > .inner {
+  max-width: inherit; }
+.region-splash {
+  padding: 120px 0 0; }
+  @media all and (max-width: 1440px) {
+    .region-splash {
+      padding: 0 20px; } }
+
+/*# sourceMappingURL=layout.css.map */

@@ -1,0 +1,65 @@
+/**
+ * @file
+ * Style for regions (non-layout).
+ */
+@import "../base/variables";
+
+.region {
+  &-footer {
+    background-color: $color-prim;
+    border-top: 6px solid $color-bg;
+    color: $color-bg;
+    font-size: 0.6em;
+
+    > .inner {
+      padding: spx(4) spx(2) spx(1);
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: inherit;
+      }
+    }
+
+    .contact-info-address {
+      span {
+        display: inline-block;
+
+        &[itemprop="streetAddress"] {
+          display: block;
+        }
+      }
+    }
+
+    ul.menu {
+      > li {
+        > a {
+          padding: 0;
+        }
+      }
+    }
+
+    .muted {
+      color: $color-prim-80;
+      font-size: 0.8em;
+    }
+
+    .text-transform--uppercase {
+      // Kind of hacky.
+      font-weight: 400;
+    }
+
+    @media all and (max-width: 700px) {
+      .float--left,
+      .float--right {
+        float: none;
+        margin: 0 0 spx(2);
+      }
+    }
+  }
+
+  &-nav {
+    border-top: 1px solid $color-bg;
+  }
+}

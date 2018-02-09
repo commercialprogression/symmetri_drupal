@@ -1,0 +1,23 @@
+{
+  "name": "compro_theme",
+  "version": "1.0.0",
+  "authors": [
+    "Chris Keller <chris@commercialprogression.com>",
+    "Brad Czerniak <brad@commercialprogression.com>",
+    "Hillary Lewandowski <hillary@commercialprogression.com>"
+  ],
+  "description": "Drupal theme",
+  "main": "",
+  "moduleType": [],
+  "license": "GPL2",
+  "homepage": "https://github.com/commercialprogression/compro_theme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}

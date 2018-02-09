@@ -1,0 +1,5 @@
+# Schema for the configuration files of the Compro theme.
+
+compro_theme.settings:
+  type: theme_settings
+  label: 'Compro theme settings'

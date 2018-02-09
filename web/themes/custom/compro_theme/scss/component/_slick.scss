@@ -1,0 +1,71 @@
+/**
+ * @file
+ * Slick slideshows.
+ */
+@import "../base/variables";
+
+.slick {
+  &-arrow {
+    background-color: transparent;
+    bottom: 50%;
+    color: transparent;
+    font-size: 0;
+    font-weight: 600;
+    margin: 0 0 spx(-3);
+    padding: spx(1);
+    position: absolute;
+    transform: scale(0.7, 1);
+    z-index: 4;
+
+    &::after {
+      content: '\25B7';
+      color: $color-bg;
+      font-size: spx(6);
+    }
+
+    &:hover {
+      background-color: transparent;
+
+      &::after {
+        color: $color-sec;
+      }
+    }
+
+    @media all and (max-width: 1060px) {
+      opacity: 0.5;
+    }
+  }
+
+  &-initialized {
+    .slick-slide {
+      &.display--flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        height: auto;
+      }
+    }
+
+    .slick-track {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: flex;
+    }
+  }
+
+  &-next {
+    right: spx(-2);
+  }
+
+  &-prev {
+    left: spx(-2);
+
+    &::after {
+      content: '\25C1';
+    }
+  }
+}

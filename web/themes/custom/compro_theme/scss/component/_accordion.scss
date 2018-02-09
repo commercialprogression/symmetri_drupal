@@ -1,0 +1,17 @@
+/**
+ * @file
+ * Style for accordions.
+ */
+@import "../base/variables";
+
+details {
+  border: 1px solid;
+  margin: spx(1) 0;
+  padding: spx(0.5) spx(1.5);
+  text-align: left;
+
+  > summary {
+    cursor: pointer;
+    padding: spx(0.2) spx(0.5);
+  }
+}

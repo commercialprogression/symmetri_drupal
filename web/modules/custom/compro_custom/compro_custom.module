@@ -1,0 +1,370 @@
+<?php
+
+/**
+ * @file
+ * Custom module to perform misc tasks.
+ */
+
+use Drupal\Core\Link;
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Unicode;
+use Drupal\Component\Utility\Xss;
+use Drupal\node\Entity\NodeType;
+use Drupal\node\NodeInterface;
+
+/**
+ * Helper function to get options (all or available).
+ */
+function _compro_custom_get_options() {
+  return [
+    'h1' => t('Heading 1'),
+    'h2' => t('Heading 2'),
+    'h3' => t('Heading 3'),
+    'h4' => t('Heading 4'),
+    'h5' => t('Heading 5'),
+    'h6' => t('Heading 6'),
+  ];
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function compro_custom_page_attachments(array &$attachments) {
+  // Conditionally add CSS, based on admin screen.
+  $compro_custom = \Drupal::config('compro_custom.form');
+  if ($compro_custom->get('icon_enable')) {
+    if ($compro_custom->get('icon_neg')) {
+      $attachments['#attached']['library'][] = 'compro_custom/neg_icons';
+    }
+    else {
+      $attachments['#attached']['library'][] = 'compro_custom/icons';
+    }
+  }
+
+  // Add an apple-touch-icon if there's one in the site root.
+  if (file_exists(DRUPAL_ROOT . '/apple-touch-icon.png')) {
+    $attachments['#attached']['html_head_link'][][] = [
+      'rel' => 'apple-touch-icon',
+      'href' => '/apple-touch-icon.png',
+    ];
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * In order to modify the core logo block, we have to trick Drupal into thinking
+ * that Compro Custom is a theme.
+ */
+function compro_custom_theme_registry_alter(&$theme_registry) {
+  if (isset($theme_registry['block__system_branding_block'])) {
+    $theme_registry['block__system_branding_block']['path'] = 'modules/custom/compro_custom/templates';
+    $theme_registry['block__system_branding_block']['theme path'] = 'modules/custom/compro_custom';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Pass some more variables into our template file.
+ */
+function compro_custom_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $site_name = Xss::filterAdmin(\Drupal::config('system.site')->get('name'));
+
+    // Link path.
+    $compro_custom = \Drupal::config('compro_custom.form');
+
+    $variables['title_h1'] = $compro_custom->get('logo.heading') !== 1 ? FALSE : TRUE;
+
+    $variables['logo_path'] = '/';
+
+    $variables['logo_title'] = Html::escape($compro_custom->get('logo.title') !== NULL ? $compro_custom->get('logo.title') : $site_name . ' home');
+  }
+}
+
+/**
+ * This is how tokens adds new view modes during install.
+ *
+ * Implementing hook_entity_type_alter()
+ * will throw an error, so it seems the best way to implement this
+ * is during install, and when new entity types are created.
+ */
+function compro_custom_add_view_modes() {
+  $modes = ['teaser', 'small'];
+  // Create view modes for each entity type.
+  $info = \Drupal::entityTypeManager()->getDefinitions();
+  foreach ($info as $entity_type => $entity_type_info) {
+    // We're only interested in entity types with a view builder.
+    if (!$entity_type_info->getViewBuilderClass()) {
+      continue;
+    }
+    // Try to find a token view mode for that entity type.
+    $storage = \Drupal::entityTypeManager()->getStorage('entity_view_mode');
+    // Add view mode if it does not already exist.
+    foreach ($modes as $mode) {
+      if (!$storage->load("$entity_type.$mode")) {
+        $storage->create([
+          'targetEntityType' => $entity_type,
+          'id' => "$entity_type.$mode",
+          'status' => TRUE,
+          'label' => ucwords($mode),
+        ])->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function compro_custom_entity_insert(EntityInterface $entity) {
+  compro_custom_add_view_modes();
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function compro_custom_entity_extra_field_info() {
+  $extra = [];
+
+  // Go through all the entity types and add extra fields for display.
+  foreach (NodeType::loadMultiple() as $bundle) {
+    $extra['node'][$bundle->Id()] = [
+      'display' => [
+        'compro_submitted' => [
+          'label' => t('Submitted'),
+          'description' => t('Author attribution for the content.'),
+          'weight' => 0,
+        ],
+      ],
+      'form' => [
+        'compro_submitted' => [
+          'label' => t('Submitted'),
+          'description' => t('Author attribution for the content.'),
+          'edit' => Link::fromTextAndUrl('Edit', Url::fromRoute('compro_custom.compro_custom_submitted'))
+            ->toString(),
+          'weight' => 0,
+        ],
+      ],
+    ];
+  }
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function compro_custom_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  // Submitted line.
+  if ($display->getComponent('compro_submitted')) {
+    $sub = \Drupal::config('compro_custom.compro_submitted');
+    $sub_line = 'Submitted by [node:author:name] on [node:created]';
+    if ($sub->get($entity->bundle())) {
+      $sub_line = $sub->get($entity->bundle());
+    }
+    $build['compro_submitted'] = [
+      '#prefix' => '<div class="submitted">',
+      '#markup' => \Drupal::token()
+        ->replace($sub_line, ['node' => $entity]),
+      '#suffix' => '</div>',
+    ];
+  }
+}
+
+/**
+ * Implements hook_node_links_alter().
+ */
+function compro_custom_node_links_alter(array &$links, NodeInterface $entity, array &$context) {
+  // Switch "Read more" to "Learn more" in the node links.
+  if (isset($links['node']['#links']['node-readmore']['title'])) {
+    $node_title_stripped = strip_tags($entity->label());
+    $links['node']['#links']['node-readmore']['title'] = t('Learn more<span class="visually-hidden"> about @title</span>', [
+      '@title' => $node_title_stripped,
+    ]);
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_table_fields_alter().
+ */
+function compro_custom_inline_entity_form_table_fields_alter(&$fields, $context) {
+  if (!in_array($context['entity_type'], [
+    'node',
+  ])) {
+    unset($fields['label']);
+    $fields['entity_has'] = [
+      'type' => 'callback',
+      'callback' => 'compro_custom_inline_entity_form_table_fields_callback',
+      'callback_arguments' => ['entity_has'],
+      'label' => t('Contents'),
+      'weight' => 1,
+    ];
+  }
+}
+
+/**
+ * Callable for tweaking the IEF table.
+ */
+function compro_custom_inline_entity_form_table_fields_callback($entity, $vars, $field_name) {
+  $return = [];
+
+  switch ($field_name) {
+    case 'entity_has':
+      $fields = [];
+
+      // Parse through components if present.
+      if ($entity->hasField('field_components')) {
+        $components = $entity->get('field_components')->referencedEntities();
+        foreach ($components as $key => $value) {
+          $fields[] = '<strong>' . $value->bundle() . '</strong> <small>'
+            . _compro_custom_summarize_entity($value)
+            . '</small>';
+        }
+      }
+      else {
+        $fields[] = '<strong>Fields</strong> <small>'
+          . _compro_custom_summarize_entity($entity)
+          . '</small>';
+      }
+
+      $return = [
+        '#markup' => implode('<br>', $fields),
+      ];
+
+      break;
+
+    case 'entity_used':
+      $return = [
+        '#markup' => 'BradBrad2',
+      ];
+
+      break;
+  }
+
+  return $return;
+}
+
+/**
+ * Helper function to give a summary of entity values.
+ * @param $entity
+ * @param $field_labels
+ *
+ * @return string
+ */
+function _compro_custom_summarize_entity($entity, $recurse = 0) {
+  $return = [];
+  $prefix = '';
+
+  if (method_exists($entity, 'getFieldDefinitions')) {
+    $fields = $entity->getFieldDefinitions();
+    foreach ($fields as $name => $definition) {
+      if (!in_array(Unicode::substr($name, 0, 11), [
+          'field_style',
+          'field_image'
+        ])
+        && !in_array($name, [
+          'default_langcode',
+          'parent_field_name',
+          'parent_id',
+          'parent_type',
+          'revision_translation_affected',
+          'revision_uid',
+          'status',
+          'type',
+          'uid',
+        ])
+      ) {
+        $type = $definition->getType();
+
+        // Only summarize certain fields.
+        if (in_array($type, [
+          'boolean',
+          'entity_reference',
+          'entity_reference_revisions',
+          'heading_text',
+          'link',
+          'string',
+          'text',
+          'text_long',
+          'text_with_summary',
+        ])) {
+          $value = $entity->get($name)->getValue();
+          $label = $definition->getLabel();
+          foreach ($value as $key => $val) {
+            switch ($type) {
+              case 'boolean':
+                // Make an array of on/off values.
+                $settings = $definition->getSettings();
+                $switch_vals = [
+                  $settings['off_label'],
+                  $settings['on_label'],
+                ];
+
+                $return[] = '<em>' . $label . '</em>: ' . $switch_vals[$val['value']];
+
+                break;
+
+              case 'heading_text':
+              case 'string':
+              case 'text':
+              case 'text_long':
+              case 'text_with_summary':
+                if (Unicode::strlen($val['value']) >= 3) {
+                  $return[] = Unicode::substr(strip_tags($val['value']), 0, 20);
+                }
+
+                break;
+
+              case 'link':
+                if (Unicode::strlen($val['title']) >= 3) {
+                  $return[] = Unicode::substr(strip_tags($val['title']), 0, 20);
+                }
+
+                break;
+            }
+          }
+
+          if (in_array($type, [
+            'entity_reference',
+            'entity_reference_revisions'
+          ])) {
+            $prefix .= '<strong>' . $label . ': ' . count($value) . '</strong> <br>';
+            $entities = $entity->get($name)->referencedEntities();
+            $ref_return = [];
+            $recurse++;
+            foreach ($entities as $ref_entity) {
+              if ($recurse <= 2) {
+                $sum = _compro_custom_summarize_entity($ref_entity, $recurse);
+
+                if (Unicode::strlen($sum) >= 3) {
+                  $ref_return[] = '<small>' . $sum . '</small>';
+                }
+              }
+            }
+
+            $return[] = implode(' | ', $ref_return);
+          }
+        }
+      }
+    }
+  }
+
+  return $prefix . implode(' | ', $return);
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  // Change the core 'Your email' to a generic label.
+  if ($form_id === 'contact_message_contact_us_form') {
+    if (isset($form['mail']['#title'])) {
+      $form['mail']['#title'] = t('Email Address');
+    }
+  }
+}

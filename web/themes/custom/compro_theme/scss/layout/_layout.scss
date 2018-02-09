@@ -1,0 +1,101 @@
+/**
+ * @file
+ * Main layout for the theme.
+ */
+@import "../base/variables";
+
+main {
+  min-height: 37vh;
+}
+
+.block {
+  &-inverted-logo-block {
+    margin: 0 spx(1) spx(1) 0;
+    max-width: 150px;
+
+    @media all and (max-width: 700px) {
+      margin: 0 auto spx(1);
+    }
+  }
+
+  &-system-branding-block {
+    margin: spx(1.6) spx(7) spx(1.6) spx(2);
+    max-width: 240px;
+    min-width: 185px;
+
+    @media all and (max-width: 1090px) {
+      margin: spx(1.6) spx(2);
+    }
+    @media all and (max-width: 225px) {
+      min-width: inherit;
+    }
+  }
+}
+
+.entity-bundle{
+  &-column{
+    margin: 0 spx(2) 0 0;
+
+    @media all and (max-width: 1023px) {
+      /* This mq matches to where display--flex begins wrapping. */
+      min-width: 270px;
+    }
+    @media all and (max-width: 615px) {
+      margin: 0 0 spx(4);
+    }
+  }
+
+  &-row {
+    margin: 0 spx(-2) 0 0;
+
+    @media all and (max-width: 615px) {
+      margin: 0;
+    }
+  }
+
+  &-stripe {
+    padding: spx(2) spx(2);
+
+    > .inner {
+      margin: 0 auto;
+      max-width: $content-area-width;
+      padding: spx(4) 0;
+    }
+
+    &.container--no-pad {
+      > .inner {
+        padding: 0;
+      }
+    }
+  }
+}
+
+.page {
+  text-align: $text-align-base;
+}
+
+.region {
+  > .inner {
+    margin: 0 auto;
+    max-width: $content-area-width;
+  }
+
+  &-content-top {
+    position: relative;
+    z-index: 3;
+  }
+
+  &-content {
+    > .inner {
+      max-width: inherit;
+    }
+  }
+
+  &-splash {
+    padding: 120px 0 0;
+
+    @media all and (max-width: 1440px) {
+      padding: 0 20px;
+    }
+  }
+}
