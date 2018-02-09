@@ -4,14 +4,14 @@
 # to be processed by Platform.sh.
 
 "https://{default}/":
-    type: upstream
-    upstream: "app:http"
-    cache:
-      enabled: true
+  type: upstream
+  upstream: "app:http"
+  cache:
+    enabled: true
 
-      # Base the cache on the session cookie. Ignore all other cookies.
-      cookies: ['/^SS?ESS/']
+    # Base the cache on the session cookie. Ignore all other cookies.
+    cookies: ['/^SS?ESS/']
 
 "https://www.{default}/":
-    type: redirect
-    to: "https://{default}/"
+  type: redirect
+  to: "https://{default}/"

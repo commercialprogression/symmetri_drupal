@@ -15,7 +15,7 @@ type: 'php:7.1'
 # to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
 # side is in the form `<service name>:<endpoint name>`.
 relationships:
-    database: 'mysqldb:mysql'
+  database: 'mysqldb:mysql'
 #    solr: 'solrsearch:solr'
 #    redis: 'rediscache:redis'
 
@@ -26,80 +26,82 @@ disk: 2048
 # directory paths, relative to the application root. The values are strings such as
 # 'shared:files/NAME', where NAME is just a unique name for the mount.
 mounts:
-    '/web/sites/default/files': 'shared:files/files'
-    '/tmp': 'shared:files/tmp'
-    '/private': 'shared:files/private'
-    '/drush-backups': 'shared:files/drush-backups'
+  '/web/sites/default/files': 'shared:files/files'
+  '/tmp': 'shared:files/tmp'
+  '/private': 'shared:files/private'
+  '/drush-backups': 'shared:files/drush-backups'
 
 
 # Configuration of the build of this application.
 build:
-    flavor: composer
+  flavor: composer
 
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
-    # The deploy hook runs after your application has been deployed and started.
-    deploy: |
-      cd web
-      drush -y cache-rebuild
-      drush -y updatedb
-      drush -y config-import
-      drush -y entup
+  # The deploy hook runs after your application has been deployed and started.
+  deploy: |
+    cd web
+    drush -y cache-rebuild
+    drush -y updatedb
+    drush -y config-import
+    drush -y entup
+    drush -y cache-rebuild
 
 # The configuration of app when it is exposed to the web.
 web:
-    # Specific parameters for different URL prefixes.
-    locations:
-        '/':
-            # The folder from which to serve static assets, for this location.
-            #
-            # This is a filesystem path, relative to the application root.
-            root: 'web'
+  # Specific parameters for different URL prefixes.
+  locations:
+    '/':
+      # The folder from which to serve static assets, for this location.
+      #
+      # This is a filesystem path, relative to the application root.
+      root: 'web'
 
-            # How long to allow static assets from this location to be cached.
-            #
-            # Can be a time in seconds, or -1 for no caching. Times can be
-            # suffixed with "s" (seconds), "m" (minutes), "h" (hours), "d"
-            # (days), "w" (weeks), "M" (months, as 30 days) or "y" (years, as
-            # 365 days).
-            expires: 5m
+      # How long to allow static assets from this location to be cached.
+      #
+      # Can be a time in seconds, or -1 for no caching. Times can be
+      # suffixed with "s" (seconds), "m" (minutes), "h" (hours), "d"
+      # (days), "w" (weeks), "M" (months, as 30 days) or "y" (years, as
+      # 365 days).
+      expires: 5m
 
-            # Whether to forward disallowed and missing resources from this
-            # location to the application.
-            #
-            # Can be true, false or a URI path string.
-            passthru: '/index.php'
+      # Whether to forward disallowed and missing resources from this
+      # location to the application.
+      #
+      # Can be true, false or a URI path string.
+      passthru: '/index.php'
 
-            # Deny access to static files in this location.
-            allow: false
+      # Deny access to static files in this location.
+      allow: false
 
-            # Rules for specific URI patterns.
-            rules:
-                # Allow access to common static files.
-                '\.(jpe?g|png|gif|svgz?|css|js|map|ico|bmp|eot|woff2?|otf|ttf)$':
-                    allow: true
-                '^/robots\.txt$':
-                    allow: true
-                '^/sitemap\.xml$':
-                    allow: true
+      # Rules for specific URI patterns.
+      rules:
+        # Allow access to common static files.
+        '\.(bmp|css|eot|gif|html|ico|jpe?g|js|map|otf|png|svg?|svgz?|ttf|woff2?)$':
+          allow: true
+          expires: 3M
+        '^/robots\.txt$':
+          allow: true
+        '^/sitemap\.xml$':
+          allow: true
 
-        '/sites/default/files':
-            # Allow access to all files in the public files directory.
-            allow: true
-            expires: 5m
-            passthru: '/index.php'
-            root: 'web/sites/default/files'
+    '/sites/default/files':
+      # Allow access to all files in the public files directory.
+      allow: true
+      expires: 3M
+      passthru: '/index.php'
+      root: 'web/sites/default/files'
 
-            # Do not execute PHP scripts.
-            scripts: false
+      # Do not execute PHP scripts.
+      scripts: false
 
-            rules:
-                # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
-                '^/sites/default/files/(css|js)':
-                    expires: 2w
+      rules:
+        # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
+        '^/sites/default/files/(bmp|css|eot|gif|html|ico|jpe?g|js|map|otf|png|svg?|svgz?|ttf|woff2?)':
+          expires: 3M
 
 # The configuration of scheduled execution.
 crons:
-    drupal:
-        spec: '*/20 * * * *'
-        cmd: 'cd web ; drush core-cron'
+  drupal:
+    spec: '*/20 * * * *'
+    cmd: 'cd web ; drush core-cron'

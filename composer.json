@@ -1,12 +1,12 @@
 {
-    "name": "drupal-composer/drupal-project",
-    "description": "Project template for Drupal 8 projects with composer",
+    "name": "commercialprogression/symmetri_drupal",
+    "description": "Composer-based template for Symmetri Drupal 8 projects",
     "type": "project",
     "license": "GPL-2.0+",
     "authors": [
         {
-            "name": "",
-            "role": ""
+            "name": "Brad Czerniak",
+            "role": "maintainer"
         }
     ],
     "repositories": [
@@ -21,7 +21,37 @@
         "cweagans/composer-patches": "~1.0",
         "drupal/core": "~8.0",
         "drush/drush": "~8.0",
-        "drupal/console": "~1.0"
+        "drupal/console": "~1.0",
+        "drupal/admin_toolbar": "^1.23",
+        "drupal/advagg": "^3.4",
+        "drupal/bg_image_formatter": "^1.1",
+        "drupal/block_class": "^1.0@alpha",
+        "drupal/contact_storage": "^1.0@beta",
+        "drupal/ctools": "^3.0",
+        "drupal/devel": "^1.2",
+        "drupal/diff": "^1.0@RC",
+        "drupal/eck": "^1.0@alpha",
+        "drupal/entity_browser": "^1.4",
+        "drupal/entity_reference_display": "^1.1",
+        "drupal/features": "^3.5",
+        "drupal/google_analytics": "^2.2",
+        "drupal/inline_entity_form": "^1.0@beta",
+        "drupal/libraries": "^3.0@alpha",
+        "drupal/linked_field": "^1.1",
+        "drupal/linkit": "^4.3",
+        "drupal/media_entity": "^1.7",
+        "drupal/media_entity_browser": "^1.0@beta",
+        "drupal/media_entity_image": "^1.2",
+        "drupal/menu_link_attributes": "^1.0",
+        "drupal/metatag": "^1.4",
+        "drupal/pathauto": "^1.0",
+        "drupal/redirect": "^1.0",
+        "drupal/styleguide": "^1.0@alpha",
+        "drupal/subpathauto": "^1.0@beta",
+        "drupal/token": "^1.1",
+        "drupal/video_embed_field": "^1.5",
+        "drupal/viewsreference": "^1.2",
+        "drupal/xmlsitemap": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
