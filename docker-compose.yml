@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  mysql:
+    image: mariadb:10
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: drupal
+    ports:
+      - "3306:3306"
+
+  web:
+    build: .
+    environment:
+      XDEBUG_CONFIG: remote_host=172.17.0.1
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www/html
+    links:
+      - mysql
+      - mailhog
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
