@@ -1,0 +1,7 @@
+name: symmetri_drupal
+recipe: drupal8
+services:
+  appserver:
+    xdebug: true
+config:
+  webroot: web
