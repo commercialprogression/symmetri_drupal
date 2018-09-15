@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: human_short_us_
+label: 'Human short (US)'
+locked: false
+pattern: 'n/j/y, g:i A'

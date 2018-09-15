@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: iso8601
+label: 'ISO 8601 date'
+locked: false
+pattern: c

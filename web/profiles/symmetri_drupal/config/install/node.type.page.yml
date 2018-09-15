@@ -1,0 +1,17 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Page
+type: page
+description: 'Standalone, non-serialized content. If it''s going to be in the main menu, it''s probably a page.'
+help: ''
+new_revision: true
+preview_mode: 0
+display_submitted: false

@@ -31,7 +31,6 @@ dependencies:
 - admin_toolbar
 - admin_toolbar_tools
 - adminimal_admin_toolbar
-- advagg
 - better_exposed_filters
 - bg_image_formatter
 - block_class
