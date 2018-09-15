@@ -1,0 +1,24 @@
+uuid: 6a9374b9-400d-4b19-a0e1-6a718fff9bf5
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_class
+    - system
+  theme:
+    - compro_theme
+third_party_settings:
+  block_class:
+    classes: ''
+id: mainpagecontent_2
+theme: compro_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

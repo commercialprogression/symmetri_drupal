@@ -1,0 +1,28 @@
+uuid: 38bf19ae-7fe0-4c50-bd74-4a40f729a399
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.utility
+  module:
+    - block_class
+    - system
+  theme:
+    - compro_theme
+third_party_settings:
+  block_class:
+    classes: compro-superfish
+id: utility
+theme: compro_theme
+region: utility
+weight: 0
+provider: null
+plugin: 'system_menu_block:utility'
+settings:
+  id: 'system_menu_block:utility'
+  label: Utility
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }
