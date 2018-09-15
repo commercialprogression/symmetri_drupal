@@ -1,0 +1,152 @@
+/* Tags */
+blockquote {
+  font-style: italic;
+}
+embed, img, object {
+  max-width: 100%;
+}
+
+/* IDs */
+#branding {
+  overflow: hidden;
+  padding: 10px 20px 0 20px;
+  position: relative;
+  background-color: #333;
+}
+div.block-system-breadcrumb-block li,
+div.block-system-breadcrumb-block a {
+  font-size: 14px;
+  color: #888888;
+}
+#branding h1.page-title {
+  font-size: 32px;
+  line-height: 38px;
+  margin: 0;
+  padding-bottom: 10px;
+}
+#branding ul.primary li {
+  padding: 5px 0;
+  font-size: 15px;
+}
+#branding ul.primary .tabs__tab a {
+  color: #797979;
+}
+#branding ul.primary .tabs__tab.is-active {
+  background-color: #fff;
+  border-top: 3px solid #0074BD;
+  margin-top: -3px;
+  color: #333;
+  box-shadow: 0 0 0;
+}
+#branding .tabs.secondary,
+#branding ul.primary {
+  margin: 0 0 0 -20px;
+  padding: 0 8px;
+  width: 100%;
+}
+#branding .tabs.secondary .tabs__tab {
+  display: inline;
+  margin: 0;
+  border-bottom: 1px solid #EBEBEB;
+}
+#branding .tabs.secondary .tabs__tab:hover, .tabs.secondary .tabs__tab:focus {
+  border-bottom: 1px solid #008ee6;
+}
+#branding .tabs.secondary .tabs__tab a {
+  color: #777;
+}
+#branding .tabs.secondary .tabs__tab a:hover, .tabs.secondary .tabs__tab a:focus,
+#branding ul.primary .tabs__tab a:hover, ul.primary .tabs__tab a:focus {
+  color: #008ee6;
+  text-decoration: none;
+}
+#branding .tabs.secondary .tabs__tab.is-active {
+  border-bottom: 1px solid #000;
+}
+#branding .tabs.secondary .tabs__tab a.is-active {
+  color: #000;
+}
+#branding .tabs.secondary {
+  background: #fff;
+}
+
+/* Classes */
+.adminimal .form-item{
+  margin-bottom: 2em;
+}
+.field-type-paragraphs {}
+  .field-type-paragraphs .field-multiple-table {}
+    .field-type-paragraphs .field-multiple-table tr.draggable td:nth-child(2) {}
+      .field-type-paragraphs .field-multiple-table tr.draggable td:nth-child(2) > div:nth-child(1) {
+        display: none;
+      }
+      .field-type-paragraphs .field-multiple-table tr.draggable td:nth-child(2) > div:nth-child(2) {
+        background: #fafafa;
+        border: 1px dashed #ccc;
+        float: left;
+        max-width: 37em;
+        min-height: 3.5em;
+        min-width: 20em;
+        padding: 1em;
+      }
+      .field-type-paragraphs .field-multiple-table tr.draggable td:nth-child(2) > .form-actions {
+        float: right;
+        margin: 0 0 0 10px;
+        max-width: 18em;
+      }
+.node-form {
+  margin: 0 auto;
+}
+.views-field-excluded {
+  color: #888;
+}
+.shortcut-action__message {
+  font-size: 12px;
+}
+.position-container {
+  position: inherit;
+  display: inherit;
+}
+.adminimal .toolbar-tray a,
+.adminimal .toolbar .toolbar-tray a.is-active,
+.adminimal .toolbar .toolbar-tray-vertical .toolbar-menu a,
+.adminimal .toolbar .toolbar-tray .menu-item--active-trail > .toolbar-box a,
+.adminimal .toolbar .toolbar-tray a.is-active,
+.adminimal .toolbar .toolbar-tray-vertical .toolbar-menu a:hover {
+  color: #565656;
+}
+.adminimal .toolbar .menu-item {
+  background-color: #f5f5f2;
+}
+.adminimal .toolbar .toolbar-icon.toolbar-handle:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+}
+.adminimal .toolbar .toolbar-icon.toolbar-handle:hover:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+}
+.adminimal .toolbar .toolbar-icon.toolbar-handle.open:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.adminimal .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+}
+.adminimal .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle:hover:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+}
+.adminimal .toolbar .toolbar-menu .toolbar-menu .toolbar-icon.toolbar-handle.open:before {
+  background-image: url(../../../contrib/adminimal_theme/images/chevron-disc-down.svg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.toolbar-icon-ummcubed3-admin-config:before {
+  background-image: url(../../compro_theme/img/new_cube.svg);
+}

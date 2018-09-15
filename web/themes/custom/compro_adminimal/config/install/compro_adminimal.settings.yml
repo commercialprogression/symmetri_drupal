@@ -1,0 +1,5 @@
+features:
+  display_icons_config: '1'
+third_party_settings:
+  shortcut:
+    module_link: true

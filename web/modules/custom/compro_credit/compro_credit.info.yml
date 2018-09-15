@@ -1,0 +1,5 @@
+name: Compro Credit
+description: Provides a block crediting CP for site design.
+package: compro
+type: module
+core: 8.x

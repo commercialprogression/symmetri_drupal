@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Compro Adminimal theme.
+ */
+
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Template\Attribute;
+
+/**
+ * Override of theme_image().
+ */
+function compro_adminimal_image($variables) {
+  $attributes = $variables['attributes'];
+  $attributes['src'] = file_create_url($variables['uri']);
+
+  $more_attrs = array('alt', 'title');
+  if (isset($variables['style_name'])) {
+    $more_attrs = array_merge($more_attrs, array('height', 'width'));
+  }
+
+  foreach ($more_attrs as $key) {
+    if (isset($variables[$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+  }
+
+  return '<img' . new Attribute($attributes) . ' />';
+}
+
+/**
+ * Implements template_preprocess_entity().
+ */
+function compro_adminimal_preprocess_entity(&$variables) {
+  $variables['classes_array'][] = Html::getClass('view-mode-' . $variables['view_mode']);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function compro_adminimal_preprocess_page_title(&$variables) {
+  // Since the title and the shortcut link are both block level elements,
+  // positioning them next to each other is much simpler with a wrapper div.
+  if (!empty($variables['title_suffix']['add_or_remove_shortcut']) && $variables['title']) {
+    // Add a wrapper div using the title_prefix and title_suffix render
+    // elements.
+    $variables['title_prefix']['shortcut_wrapper'] = array(
+      '#markup' => '<div class="shortcut-wrapper clearfix">',
+      '#weight' => 100,
+    );
+    $variables['title_suffix']['shortcut_wrapper'] = array(
+      '#markup' => '</div>',
+      '#weight' => -99,
+    );
+    // Make sure the shortcut link is the first item in title_suffix.
+    $variables['title_suffix']['add_or_remove_shortcut']['#weight'] = -100;
+  }
+}

@@ -1,0 +1,45 @@
+# $Id$
+#
+# LANGUAGE translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  compro_credit.module: n/a
+#  compro_credit.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-04-28 19:01-0400\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: compro_credit.module:12
+msgid "Compro credit"
+msgstr ""
+
+#: compro_credit.module:41
+msgid "Drupal website design"
+msgstr ""
+
+#: compro_credit.module:53
+msgid "by Commercial Progression"
+msgstr ""
+
+#: compro_credit.info:0
+msgid "Compro Credit"
+msgstr ""
+
+#: compro_credit.info:0
+msgid "Provides a block crediting CP for site design."
+msgstr ""
+
+#: compro_credit.info:0
+msgid "compro"
+msgstr ""
+

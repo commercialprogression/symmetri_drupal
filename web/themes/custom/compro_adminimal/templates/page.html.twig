@@ -1,0 +1,23 @@
+<div id="branding" class="clearfix">
+  {{ page.content_top.compro_adminimal_breadcrumbs }}
+  {% if page.content_top.compro_adminimal_page_title %}
+    <h1 class="page-title">{{ page.content_top.compro_adminimal_page_title }}</h1>
+  {% endif %}
+  {{ page.content_top.compro_adminimal_local_tasks }}
+  {% if page.content_top.compro_adminimal_secondary_tasks %}
+  {% endif %}
+</div>
+
+<div class="layout-container">
+  <main class="page-content clearfix" role="main">
+    <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+    {{ page.highlighted }}
+    {% if page.help %}
+      <div class="help">
+        {{ page.help }}
+      </div>
+    {% endif %}
+    {{ page.content }}
+  </main>
+
+</div>

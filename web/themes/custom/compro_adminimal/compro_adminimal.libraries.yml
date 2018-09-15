@@ -1,0 +1,8 @@
+global-styling:
+  version: 1.x
+  css:
+    base:
+      css/compro_adminimal.css: { }
+  dependencies:
+    - core/drupal
+    - core/jquery
