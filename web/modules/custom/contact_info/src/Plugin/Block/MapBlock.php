@@ -44,7 +44,7 @@ class MapBlock extends BlockBase {
       '#title' => t('Google API key'),
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#default_value' => isset($map_data['api_key']) ? $map_data['api_key'] : 'AIzaSyAkkBDnKYln9G2v8PLIFUiUUmqyyiZ4uxw',
+      '#default_value' => isset($map_data['api_key']) ? $map_data['api_key'] : '',
     );
 
     $form['dimensions'] = array(
