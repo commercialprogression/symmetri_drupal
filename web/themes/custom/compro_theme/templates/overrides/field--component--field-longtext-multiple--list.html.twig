@@ -1,0 +1,2 @@
+{% if label and not label_hidden %}<strong{{ title_attributes.addClass(title_classes) }}>{{ label }}</strong>{% endif %}
+{% for item in items %}<{{ html_tag }}>{{ item.content }}</{{ html_tag }}>{% endfor %}

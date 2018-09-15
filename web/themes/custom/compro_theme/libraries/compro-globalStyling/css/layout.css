@@ -1,0 +1,103 @@
+/**
+ * @file
+ * Main layout for the theme.
+ */
+/**
+ * @file
+ * Variables for reuse throughout the theme.
+ */
+/**
+ * Common settings.
+ */
+/**
+ * Colors.
+ *
+ * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ */
+/* Named colors */
+/* Main settings. */
+/* Stateful colors. */
+/* Utility colors. */
+/**
+ * Functions.
+ */
+/* stylelint-disable */
+/* stylelint-enable */
+main {
+  min-height: 37vh; }
+
+.block-inverted-logo-block {
+  margin: 0 10px 10px 0;
+  max-width: 150px; }
+  @media all and (max-width: 770px) {
+    .block-inverted-logo-block {
+      margin: 0 auto 10px; } }
+.block-social {
+  width: 115px; }
+  @media all and (max-width: 770px) {
+    .block-social {
+      margin: 0 auto 10px; } }
+.block-system-branding-block {
+  margin: 36px 40px 16px 20px;
+  max-width: 125px;
+  min-width: 105px; }
+  @media all and (max-width: 1300px) {
+    .block-system-branding-block {
+      margin: 36px 20px 16px 20px; } }
+  @media all and (max-width: 1225px) {
+    .block-system-branding-block {
+      margin: 16px 20px; } }
+  @media all and (max-width: 225px) {
+    .block-system-branding-block {
+      min-width: inherit; } }
+
+.entity-type-section {
+  padding: 80px 20px; }
+
+.entity-bundle-column {
+  margin: 0; }
+  .entity-bundle-column.entity-type-section:not(.padding--0) {
+    padding: 20px 20px; }
+  @media all and (max-width: 1023px) {
+    .entity-bundle-column {
+      /* This mq matches to where display--flex begins wrapping. */
+      min-width: 270px; } }
+.entity-bundle-row {
+  padding: 0; }
+  @media all and (max-width: 770px) {
+    .entity-bundle-row {
+      flex-direction: column; } }
+@media all and (max-width: 1225px) {
+  .entity-bundle-cards {
+    display: block; }
+    .entity-bundle-cards > .entity-type-card {
+      display: inline-block; } }
+.entity-bundle-stripe > .inner {
+  margin: 0 auto;
+  max-width: 1200px; }
+
+.page {
+  text-align: center; }
+
+.region > .inner {
+  margin: 0 auto;
+  max-width: 1200px; }
+.region-content-top {
+  position: relative;
+  z-index: 3; }
+.region-content > .inner {
+  max-width: inherit; }
+.region-splash {
+  padding: 120px 0 0; }
+  .has-field-image-background:not(.has-field-video-background) .region-splash .block-hero-title-block {
+    max-width: 550px; }
+  @media all and (max-width: 1440px) {
+    .region-splash {
+      padding: 0 20px; } }
+  @media all and (max-width: 1440px) and (min-width: 770px) {
+    .has-field-video-background .region-splash {
+      padding-top: 4.5% !important; }
+      .has-field-video-background .region-splash > .inner {
+        max-height: 585px; } }
+
+/*# sourceMappingURL=layout.css.map */

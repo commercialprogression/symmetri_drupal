@@ -1,0 +1,81 @@
+/**
+ * @file
+ * Style for heroes at the top of pages.
+ */
+@import "../base/variables";
+
+.has-field-video-background {
+  .field-name--field-video-background {
+    display: none;
+  }
+
+  @media all and (min-width: 768px) {
+    position: relative;
+
+    .contextual-region {
+      position: static;
+    }
+
+    .entity-type-component {
+      position: relative;
+      z-index: 3;
+    }
+
+    .field-name--field-video-background {
+      bottom: 0;
+      display: block;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1;
+
+      > video {
+        min-width: 1200px;
+      }
+
+      @media all and (max-width: $tablet-break) {
+        top: 80px;
+      }
+    }
+
+    &:before {
+      background-color: #227982;
+      background-color: rgba(#227982, 0.8);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+  }
+}
+
+.splash-header {
+  &.has-field-image-background {
+    min-height: 57vh;
+  }
+
+  .block-hero-title-block {
+    display: inline-block;
+  }
+}
+
+.path-frontpage {
+  .region-splash a {
+    color: $color-yellow;
+
+    &:hover {
+      color: $color-lightblue;
+    }
+  }
+  .block-hero-title-block {
+    a,
+    p {
+      font-size: 18px;
+    }
+  }
+}

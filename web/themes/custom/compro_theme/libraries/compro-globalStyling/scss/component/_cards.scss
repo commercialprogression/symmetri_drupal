@@ -1,0 +1,90 @@
+/**
+ * @file
+ * Style for the Card entity type.
+ */
+@import "../base/variables";
+
+.card-text-focal {
+  &--center {
+    > .inner {
+      left: spx(1);
+      right: spx(1);
+    }
+  }
+
+  &--left {
+    > .inner {
+      left: spx(1);
+      right: 35%;
+
+      @media all and (max-width: 1440px) {
+        right: spx(1);
+      }
+    }
+  }
+
+  &--right {
+    > .inner {
+      left: 35%;
+      right: spx(1);
+
+      @media all and (max-width: 1440px) {
+        left: spx(1);
+      }
+    }
+  }
+}
+
+.entity-bundle-cards {
+
+  .entity-type-card {
+
+    &.view-mode-default {
+      padding: 0 1.2rem;
+
+      .field-name--title {
+        font-size: 20px;
+        color: $color-lightteal;
+        margin-top: 2rem;
+        font-weight: 500;
+      }
+      img {
+        margin: 0 auto;
+      }
+      h2
+      .field-type--text-long {
+        text-align: left;
+      }
+    }
+
+    &.entity-bundle-rollover {
+      margin: 0;
+      padding: 0;
+
+      .entity-bundle-heading {
+        color: $color-yellow;
+      }
+
+      .entity-bundle-text,
+      .entity-bundle-rich-text {
+        color: $color-white;
+
+        .field-name--field-text {
+          font-weight: 500;
+        }
+      }
+    }
+
+    .field-type--text-long {
+      margin-bottom: spx(1);
+    }
+
+    @media all and (max-width: $mobile-break) {
+      margin-bottom: spx(8);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

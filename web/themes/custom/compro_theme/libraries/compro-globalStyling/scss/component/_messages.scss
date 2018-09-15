@@ -1,0 +1,26 @@
+/**
+ * @file
+ * Message component.
+ */
+@import "../base/variables";
+
+.messages {
+  font-style: italic;
+  margin: $spacing-base 0;
+  padding: $spacing-base;
+
+  &--error {
+    background: $color-error-light;
+    color: $color-error-dark;
+  }
+
+  &--status {
+    background: $color-status-light;
+    color: $color-status-dark;
+  }
+
+  &--warning {
+    background: $color-warning-light;
+    color: $color-warning-dark;
+  }
+}

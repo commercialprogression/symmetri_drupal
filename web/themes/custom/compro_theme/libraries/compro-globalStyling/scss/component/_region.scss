@@ -1,0 +1,80 @@
+/**
+ * @file
+ * Style for regions (non-layout).
+ */
+@import "../base/variables";
+
+.region {
+  &-header {
+    .logo {
+      max-width: 125px;
+    }
+  }
+  &-footer {
+    background-color: $color-darkteal;
+    color: $color-bg;
+
+    > .inner {
+      padding: spx(4) spx(2) spx(1) spx(0);
+
+      @media all and (max-width: $mobile-break) {
+        padding: spx(4) spx(0) spx(2);
+      }
+    }
+
+    a {
+      &:link,
+      &:visited {
+        color: inherit;
+      }
+    }
+
+    .contact-info-address {
+      span {
+        display: inline-block;
+
+        &[itemprop="streetAddress"] {
+          display: block;
+        }
+      }
+    }
+
+    .menu {
+      > li {
+        > a {
+          padding: 0;
+        }
+      }
+    }
+
+    .muted {
+      color: $color-prim-light;
+      font-size: 0.8em;
+    }
+
+    .text-transform--uppercase {
+      // Kind of hacky.
+      font-weight: 400;
+    }
+
+    &-menu {
+      padding-left: 1rem;
+    }
+
+    @media all and (max-width: 700px) {
+      .float--left,
+      .float--right {
+        float: none;
+        margin: 0 0 spx(2);
+      }
+    }
+    @media all and (min-width: $mobile-break) {
+
+      &-menu {
+        padding: 30px 0 0 140px;
+        max-width: 840px;
+        width: 100%;
+      }
+    }
+  }
+}

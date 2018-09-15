@@ -7,16 +7,14 @@ core: 8.x
 ckeditor_stylesheets:
   - css/base.css
 libraries:
-#  - compro_theme/animate
-#  - compro_theme/autotrack
-#  - compro_theme/details
-#  - compro_theme/hamburger
-#  - compro_theme/headroom
-#  - compro_theme/hoverIntent
-#  - compro_theme/slick
-#  - compro_theme/superfish
-#  - compro_theme/tippyjs
-  - compro_theme/global-styling
+  - compro_theme/compro-propertyValue
+  - compro_theme/compro-animate
+  - compro_theme/compro-autotrack
+  - compro_theme/compro-fontawesome
+  - compro_theme/compro-headroom
+  - compro_theme/compro-tippyjs
+  - compro_theme/compro-globalStyling
+  - compro_theme/compro-hamburger
 regions:
   page_top: Page top
   header: Header
@@ -29,6 +27,8 @@ regions:
   content_bottom: Content bottom
   post_content: Post-content
   footer: Footer
+  footer_menu: Footer menu
+  footer_utility: Footer utility
   page_bottom: Page bottom
 features:
   - logo

@@ -1,0 +1,78 @@
+/**
+ * @file
+ * Style for views directly.
+ */
+@import "../base/variables";
+
+.node--type-video {
+
+  &.node--view-mode-full {
+    padding: spx(4) spx(2);
+    max-width: 650px;
+    margin: 0 auto;
+
+    .node__content > .field {
+      margin-bottom: spx(2);
+    }
+
+    iframe {
+      border: none;
+    }
+  }
+
+  &.node--view-mode-teaser {
+
+    .field-type--video-embed-field img {
+      margin: 0 auto;
+    }
+    
+    &.rollover,
+    .rollover {
+      margin-bottom: spx(4);
+
+      h2 {
+        color: $color-lightteal;
+        font-size: 18px;
+        line-height: 25px;
+        margin-top: spx(1);
+
+        & > a {
+          font-weight: 300;
+        }
+      }
+
+      &--hover,
+      .field-name--field-media-video-embed-field {
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 16px;
+        color: $color-white;
+
+        .video-hover-title {
+          > a {
+            &:before {
+              content: " ";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              top: 0;
+              left: 0;
+            }
+
+            color: $color-yellow;
+            font-weight: 700;
+          }
+        }
+
+        .submitted {
+          color: $color-white;
+          margin: spx(2) 0 0 0;
+        }
+      }
+
+      &:hover {
+        background-color: $color-bg-dark;
+      }
+    }
+  }
+}

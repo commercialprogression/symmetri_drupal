@@ -11,16 +11,16 @@ module.exports = function(grunt) {
         outputFile: '.lint/eslint.latest.log',
         quiet: true
       },
-      target: ['js/*.js']
+      target: ['libraries/compro-globalStyling/*.js']
     },
 
     sass: {
       dist: {
         files: [{
           expand: true,
-          cwd: 'scss/',
+          cwd: 'libraries/compro-globalStyling/scss/',
           src: ['*.scss'],
-          dest: 'css/',
+          dest: 'libraries/compro-globalStyling/css/',
           ext: '.css'
         }]
       }
@@ -37,19 +37,18 @@ module.exports = function(grunt) {
         syntax: ''
       },
       src: [
-        'scss/*.scss',
-        'scss/*/*.scss'
+        'libraries/compro-globalStyling/scss/*.scss',
+        'libraries/compro-globalStyling/scss/*/*.scss'
       ]
     },
 
     watch: {
       css: {
         files: [
-          'js/*.js',
-          'scss/*.scss',
-          'scss/*/*.scss'
+          'libraries/compro-globalStyling/scss/*.scss',
+          'libraries/compro-globalStyling/scss/*/*.scss'
         ],
-        tasks: ['sass', 'stylelint', 'eslint']
+        tasks: ['sass']
       }
     }
 
@@ -57,6 +56,4 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-eslint');
-  grunt.loadNpmTasks('grunt-stylelint');
 };

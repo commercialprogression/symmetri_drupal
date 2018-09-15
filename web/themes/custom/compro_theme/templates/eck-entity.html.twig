@@ -1,3 +1,3 @@
-<div {{ attributes }}>
-  {{ entity }}
-</div>
+{% spaceless %}
+<{{ html_tag }}{{ attributes }}>{{ entity }}</{{ html_tag }}>
+{% endspaceless %}

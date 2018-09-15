@@ -1,0 +1,64 @@
+/**
+ * @file
+ * Style for views directly.
+ */
+@import "../base/variables";
+
+.node--type-blog {
+
+  &.node--view-mode-full {
+    text-align: left;
+    padding: spx(4) spx(2);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    figcaption {
+      margin: spx(1) 0;
+    }
+
+    figure {
+      display: inherit;
+    }
+
+    .field-label ~ a {
+      margin-left: spx(.5);
+    }
+
+    .field-name--body {
+      font-size: 1.25em;
+
+      & > *,
+      img {
+        margin: 0 auto spx(3);
+      }
+    }
+    .node__content {
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .node__content > .field-name--body.field-type--text-with-summary {
+      margin-bottom: spx(3);
+    }
+
+    .submitted {
+      text-align: center;
+    }
+  }
+
+  &.node--view-mode-teaser {
+    text-align: left;
+
+    .field-name--title {
+      font-size: 1.225em;
+      font-weight: bold;
+
+    }
+    .field-label ~ a {
+      margin-left: spx(.5);
+    }
+
+    .node__links {
+      text-align: center;
+    }
+  }
+}

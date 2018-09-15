@@ -1,0 +1,92 @@
+/**
+ * @file
+ * Variables for reuse throughout the theme.
+ */
+
+/**
+ * Common settings.
+ */
+$border-radius: 4px;
+$border-width: 1px;
+$columns: 2; // For actual columns (text).
+$content-area-width: 1200px;
+$filter-base: 50%;
+$line-height-copy: 1.4;
+$line-height-heading: 1;
+$opacity-base: 0.5;
+$spacing-base: 10px; // Number of pixels for a 'unit' of padding/margin.
+$text-align-base: center;
+$mobile-break: 770px;
+$tablet-break: 1225px;
+
+/**
+ * Colors.
+ *
+ * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ */
+
+/* Named colors */
+$color-darkblue: #00547a;
+$color-lightblue: #3ca0ce;
+$color-darkteal: #0e3e54;
+$color-murkyteal: #396D84;
+$color-mediumteal: #0C9097;
+$color-lightteal: #0faeb7;
+$color-scarlet: #ef4e13;
+$color-orange: #de8b20;
+$color-lightorange: #ffca05;
+$color-yellow: #ffcb05;
+$color-black: #303030;
+$color-mediumgray: #6b6b6b;
+$color-lightgray: #ebebeb;
+$color-superlightgray: #f8f8f9;
+$color-white: #fff;
+
+/* Main settings. */
+$color-bg: $color-white; // Customarily light.
+$color-text: $color-mediumgray; // Customarily dark. (redeclared later).
+$color-prim: $color-darkteal; // Links and important elements. If the brand has blue, put it here.
+$color-sec: $color-orange; // If primary is blue, go with orange or something here.
+$color-tert: $color-yellow; // This is something weird, like a green or a purple.
+
+/* Stateful colors. */
+$color-status: $color-lightteal;
+$color-warning: $color-yellow;
+$color-error: $color-orange;
+
+/* Utility colors. */
+$color-bg-dark: darken($color-bg, 99%);
+$color-bg-medium: lighten($color-bg-dark, 50%);
+$color-bg-light: lighten($color-bg-dark, 90%);
+$color-text-dark: darken($color-text, 99%);
+$color-text-medium: lighten($color-text-dark, 50%);
+$color-text-light: lighten($color-text-dark, 90%);
+$color-prim-dark: darken($color-prim, 99%);
+$color-prim-medium: lighten($color-prim-dark, 50%);
+$color-prim-light: lighten($color-prim-dark, 90%);
+$color-sec-dark: darken($color-sec, 99%);
+$color-sec-medium: lighten($color-sec-dark, 50%);
+$color-sec-light: lighten($color-sec-dark, 90%);
+$color-tert-dark: darken($color-tert, 99%);
+$color-tert-medium: lighten($color-tert-dark, 50%);
+$color-tert-light: lighten($color-tert-dark, 90%);
+$color-status-dark: darken($color-status, 99%);
+$color-status-medium: lighten($color-status-dark, 50%);
+$color-status-light: lighten($color-status-dark, 90%);
+$color-warning-dark: darken($color-warning, 99%);
+$color-warning-medium: lighten($color-warning-dark, 50%);
+$color-warning-light: lighten($color-warning-dark, 90%);
+$color-error-dark: darken($color-error, 99%);
+$color-error-medium: lighten($color-error-dark, 50%);
+$color-error-light: lighten($color-error-dark, 90%);
+
+/**
+ * Functions.
+ */
+
+// Return pixel values based on the site's spacing base.
+/* stylelint-disable */
+@function spx($multiplier){
+  @return ceil($spacing-base * $multiplier)
+}
+/* stylelint-enable */

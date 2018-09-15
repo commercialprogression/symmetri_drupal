@@ -1,14 +1,14 @@
-global-styling:
+compro-globalStyling:
   version: 1.x
   css:
     base:
-      css/base.css: {}
+      libraries/compro-globalStyling/css/base.css: {}
     layout:
-      css/layout.css: {}
+      libraries/compro-globalStyling/css/layout.css: {}
     component:
-      css/components.css: {}
+      libraries/compro-globalStyling/css/components.css: {}
   js:
-    js/behavior.js: {}
+    libraries/compro-globalStyling/compro-globalStyling.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax
@@ -16,75 +16,87 @@ global-styling:
     - core/drupalSettings
     - core/jquery.once
 
-animate:
+compro-animate:
   version: 3.5.x
   css:
     base:
-      vendor/animate/animate.css: {}
+      libraries/compro-animate/animate/animate.css: {}
   js:
-      js/compro-animate.js: {}
+      libraries/compro-animate/compro-animate.js: {}
   dependencies:
       - core/jquery
 
-autotrack:
+compro-autotrack:
   version: 2.4.x
   js:
-    vendor/autotrack/autotrack.js: {}
-    js/compro-autotrack.js: {}
+    libraries/compro-autotrack/autotrack/autotrack.js: {}
+    libraries/compro-autotrack/compro-autotrack.js: {}
   dependencies:
     - google_analytics/google_analytics
 
-details:
+compro-details:
   version: 0.1.x
   js:
-    vendor/jquery.details/jquery.details.min.js: {}
-    js/compro-details.js: {}
+    libraries/compro-details/jquery.details/jquery.details.min.js: {}
+    libraries/compro-details/compro-details.js: {}
 
-hamburger:
+compro-fontawesome:
+  version: 5.0.x
+  css:
+    component:
+      libraries/compro-fontawesome/css/fontawesome-all.css: {}
+
+compro-hamburger:
   version: 0.9.x
   css:
     component:
-      vendor/hamburgers/dist/hamburgers.min.css: {}
+      libraries/compro-hamburgers/hamburgers/dist/hamburgers.min.css: {}
   js:
-    js/compro-hamburger.js: {}
+    libraries/compro-hamburgers/compro-hamburgers.js: {}
 
-headroom:
+compro-headroom:
   version: 0.9.x
   js:
-    vendor/headroom/dist/headroom.min.js: {}
-    vendor/headroom/dist/jQuery.headroom.min.js: {}
-    js/compro-headroom.js: {}
+    libraries/compro-headroom/headroom/dist/headroom.min.js: {}
+    libraries/compro-headroom/headroom/dist/jQuery.headroom.min.js: {}
+    libraries/compro-headroom/compro-headroom.js: {}
 
-hoverIntent:
+compro-hoverIntent:
   version: 1.9.x
   js:
-    vendor/hoverIntent/jquery.hoverIntent.min.js: {}
+    libraries/compro-hoverIntent/hoverIntent/jquery.hoverIntent.min.js: {}
 
-iframe-resize:
+compro-iframeResizer:
   version: 3.5.x
   js:
-    vendor/iframe-resize/iframeResizer.min.js: {}
-    js/compro-iframeResizer.js: {}
+    libraries/compro-iframeResizer/iframe-resize/iframeResizer.min.js: {}
+    libraries/compro-iframeResizer/compro-iframeResizer.js: {}
 
-slick:
+compro-propertyValue:
+  version: 0.1.x
+  css:
+    base:
+      libraries/compro-propertyValue/property--value/dist/property--value.min.css: {}
+
+compro-slick:
   version: 1.7.x
   css:
     component:
-      vendor/slick/slick.css: {}
+      libraries/compro-slick/slick/slick.css: {}
   js:
-    vendor/slick/slick.min.js: {}
-    js/compro-slick.js: {}
+    libraries/compro-slick/slick/slick.min.js: {}
+    libraries/compro-slick/compro-slick.js: {}
 
-superfish:
+compro-superfish:
   version: 1.7.x
   js:
-    vendor/superfish/dist/js/superfish.min.js: {}
-    js/compro-superfish.js: {}
+    libraries/compro-superfish/superfish/dist/js/superfish.min.js: {}
+    libraries/compro-superfish/compro-superfish.js: {}
   dependencies:
-    - compro_theme/hoverIntent
+    - compro_theme/compro-hoverIntent
 
-tippyjs:
+compro-tippyjs:
   version: 2.0.x
   js:
-    vendor/tippyjs/dist/tippy.all.min.js: {}
-    js/compro-tippyjs.js: {}
+    libraries/compro-tippyjs/tippyjs/dist/tippy.all.min.js: {}
+    libraries/compro-tippyjs/compro-tippyjs.js: {}

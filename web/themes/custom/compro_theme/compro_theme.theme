@@ -60,6 +60,34 @@ function compro_theme_preprocess_html(&$vars) {
 
     $vars['body_classes'][] = Html::cleanCssIdentifier('page--vocabulary-' . $term->bundle());
   }
+
+  // Meta robots noindex for paginated content.
+  if ($query = \Drupal::request()->query->get('page')) {
+    $robotted = FALSE;
+    foreach ($vars['page']['#attached']['html_head'] as $key => $tag) {
+      if (isset($tag[1]) && $tag[1] === 'robots') {
+        $vars['page']['#attached']['html_head'][$key][0]['#attributes']['content'] = 'noindex, follow';
+
+        $robotted = TRUE;
+        break;
+      }
+    }
+
+    // In case the loop didn't find anything.
+    if (!$robotted) {
+      $vars['page']['#attached']['html_head'][] = [
+        [
+          '#tag' => 'meta',
+          '#attributes' => [
+            'name' => 'robots',
+            'content' => 'noindex, follow',
+          ],
+        ],
+        'robots',
+      ];
+      $robotted = TRUE;
+    }
+  }
 }
 
 /**
@@ -69,6 +97,21 @@ function compro_theme_preprocess_page(&$vars) {
   $vars['splash_classes'] = [
     'splash-header',
   ];
+
+  // If the host entity has a hero, apply its style classes to splash-header.
+  $parameters = \Drupal::routeMatch()->getParameters()->all();
+  if (isset($parameters['node'])) {
+    $node = $parameters['node'];
+    if ($node->hasField('field_hero')) {
+      // Any field_style_... fields print as CSS classes.
+      $heroes = $node->get('field_hero')->referencedEntities();
+      $where = &$vars['splash_classes'];
+
+      foreach ($heroes as $hero) {
+        _compro_theme_entity_style_classes($vars, $hero, $where);
+      }
+    }
+  }
 }
 
 /**
@@ -82,10 +125,6 @@ function compro_theme_preprocess_region(&$vars) {
   ];
 
   switch ($vars['region']) {
-    case 'footer':
-      $vars['html_tag'] = 'footer';
-
-      break;
     case 'header':
       $vars['html_tag'] = 'header';
 
@@ -123,6 +162,19 @@ function compro_theme_preprocess_node(&$vars) {
     case 'page':
       // Something by content type.
       break;
+
+    case 'video':
+      if ($vars['view_mode'] === 'teaser') {
+        $vars['classes'][] = Html::cleanCssIdentifier('rollover');
+
+        $vars['content_attributes']['class'][] = 'node__content';
+        $vars['content_attributes']['class'][] = 'display--flex';
+        $vars['content_attributes']['class'][] = 'rollover--hover';
+        $vars['content_attributes']['class'][] = 'flex-direction--column';
+        $vars['content_attributes']['class'][] = 'justify-content--center';
+      }
+
+      break;
   }
 
   // Any field_style_... fields print as CSS classes.
@@ -135,11 +187,24 @@ function compro_theme_preprocess_node(&$vars) {
  */
 function compro_theme_preprocess_taxonomy_term(&$vars) {
   $term = $vars['term'];
+  $bundle = $term->bundle();
 
   $vars['classes'] = [
     Html::cleanCssIdentifier('taxonomy-term'),
-    Html::cleanCssIdentifier('vocabulary-' . $term->bundle()),
+    Html::cleanCssIdentifier('vocabulary-' . $bundle),
   ];
+
+  switch ($bundle) {
+    case 'company':
+      if ($vars['view_mode'] === 'small') {
+        $vars['classes'][] =Html::cleanCssIdentifier('flex--1');
+        $vars['attributes']['class'][] =Html::cleanCssIdentifier('display--flex');
+        $vars['attributes']['class'][] =Html::cleanCssIdentifier('flex-direction--column');
+        $vars['attributes']['class'][] =Html::cleanCssIdentifier('justify-content--flex-end');
+      }
+
+      break;
+  }
 
   $vars['attributes']['id'] = Html::cleanCssIdentifier('taxonomy-term-' . $term->id());
 }
@@ -148,10 +213,12 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
  * Implements hook_preprocess_entity().
  */
 function compro_theme_preprocess_eck_entity(&$vars) {
+  $vars['html_tag'] = 'div';
   $entity = $vars['entity']['#entity'];
   $type = $entity->getEntityTypeId();
   $bundle = $entity->bundle();
   $view_mode = $vars['entity']['#view_mode'];
+  $ref_field = $entity->_referringItem->getFieldDefinition()->getName();
 
   $vars['attributes']['class'] = array(
     Html::cleanCssIdentifier('eck-entity'),
@@ -159,14 +226,71 @@ function compro_theme_preprocess_eck_entity(&$vars) {
     Html::cleanCssIdentifier('entity-bundle-' . $bundle),
     Html::cleanCssIdentifier('view-mode-' . $view_mode),
     Html::cleanCssIdentifier('entity-' . $bundle . '-' . $entity->id()),
+    Html::cleanCssIdentifier('from-parent--' . $ref_field),
   );
+  $vars['attributes']['id'] = Html::cleanCssIdentifier($type . '-' . $bundle . '-' . $entity->id());
+
+  // Style classes by type.
+  switch ($type) {
+    case 'card':
+      $vars['attributes']['class'][] =Html::cleanCssIdentifier('flex--1');
+
+      break;
+  }
 
   // Style classes by bundle (where unambiguous).
   switch ($bundle) {
+    case 'accordion':
+      $vars['html_tag'] = 'details';
+
+      break;
+
+    case 'blockquote':
+      $vars['html_tag'] = 'blockquote';
+
+      break;
+
+    case 'cards':
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = HTML::cleanCssIdentifier('align-self--center');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--space-around');
+
+      break;
+
     case 'column':
       $vars['attributes']['class'][] = 'display--flex';
       $vars['attributes']['class'][] = 'flex-direction--column';
 
+      break;
+
+    case 'company_reference':
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = HTML::cleanCssIdentifier('align-self--center');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--flex-end');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-transform--uppercase');
+
+      break;
+
+    case 'heading':
+      $values = $entity->get('field_heading')->getValue();
+      if (isset($values[0]['wrapper'])) {
+        $vars['html_tag'] = $values[0]['wrapper'];
+      }
+
+      break;
+
+    case 'list':
+      $vars['html_tag'] = 'ul';
+      break;
+
+    case 'media':
+      $vars['html_tag'] = 'figure';
+
+      break;
+
+    case 'rollover':
+      $vars['attributes']['class'][] = 'rollover';
       break;
 
     case 'row':
@@ -176,8 +300,10 @@ function compro_theme_preprocess_eck_entity(&$vars) {
       break;
   }
 
-  $where = &$vars['attributes']['class'];
-  _compro_theme_entity_style_classes($vars, $entity, $where);
+  if ($ref_field !== 'field_hero') {
+    $where = &$vars['attributes']['class'];
+    _compro_theme_entity_style_classes($vars, $entity, $where);
+  }
 }
 
 /**
@@ -224,8 +350,53 @@ function compro_theme_preprocess_field(&$vars) {
     $vars['wrapped'] = FALSE;
   }
 
+  // Tweak the wrapper HTML tag.
+  if ($vars['entity_type'] === 'component') {
+    switch ($vars['element']['#bundle']) {
+      case 'accordion':
+        if ($vars['field_name'] === 'field_text') {
+          $vars['html_tag'] = 'summary';
+        }
+
+        break;
+
+      case 'list':
+        if ($vars['field_name'] === 'field_longtext_multiple') {
+          $vars['html_tag'] = 'li';
+        }
+
+        break;
+
+      case 'media':
+        if ($vars['field_name'] === 'field_longtext') {
+          $vars['html_tag'] = 'figcaption';
+          $vars['wrapped'] = TRUE;
+        }
+
+        break;
+    }
+  }
+
   if ($vars['field_name'] === 'title') {
     $vars['html_tag'] = 'h2';
+  }
+}
+
+/**
+ * Implements hook_preprocess_file_video().
+ */
+function compro_theme_preprocess_file_video(&$vars) {
+  // If a video file is set to autoplay, also set it to mute.
+  $autoplay = FALSE;
+  foreach ($vars['attributes'] as $key => $value) {
+    if ($key === 'autoplay') {
+      $autoplay = TRUE;
+      break;
+    }
+  }
+
+  if ($autoplay) {
+    $vars['attributes']['muted'] = 'muted';
   }
 }
 
@@ -286,12 +457,18 @@ function compro_theme_preprocess_views_view(&$vars) {
 
   // Class out by view id.
   switch ($vars['id']) {
-    case 'location':
-      $vars['classes'][] = 'text-transform--uppercase';
-      $vars['header_attributes']['class'][] = 'text-align--left';
+    case 'blog':
+    case 'case_study':
+    case 'event':
+    case 'resource':
+    case 'taxonomy_term':
       $vars['content_attributes']['class'][] = 'display--flex';
       $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+      $vars['content_attributes']['class'][] = 'layout--3-column';
+      $vars['content_attributes']['class'][] = 'child-max-width--320px';
       $vars['content_attributes']['class'][] = 'justify-content--space-around';
+
+      break;
   }
 }
 
@@ -339,6 +516,12 @@ function compro_theme_theme_suggestions_field_alter(&$suggestions, $vars) {
  */
 function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
   $fields = $entity->getFieldDefinitions();
+
+  // Put a selector with the ID on the target here so that non-direct application
+  // can still be used for backgrounds.
+  $where[] = Html::cleanCssIdentifier('background--' . $entity->getEntityTypeId()
+    . '-' . $entity->bundle() . '-' . $entity->id());
+
   foreach ($fields as $name => $definition) {
     if (Unicode::substr($name, 0, 11) === 'field_style') {
       // field_style_... values as classes (typically _classes.scss)
@@ -367,7 +550,10 @@ function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
       }
     }
     else {
-      if (Unicode::substr($name, 0, 11) === 'field_image') {
+      if (in_array(Unicode::substr($name, 0, 11), [
+        'field_image',
+        'field_video',
+      ])) {
         // Whether an image is present (especially for backgrounds).
 
         $value = $entity->get($name)->getValue();

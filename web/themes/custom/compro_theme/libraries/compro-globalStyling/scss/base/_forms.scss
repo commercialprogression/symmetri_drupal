@@ -1,0 +1,389 @@
+/**
+ * @file
+ * HTML form elements.
+ */
+@import "variables";
+
+button,
+input,
+select,
+textarea {
+  background: $color-bg;
+  border: none;
+  -webkit-border-radius: spx(.3);
+  -moz-border-radius: spx(.3);
+  border-radius: spx(.3);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: $color-text;
+  font-size: 100%;
+  font-weight: 400;
+  margin: 0;
+  max-width: 100%;
+  padding: spx(0.5) spx(1);
+  vertical-align: middle;
+
+  @media all and (max-width: 670px) {
+    max-width: 280px;
+  }
+}
+
+textarea {
+  max-height: inherit;
+  padding: spx(0.5) spx(2);
+}
+
+button,
+input {
+  line-height: 1;
+}
+
+select {
+  max-width: 100%;
+
+  @media all and (max-width: 670px) {
+    max-width: 280px;
+  }
+}
+
+.child-links--as-buttons a,
+.button,
+a.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  background-color: $color-sec;
+  border-color: transparent;
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  border-radius: $border-radius;
+  color: $color-bg;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0 spx(2) spx(2) 0;
+  padding: spx(1) spx(4) spx(1);
+  text-decoration: none;
+
+  &:hover {
+    background-color: $color-sec-medium;
+  }
+
+  &:active {
+    background-color: rgba($color-sec, .5);
+  }
+
+  &:focus {
+    outline: 1px dashed;
+    outline-offset: spx(0.1);
+  }
+
+  &.disabled,
+  &[disabled] {
+    background-color: $color-bg-light;
+    color: $color-text-dark;
+    cursor: default;
+  }
+  &.button--primary {
+    background-color: $color-yellow;
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  cursor: pointer
+}
+
+input[type="file"] {
+  padding: spx(0.2);
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  font-size: 0.95em;
+  margin: 0;
+}
+
+input[type="image"] {
+  border: 0 none;
+}
+
+form {
+  text-align: left;
+  max-width: 550px;
+
+  .field {
+    &-multiple-table {
+      margin: 0;
+
+      .field-multiple-drag {
+        width: spx(3);
+        padding-right: 0;
+
+        .tabledrag-handle {
+          padding-right: spx(.5);
+        }
+      }
+    }
+
+    &-add-more-submit {
+      margin: spx(.5) 0 0;
+    }
+  }
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+
+  &.option {
+    display: inline;
+    font-weight: normal;
+  }
+}
+
+.description {
+  font-size: 0.85em;
+}
+
+.form {
+  &-actions,
+  &-item {
+    margin: 0 0 spx(1);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    input,
+    textarea,
+    select {
+      &.error {
+        border: 2px solid $color-error;
+      }
+    }
+
+    &--error-message {
+      &::before {
+        content: '';
+        display: inline-block;
+        height: 14px;
+        width: 14px;
+        vertical-align: sub;
+        background: url(/core/misc/icons/e32700/error.svg) no-repeat;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        background-size: contain;
+      }
+    }
+  }
+
+  &-checkboxes,
+  &-radios {
+    .form-item {
+      margin-top: spx(.5);
+      margin-bottom: spx(.5);
+    }
+  }
+
+  &-composite {
+    > legend {
+      display:inline;
+      font-size: inherit;
+      font-weight: bold;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-required {
+    &::after {
+      content: '*';
+      display: inline-block;
+      margin: 0 0 0 spx(.2);
+      vertical-align: super;
+    }
+  }
+
+  &-type {
+    &-checkbox,
+    &-radio {
+      .description {
+        margin-left: 2.4em;
+      }
+    }
+
+    &-item {
+      font-weight: 700;
+
+      label {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.entity-bundle-form {
+
+  .color--inherit & {
+    position: relative;
+
+    .form-item {
+      position: relative;
+
+      &.form-type-textarea,
+      &.form-type-textfield,
+      &.form-type-email,
+      &.webform-component-email,
+      &.webform-component-textfield {
+        padding: spx(2) 0;
+
+        input {
+          box-shadow: 1px 1px $color-lightgray, -1px -1px $color-lightgray;
+        }
+
+        > label {
+          line-height: 1;
+          position: absolute;
+          top: 0px;
+          -webkit-transition: all .3s;
+          -moz-transition: all .3s;
+          -ms-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s;
+        }
+      }
+
+      &.empty-textfield > label {
+        top: 38px;
+        left: 12px;
+        color: $color-mediumgray;
+      }
+      &.input-focus > label {
+        top: -4px;
+        left: 0;
+      }
+
+      &.form-type-radio {
+        display: inline-block;
+        margin-right: spx(2);
+      }
+    }
+
+    .form-type-textarea {
+
+      textarea {
+        border: 1px solid $color-lightgray;
+      }
+    }
+  }
+
+  .color--white & {
+    position: relative;
+
+    .form-item {
+      position: relative;
+
+      &.form-type-textarea,
+      &.form-type-textfield,
+      &.form-type-email,
+      &.webform-component-email,
+      &.webform-component-textfield {
+        padding: spx(2) 0 0;
+
+        input {
+          box-shadow: 1px 1px $color-lightgray, -1px -1px $color-lightgray;
+        }
+
+        > label {
+          line-height: 1;
+          position: absolute;
+          top: 0px;
+          -webkit-transition: all .3s;
+          -moz-transition: all .3s;
+          -ms-transition: all .3s;
+          -o-transition: all .3s;
+          transition: all .3s;
+        }
+      }
+
+      &.empty-textfield > label {
+        top: 38px;
+        left: 12px;
+        color: $color-mediumgray;
+      }
+      &.input-focus > label {
+        top: -4px;
+        left: 0;
+      }
+    }
+  }
+
+  &.form--inline {
+
+    .form-actions {
+      max-width: 40%;
+      clear: none;
+      display: inline-block;
+
+      button {
+        padding: 20px;
+        text-transform: capitalize;
+        border-radius: 0 4px 4px 0;
+        color: #40658f;
+        margin-top: 20px;
+        height: 55px;
+      }
+    }
+
+    .form-wrapper:not(.form-actions) {
+      max-width: 60%;
+      display: inline-block;
+      vertical-align: top;
+
+      .form-item {
+        height: 55px;
+        border-radius: 4px 0 0 4px;
+        max-width: 100%;
+        box-shadow: none;
+
+        &.empty-textfield > label {
+          top: 42px;
+        }
+      }
+      input {
+        height: 55px;
+        border-radius: 4px 0 0 4px;
+        max-width: 100%;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .contact-form {
+    max-width: 400px;
+
+    .button {
+      display: block;
+      margin-top: spx(2);
+    }
+  }
+
+  input {
+    height: 45px;
+  }
+}
+
+.label {
+  display:inline;
+  font-size: inherit;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.marker {
+  color: #e00;
+}
