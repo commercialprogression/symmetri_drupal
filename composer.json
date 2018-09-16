@@ -59,6 +59,8 @@
         "drupal/diff": "^1.0@RC",
         "drupal/easy_breadcrumb": "^1.8",
         "drupal/eck": "^1.0@alpha",
+        "drupal/entity": "~1.0",
+        "drupal/entityqueue": "^1.0",
         "drupal/entity_browser": "^2.0",
         "drupal/entity_reference_display": "^1.1",
         "drupal/features": "^3.5",
@@ -86,7 +88,6 @@
         "drupal/styleguide": "^1.0@alpha",
         "drupal/subpathauto": "^1.0@beta",
         "drupal/token": "^1.1",
-        "drupal/video_embed_field": "2.x-dev",
         "drupal/viewsreference": "^1.2",
         "harvesthq/chosen": "^1.8.2"
     },

@@ -27,6 +27,7 @@ dependencies:
 - file
 - views
 - views_ui
+- viewsreference
 - automated_cron
 - admin_toolbar
 - admin_toolbar_tools
@@ -47,6 +48,7 @@ dependencies:
 - entity_browser
 - entity_browser_entity_form
 - entity_reference_display
+- entityqueue
 - field
 - field_group
 - ctools
@@ -80,8 +82,6 @@ dependencies:
 - text
 - token
 - user
-#- video_embed_field
-- video_embed_media
 - pathauto
 - linked_field
 themes:
