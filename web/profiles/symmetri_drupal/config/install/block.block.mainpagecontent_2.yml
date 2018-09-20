@@ -1,15 +1,11 @@
-uuid: 6a9374b9-400d-4b19-a0e1-6a718fff9bf5
 langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - system
   theme:
     - compro_theme
-third_party_settings:
-  block_class:
-    classes: ''
+third_party_settings: {}
 id: mainpagecontent_2
 theme: compro_theme
 region: content

@@ -1,15 +1,11 @@
-uuid: 36be3447-2568-4630-8900-c1b26b4dbf1a
 langcode: en
 status: true
 dependencies:
   module:
-    - block_class
     - contact_info
   theme:
     - compro_theme
-third_party_settings:
-  block_class:
-    classes: ''
+third_party_settings: {}
 id: social
 theme: compro_theme
 region: footer

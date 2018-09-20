@@ -88,6 +88,7 @@
         "drupal/styleguide": "^1.0@alpha",
         "drupal/subpathauto": "^1.0@beta",
         "drupal/token": "^1.1",
+        "drupal/video_embed_field": "^2.0",
         "drupal/viewsreference": "^1.2",
         "harvesthq/chosen": "^1.8.2"
     },
