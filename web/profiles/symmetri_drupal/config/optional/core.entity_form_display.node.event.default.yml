@@ -1,0 +1,146 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.event.body
+    - field.field.node.event.field_date_range
+    - field.field.node.event.field_hero
+    - field.field.node.event.field_location
+    - field.field.node.event.field_sections
+    - field.field.node.event.field_seo
+    - node.type.event
+  module:
+    - datetime_range
+    - entity_browser_entity_form
+    - inline_entity_form
+    - path
+    - text
+id: node.event.default
+targetEntityType: node
+bundle: event
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 6
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  compro_submitted:
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 11
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_date_range:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_hero:
+    weight: 5
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Hero
+      label_plural: Heroes
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_location:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_sections:
+    weight: 7
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: Section
+      label_plural: Sections
+      allow_new: true
+      match_operator: CONTAINS
+      allow_existing: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_seo:
+    weight: 8
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: SEO
+      label_plural: SEOs
+    third_party_settings: {  }
+    type: inline_entity_form_simple
+    region: content
+  path:
+    type: path
+    weight: 14
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  promote:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 12
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 16
+    region: content
+    third_party_settings: {  }
+  sticky:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 13
+    region: content
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    region: content
+    third_party_settings: {  }
+  url_redirects:
+    weight: 15
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_hero
+    - field.field.node.page.field_sections
+    - field.field.node.page.field_seo
+    - node.type.page
+  module:
+    - user
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_sections:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  body: true
+  compro_submitted: true
+  field_hero: true
+  field_seo: true
+  links: true

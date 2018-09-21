@@ -1,0 +1,33 @@
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.media.full
+    - field.field.media.video_embed.field_media_video_embed_field
+    - image.style.viewport
+    - media.type.video_embed
+  module:
+    - video_embed_field
+id: media.video_embed.full
+targetEntityType: media
+bundle: video_embed
+mode: full
+content:
+  field_media_video_embed_field:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: viewport
+      link_image_to: provider
+      responsive: true
+      width: 854
+      height: 480
+      autoplay: false
+    third_party_settings: {  }
+    type: video_embed_field_lazyload
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

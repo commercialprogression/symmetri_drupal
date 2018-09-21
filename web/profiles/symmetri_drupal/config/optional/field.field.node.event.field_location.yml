@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_location
+    - node.type.event
+id: node.event.field_location
+field_name: field_location
+entity_type: node
+bundle: event
+label: Location
+description: 'A brief description of the location of the event.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 'CNX Corporation, 217 N Jefferson St, Suite 450, Chicago, IL 60661'
+default_value_callback: ''
+settings: {  }
+field_type: string

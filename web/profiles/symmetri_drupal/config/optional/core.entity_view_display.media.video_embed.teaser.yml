@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.teaser
+    - field.field.media.video_embed.field_media_video_embed_field
+    - image.style.content_area
+    - media.type.video_embed
+  module:
+    - video_embed_field
+id: media.video_embed.teaser
+targetEntityType: media
+bundle: video_embed
+mode: teaser
+content:
+  field_media_video_embed_field:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: content_area
+      link_image_to: ''
+    third_party_settings: {  }
+    type: video_embed_field_thumbnail
+    region: content
+hidden:
+  created: true
+  name: true
+  thumbnail: true
+  uid: true

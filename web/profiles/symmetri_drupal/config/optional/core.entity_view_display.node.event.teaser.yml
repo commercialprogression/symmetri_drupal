@@ -1,0 +1,57 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.event.body
+    - field.field.node.event.field_date_range
+    - field.field.node.event.field_hero
+    - field.field.node.event.field_location
+    - field.field.node.event.field_sections
+    - field.field.node.event.field_seo
+    - node.type.event
+  module:
+    - datetime_range
+    - text
+    - user
+id: node.event.teaser
+targetEntityType: node
+bundle: event
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 2
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_date_range:
+    type: daterange_default
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      timezone_override: ''
+      format_type: human_short_us_
+      separator: '-'
+    third_party_settings: {  }
+  field_location:
+    type: string
+    weight: 1
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  compro_submitted: true
+  field_hero: true
+  field_sections: true
+  field_seo: true

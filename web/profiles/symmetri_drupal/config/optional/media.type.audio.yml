@@ -3,10 +3,12 @@ status: true
 dependencies: {  }
 id: audio
 label: Audio
-description: 'A locally hosted audio file.'
+description: ''
 source: audio_file
 queue_thumbnail_downloads: false
 new_revision: true
 source_configuration:
   source_field: field_media_audio_file
-field_map: {  }
+field_map:
+  mimetype: field_mimetype
+  filesize: field_filesize
