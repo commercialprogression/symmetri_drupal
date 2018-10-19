@@ -214,10 +214,10 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
  */
 function compro_theme_preprocess_eck_entity(&$vars) {
   $vars['html_tag'] = 'div';
-  $entity = $vars['entity']['#entity'];
+  $entity = $vars['eck_entity'];
   $type = $entity->getEntityTypeId();
   $bundle = $entity->bundle();
-  $view_mode = $vars['entity']['#view_mode'];
+  $view_mode = $vars['elements']['#view_mode'];
   $ref_field = $entity->_referringItem->getFieldDefinition()->getName();
 
   $vars['attributes']['class'] = array(
