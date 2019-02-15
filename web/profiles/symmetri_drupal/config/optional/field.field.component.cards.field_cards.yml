@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.card.rollover
     - eck.eck_type.card.standard
     - eck.eck_type.component.cards
     - field.storage.component.field_cards
@@ -21,7 +20,6 @@ settings:
   handler_settings:
     target_bundles:
       standard: standard
-      rollover: rollover
     sort:
       field: _none
     auto_create: false

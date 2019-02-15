@@ -1,0 +1,81 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_entity_browser
+  module:
+    - entity_browser_entity_form
+    - views
+name: media_entity_browser
+label: 'Media Entity Browser'
+display: modal
+display_configuration:
+  width: '1070'
+  height: '840'
+  link_text: 'Select entities'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  6586703a-6976-4124-8a49-cbb07ceaa3b1:
+    settings:
+      view: media_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Select entities'
+      auto_select: false
+    uuid: 6586703a-6976-4124-8a49-cbb07ceaa3b1
+    weight: 1
+    label: 'Select Existing'
+    id: view
+  ecbe7b0a-e962-4ba0-8b58-8968b7316d82:
+    settings:
+      entity_type: media
+      bundle: image
+      form_mode: default
+      submit_text: Save
+    uuid: ecbe7b0a-e962-4ba0-8b58-8968b7316d82
+    weight: 2
+    label: Image
+    id: entity_form
+  78d4c0fc-a82a-4776-8e15-7791b51724dc:
+    settings:
+      entity_type: media
+      bundle: audio
+      form_mode: default
+      submit_text: Save
+    uuid: 78d4c0fc-a82a-4776-8e15-7791b51724dc
+    weight: 3
+    label: Audio
+    id: entity_form
+  0092b64b-4a85-4c00-b4ef-bada853c36d4:
+    settings:
+      entity_type: media
+      bundle: document
+      form_mode: default
+      submit_text: Save
+    uuid: 0092b64b-4a85-4c00-b4ef-bada853c36d4
+    weight: 4
+    label: Document
+    id: entity_form
+  ae2e98cf-2d02-4bc9-9eb5-f2ab8c33443c:
+    settings:
+      entity_type: media
+      bundle: video
+      form_mode: default
+      submit_text: Save
+    uuid: ae2e98cf-2d02-4bc9-9eb5-f2ab8c33443c
+    weight: 5
+    label: Video
+    id: entity_form
+  c6ea6f63-d50c-4c3a-8ec6-b6eef5671069:
+    settings:
+      entity_type: media
+      bundle: video_embed
+      form_mode: default
+      submit_text: Save
+    uuid: c6ea6f63-d50c-4c3a-8ec6-b6eef5671069
+    weight: 6
+    label: 'Video embed'
+    id: entity_form

@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+    - eck
+id: special.field_form_form
+field_name: field_form_form
+entity_type: special
+type: entity_reference
+settings:
+  target_type: contact_form
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

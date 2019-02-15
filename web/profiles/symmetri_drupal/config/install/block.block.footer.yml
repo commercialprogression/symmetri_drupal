@@ -7,11 +7,10 @@ dependencies:
     - system
   theme:
     - compro_theme
-third_party_settings: {}
 id: footer
 theme: compro_theme
-region: footer_menu
-weight: 0
+region: footer
+weight: -4
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.small
+    - field.field.node.article.body
+    - field.field.node.article.field_components
+    - field.field.node.article.field_hero
+    - field.field.node.article.field_image
+    - field.field.node.article.field_seo
+    - field.field.node.article.field_tag
+    - node.type.article
+  module:
+    - user
+id: node.article.small
+targetEntityType: node
+bundle: article
+mode: small
+content:
+  field_image:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: small
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  compro_submitted: true
+  field_components: true
+  field_hero: true
+  field_seo: true
+  field_tag: true
+  links: true

@@ -3,14 +3,15 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.layout
-    - field.field.component.layout.field_rows
-    - field.field.component.layout.field_style_slick
+    - field.field.component.layout.field_columns
+    - field.field.component.layout.field_style_flexdirection
+    - field.field.component.layout.field_style_justifycontent
 id: component.layout.default
 targetEntityType: component
 bundle: layout
 mode: default
 content:
-  field_rows:
+  field_columns:
     weight: 0
     label: hidden
     settings:
@@ -22,5 +23,6 @@ content:
 hidden:
   changed: true
   created: true
-  field_style_slick: true
+  field_style_flexdirection: true
+  field_style_justifycontent: true
   uid: true

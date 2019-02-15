@@ -1,0 +1,92 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.special.content_listing
+    - field.field.special.content_listing.field_content
+    - field.field.special.content_listing.field_style_layout
+    - field.field.special.content_listing.field_term_viewmode
+  module:
+    - chosen_field
+    - entity_browser_entity_form
+    - field_group
+    - inline_entity_form
+third_party_settings:
+  field_group:
+    group_admin:
+      children:
+        - group_content
+        - group_settings
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: Admin
+    group_content:
+      children:
+        - field_content
+      parent_name: group_admin
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: false
+      label: Content
+    group_settings:
+      children:
+        - field_term_viewmode
+        - field_style_layout
+      parent_name: group_admin
+      weight: 7
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+      label: Settings
+id: special.content_listing.default
+targetEntityType: special
+bundle: content_listing
+mode: default
+content:
+  field_content:
+    weight: 5
+    settings:
+      form_mode: default
+      override_labels: true
+      label_singular: node
+      label_plural: nodes
+      allow_existing: true
+      match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
+      allow_new: false
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
+    type: inline_entity_form_complex
+    region: content
+  field_style_layout:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+  field_term_viewmode:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: chosen_select
+    region: content
+hidden:
+  created: true
+  uid: true

@@ -4,8 +4,6 @@ dependencies:
   config:
     - eck.eck_type.component.blockquote
     - field.field.component.blockquote.field_longtext
-    - field.field.component.blockquote.field_style_quoteclose
-    - field.field.component.blockquote.field_style_quoteopen
   module:
     - field_group
     - text
@@ -62,20 +60,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
-    region: content
-  field_style_quoteclose:
-    weight: 3
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_style_quoteopen:
-    weight: 2
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
     region: content
 hidden:
   created: true

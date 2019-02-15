@@ -5,85 +5,69 @@ core: 8.x
 
 # Required modules.
 dependencies:
-- node
-- block
-- breakpoint
-- ckeditor
-- config
-- menu_link_content
-- datetime
-- block_content
-- quickedit
-- editor
-- help
-- image
-- menu_ui
-- options
-- path
-- taxonomy
-- dblog
-- toolbar
-- field_ui
-- file
-- views
-- views_ui
-- viewsreference
-- automated_cron
-- admin_toolbar
-- admin_toolbar_tools
-- adminimal_admin_toolbar
-- better_exposed_filters
-- bg_image_formatter
-- block_class
-- captcha
-- chosen
-- chosen_lib
-- compro_credit
-- compro_custom
-- config_filter
-- config_ignore
-- config_split
-- contact_info
-- entity
-- entity_browser
-- entity_browser_entity_form
-- entity_reference_display
-- entityqueue
-- field
-- field_group
-- ctools
-- ctools_views
-- datetime_range
-- diff
-- easy_breadcrumb
-- eck
-- filter
-- google_analytics
-- inline_entity_form
-- inline_form_errors
-- link
-- linkit
-- media
-- media_entity_browser
-- menu_link_attributes
-- menu_trail_by_path
-- metatag
-- path_redirect_import
-- recaptcha
-- redirect
-- redirect_404
-- redirect_domain
-- search_api
-- simple_sitemap
-- smart_trim
-- styleguide
-- system
-- telephone
-- text
-- token
-- user
-- pathauto
-- linked_field
+  - address
+  - automated_cron
+  - admin_toolbar
+  - admin_toolbar_tools
+  - adminimal_admin_toolbar
+  - bg_image_formatter
+  - block
+  - block_class
+  - block_content
+  - breakpoint
+  - chosen_field
+  - ckeditor
+  - compro_custom
+  - contact
+  - contact_info
+  - contact_storage
+  - dblog
+  - diff
+  - easy_breadcrumb
+  - eck
+  - editor
+  - entity_browser
+  - entity_browser_entity_form
+  - entity_reference_display
+  - entityqueue
+  - field
+  - field_formatter_class
+  - field_group
+  - field_ui
+  - file
+  - filter
+  - image
+  - inline_entity_form
+  - libraries
+  - link
+  - linkit
+  - linked_field
+  - media
+  - menu_link_attributes
+  - menu_link_content
+  - menu_ui
+  - metatag
+  - node
+  - options
+  - path
+  - pathauto
+  - redirect
+  - redirect_404
+  - redirect_domain
+  - search_api
+  - search_api_solr
+  - simple_sitemap
+  - system
+  - taxonomy
+  - telephone
+  - text
+  - toolbar
+  - user
+  - video_embed_field
+  - video_embed_media
+  - views
+  - views_ui
+  - viewsreference
 themes:
 - stable
 - classy

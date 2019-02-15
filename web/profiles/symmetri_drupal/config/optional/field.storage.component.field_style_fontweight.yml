@@ -18,13 +18,10 @@ settings:
       label: Regular
     -
       value: font-weight--500
-      label: Semi-bold
+      label: Medium
     -
       value: font-weight--600
-      label: Bold
-    -
-      value: font-weight--700
-      label: Black
+      label: Semi-Bold
   allowed_values_function: ''
 module: options
 locked: false

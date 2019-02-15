@@ -6,7 +6,6 @@ dependencies:
     - field.field.component.rich_text.field_longtext
     - field.field.component.rich_text.field_style_color
     - field.field.component.rich_text.field_style_fontweight
-    - field.field.component.rich_text.field_style_paragraph
     - field.field.component.rich_text.field_style_text_transform
   module:
     - field_group
@@ -75,12 +74,6 @@ content:
     region: content
   field_style_fontweight:
     weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_style_paragraph:
-    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: options_select

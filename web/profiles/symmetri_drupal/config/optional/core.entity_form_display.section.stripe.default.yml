@@ -5,7 +5,6 @@ dependencies:
     - eck.eck_type.section.stripe
     - field.field.section.stripe.field_components
     - field.field.section.stripe.field_image_background
-    - field.field.section.stripe.field_style_accent_color
     - field.field.section.stripe.field_style_bgcolor
     - field.field.section.stripe.field_style_bghide
     - field.field.section.stripe.field_style_bgpx
@@ -16,12 +15,9 @@ dependencies:
     - field.field.section.stripe.field_style_fullwidth
     - field.field.section.stripe.field_style_textalign
     - field.field.section.stripe.field_style_unpad
-    - field.field.section.stripe.field_video_background
     - image.style.thumbnail
   module:
     - field_group
-    - file
-    - image
     - inline_entity_form
 third_party_settings:
   field_group:
@@ -101,12 +97,6 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_style_accent_color:
-    weight: 32
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
   field_style_bgcolor:
     weight: 33
     settings: {  }
@@ -169,13 +159,6 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
-    region: content
-  field_video_background:
-    weight: 36
-    settings:
-      progress_indicator: throbber
-    third_party_settings: {  }
-    type: file_generic
     region: content
 hidden:
   created: true

@@ -36,10 +36,10 @@ settings:
             - SpecialChar
             - Source
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
     linkit:
       linkit_profile: ''
 image_upload:

@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_sections
     - field.field.node.page.field_seo
+    - field.field.node.page.field_tag
     - node.type.page
   module:
     - user
@@ -28,4 +29,5 @@ hidden:
   compro_submitted: true
   field_hero: true
   field_seo: true
+  field_tag: true
   links: true

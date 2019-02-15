@@ -30,7 +30,7 @@ content:
         advanced: {  }
     region: content
   field_link:
-    weight: 3
+    weight: 5
     label: hidden
     settings:
       trim_length: 80
@@ -42,7 +42,7 @@ content:
     type: link
     region: content
   field_text:
-    weight: 2
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
@@ -51,7 +51,7 @@ content:
   title:
     label: hidden
     type: string
-    weight: 1
+    weight: 3
     region: content
     settings:
       link_to_entity: false

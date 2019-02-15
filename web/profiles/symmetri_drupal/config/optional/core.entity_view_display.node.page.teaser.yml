@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_sections
     - field.field.node.page.field_seo
+    - field.field.node.page.field_tag
     - node.type.page
   module:
     - text
@@ -19,7 +20,7 @@ content:
   body:
     label: hidden
     type: text_summary_or_trimmed
-    weight: 101
+    weight: 1
     settings:
       trim_length: 600
     third_party_settings: {  }
@@ -30,7 +31,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 100
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -38,3 +39,4 @@ hidden:
   field_hero: true
   field_sections: true
   field_seo: true
+  field_tag: true

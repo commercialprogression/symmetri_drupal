@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.attachment.seo
+    - field.storage.taxonomy_term.field_seo
+    - taxonomy.vocabulary.tags
+id: taxonomy_term.tags.field_seo
+field_name: field_seo
+entity_type: taxonomy_term
+bundle: tags
+label: SEO
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:attachment'
+  handler_settings:
+    target_bundles:
+      seo: seo
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

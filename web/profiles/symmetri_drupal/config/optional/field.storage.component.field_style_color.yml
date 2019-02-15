@@ -14,38 +14,47 @@ settings:
       value: color--black
       label: Black
     -
-      value: color--darkblue
-      label: 'Dark blue'
+      value: color--grey-dark
+      label: 'Grey (dark)'
     -
-      value: color--darkteal
-      label: 'Dark teal'
+      value: color--grey
+      label: Grey
     -
-      value: color--lightblue
-      label: 'Light blue'
-    -
-      value: color--lightgray
-      label: 'Light gray'
-    -
-      value: color--lightteal
-      label: 'Light teal'
-    -
-      value: color--mediumgray
-      label: 'Medium gray'
-    -
-      value: color--mediumteal
-      label: 'Medium teal'
-    -
-      value: color--orange
-      label: Orange
-    -
-      value: color--superlightgray
-      label: 'Super light gray'
+      value: color--grey-light
+      label: 'Grey (light)'
     -
       value: color--white
       label: White
     -
-      value: color--yellow
-      label: Yellow
+      value: color--main
+      label: 'Main [blue]'
+    -
+      value: color--main-dark
+      label: 'Main [blue] (dark)'
+    -
+      value: color--main-light
+      label: 'Main [blue] (light)'
+    -
+      value: color--second
+      label: Second
+    -
+      value: color--second-dark
+      label: 'Second (dark)'
+    -
+      value: color--second-light
+      label: 'Second (light)'
+    -
+      value: color--third
+      label: Third
+    -
+      value: color--third-dark
+      label: 'Third (dark)'
+    -
+      value: color--third-light
+      label: 'Third (light)'
+    -
+      value: color--accent
+      label: Accent
   allowed_values_function: ''
 module: options
 locked: false

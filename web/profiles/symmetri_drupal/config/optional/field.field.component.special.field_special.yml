@@ -3,7 +3,9 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.special
+    - eck.eck_type.special.content_listing
     - eck.eck_type.special.form
+    - eck.eck_type.special.term_listing
     - eck.eck_type.special.view
     - field.storage.component.field_special
 id: component.special.field_special
@@ -20,7 +22,9 @@ settings:
   handler: 'default:special'
   handler_settings:
     target_bundles:
+      content_listing: content_listing
       form: form
+      term_listing: term_listing
       view: view
     sort:
       field: _none

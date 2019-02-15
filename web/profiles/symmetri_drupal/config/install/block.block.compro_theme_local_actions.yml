@@ -5,7 +5,7 @@ dependencies:
     - compro_theme
 id: compro_theme_local_actions
 theme: compro_theme
-region: content_top
+region: pre_content
 weight: -3
 provider: null
 plugin: local_actions_block

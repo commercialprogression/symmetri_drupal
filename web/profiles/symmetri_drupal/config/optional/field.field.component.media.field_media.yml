@@ -8,6 +8,7 @@ dependencies:
     - media.type.document
     - media.type.image
     - media.type.video
+    - media.type.video_embed
 id: component.media.field_media
 field_name: field_media
 entity_type: component
@@ -26,6 +27,7 @@ settings:
       document: document
       image: image
       video: video
+      video_embed: video_embed
     sort:
       field: _none
     auto_create: false

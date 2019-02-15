@@ -7,8 +7,6 @@ dependencies:
     - field.field.component.media.field_link
     - field.field.component.media.field_longtext
     - field.field.component.media.field_media
-    - field.field.component.media.field_style_encroach
-    - field.field.component.media.field_style_float
   module:
     - entity_browser
     - field_group
@@ -91,19 +89,6 @@ content:
         view_mode: small
     third_party_settings: {  }
     type: entity_browser_entity_reference
-    region: content
-  field_style_encroach:
-    weight: 6
-    settings:
-      display_label: true
-    third_party_settings: {  }
-    type: boolean_checkbox
-    region: content
-  field_style_float:
-    weight: 7
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
 hidden:
   created: true

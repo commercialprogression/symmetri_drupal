@@ -3,9 +3,11 @@ status: true
 dependencies:
   config:
     - eck.eck_type.component.layout
-    - field.field.component.layout.field_rows
-    - field.field.component.layout.field_style_slick
+    - field.field.component.layout.field_columns
+    - field.field.component.layout.field_style_flexdirection
+    - field.field.component.layout.field_style_justifycontent
   module:
+    - entity_browser_entity_form
     - field_group
     - inline_entity_form
 third_party_settings:
@@ -24,7 +26,7 @@ third_party_settings:
       label: Admin
     group_content:
       children:
-        - field_rows
+        - field_columns
       parent_name: group_admin
       weight: 20
       format_type: tab
@@ -37,7 +39,8 @@ third_party_settings:
       label: Content
     group_settings:
       children:
-        - field_style_slick
+        - field_style_justifycontent
+        - field_style_flexdirection
       parent_name: group_admin
       weight: 21
       format_type: tab
@@ -53,25 +56,36 @@ targetEntityType: component
 bundle: layout
 mode: default
 content:
-  field_rows:
-    weight: 1
+  field_columns:
+    weight: 22
     settings:
       form_mode: default
       override_labels: true
-      label_singular: Row
-      label_plural: Rows
+      label_singular: Column
+      label_plural: Columns
       allow_new: true
       match_operator: CONTAINS
+      collapsible: false
+      collapsed: false
       allow_existing: false
-    third_party_settings: {  }
+      allow_duplicate: false
+    third_party_settings:
+      entity_browser_entity_form:
+        entity_browser_id: _none
     type: inline_entity_form_complex
     region: content
-  field_style_slick:
-    weight: 0
+  field_style_flexdirection:
+    weight: 25
     settings:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_style_justifycontent:
+    weight: 24
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

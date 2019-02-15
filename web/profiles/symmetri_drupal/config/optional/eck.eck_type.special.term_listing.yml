@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.special
+name: 'Term Listing'
+type: term_listing
+description: 'Show a list of taxonomy terms by their view modes'

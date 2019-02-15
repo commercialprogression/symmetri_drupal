@@ -7,7 +7,6 @@ dependencies:
     - field.field.component.heading.field_style_color
     - field.field.component.heading.field_style_fontweight
     - field.field.component.heading.field_style_headinglevel
-    - field.field.component.heading.field_style_logo
     - field.field.component.heading.field_style_text_transform
   module:
     - compro_custom
@@ -29,6 +28,5 @@ hidden:
   field_style_color: true
   field_style_fontweight: true
   field_style_headinglevel: true
-  field_style_logo: true
   field_style_text_transform: true
   uid: true

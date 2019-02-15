@@ -5,7 +5,6 @@ dependencies:
     - system
   theme:
     - compro_theme
-third_party_settings: {}
 id: mainpagecontent_2
 theme: compro_theme
 region: content

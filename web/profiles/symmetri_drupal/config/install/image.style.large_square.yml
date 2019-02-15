@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: large_square
+label: 'Large square'
+effects:
+  bcfd0cd8-dac5-4e97-9867-17c72071d0a8:
+    uuid: bcfd0cd8-dac5-4e97-9867-17c72071d0a8
+    id: image_scale
+    weight: 1
+    data:
+      width: 480
+      height: null
+      upscale: false

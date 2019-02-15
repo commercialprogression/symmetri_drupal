@@ -9,8 +9,7 @@ dependencies:
     - field.field.media.image.field_width
     - image.style.viewport
     - media.type.image
-  module:
-    - image
+  module: {  }
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -22,6 +21,10 @@ content:
     settings:
       image_style: viewport
       image_link: ''
+      svg_attributes:
+        width: '1440'
+        height: ''
+      svg_render_as_image: 0
     third_party_settings: {  }
     type: image
     region: content

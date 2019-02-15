@@ -11,22 +11,22 @@ type: list_string
 settings:
   allowed_values:
     -
-      value: vertical-spacing-1
+      value: padding-vertical--1
       label: 1x
     -
-      value: vertical-spacing-2
+      value: padding-vertical--2
       label: 2x
     -
-      value: vertical-spacing-4
+      value: padding-vertical--4
       label: 4x
     -
-      value: vertical-spacing-8
+      value: padding-vertical--8
       label: 8x
     -
-      value: vertical-spacing-16
+      value: padding-vertical--16
       label: 16x
     -
-      value: vertical-spacing-32
+      value: padding-vertical--32
       label: 32x
   allowed_values_function: ''
 module: options

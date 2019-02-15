@@ -7,7 +7,6 @@ dependencies:
     - field.field.component.heading.field_style_color
     - field.field.component.heading.field_style_fontweight
     - field.field.component.heading.field_style_headinglevel
-    - field.field.component.heading.field_style_logo
     - field.field.component.heading.field_style_text_transform
   module:
     - compro_custom
@@ -81,12 +80,6 @@ content:
     region: content
   field_style_headinglevel:
     weight: 6
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
-    region: content
-  field_style_logo:
-    weight: 4
     settings: {  }
     third_party_settings: {  }
     type: options_select

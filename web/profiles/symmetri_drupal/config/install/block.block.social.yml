@@ -5,11 +5,10 @@ dependencies:
     - contact_info
   theme:
     - compro_theme
-third_party_settings: {}
 id: social
 theme: compro_theme
-region: footer
-weight: 0
+region: footer_menu
+weight: -4
 provider: null
 plugin: social
 settings:

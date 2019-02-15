@@ -8,7 +8,6 @@ dependencies:
     - eck.eck_type.component.heading
     - eck.eck_type.component.layout
     - eck.eck_type.component.link
-    - eck.eck_type.component.list
     - eck.eck_type.component.media
     - eck.eck_type.component.rich_text
     - eck.eck_type.component.spacer
@@ -36,7 +35,6 @@ settings:
       heading: heading
       layout: layout
       link: link
-      list: list
       media: media
       rich_text: rich_text
       spacer: spacer

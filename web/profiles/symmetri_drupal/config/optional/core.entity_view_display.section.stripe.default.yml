@@ -5,7 +5,6 @@ dependencies:
     - eck.eck_type.section.stripe
     - field.field.section.stripe.field_components
     - field.field.section.stripe.field_image_background
-    - field.field.section.stripe.field_style_accent_color
     - field.field.section.stripe.field_style_bgcolor
     - field.field.section.stripe.field_style_bghide
     - field.field.section.stripe.field_style_bgpx
@@ -16,11 +15,9 @@ dependencies:
     - field.field.section.stripe.field_style_fullwidth
     - field.field.section.stripe.field_style_textalign
     - field.field.section.stripe.field_style_unpad
-    - field.field.section.stripe.field_video_background
     - image.style.viewport
   module:
     - bg_image_formatter
-    - file
 id: section.stripe.default
 targetEntityType: section
 bundle: stripe
@@ -55,24 +52,9 @@ content:
     third_party_settings: {  }
     type: bg_image_formatter
     region: content
-  field_video_background:
-    weight: 0
-    label: hidden
-    settings:
-      autoplay: true
-      loop: true
-      multiple_file_display_type: sources
-      muted: true
-      width: 1920
-      height: 1080
-      controls: false
-    third_party_settings: {  }
-    type: file_video
-    region: content
 hidden:
   changed: true
   created: true
-  field_style_accent_color: true
   field_style_bgcolor: true
   field_style_bghide: true
   field_style_bgpx: true

@@ -4,8 +4,6 @@ dependencies:
   config:
     - eck.eck_type.component.blockquote
     - field.field.component.blockquote.field_longtext
-    - field.field.component.blockquote.field_style_quoteclose
-    - field.field.component.blockquote.field_style_quoteopen
   module:
     - text
 id: component.blockquote.default
@@ -23,6 +21,4 @@ content:
 hidden:
   changed: true
   created: true
-  field_style_quoteclose: true
-  field_style_quoteopen: true
   uid: true

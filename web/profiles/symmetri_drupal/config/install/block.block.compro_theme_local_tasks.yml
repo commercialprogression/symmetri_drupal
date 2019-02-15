@@ -5,7 +5,7 @@ dependencies:
     - compro_theme
 id: compro_theme_local_tasks
 theme: compro_theme
-region: content_top
+region: pre_content
 weight: -4
 provider: null
 plugin: local_tasks_block

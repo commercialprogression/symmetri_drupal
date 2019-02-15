@@ -6,7 +6,6 @@ dependencies:
     - field.field.component.rich_text.field_longtext
     - field.field.component.rich_text.field_style_color
     - field.field.component.rich_text.field_style_fontweight
-    - field.field.component.rich_text.field_style_paragraph
     - field.field.component.rich_text.field_style_text_transform
   module:
     - text
@@ -27,6 +26,5 @@ hidden:
   created: true
   field_style_color: true
   field_style_fontweight: true
-  field_style_paragraph: true
   field_style_text_transform: true
   uid: true

@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.small
+    - field.field.media.audio.field_filesize
+    - field.field.media.audio.field_media_audio_file
+    - field.field.media.audio.field_mimetype
+    - media.type.audio
+  module:
+    - field_formatter_class
+    - file
+id: media.audio.small
+targetEntityType: media
+bundle: audio
+mode: small
+content:
+  field_media_audio_file:
+    type: file_rss_enclosure
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      field_formatter_class:
+        class: ''
+    region: content
+hidden:
+  created: true
+  field_filesize: true
+  field_mimetype: true
+  name: true
+  thumbnail: true
+  uid: true

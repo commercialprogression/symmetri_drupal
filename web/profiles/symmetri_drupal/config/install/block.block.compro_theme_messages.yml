@@ -7,7 +7,7 @@ dependencies:
     - compro_theme
 id: compro_theme_messages
 theme: compro_theme
-region: content_top
+region: pre_content
 weight: -5
 provider: null
 plugin: system_messages_block

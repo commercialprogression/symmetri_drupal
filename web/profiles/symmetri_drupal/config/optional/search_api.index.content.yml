@@ -1,0 +1,208 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_seo
+    - field.storage.attachment.field_seo_description
+    - field.storage.attachment.field_seo_news_keywords
+    - field.storage.attachment.field_seo_title
+    - field.storage.node.body
+    - search_api.server.solr
+    - core.entity_view_mode.node.search_index
+  module:
+    - eck
+    - node
+    - search_api
+id: content
+name: Content
+description: ''
+read_only: false
+field_settings:
+  field_seo_description:
+    label: 'SEO » Attachment » Description'
+    datasource_id: 'entity:node'
+    property_path: 'field_seo:entity:field_seo_description'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_seo
+        - field.storage.attachment.field_seo_description
+      module:
+        - eck
+  field_seo_news_keywords:
+    label: 'SEO » Attachment » News Keywords'
+    datasource_id: 'entity:node'
+    property_path: 'field_seo:entity:field_seo_news_keywords'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_seo
+        - field.storage.attachment.field_seo_news_keywords
+      module:
+        - eck
+  field_seo_title:
+    label: 'SEO » Attachment » Title tag'
+    datasource_id: 'entity:node'
+    property_path: 'field_seo:entity:field_seo_title'
+    type: text
+    boost: !!float 3
+    dependencies:
+      config:
+        - field.storage.node.field_seo
+        - field.storage.attachment.field_seo_title
+      module:
+        - eck
+  node_grants:
+    label: 'Node access information'
+    property_path: search_api_node_grants
+    type: string
+    indexed_locked: true
+    type_locked: true
+    hidden: true
+  processed:
+    label: 'Description » Processed text'
+    datasource_id: 'entity:node'
+    property_path: 'body:processed'
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.body
+  rendered_item:
+    label: 'Rendered HTML output'
+    property_path: rendered_item
+    type: text
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          event: search_index
+          news: search_index
+          page: search_index
+  status:
+    label: status
+    datasource_id: 'entity:node'
+    property_path: status
+    type: boolean
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 5
+    dependencies:
+      module:
+        - node
+  type:
+    label: 'Content type'
+    datasource_id: 'entity:node'
+    property_path: type
+    type: string
+    dependencies:
+      module:
+        - node
+  uid:
+    label: uid
+    datasource_id: 'entity:node'
+    property_path: uid
+    type: integer
+    indexed_locked: true
+    type_locked: true
+    dependencies:
+      module:
+        - node
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  content_access:
+    weights:
+      preprocess_query: -50
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields:
+      - field_seo_description
+      - field_seo_news_keywords
+      - field_seo_title
+      - processed
+      - title
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  html_filter:
+    all_fields: true
+    fields:
+      - field_seo_description
+      - field_seo_news_keywords
+      - field_seo_title
+      - processed
+      - rendered_item
+      - title
+      - type
+    title: true
+    alt: true
+    tags:
+      b: 2
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+    weights:
+      preprocess_index: -48
+      preprocess_query: -48
+  ignorecase:
+    all_fields: true
+    fields:
+      - field_seo_description
+      - field_seo_news_keywords
+      - field_seo_title
+      - processed
+      - rendered_item
+      - title
+      - type
+    weights:
+      preprocess_index: -46
+      preprocess_query: -46
+  rendered_item: {  }
+  tokenizer:
+    all_fields: true
+    fields:
+      - field_seo_description
+      - field_seo_news_keywords
+      - field_seo_title
+      - processed
+      - rendered_item
+      - title
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -42
+      preprocess_query: -40
+tracker_settings:
+  default:
+    indexing_order: fifo
+options:
+  index_directly: true
+  cron_limit: 50
+server: solr

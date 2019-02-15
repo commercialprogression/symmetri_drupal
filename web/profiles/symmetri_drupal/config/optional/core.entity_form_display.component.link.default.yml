@@ -5,6 +5,7 @@ dependencies:
     - eck.eck_type.component.link
     - field.field.component.link.field_link
     - field.field.component.link.field_style_button
+    - field.field.component.link.field_style_childbgcolor
   module:
     - field_group
     - link
@@ -38,6 +39,8 @@ third_party_settings:
     group_settings:
       children:
         - field_style_button
+        - field_style_invert
+        - field_style_childbgcolor
       parent_name: group_admin
       weight: 4
       format_type: tab
@@ -67,6 +70,12 @@ content:
       display_label: true
     third_party_settings: {  }
     type: boolean_checkbox
+    region: content
+  field_style_childbgcolor:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
     region: content
 hidden:
   created: true

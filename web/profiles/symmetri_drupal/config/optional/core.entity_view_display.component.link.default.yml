@@ -5,6 +5,7 @@ dependencies:
     - eck.eck_type.component.link
     - field.field.component.link.field_link
     - field.field.component.link.field_style_button
+    - field.field.component.link.field_style_childbgcolor
   module:
     - link
 id: component.link.default
@@ -28,4 +29,5 @@ hidden:
   changed: true
   created: true
   field_style_button: true
+  field_style_childbgcolor: true
   uid: true

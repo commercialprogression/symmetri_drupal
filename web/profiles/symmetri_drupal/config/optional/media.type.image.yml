@@ -1,14 +1,17 @@
 langcode: en
 status: true
 dependencies: {  }
-id: audio
-label: Audio
+id: image
+label: Image
 description: ''
-source: audio_file
+source: image
 queue_thumbnail_downloads: false
 new_revision: true
 source_configuration:
-  source_field: field_media_audio_file
+  source_field: field_media_image
 field_map:
+  name: name
   mimetype: field_mimetype
   filesize: field_filesize
+  width: field_width
+  height: field_h
