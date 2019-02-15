@@ -90,7 +90,8 @@
         "drupal/token": "^1.1",
         "drupal/video_embed_field": "^2.0",
         "drupal/viewsreference": "^1.2",
-        "harvesthq/chosen": "^1.8.2"
+        "harvesthq/chosen": "^1.8.2",
+        "drupal/field_formatter_class": "^1.1"
     },
     "require-dev": {
         "behat/mink": "~1.7",
