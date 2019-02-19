@@ -5,18 +5,21 @@
  * Functions to support theming in the compro_theme theme.
  */
 
-use Drupal\Component\Utility\SafeMarkup;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\Unicode;
 use Drupal\Core\Template\Attribute;
-use Drupal\node\Entity\Node;
-use Drupal\entity;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\media\Entity\Media;
+use Drupal\Core\Entity\Plugin\DataType\EntityReference;
 
 /**
  * Implements hook_preprocess_HOOK() for HTML document templates.
  */
 function compro_theme_preprocess_html(&$vars) {
+  // Classes to be applied to the body, but overridden if fields present.
+  $field_hero_class = Html::cleanCssIdentifier('page-lacks--field-hero');
+  $field_sections_class = Html::cleanCssIdentifier('page-lacks--field-sections');
+
   // Get classes out of the twig.
   if (!isset($vars['body_classes'])) {
     $vars['body_classes'] = [];
@@ -47,6 +50,16 @@ function compro_theme_preprocess_html(&$vars) {
 
     // D7-style body class by nid.
     $vars['body_classes'][] = Html::cleanCssIdentifier('node--nid-' . $node->id());
+
+    // Body class for the presence of field_hero.
+    if ($node->hasField('field_hero')) {
+      $field_hero_class = Html::cleanCssIdentifier('page-has--field-hero');
+    }
+
+    // Body class for the presence of field_sections.
+    if ($node->hasField('field_sections')) {
+      $field_sections_class = Html::cleanCssIdentifier('page-has--field-sections');
+    }
   }
 
   if (isset($parameters['taxonomy_term'])) {
@@ -58,8 +71,22 @@ function compro_theme_preprocess_html(&$vars) {
       $term = $parameters['taxonomy_term'];
     }
 
+    // Body class for the presence of field_hero.
+    if ($term->hasField('field_hero')) {
+      $field_hero_class = Html::cleanCssIdentifier('page-has--field-hero');
+    }
+
+    // Body class for the presence of field_sections.
+    if ($term->hasField('field_sections')) {
+      $field_sections_class = Html::cleanCssIdentifier('page-has--field-sections');
+    }
+
     $vars['body_classes'][] = Html::cleanCssIdentifier('page--vocabulary-' . $term->bundle());
   }
+
+  // Attach classes now that the page has been preprocessed for them.
+  $vars['body_classes'][] = $field_hero_class;
+  $vars['body_classes'][] = $field_sections_class;
 
   // Meta robots noindex for paginated content.
   if ($query = \Drupal::request()->query->get('page')) {
@@ -93,26 +120,7 @@ function compro_theme_preprocess_html(&$vars) {
 /**
 * Implements hook_preprocess_page() for PAGE document templates.
 */
-function compro_theme_preprocess_page(&$vars) {
-  $vars['splash_classes'] = [
-    'splash-header',
-  ];
-
-  // If the host entity has a hero, apply its style classes to splash-header.
-  $parameters = \Drupal::routeMatch()->getParameters()->all();
-  if (isset($parameters['node'])) {
-    $node = $parameters['node'];
-    if ($node->hasField('field_hero')) {
-      // Any field_style_... fields print as CSS classes.
-      $heroes = $node->get('field_hero')->referencedEntities();
-      $where = &$vars['splash_classes'];
-
-      foreach ($heroes as $hero) {
-        _compro_theme_entity_style_classes($vars, $hero, $where);
-      }
-    }
-  }
-}
+//function compro_theme_preprocess_page(&$vars) {}
 
 /**
  * Implements hook_preprocess_region().
@@ -121,12 +129,20 @@ function compro_theme_preprocess_region(&$vars) {
   $vars['html_tag'] = 'div';
   $vars['classes'] = [
     Html::cleanCssIdentifier('region'),
-    Html::cleanCssIdentifier('region-' . $vars['region']),
+    Html::cleanCssIdentifier('region--' . $vars['region']),
   ];
+  $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('inner');
 
   switch ($vars['region']) {
     case 'header':
       $vars['html_tag'] = 'header';
+
+      break;
+    case 'nav':
+      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
+      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('layout--flex-row');
+      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('justify-content--center');
 
       break;
     case 'sidebar_first':
@@ -147,6 +163,7 @@ function compro_theme_preprocess_node(&$vars) {
     Html::cleanCssIdentifier('node'),
     Html::cleanCssIdentifier('node--type-' . $node->bundle()),
     Html::cleanCssIdentifier('node--view-mode-' . $vars['view_mode']),
+    Html::cleanCssIdentifier('view-mode--' . $vars['view_mode']),
   ];
   if ($node->isPromoted()) {
     $vars['classes'][] = Html::cleanCssIdentifier('node--promoted');
@@ -162,16 +179,30 @@ function compro_theme_preprocess_node(&$vars) {
     case 'page':
       // Something by content type.
       break;
+  }
 
-    case 'video':
-      if ($vars['view_mode'] === 'teaser') {
-        $vars['classes'][] = Html::cleanCssIdentifier('rollover');
+  // Add classes and jazz to the image column, if present.
+  $vars['teaser_attributes'] = new Attribute([
+    'class' => [
+      Html::cleanCssIdentifier($vars['view_mode'] . '--image'),
+      'flex--none',
+      'text-align--center',
+    ],
+  ]);
 
-        $vars['content_attributes']['class'][] = 'node__content';
-        $vars['content_attributes']['class'][] = 'display--flex';
-        $vars['content_attributes']['class'][] = 'rollover--hover';
-        $vars['content_attributes']['class'][] = 'flex-direction--column';
-        $vars['content_attributes']['class'][] = 'justify-content--center';
+  // Classes and other preprocess by view mode.
+  switch ($vars['view_mode']) {
+    case 'teaser':
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--row');
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--left');
+      $vars['classes'][] = Html::cleanCssIdentifier('layout--flex-row');
+
+      if ($node->hasField('field_image')) {
+        $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('flex--auto');
+        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('padding-horizontal--8');
+        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('width--160px');
+        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('min-height--160px');
       }
 
       break;
@@ -191,22 +222,63 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
 
   $vars['classes'] = [
     Html::cleanCssIdentifier('taxonomy-term'),
-    Html::cleanCssIdentifier('vocabulary-' . $bundle),
+    Html::cleanCssIdentifier('vocabulary--' . $bundle),
+    Html::cleanCssIdentifier('taxonomy-term--view-mode--' . $vars['view_mode']),
+    Html::cleanCssIdentifier('view-mode--' . $vars['view_mode']),
   ];
 
   switch ($bundle) {
-    case 'company':
-      if ($vars['view_mode'] === 'small') {
-        $vars['classes'][] =Html::cleanCssIdentifier('flex--1');
-        $vars['attributes']['class'][] =Html::cleanCssIdentifier('display--flex');
-        $vars['attributes']['class'][] =Html::cleanCssIdentifier('flex-direction--column');
-        $vars['attributes']['class'][] =Html::cleanCssIdentifier('justify-content--flex-end');
-      }
-
+    case 'industry':
+      // Something by vocabulary.
       break;
   }
 
   $vars['attributes']['id'] = Html::cleanCssIdentifier('taxonomy-term-' . $term->id());
+
+  // Add classes and jazz to the image column, if present.
+  $vars['teaser_attributes'] = new Attribute([
+    'class' => [
+      Html::cleanCssIdentifier($vars['view_mode'] . '--image'),
+      'flex--none',
+      'text-align--center',
+    ],
+  ]);
+
+  // Add classes to the link wrapping the teaser images.
+  $vars['link_attributes'] = new Attribute([
+    'class' => [
+      Html::cleanCssIdentifier($vars['view_mode'] . '--link'),
+    ],
+    'href' => $vars['url'],
+  ]);
+
+  // Classes and other preprocess by view mode.
+  switch ($vars['view_mode']) {
+    case 'teaser':
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--row');
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--left');
+      $vars['classes'][] = Html::cleanCssIdentifier('layout--flex-row');
+
+      if ($term->hasField('field_image')) {
+        $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('flex--auto');
+        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('padding-horizontal--8');
+        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('width--160px');
+        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('min-height--160px');
+      }
+
+      break;
+
+    case 'small':
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex--1');
+
+      break;
+  }
+
+  // Any field_style_... fields print as CSS classes.
+  $where = &$vars['classes'];
+  _compro_theme_entity_style_classes($vars, $term, $where);
 }
 
 /**
@@ -224,7 +296,7 @@ function compro_theme_preprocess_eck_entity(&$vars) {
     Html::cleanCssIdentifier('eck-entity'),
     Html::cleanCssIdentifier('entity-type-' . $type),
     Html::cleanCssIdentifier('entity-bundle-' . $bundle),
-    Html::cleanCssIdentifier('view-mode-' . $view_mode),
+    Html::cleanCssIdentifier('view-mode--' . $view_mode),
     Html::cleanCssIdentifier('entity-' . $bundle . '-' . $entity->id()),
     Html::cleanCssIdentifier('from-parent--' . $ref_field),
   );
@@ -233,7 +305,11 @@ function compro_theme_preprocess_eck_entity(&$vars) {
   // Style classes by type.
   switch ($type) {
     case 'card':
-      $vars['attributes']['class'][] =Html::cleanCssIdentifier('flex--1');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex--1');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('padding-horizontal--8');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--column');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--space-between');
 
       break;
   }
@@ -254,21 +330,28 @@ function compro_theme_preprocess_eck_entity(&$vars) {
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
       $vars['attributes']['class'][] = HTML::cleanCssIdentifier('align-self--center');
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--space-around');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('layout--flex-row');
 
       break;
 
     case 'column':
-      $vars['attributes']['class'][] = 'display--flex';
-      $vars['attributes']['class'][] = 'flex-direction--column';
-
-      break;
-
-    case 'company_reference':
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
-      $vars['attributes']['class'][] = HTML::cleanCssIdentifier('align-self--center');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--flex-end');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-align--center');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-transform--uppercase');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--column');
+
+      // Check if column is empty or has only a spacer.
+      // @TODO Do a loop check for multiple spacers?
+      if ($entity->hasField('field_components')) {
+        $values = $entity->get('field_components')->getValue();
+        if (!isset($values) || !count($values)) {
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('column--empty');
+        }
+        elseif (count($values) === 1 && isset($values[0]['target_id'])) {
+          $component = \Drupal::entityTypeManager()->getStorage('component')->load($values[0]['target_id']);
+          if ($component->bundle() === 'spacer') {
+            $vars['attributes']['class'][] = Html::cleanCssIdentifier('column--empty');
+          }
+        }
+      }
 
       break;
 
@@ -277,6 +360,12 @@ function compro_theme_preprocess_eck_entity(&$vars) {
       if (isset($values[0]['wrapper'])) {
         $vars['html_tag'] = $values[0]['wrapper'];
       }
+
+      break;
+
+    case 'layout':
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
 
       break;
 
@@ -289,21 +378,46 @@ function compro_theme_preprocess_eck_entity(&$vars) {
 
       break;
 
-    case 'rollover':
-      $vars['attributes']['class'][] = 'rollover';
-      break;
+    case 'term_listing':
+      // Set the child display mode as a class to the container.
+      $value = $entity->get('field_term_viewmode')->getValue();
+      $mode = 'default';
+      if (isset($value[0]['value'])) {
+        $mode = $value[0]['value'];
+      }
 
-    case 'row':
-      $vars['attributes']['class'][] = 'display--flex';
-      $vars['attributes']['class'][] = 'flex-direction--row';
+      $vars['child_mode'] = $mode;
+      // Set classes on the container based on the child display mode.
+      switch ($mode) {
+        case 'small':
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-wrap--wrap');
+
+          break;
+      }
 
       break;
   }
 
-  if ($ref_field !== 'field_hero') {
-    $where = &$vars['attributes']['class'];
-    _compro_theme_entity_style_classes($vars, $entity, $where);
-  }
+  $where = &$vars['attributes']['class'];
+  _compro_theme_entity_style_classes($vars, $entity, $where);
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ */
+function compro_theme_preprocess_user(&$vars) {
+  $vars['html_tag'] = 'div';
+  $entity = $vars['user'];
+  $view_mode = $vars['elements']['#view_mode'];
+
+  $vars['attributes']['class'] = [
+    Html::cleanCssIdentifier('user'),
+    Html::cleanCssIdentifier('view-mode--' . $view_mode),
+    Html::cleanCssIdentifier('user-uid--' . $entity->id()),
+  ];
+  $vars['attributes']['id'] = Html::cleanCssIdentifier( 'user--' . $entity->id());
 }
 
 /**
@@ -348,6 +462,11 @@ function compro_theme_preprocess_field(&$vars) {
     || $vars['field_name'] === 'field_longtext'
   ) {
     $vars['wrapped'] = FALSE;
+
+    // Unless the formatter is just the label, in which case we wrap it.
+    if ($vars['element']['#formatter'] === 'entity_reference_label') {
+      $vars['wrapped'] = TRUE;
+    }
   }
 
   // Tweak the wrapper HTML tag.
@@ -377,8 +496,22 @@ function compro_theme_preprocess_field(&$vars) {
     }
   }
 
-  if ($vars['field_name'] === 'title') {
-    $vars['html_tag'] = 'h2';
+  // Fields by field machine name.
+  switch ($vars['field_name']) {
+    case 'field_style_hr':
+      // Put a class on the truth value.
+      $class = 'card-hr--hide';
+      if ($vars['element'][0]['#markup'] === 'card-hr--included') {
+        $class = 'card-hr--show';
+      }
+      $vars['classes'][] = Html::cleanCssIdentifier($class);
+
+      break;
+
+    case 'title':
+      $vars['html_tag'] = 'h2';
+
+      break;
   }
 }
 
@@ -457,15 +590,21 @@ function compro_theme_preprocess_views_view(&$vars) {
 
   // Class out by view id.
   switch ($vars['id']) {
-    case 'blog':
-    case 'case_study':
-    case 'event':
-    case 'resource':
+    case 'content':
+      if ($vars['display_id'] === 'block_3') {
+        $vars['content_attributes']['class'][] = 'display--flex';
+        $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+        $vars['content_attributes']['class'][] = 'layout--flex-row';
+        $vars['content_attributes']['class'][] = 'justify-content--space-around';
+      }
+
+      break;
+
     case 'taxonomy_term':
+    case 'people':
       $vars['content_attributes']['class'][] = 'display--flex';
       $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
-      $vars['content_attributes']['class'][] = 'layout--3-column';
-      $vars['content_attributes']['class'][] = 'child-max-width--320px';
+      $vars['content_attributes']['class'][] = 'layout--flex-row';
       $vars['content_attributes']['class'][] = 'justify-content--space-around';
 
       break;
@@ -503,6 +642,20 @@ function compro_theme_preprocess_input(&$vars) {
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
+function compro_theme_theme_suggestions_taxonomy_term_alter(&$suggestions, $vars) {
+  $term = $vars['elements']['#taxonomy_term'];
+  $sanitized_view_mode = strtr($vars['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'taxonomy_term__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'taxonomy_term__' . $term->id() . '__' . $sanitized_view_mode;
+
+  return $suggestions;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
 function compro_theme_theme_suggestions_field_alter(&$suggestions, $vars) {
   // Allow templates by field formatter.
   if (isset($vars['element']['#formatter'])) {
@@ -523,14 +676,15 @@ function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
     . '-' . $entity->bundle() . '-' . $entity->id());
 
   foreach ($fields as $name => $definition) {
+    $type = $definition->getType();
+    $settings = $definition->getSettings();
+
     if (Unicode::substr($name, 0, 11) === 'field_style') {
       // field_style_... values as classes (typically _classes.scss)
 
       // Handle different field types, mainly boolean and list_string
-      $type = $definition->getType();
       if ($type === 'boolean') {
         // Make an array of on/off values.
-        $settings = $definition->getSettings();
         $switch_vals = [
           $settings['off_label'],
           $settings['on_label'],
@@ -549,27 +703,46 @@ function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
         }
       }
     }
-    else {
-      if (in_array(Unicode::substr($name, 0, 11), [
-        'field_image',
-        'field_video',
-      ])) {
-        // Whether an image is present (especially for backgrounds).
-
-        $value = $entity->get($name)->getValue();
-        if (isset($value[0]['target_id'])) {
-          $where[] = Html::cleanCssIdentifier('has-' . $name);
+    else if (in_array(Unicode::substr($name, 0, 11), [
+      'field_image',
+      'field_video',
+    ])) {
+      // Whether an image is present (especially for backgrounds).
+      $value = $entity->get($name)->getValue();
+      if (isset($value[0]['target_id'])) {
+        $where[] = Html::cleanCssIdentifier('has-' . $name);
+      }
+    }
+    else if (Unicode::substr($name, 0, 10) === 'field_data') {
+      // Add field_data_... as HTML data-*="" attributes using the field value.
+      $data_attr = Unicode::substr($name, 11);
+      $value = $entity->get($name)->getValue();
+      foreach ($value as $key => $val) {
+        if (isset($val['value'])) {
+          $vars['attributes'][Html::cleanCssIdentifier('data-' . $data_attr)] = $val['value'];
         }
       }
-      else {
-        if (Unicode::substr($name, 0, 10) === 'field_data') {
-          $data_attr = Unicode::substr($name, 11);
-          $value = $entity->get($name)->getValue();
-          foreach ($value as $key => $val) {
-            if (isset($val['value'])) {
-              $vars['attributes'][Html::cleanCssIdentifier('data-' . $data_attr)] = $val['value'];
-            }
-          }
+    }
+    else if ($type === 'entity_reference_display') {
+      // Set the child display mode as a class to the container.
+      $value = $entity->get($name)->getValue();
+      $mode = 'default';
+      if (isset($value[0]['value'])) {
+        $mode = $value[0]['value'];
+      }
+
+      $vars['child_mode'] = $mode;
+      $where[] = Html::cleanCssIdentifier('child-display-mode--' . $mode);
+    }
+    else if ($type === 'entity_reference' && isset($settings['target_type'])
+      && $settings['target_type'] === 'taxonomy_term'
+    ) {
+      // Class nodes/etc. with tagged taxonomy terms.
+      $values = $entity->get($name)->referencedEntities();
+      foreach ($values as $key => $term) {
+        if (!is_null($term->label())) {
+          $where[] = Html::cleanCssIdentifier('tagged-with-tid--' . $term->id());
+          $where[] = Html::cleanCssIdentifier('tagged-with-vocabulary--' . $term->bundle());
         }
       }
     }

@@ -14,12 +14,18 @@
           // Top-pad the next sibling to the header plus change.
           $headroom.each(function () {
             var $this = $(this),
-              thisHeight = $this.height(),
-              topPad = (window.innerWidth >= 615) ? 60 : 20;
+              thisHeight = $this.height();
 
-            $this.next().css({
-              'padding-top': (thisHeight + topPad) + 'px'
-            });
+            if (window.innerWidth >= 1024) {
+              $this.next().find('.entity-bundle-stripe').css({
+                'padding-top': (thisHeight + 80) + 'px'
+              });
+            }
+            else {
+              $this.next().find('.entity-bundle-stripe').css({
+                'padding-top': '60px'
+              });
+            }
           });
         };
 

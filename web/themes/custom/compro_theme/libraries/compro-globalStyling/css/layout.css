@@ -2,102 +2,321 @@
  * @file
  * Main layout for the theme.
  */
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Make the content area tall enough by default that desktops never see the
+ * footer super high on the page.
  */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
 main {
-  min-height: 37vh; }
+  min-height: 37vh;
+}
 
-.block-inverted-logo-block {
-  margin: 0 10px 10px 0;
-  max-width: 150px; }
-  @media all and (max-width: 770px) {
-    .block-inverted-logo-block {
-      margin: 0 auto 10px; } }
-.block-social {
-  width: 115px; }
-  @media all and (max-width: 770px) {
-    .block-social {
-      margin: 0 auto 10px; } }
-.block-system-branding-block {
-  margin: 36px 40px 16px 20px;
-  max-width: 125px;
-  min-width: 105px; }
-  @media all and (max-width: 1300px) {
-    .block-system-branding-block {
-      margin: 36px 20px 16px 20px; } }
-  @media all and (max-width: 1225px) {
-    .block-system-branding-block {
-      margin: 16px 20px; } }
-  @media all and (max-width: 225px) {
-    .block-system-branding-block {
-      min-width: inherit; } }
+/**
+ * Since they're only used for spacing at desktop width, hide empty columns on
+ * tablet/mobile.
+ */
+@media all and (max-width: 1023px) {
+  .column--empty {
+    display: none;
+  }
+}
 
-.entity-type-section {
-  padding: 80px 20px; }
+/**
+ * Ensure columns are not allowed to become too narrow, starting at the wrap
+ * breakpoint.
+ */
+@media all and (max-width: 1023px) {
+  .entity-bundle-column {
+    min-width: 270px;
+  }
+}
+@media all and (max-width: 767px) {
+  .entity-bundle-column {
+    padding-top: 20px;
+  }
+  .entity-bundle-column:last-child {
+    padding-bottom: 20px;
+  }
+}
 
-.entity-bundle-column {
-  margin: 0; }
-  .entity-bundle-column.entity-type-section:not(.padding--0) {
-    padding: 20px 20px; }
-  @media all and (max-width: 1023px) {
-    .entity-bundle-column {
-      /* This mq matches to where display--flex begins wrapping. */
-      min-width: 270px; } }
-.entity-bundle-row {
-  padding: 0; }
-  @media all and (max-width: 770px) {
-    .entity-bundle-row {
-      flex-direction: column; } }
-@media all and (max-width: 1225px) {
-  .entity-bundle-cards {
-    display: block; }
-    .entity-bundle-cards > .entity-type-card {
-      display: inline-block; } }
+/**
+ * Wrap layouts in the content area when they get to a narrow desktop-ish viewport.
+ *
+ * And then switch layouts from side-by-side flexes to top-to-bottom flexes at
+ * narrow viewports.
+ */
+@media all and (max-width: 1023px) {
+  .entity-bundle-layout,
+  .layout--flex-row {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+@media all and (max-width: 767px) {
+  .entity-bundle-layout,
+  .layout--flex-row {
+    flex-direction: column;
+  }
+}
+
+/**
+ * By default, stripes should have generous padding.
+ *
+ * Place the overriding class after it in order for cascade purposes.
+ */
+.entity-bundle-stripe {
+  padding: 80px 20px;
+}
+@media all and (max-width: 767px) {
+  .entity-bundle-stripe {
+    padding: 60px 20px;
+  }
+}
 .entity-bundle-stripe > .inner {
   margin: 0 auto;
-  max-width: 1200px; }
+  max-width: 1440px;
+}
+.child-inner-max-width--inherit > .inner {
+  margin: 0;
+  max-width: inherit;
+}
+.padding--0 {
+  padding: 0;
+}
+@media all and (max-width: 767px) {
+  .padding--0 {
+    padding: 0 20px;
+  }
+}
 
-.page {
-  text-align: center; }
+/**
+ * The wrapper around all the footer regions separately.
+ *
+ * In many designs various different footers have different backgrounds and things.
+ * When they don't, those styles can be applied at the wrapper level.
+ */
+.footer-wrapper {
+  padding: 45px 0 20px;
+}
+.footer-wrapper a {
+  color: #fff;
+}
+.footer-wrapper a:hover,
+.footer-wrapper a:active,
+.footer-wrapper a:focus {
+  color: #a3b3d0;
+}
 
+/**
+ * The wrapper for both the top bar and the splash.
+ *
+ * Applying a default background at this level, which will be covered entirely
+ * by a splash.
+ */
+.header-and-splash {
+  background: #1a428a url('../images/bg_hero_default.jpg') center center scroll no-repeat;
+  background-size: cover;
+}
+
+/**
+ * Layout classes for hiding (see below for showing) at various viewports.
+ */
+@media all and (max-width: 767px) {
+  .hide--narrow {
+    display: none;
+  }
+}
+@media all and (max-width: 1023px) {
+  .hide--medium {
+    display: none;
+  }
+}
+@media all and (min-width: 1024px) {
+  .hide--wide {
+    display: none;
+  }
+}
+
+/**
+ * Styles that apply at the global scope of the page but not the body.
+ */
+.page {}
+
+/**
+ * Styles specific to the lack of field_hero on a page.
+ */
+.page-lacks--field-hero {}
+
+/**
+ * Styles specific to the lack of field_hero (body stripes) on a page.
+ */
+.page-lacks--field-sections {}
+.page-lacks--field-sections .view-mode--full > .node__content {
+  font-size: 1.25em;
+}
+
+
+/**
+ * Regions in general, with specific overrides below.
+ *
+ * The max-width on the inner ensures that a region could, for instance, have a
+ * background color, while the contents will have a reasonable measure. The 20px
+ * horizontal padding ensures there's enough space on either side for a touchscreen
+ * device user to scroll with their thumb along the edge of the page.
+ *
+ * Any region containing stripe sections shouldn't have an inner max-width or
+ * thumb-scroll padding, so those are overridden in one fell swoop collectively.
+ */
+.region {}
 .region > .inner {
   margin: 0 auto;
-  max-width: 1200px; }
-.region-content-top {
-  position: relative;
-  z-index: 3; }
-.region-content > .inner {
-  max-width: inherit; }
-.region-splash {
-  padding: 120px 0 0; }
-  .has-field-image-background:not(.has-field-video-background) .region-splash .block-hero-title-block {
-    max-width: 550px; }
-  @media all and (max-width: 1440px) {
-    .region-splash {
-      padding: 0 20px; } }
-  @media all and (max-width: 1440px) and (min-width: 770px) {
-    .has-field-video-background .region-splash {
-      padding-top: 4.5% !important; }
-      .has-field-video-background .region-splash > .inner {
-        max-height: 585px; } }
+  max-width: 1440px;
+  padding: 0 20px;
+}
+.page-has--field-hero .region--splash > .inner,
+.page-has--field-sections .region--content > .inner {
+  max-width: inherit;
+  padding: 0;
+}
 
-/*# sourceMappingURL=layout.css.map */
+/**
+ * Header region (usually just logo block).
+ */
+.region--header {}
+
+/**
+ * Utility region (usually just utility menu).
+ */
+.region--utility {}
+
+.menu--utility {
+  display: inline-block;
+}
+
+/**
+ * Nav region (usually just main menu).
+ */
+.region--nav {}
+
+/**
+ * Splash region (One stripe distinct from the others).
+ */
+.region--splash {}
+
+/**
+ * Pre-content region.
+ */
+.region--pre-content {}
+
+/**
+ * Content-top override because the tabs are so close to the main menu dropdown.
+ */
+.region--content-top {
+  position: relative;
+  z-index: 3;
+}
+
+/**
+ * Content region.
+ */
+.region--content {}
+.page-lacks--field-sections .region--content > .inner {
+  /* @see .page-lacks--field-sections */
+  max-width: 960px;
+  max-width: 75ch;
+  padding: 40px 20px 80px;
+}
+
+/**
+ * Content_bottom region.
+ */
+.region--content-bottom {}
+
+/**
+ * Post_content region.
+ */
+.region--post-content {}
+
+/**
+ * Footer region (Footer logo, socials, perhaps copyright or other blocks).
+ */
+.region--footer {}
+
+/**
+ * Footer menu region (repeat of main menu).
+ */
+.region--footer-menu {}
+
+/**
+ * Footer utility region (Often for copyright and such. Small text).
+ */
+.region--footer-utility {}
+
+/**
+ * Layout classes for showing (see above for hiding) at various viewports.
+ */
+@media all and (max-width: 767px) {
+  .show--narrow {
+    display: inherit;
+  }
+}
+@media all and (max-width: 1023px) {
+  .show--medium {
+    display: inherit;
+  }
+}
+@media all and (min-width: 1024px) {
+  .show--wide {
+    display: inherit;
+  }
+}
+
+/**
+ * Top bar. Everything in the header that's not the splash. Often fixed.
+ */
+.top-bar {
+  background-color: #1a428a;
+}
+  @media all and (min-width: 1024px) {
+    .js .top-bar {
+      background-color: transparent;
+    }
+  }
+  .top-bar > .inner {
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+.top-bar a {
+  color: #fff;
+}
+.top-bar a:hover,
+.top-bar a:active,
+.top-bar a:focus {
+  color: #666;
+}
+
+/**
+ * The menu areas inside the top bar.
+ */
+.utility-and-nav {}
+
+/**
+ * Consistent stylings per view mode.
+ */
+.view-mode--full {}
+.view-mode--full > .node__content > .submitted,
+.view-mode--full > .node__content > img {
+  margin-bottom: 30px;
+}
+.view-mode--small {
+  margin-bottom: 40px;
+}
+@media all and (min-width: 768px) {
+  .view-mode--small {
+    min-width: 280px;
+  }
+}
+.view-mode--teaser {
+  margin-bottom: 80px;
+}

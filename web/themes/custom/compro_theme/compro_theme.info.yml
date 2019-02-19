@@ -10,8 +10,8 @@ libraries:
   - compro_theme/compro-propertyValue
   - compro_theme/compro-animate
   - compro_theme/compro-autotrack
-  - compro_theme/compro-fontawesome
   - compro_theme/compro-headroom
+  - compro_theme/compro-superfish
   - compro_theme/compro-tippyjs
   - compro_theme/compro-globalStyling
   - compro_theme/compro-hamburger

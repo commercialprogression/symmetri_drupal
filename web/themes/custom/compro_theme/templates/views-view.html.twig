@@ -4,14 +4,14 @@
     {{ title }}
   {% endif %}
   {{ title_suffix }}
-  {% if header %}
-    <div{{ header_attributes }}>
-      {{ header }}
-    </div>
-  {% endif %}
   {% if exposed %}
     <div{{ filters_attributes }}>
       {{ exposed }}
+    </div>
+  {% endif %}
+  {% if header %}
+    <div{{ header_attributes }}>
+      {{ header }}
     </div>
   {% endif %}
   {% if attachment_before %}

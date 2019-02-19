@@ -1,561 +1,260 @@
 /**
  * @file
- * Style for accordions.
+ * Component and class-level styles.
  */
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Background-color classes for the settings dropdowns. Add here as needed.
  */
+.background-color--black {
+  background-color: #222;
+}
+.background-color--grey-dark {
+  background-color: #444;
+}
+.background-color--grey {
+  background-color: #999;
+}
+.background-color--grey-light {
+  background-color: #f5f5f5;
+}
+.background-color--white {
+  background-color: #fff;
+}
+.background-color--main,
+.background-color--blue {
+  background-color: #1a428a;
+}
+.background-color--main-dark,
+.background-color--blue-dark {
+  background-color: #0a1a37;
+}
+.background-color--main-light,
+.background-color--blue-light {
+  background-color: #a3b3d0;
+}
+.background-color--second {
+  background-color: #009abf;
+}
+.background-color--second-dark {
+  background-color: #003e4c;
+}
+.background-color--second-light {
+  background-color: #99d7e5 ;
+}
+.background-color--third {
+  background-color: #f0ad33;
+}
+.background-color--third-dark {
+  background-color: #604514;
+}
+.background-color--third-light {
+  background-color: #f9dead;
+}
+.background-color--accent {
+  background-color: #c4d701;
+}
+
 /**
- * Common settings.
+ * A class for a settings checkbox that hides background images on mobile.
  */
+@media all and (max-width: 1023px) {
+  .background-image-display-mobile--hide {
+    background-image: none;
+  }
+}
+
 /**
- * Colors.
+ * Header logo block.
+ */
+.block-system-branding-block {}
+.block-system-branding-block a {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 18px 0 16px;
+}
+.block-system-branding-block h1 {
+  line-height: 0;
+}
+
+/**
+ * Blockquote checkbox classes for adding opening and closing quotes as needed.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Especially useful if the opening/closing quotes have to look different than
+ * the text in some way.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-details {
-  border-bottom: 1px solid;
-  margin: 10px 0;
-  padding: 5px 15px;
-  text-align: left;
-  position: relative; }
-  details > summary {
-    display: block;
-    cursor: pointer;
-    padding: 2px 5px; }
-    details > summary:focus {
-      outline: none; }
-    details > summary::-webkit-details-marker {
-      display: none; }
-    details > summary::marker {
-      display: none; }
-    details > summary::after {
-      color: #666;
-      content: '\2304';
-      font-size: 30px;
-      line-height: 1;
-      position: absolute;
-      right: 24px;
-      top: -5px;
-      transform: scaleY(1);
-      -moz-transform: scaleY(1);
-      -o-transform: scaleY(1);
-      -webkit-transform: scaleY(1);
-      transition: all .2s ease-in; }
-  details[open] > summary {
-    margin-bottom: 20px; }
-    details[open] > summary:after {
-      top: 10px;
-      transform: scaleY(-1);
-      -moz-transform: scaleY(-1);
-      -o-transform: scaleY(-1);
-      -webkit-transform: scaleY(-1); }
+.blockquote--closing-include p:last-child::after {
+  content: "\201D";
+}
+.blockquote--opening-include p:first-child::before {
+  content: "\201C";
+}
 
 /**
- * @file
- * Style for the Card entity type.
+ * Default lines for cards (under image or faux top border).
  */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.card-text-focal--center > .inner {
-  left: 10px;
-  right: 10px; }
-.card-text-focal--left > .inner {
-  left: 10px;
-  right: 35%; }
-  @media all and (max-width: 1440px) {
-    .card-text-focal--left > .inner {
-      right: 10px; } }
-.card-text-focal--right > .inner {
-  left: 35%;
-  right: 10px; }
-  @media all and (max-width: 1440px) {
-    .card-text-focal--right > .inner {
-      left: 10px; } }
-
-.entity-bundle-cards .entity-type-card.view-mode-default {
-  padding: 0 1.2rem; }
-  .entity-bundle-cards .entity-type-card.view-mode-default .field-name--title {
-    font-size: 20px;
-    color: #0faeb7;
-    margin-top: 2rem;
-    font-weight: 500; }
-  .entity-bundle-cards .entity-type-card.view-mode-default img {
-    margin: 0 auto; }
-  .entity-bundle-cards .entity-type-card.view-mode-default h2
-  .field-type--text-long {
-    text-align: left; }
-.entity-bundle-cards .entity-type-card.entity-bundle-rollover {
-  margin: 0;
-  padding: 0; }
-  .entity-bundle-cards .entity-type-card.entity-bundle-rollover .entity-bundle-heading {
-    color: #ffcb05; }
-  .entity-bundle-cards .entity-type-card.entity-bundle-rollover .entity-bundle-text,
-  .entity-bundle-cards .entity-type-card.entity-bundle-rollover .entity-bundle-rich-text {
-    color: #fff; }
-    .entity-bundle-cards .entity-type-card.entity-bundle-rollover .entity-bundle-text .field-name--field-text,
-    .entity-bundle-cards .entity-type-card.entity-bundle-rollover .entity-bundle-rich-text .field-name--field-text {
-      font-weight: 500; }
-.entity-bundle-cards .entity-type-card .field-type--text-long {
-  margin-bottom: 10px; }
-@media all and (max-width: 770px) {
-  .entity-bundle-cards .entity-type-card {
-    margin-bottom: 80px; }
-    .entity-bundle-cards .entity-type-card:last-child {
-      margin-bottom: 0; } }
-
-/**
- * @file
- * Style for entities in general.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.entity-bundle-heading {
-  color: #0e3e54;
-  max-width: 800px; }
-  .path-frontpage .entity-bundle-heading {
-    max-width: none; }
-  .color--white .entity-bundle-heading {
-    color: #fff; }
-.entity-bundle-column {
-  padding-left: 1rem;
-  padding-right: 1rem; }
-  .entity-bundle-column .entity-bundle-heading,
-  .entity-bundle-column .entity-bundle-rich-text,
-  .entity-bundle-column .entity-bundle-list {
-    max-width: 550px; }
-.entity-bundle-link {
-  padding-top: 1rem; }
-.entity-bundle-rich-text ul {
-  margin: 20px 40px;
-  max-width: 70ch;
-  overflow-wrap: break-word;
-  word-wrap: break-word; }
-  .entity-bundle-rich-text ul li {
-    list-style: none;
-    position: relative;
-    padding-left: 25px;
-    text-align: left; }
-    .entity-bundle-rich-text ul li:before {
-      content: '\2023';
-      position: absolute;
-      left: 0;
-      color: #0e3e54; }
-[class*='background-color--'] .entity-bundle-stripe input {
-  border: 1px solid #ebebeb; }
-.entity-bundle-company-reference .vocabulary-company {
-  padding-left: 10px;
-  padding-right: 10px; }
-  .entity-bundle-company-reference .vocabulary-company a {
-    min-height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  .entity-bundle-company-reference .vocabulary-company .field-name--field-subtitle {
-    min-height: 40px; }
-  @media all and (max-width: 1225px) {
-    .entity-bundle-company-reference .vocabulary-company {
-      display: inline-block;
-      margin: 50px 0; } }
-@media all and (max-width: 1225px) {
-  .entity-bundle-company-reference {
-    display: block; } }
-.entity-type-section .list-style-type--fa-check-circle > li {
-  list-style: none;
-  position: relative;
-  padding-left: 60px;
-  text-align: left;
-  line-height: 21px;
-  margin-bottom: 1rem;
-  min-height: 29px;
-  max-width: 70ch;
-  margin-left: auto;
-  margin-right: auto; }
-  .entity-type-section .list-style-type--fa-check-circle > li:before {
-    content: '\f058';
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    font-size: 29px;
-    line-height: 29px;
-    color: #3ca0ce;
-    position: absolute;
-    font-weight: 900;
-    left: 0; }
-.entity-type-section.has-field-video-background .entity-bundle-heading {
-  color: #fff; }
-@media all and (max-width: 770px) {
-  .entity-type-section .flex-direction--row {
-    flex-direction: column; } }
-
-.node.node--view-mode-teaser > h2 {
-  font-size: 1.5em; }
-.node.node--view-mode-full > .node__content > .field {
-  max-width: 1200px;
-  margin: 0 auto; }
-.node.node--type-release .submitted {
-  margin: 10px 0; }
-
-.node__links {
-  margin: 20px 0 0; }
-
-.footer-wrapper {
-  background-color: #0e3e54; }
-  .footer-wrapper > div {
-    flex-direction: column-reverse;
-    padding-top: 10px; }
-  .footer-wrapper .menu {
-    display: flex;
-    flex-direction: column; }
-    .footer-wrapper .menu a,
-    .footer-wrapper .menu span {
-      color: #fff;
-      font-weight: 100;
-      padding: 5px 0;
-      font-size: 14px;
-      display: inline-block; }
-      .footer-wrapper .menu a:hover,
-      .footer-wrapper .menu span:hover {
-        color: #ffcb05;
-        text-shadow: 1px 0 0; }
-  .footer-wrapper ul.menu > li.menu-item--expanded {
-    vertical-align: top;
-    flex-grow: 1; }
-    .footer-wrapper ul.menu > li.menu-item--expanded > a {
-      color: #0faeb7;
-      font-size: 18px;
-      font-weight: 700; }
-      .footer-wrapper ul.menu > li.menu-item--expanded > a:hover {
-        text-shadow: none; }
-    .footer-wrapper ul.menu > li.menu-item--expanded ul.menu {
-      display: block; }
-      .footer-wrapper ul.menu > li.menu-item--expanded ul.menu > li {
-        display: block; }
-  .footer-wrapper .region-footer-utility .menu a,
-  .footer-wrapper .region-footer-utility .menu span {
-    font-size: 12px; }
-  .footer-wrapper .region-footer-utility .sencha-badge {
-    margin-bottom: 2rem; }
-  @media all and (max-width: 770px) {
-    .footer-wrapper .region-footer-utility .sencha-badge {
-      display: inline-block; }
-    .footer-wrapper .region-footer-utility .pipe-spaced li:after {
-      content: none; } }
-  .footer-wrapper .social {
-    margin-top: 1rem; }
-    .footer-wrapper .social a::before {
-      border-radius: 2px;
-      margin-right: .5rem;
-      background-color: #0faeb7;
-      padding: 5px 8px;
-      color: #0e3e54; }
-    .footer-wrapper .social a:last-child:before {
-      margin-right: 0; }
-    .footer-wrapper .social a:hover::before {
-      background-color: #ffcb05;
-      color: #0e3e54; }
-  @media all and (min-width: 770px) {
-    .footer-wrapper ul.menu {
-      flex-direction: row; }
-    .footer-wrapper > div {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      flex-direction: row; } }
-
-/**
- * @file
- * Style for sticky headers at the top of pages.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-@media all and (min-width: 1226px) {
-  .headroom {
-    left: 0;
-    position: fixed;
-    right: 0;
-    -webkit-transition: all .3s ease-in;
-    -o-transition: all .3s ease-in;
-    -moz-transition: all .3s ease-in;
-    transition: all .3s ease-in;
-    will-change: transform;
-    z-index: 100; }
-    .path-frontpage .headroom--top {
-      background-color: transparent; }
-    .headroom--top {
-      background-color: rgba(14, 62, 84, 0.9); }
-    .headroom--not-top:not(.headroom--unpinned) {
-      -webkit-transform: translateY(0%);
-      -moz-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      -o-transform: translateY(0%);
-      transform: translateY(0%); }
-    .headroom--not-top:not(.headroom--pinned) {
-      -webkit-transform: translateY(-100%);
-      -moz-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-      -o-transform: translateY(-100%);
-      transform: translateY(-100%); }
-    .headroom--pinned {
-      background-color: rgba(14, 62, 84, 0.95);
-      -webkit-transform: translateY(0%);
-      -moz-transform: translateY(0%);
-      -ms-transform: translateY(0%);
-      -o-transform: translateY(0%);
-      transform: translateY(0%); }
-    .headroom--unpinned {
-      -webkit-transform: translateY(-100%);
-      -moz-transform: translateY(-100%);
-      -ms-transform: translateY(-100%);
-      -o-transform: translateY(-100%);
-      transform: translateY(-100%); } }
-/**
- * @file
- * Style for heroes at the top of pages.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.has-field-video-background .field-name--field-video-background {
-  display: none; }
-@media all and (min-width: 768px) {
-  .has-field-video-background {
-    position: relative; }
-    .has-field-video-background .contextual-region {
-      position: static; }
-    .has-field-video-background .entity-type-component {
-      position: relative;
-      z-index: 3; }
-    .has-field-video-background .field-name--field-video-background {
-      bottom: 0;
-      display: block;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 1; }
-      .has-field-video-background .field-name--field-video-background > video {
-        min-width: 1200px; } }
-    @media all and (min-width: 768px) and (max-width: 1225px) {
-      .has-field-video-background .field-name--field-video-background {
-        top: 80px; } }
-@media all and (min-width: 768px) {
-    .has-field-video-background:before {
-      background-color: #227982;
-      background-color: rgba(34, 121, 130, 0.8);
-      bottom: 0;
-      content: '';
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 2; } }
-
-.splash-header.has-field-image-background {
-  min-height: 57vh; }
-.splash-header .block-hero-title-block {
-  display: inline-block; }
-
-.path-frontpage .region-splash a {
-  color: #ffcb05; }
-  .path-frontpage .region-splash a:hover {
-    color: #3ca0ce; }
-.path-frontpage .block-hero-title-block a,
-.path-frontpage .block-hero-title-block p {
-  font-size: 18px; }
-
-/**
- * @file
- * Style for hubspot form embeds.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-@media all and (min-width: 670px) {
-  .hs-form input:not([type]),
-  .hs-form input[type="email"],
-  .hs-form input[type="number"],
-  .hs-form input[type="password"],
-  .hs-form input[type="tel"],
-  .hs-form input[type="url"],
-  .hs-form input[type="text"] {
-    width: 95%; } }
-.hs-form ul {
-  list-style: none; }
-.hs-form .clearfix,
-.hs-form .field,
-.hs-form .hs-form-field {
-  margin-bottom: 20px; }
-.hs-form .hsErrMsgContainer ul {
-  color: black; }
-.hs-input:-moz-placeholder {
-  color: #bfbfbf; }
-.hs-input::-webkit-input-placeholder {
-  color: #bfbfbf; }
-
-input.hs-input.error,
-.hs-form div.field.error input,
-.hs-form div.field.error textarea,
-.hs-form div.field.error .chzn-choices,
-textarea.hs-input.error {
-  border-color: #de8b20; }
-
-input.hs-input.error:focus,
-.hs-form div.field.error input:focus,
-.hs-form div.field.error textarea:focus,
-.hs-form div.field.error .chzn-choices:focus,
-textarea.hs-input.error:focus {
-  border-color: #f9e8d2; }
-
-.help-block {
-  color: gray;
-  display: block;
-  max-width: 600px; }
-.help-inline {
-  color: gray;
-  padding-left: 5px; }
-
-.hsformerror {
-  background-color: #f9e8d2;
-  border: 1px solid black;
+.card-hr--show {
+  background-color: #666;
+  height: 4px;
+  line-height: 0;
+}
+.card-hr--hide {
   display: none;
-  height: auto;
-  z-index: 99; }
-  .hsformerror .close-form-error {
-    float: right;
-    display: inline; }
-
-.inline-inputs span,
-.inline-inputs input {
-  display: inline-block; }
+}
 
 /**
- * @file
- * Menu component.
+ * Allow links component buttons to have selectable backgrounds.
  */
+.child-element-background-color--black > *,
+.child-links-background-color--black a {
+  background-color: #222;
+}
+.child-element-background-color--grey-dark > *,
+.child-links-background-color--grey-dark a {
+  background-color: #444;
+}
+.child-element-background-color--grey > *,
+.child-links-background-color--grey a {
+  background-color: #999;
+}
+.child-element-background-color--grey-light > *,
+.child-links-background-color--grey-light a {
+  background-color: #f5f5f5;
+}
+.child-element-background-color--white > *,
+.child-links-background-color--white a {
+  background-color: #fff;
+}
+.background-color--main,
+.child-element-background-color--blue > *,
+.child-links-background-color--blue a {
+  background-color: #1a428a;
+}
+.background-color--main-dark,
+.child-element-background-color--blue-dark > *,
+.child-links-background-color--blue-dark a {
+  background-color: #0a1a37;
+}
+.background-color--main-light,
+.child-element-background-color--blue-light > *,
+.child-links-background-color--blue-light a {
+  background-color: #a3b3d0;
+}
+.child-element-background-color--second > *,
+.child-links-background-color--second a {
+  background-color: #009abf;
+}
+.child-element-background-color--second-dark > *,
+.child-links-background-color--second-dark a {
+  background-color: #003e4c;
+}
+.child-element-background-color--second-light > *,
+.child-links-background-color--second-light a {
+  background-color: #99d7e5 ;
+}
+.child-element-background-color--third > *,
+.child-links-background-color--third a {
+  background-color: #f0ad33;
+}
+.child-element-background-color--third-dark > *,
+.child-links-background-color--third-dark a {
+  background-color: #604514;
+}
+.child-element-background-color--third-light > *,
+.child-links-background-color--third-light a {
+  background-color: #f9dead;
+}
+.child-element-background-color--accent > *,
+.child-links-background-color--accent a {
+  background-color: #c4d701;
+}
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Color classes for the settings dropdowns. Add here as needed.
  */
+.color--black {
+  color: #222;
+}
+.color--grey-dark {
+  color: #444;
+}
+.color--grey {
+  color: #999;
+}
+.color--grey-light {
+  color: #f5f5f5;
+}
+.color--white {
+  color: #fff;
+}
+.color--white a {
+  color: #fff;
+}
+.color--white a:hover,
+.color--white a:active {
+  color: #999;
+}
+.color--main,
+.color--blue {
+  color: #1a428a;
+}
+.color--main-dark,
+.color--blue-dark {
+  color: #0a1a37;
+}
+.color--main-light,
+.color--blue-light {
+  color: #a3b3d0;
+}
+.color--second {
+  color: #009abf;
+}
+.color--second-dark {
+  color: #003e4c;
+}
+.color--second-light {
+  color: #99d7e5 ;
+}
+.color--third {
+  color: #f0ad33;
+}
+.color--third-dark {
+  color: #604514;
+}
+.color--third-light {
+  color: #f9dead;
+}
+.color--accent {
+  color: #c4d701;
+}
+
 /**
- * Common settings.
+ * When you need to set text in columns that auto-adjust to their container.
  */
+.columnar {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-gap: 20px;
+  column-gap: 20px;
+}
+.columnar > * {
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+}
+@media all and (max-width: 767px) {
+  .columnar {
+    -moz-column-count: 1;
+    -webkit-column-count: 1;
+    column-count: 1;
+  }
+}
+
 /**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Slide-out panel tray from the hamburger, if applicable.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
 .compro-hamburger-panel {
   display: none;
   -webkit-box-flex: 1;
@@ -563,105 +262,44 @@ textarea.hs-input.error:focus {
   -moz-box-flex: 1;
   -ms-flex: auto;
   flex: auto;
-  text-align: left; }
-  .compro-hamburger-panel > .content {
-    display: none; }
-  .compro-hamburger-panel.open {
-    background-color: #0e3e54;
-    color: #fff;
-    margin-left: -185px;
-    padding: 0 0 16px 20px; }
-    .compro-hamburger-panel.open > .content {
-      display: block; }
-    .compro-hamburger-panel.open a:link,
-    .compro-hamburger-panel.open a:visited {
-      color: inherit; }
-  @media all and (max-width: 1225px) {
-    .compro-hamburger-panel {
-      display: block; } }
+  text-align: left;
+}
+.compro-hamburger-panel > .content {
+  display: none;
+}
+.compro-hamburger-panel.open > .content {
+  display: block;
+}
 
+/**
+ * Superfish dropdown menus and overrides.
+ */
 .compro-superfish li.menu-item--expanded {
-  position: relative; }
-  .compro-superfish li.menu-item--expanded > ul {
-    background-color: rgba(57, 109, 132, 0.95);
-    display: none;
-    left: 0;
-    min-width: 17em;
-    position: absolute;
-    text-align: left;
-    top: 100%;
-    z-index: 99; }
-    @media all and (min-width: 1225px) {
-      .compro-superfish li.menu-item--expanded > ul {
-        left: -32px; } }
-    .compro-superfish li.menu-item--expanded > ul a {
-      border-bottom: 1px solid;
-      display: block;
-      padding: 16px 32px; }
-      .compro-superfish li.menu-item--expanded > ul a:last-child {
-        border-bottom: 0 none; }
-  .compro-superfish li.menu-item--expanded:hover > ul, .compro-superfish li.menu-item--expanded.sfHover > ul {
-    display: block; }
-
-ul.menu {
-  list-style: none outside;
-  padding: 0; }
-  ul.menu a[href*="tel:"] {
-    cursor: text; }
-    ul.menu a[href*="tel:"]:hover {
-      text-decoration: none; }
-  ul.menu > li {
-    display: inline-block; }
-    ul.menu > li > a {
-      display: inline-block;
-      padding: 16px 30px 16px 0px;
-      text-decoration: none; }
-      ul.menu > li > a.cta--in-menu {
-        background-color: #de8b20;
-        font-weight: 600;
-        padding: 16px 40px; }
-        ul.menu > li > a.cta--in-menu:hover {
-          background-color: #f9e8d2; }
-        @media all and (max-width: 780px) {
-          ul.menu > li > a.cta--in-menu {
-            padding: 16px; } }
-      ul.menu > li > a.divider-left {
-        border-left: 1px solid #fff;
-        padding-left: 30px; }
-        @media all and (max-width: 1330px) {
-          ul.menu > li > a.divider-left {
-            padding-left: 16px; } }
-        @media all and (max-width: 1130px) {
-          ul.menu > li > a.divider-left {
-            border-left: 0 none;
-            padding: 16px; }
-            ul.menu > li > a.divider-left::before {
-              clear: both;
-              content: '';
-              display: table; } }
-
-.menu--main .menu > li > a {
-  padding: 16px 30px 23px 0px; }
-  @media all and (max-width: 1355px) {
-    .menu--main .menu > li > a {
-      padding: 16px 13px 16px 0px; } }
-  @media all and (max-width: 1225px) {
-    .menu--main .menu > li > a {
-      display: block;
-      padding: 16px; } }
-@media all and (max-width: 1130px) {
-  .menu--main .menu > li {
-    display: block; } }
-.menu--utility .menu > li > a {
-  padding: 16px 10px 16px 0px; }
-  @media all and (max-width: 1225px) {
-    .menu--utility .menu > li > a {
-      padding: 16px 0;
-      margin-left: 16px; } }
-@media all and (max-width: 780px) {
-  .menu--utility {
-    font-size: .75em; } }
-
+  position: relative;
+}
+.compro-superfish li.menu-item--expanded > ul {
+  background-color: rgba(10, 26, 55, 0.95);
+  display: none;
+  left: 0;
+  min-width: 17em;
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  top: calc(100% - 11px);
+  z-index: 99;
+}
+.compro-superfish li.menu-item--expanded > ul a {
+  border-bottom: 1px solid;
+  display: block;
+  padding: 16px 32px;
+}
+.compro-superfish li.menu-item--expanded > ul a:last-child {
+  border-bottom: 0 none;
+}
+.compro-superfish li.menu-item--expanded:hover > ul,
+.compro-superfish li.menu-item--expanded.sfHover > ul {
+  display: block;
+}
 .sf-arrows .sf-with-ul::after {
   border: 5px solid transparent;
   border-top-color: rgba(255, 255, 255, 0.8);
@@ -671,703 +309,709 @@ ul.menu {
   margin: -4px 0 0 5px;
   position: absolute;
   top: 50%;
-  width: 0; }
+  width: 0;
+}
 .sf-arrows .sfHover .sf-with-ul::after {
   margin-top: -.6em;
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
-  transform: rotate(180deg); }
-
-.utility-and-nav {
-  color: #fff;
-  font-size: 14px;
-  font-weight: 400;
-  text-align: left; }
-  .utility-and-nav a:link,
-  .utility-and-nav a:visited {
-    color: inherit; }
-  .utility-and-nav a:hover {
-    color: #ffcb05;
-    text-decoration: none; }
-  .utility-and-nav .inner {
-    max-width: inherit; }
-  @media all and (max-width: 1225px) {
-    .utility-and-nav.compro-hamburger > .region {
-      display: none; }
-    .utility-and-nav.compro-hamburger.is-active > .region {
-      display: block;
-      float: none;
-      margin-top: 0;
-      font-size: 18px; } }
-  .utility-and-nav .region {
-    display: inline-block;
-    margin-top: 30px; }
-    .utility-and-nav .region-nav {
-      font-size: 18px; }
-      @media all and (max-width: 1300px) {
-        .utility-and-nav .region-nav {
-          font-size: 17px; } }
-    .utility-and-nav .region-utility {
-      font-size: 12px;
-      float: right;
-      margin-top: 37px; }
-      .utility-and-nav .region-utility .button {
-        background-color: #de8b20;
-        padding: 7px;
-        border-radius: 4px;
-        margin-right: 60px; }
-        .utility-and-nav .region-utility .button:hover {
-          color: #fff;
-          background-color: #3ca0ce; }
-
-@media all and (max-width: 1225px) {
-  .top-bar {
-    display: block;
-    background-color: #0e3e54;
-    padding-bottom: 10px;
-    position: relative;
-    z-index: 3; }
-    .top-bar .region-header {
-      display: inline-block;
-      float: left; }
-    .top-bar .compro-hamburger-icon {
-      display: inline-block;
-      float: right;
-      width: 40px;
-      height: 40px;
-      margin-right: 1rem;
-      margin-top: 1rem;
-      border-bottom: 4px solid white;
-      position: relative; }
-      .top-bar .compro-hamburger-icon:hover {
-        cursor: pointer; }
-      .top-bar .compro-hamburger-icon:before {
-        content: ' ';
-        border-bottom: 4px solid white;
-        top: 10px;
-        width: 100%;
-        position: absolute;
-        left: 0; }
-      .top-bar .compro-hamburger-icon:after {
-        content: ' ';
-        border-top: 4px solid white;
-        top: 25px;
-        width: 100%;
-        position: absolute;
-        left: 0; }
-    .top-bar .compro-hamburger {
-      clear: both;
-      background-color: #0e3e54; }
-      .top-bar .compro-hamburger.is-active li.menu-item--expanded > a:after {
-        content: '\f105';
-        display: inline-block;
-        font-family: "Font Awesome 5 Free", sans-serif;
-        padding: 0 .5rem;
-        transition: transform .2s; }
-      .top-bar .compro-hamburger.is-active li.menu-item--expanded ul.menu {
-        display: none; }
-      .top-bar .compro-hamburger.is-active li.menu-item--expanded > ul.menu {
-        display: block;
-        position: relative; }
-      .top-bar .compro-hamburger.is-active li.menu-item--expanded > a:after {
-        display: inline-block;
-        transform: rotate(90deg); }
-    .top-bar .utility-and-nav li {
-      display: block; } }
-.compro-hamburger-icon:focus {
-  outline: 0 none; }
-.compro-hamburger-icon, .compro-hamburger-icon::before, .compro-hamburger-icon::after {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0; }
+  transform: rotate(180deg);
+}
 
 /**
- * @file
- * Message component.
+ * Since property--value doesn't have enough flex, display, or cursor classes,
+ * this fills in for the needed ones.
  */
+.cursor--pointer {
+  cursor: pointer;
+}
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Style and layout for cards components.
  */
+.entity-bundle-cards {}
+
 /**
- * Common settings.
+ * Rich text markup styles.
  */
+.entity-bundle-rich-text {}
+.entity-bundle-rich-text > blockquote,
+.entity-bundle-rich-text > div,
+.entity-bundle-rich-text > figure,
+.entity-bundle-rich-text > ol,
+.entity-bundle-rich-text > p,
+.entity-bundle-rich-text > ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.entity-bundle-rich-text > h2,
+.entity-bundle-rich-text > h3,
+.entity-bundle-rich-text > h4,
+.entity-bundle-rich-text > h5,
+.entity-bundle-rich-text > h6 {
+  margin-top: 1em;
+  margin-bottom: .25em;
+}
+
 /**
- * Colors.
+ * Spacers.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Hide spacers on mobile if they're just holding place in a horizontal layout.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
+@media all and (max-width: 767px) {
+  .entity-bundle-spacer:only-child {
+    display: none;
+  }
+}
+
 /**
- * Functions.
+ * Hide RSS icons while leaving them present for discovery.
  */
-/* stylelint-disable */
-/* stylelint-enable */
+.feed-icons {
+  display: none;
+}
+
+/**
+ * Override property--value's weird initial/none behavior.
+ */
+.flex--initial {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0;
+  -moz-box-flex: 0;
+  -ms-flex: 0;
+  flex: 0;
+}
+/* Oddly-specific override for SVGs and <img>s. max-width to half viewport. */
+.flex--initial svg,
+.flex--initial img {
+  max-width: 780px;
+}
+
+/**
+ * Sticky main header for the site.
+ */
+@media all and (min-width: 1024px) {
+  .headroom {
+    left: 0;
+    position: fixed;
+    right: 0;
+    -webkit-transition: all .3s ease-in;
+    -o-transition: all .3s ease-in;
+    -moz-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+    will-change: transform;
+    z-index: 100;
+  }
+  .headroom--pinned {
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    -o-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  .js .headroom--pinned {
+    background-color: #222;
+    background-color: rgba(34, 34, 34, 0.95);
+  }
+  .js .headroom--top {
+    background-color: transparent;
+  }
+  .headroom--unpinned {
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+/**
+ * Override core inline list padding.
+ */
+ul.inline li:first-child {
+  padding: 0 0.5em 0 0;
+}
+
+/**
+ * Used in conjunction with compro-animate to trigger animated visibility.
+ */
+.js .revealOnScroll {
+  opacity: 0;
+}
+.js .revealOnScroll.animated {
+  opacity: 1;
+  animation-duration: 2s;
+}
+@media all and (max-width: 770px) {
+  .js .revealOnScroll.animated {
+    animation-duration: 0s;
+    animation-name: none;
+  }
+}
+
+/**
+ * Line-heights.
+ */
+.line-height--1 {
+  line-height: 1;
+}
+
+/**
+ * Max-heights.
+ */
+.max-height--56px {
+  max-height: 56px;
+}
+
+/**
+ * Core classes for the main menu (typically the header one).
+ */
+.menu--main {
+  text-transform: lowercase;
+}
+.menu--main .menu {
+  margin: 5px 0;
+}
+.menu--main .menu > li > a:hover,
+.menu--main .menu > li > a:active,
+.menu--main .menu > li > a.active,
+.menu--main .menu > li > a.active-trail {
+  color: #a3b3d0;
+}
+@media all and (max-width: 1280px) {
+  .menu--main .menu > li > a {
+    padding: 16px 16px;
+  }
+}
+
+/**
+ * Core menu class. Common styles for all front-end menus on the site.
+ *
+ * Same styling applies to header and footer, so only put common styles here.
+ */
+ul.menu {
+  list-style: none outside;
+  padding: 0;
+}
+ul.menu a[href*="tel:"] {
+  cursor: text;
+}
+ul.menu a[href*="tel:"]:hover {
+  text-decoration: none;
+}
+ul.menu > li {
+  display: inline-block;
+}
+ul.menu > li > a {
+  display: inline-block;
+  margin: 0;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+/**
+ * Core messages.
+ */
 .messages {
   font-style: italic;
   margin: 10px 0;
-  padding: 10px; }
-  .messages--error {
-    background: #f9e8d2;
-    color: black; }
-  .messages--status {
-    background: #d0f9fb;
-    color: black; }
-  .messages--warning {
-    background: #fff4cc;
-    color: black; }
+  padding: 10px;
+}
+.messages--error {
+  background: #f5d6dd;
+  color: #290a11;
+}
+.messages--status {
+  background: #d3f8f0;
+  color: #072c24;
+}
+.messages--warning {
+  background: #fcebcf;
+  color: #301f03;
+}
 
 /**
- * @file
- * Style for pagers.
+ * Min-heights for teaser images and such.
  */
+.min-height--160px {
+  min-height: 160px;
+}
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Min-width classes for flex wrapping.
  */
+@media all and (min-width: 768px) {
+  .min-width--280px {
+    min-width: 280px;
+  }
+}
+
 /**
- * Common settings.
+ * Core class for the links at the bottom of node teasers.
  */
+.node__links {
+  margin: 20px 0 0;
+}
+
 /**
- * Colors.
+ * Make the "Read more" links more interesting.
+ */
+.node-readmore {
+  font-size: .75em;
+}
+.node-readmore .button {
+  margin: 10px 0 0;
+  padding: 5px 10px;
+}
+.node-readmore .icon:before {
+  margin-right: 5px;
+}
+
+/**
+ * Padding classes.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Horizontal for column section entities. At the mobile breakpoint the padding
+ * zeroes out for consistency.
+ *
+ * Columns are then vertically spaced using flex classes from property--value.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
+.padding-horizontal--0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding-horizontal--1 {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--1 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-horizontal--2 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--2 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-horizontal--4 {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--4 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-horizontal--8 {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--8 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-horizontal--16 {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--16 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-horizontal--32 {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+@media all and (max-width: 767px) {
+  .padding-horizontal--32 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+.padding-vertical--0 {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.padding-vertical--1 {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.padding-vertical--2 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.padding-vertical--4 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.padding-vertical--8 {
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
+@media all and (max-width: 960px) {
+  .padding-vertical--8 {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+.padding-vertical--16 {
+  padding-bottom: 80px;
+  padding-top: 80px;
+}
+@media all and (max-width: 960px) {
+  .padding-vertical--16 {
+    padding-bottom: 40px;
+    padding-top: 40px;
+  }
+}
+.padding-vertical--32 {
+  padding-bottom: 160px;
+  padding-top: 160px;
+}
+@media all and (max-width: 960px) {
+  .padding-vertical--32 {
+    padding-bottom: 80px;
+    padding-top: 80px;
+  }
+}
+
 /**
- * Functions.
+ * Core pagers.
  */
-/* stylelint-disable */
-/* stylelint-enable */
 .pager {
   font-weight: 600;
   margin: 40px auto;
   text-align: center;
-  text-transform: uppercase; }
-  .pager li {
-    line-height: 1; }
-    .pager li > a,
-    .pager li > span {
-      border: 2px solid transparent;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      border-radius: 50%;
-      color: #0e3e54;
-      display: inline-block;
-      font-size: 0.7em;
-      padding: 5px 9px;
-      text-decoration: none; }
-    .pager li > a:hover {
-      border-color: #de8b20; }
-    .pager li.pager-current > span,
-    .pager li.pager-current > a, .pager li.is-active > span,
-    .pager li.is-active > a {
-      border-color: #de8b20; }
-    .pager li.pager__item--previous {
-      border-right: 1px solid #e8e8e8;
-      margin-right: 4px;
-      padding-right: 16px; }
-    .pager li.pager__item--next {
-      border-left: 1px solid #e8e8e8;
-      margin-left: 4px;
-      padding-left: 16px; }
-  .pager ul {
-    display: inline-block;
-    margin: 0;
-    padding: 0; }
-    .pager ul > li {
-      display: inline-block;
-      margin: 0; }
+  text-transform: uppercase;
+}
+.pager ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.pager ul > li {
+  display: inline-block;
+  line-height: 1;
+  margin: 0;
+}
+.pager li > a,
+.pager li > span {
+  color: #1a428a;
+  display: inline-block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.pager li > a:hover {
+  border-color: #f0ad33;
+}
+.pager li.pager-current > span,
+.pager li.pager-current > a,
+.pager li.is-active > span,
+.pager li.is-active > a {
+  border-color: #f0ad33;
+}
+.pager li.pager__item--previous {
+  border-right: 1px solid #e8e8e8;
+  margin-right: 4px;
+  padding-right: 16px;
+}
+.pager li.pager__item--next {
+  border-left: 1px solid #e8e8e8;
+  margin-left: 4px;
+  padding-left: 16px;
+}
 
 /**
- * @file
- * Style for regions (non-layout).
+ * The front page often has some strange overrides.
  */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.region-header .logo {
-  max-width: 125px; }
-.region-footer {
-  background-color: #0e3e54;
-  color: #fff; }
-  .region-footer > .inner {
-    padding: 40px 20px 10px 0px; }
-    @media all and (max-width: 770px) {
-      .region-footer > .inner {
-        padding: 40px 0px 20px; } }
-  .region-footer a:link, .region-footer a:visited {
-    color: inherit; }
-  .region-footer .contact-info-address span {
-    display: inline-block; }
-    .region-footer .contact-info-address span[itemprop="streetAddress"] {
-      display: block; }
-  .region-footer .menu > li > a {
-    padding: 0; }
-  .region-footer .muted {
-    color: #d3ecf8;
-    font-size: 0.8em; }
-  .region-footer .text-transform--uppercase {
-    font-weight: 400; }
-  .region-footer-menu {
-    padding-left: 1rem; }
-  @media all and (max-width: 700px) {
-    .region-footer .float--left,
-    .region-footer .float--right {
-      float: none;
-      margin: 0 0 20px; } }
-  @media all and (min-width: 770px) {
-    .region-footer-menu {
-      padding: 30px 0 0 140px;
-      max-width: 840px;
-      width: 100%; } }
+.path-frontpage {}
+.path-frontpage .region--splash h1 {
+  font-size: 5.625rem;
+}
+@media all and (max-width: 767px) {
+  .path-frontpage .region--splash h1 {
+    font-size: 2.25rem;
+  }
+}
 
 /**
- * @file
- * Style for the skip link.
+ * Add stylistic pipes to lists.
  */
+.pipe-spaced {}
+.pipe-spaced ul.menu > li > a,
+.pipe-spaced ul.menu > li > span {
+  padding: 10px 0;
+}
+.pipe-spaced li::after {
+  content: '|';
+  display: inline-block;
+  font-weight: 300;
+  opacity: .9;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+.pipe-spaced li:last-child::after,
+.pipe-spaced li.last::after {
+  display: none;
+}
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Utility class for printer page breaks.
  */
+.print-break {
+  page-break-before: always;
+}
+
 /**
- * Common settings.
+ * Skip-to-main-content links for accessibility.
  */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
 .skip-hide {
-  background: #24a1db;
+  background: #009abf;
   position: relative;
-  text-align: center; }
-  .skip-hide a {
-    color: #f9e8d2;
-    display: block;
-    height: 1px;
-    left: -10000px;
-    overflow: hidden;
-    padding: 10px;
-    position: absolute;
-    top: auto;
-    width: 1px; }
-    .skip-hide a:focus {
-      height: auto;
-      outline: 0 none;
-      position: static;
-      width: auto; }
-
-/**
- * @file
- * Slick slideshows.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.slick-arrow {
-  background-color: transparent;
-  bottom: 50%;
-  color: transparent;
-  font-size: 0;
-  font-weight: 600;
-  margin: 0 0 -30px;
+  text-align: center;
+}
+.skip-hide a {
+  color: #f9dead;
+  display: block;
+  height: 1px;
+  left: -10000px;
+  overflow: hidden;
   padding: 10px;
   position: absolute;
-  transform: scale(0.7, 1);
-  z-index: 4; }
-  .slick-arrow::after {
-    content: '\25B7';
-    color: #fff;
-    font-size: 60px; }
-  .slick-arrow:hover {
-    background-color: transparent; }
-    .slick-arrow:hover::after {
-      color: #de8b20; }
-  @media all and (max-width: 1060px) {
-    .slick-arrow {
-      opacity: 0.5; } }
-.slick-initialized .slick-slide.display--flex {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto; }
-.slick-initialized .slick-track {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex; }
-.slick-next {
-  right: -20px; }
-.slick-prev {
-  left: -20px; }
-  .slick-prev::after {
-    content: '\25C1'; }
+  top: auto;
+  width: 1px;
+}
+.skip-hide a:focus {
+  height: auto;
+  outline: 0 none;
+  position: static;
+  width: auto;
+}
 
 /**
- * @file
- * Style for tabs.
+ * Compro-slick slideshow base classes.
  */
+.slick-arrow {
+  bottom: 50%;
+  padding: 10px;
+  position: absolute;
+  z-index: 4;
+}
+.slick-next {
+  right: -20px;
+}
+.slick-prev {
+  left: -20px;
+}
+
 /**
- * @file
- * Variables for reuse throughout the theme.
+ * Extend/override the compro_custom social icons.
  */
+.social {
+  margin: 20px 0 0;
+}
+.social a[href]:before {
+  border-radius: 50%;
+  margin: 0 5px 5px 0;
+  min-height: 16px;
+  padding: 4px 7px 5px 9px;
+  min-width: 16px;
+  text-decoration: none;
+}
+.social a[href*="drupal.org"]:before {
+  content: '\1f4a7';
+}
+.social a[href*="drupal.org"]:hover:before {
+  background-color: #0678be;
+}
+
 /**
- * Common settings.
+ * Byline base class.
  */
+.submitted {
+  color: #ccc;
+  margin: 0 0 10px;
+}
+
 /**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Core tabs.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
 ul.tabs {
   border-bottom: 1px solid;
   border-color: #ccc;
   list-style: none;
   margin: 20px 0;
   overflow: hidden;
-  padding: 0 0 0 1em; }
-  ul.tabs > li {
-    border-color: #ccc;
-    border-style: solid;
-    border-width: 1px 1px 0;
-    display: block;
-    float: left;
-    margin: 0 1em 0 0; }
-    ul.tabs > li > a {
-      color: #024;
-      display: inline-block;
-      padding: 0.5em 1em;
-      text-decoration: none;
-      -moz-transition: background-color 0.3s ease-out;
-      -o-transition: background-color 0.3s ease-out;
-      -webkit-transition: background-color 0.3s ease-out;
-      transition: background-color 0.3s ease-out; }
-      ul.tabs > li > a:hover {
-        background: #0ae;
-        color: #fff; }
-      ul.tabs > li > a.active {
-        background: #079ac4;
-        color: #fff; }
-
+  padding: 0 0 0 1em;
+}
+ul.tabs > li {
+  border-color: #ccc;
+  border-style: solid;
+  border-width: 1px 1px 0;
+  display: block;
+  float: left;
+  margin: 0 1em 0 0;
+}
+ul.tabs > li > a {
+  color: #0a1a37;
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+}
+ul.tabs > li > a:hover {
+  background: #009abf;
+  color: #fff;
+}
+ul.tabs > li > a.active {
+  background: #009abf;
+  color: #fff;
+}
 @media all and (max-width: 550px) {
   ul.tabs {
     border: 1px solid #ccc;
     font-size: 0.8em;
-    padding: 0; }
-    ul.tabs > li {
-      -webkit-border-radius: 0;
-      -moz-border-radius: 0;
-      border-radius: 0;
-      border-width: 0 0 1px;
-      float: none;
-      margin: 0; }
-      ul.tabs > li:last-child {
-        border-width: 0; }
-      ul.tabs > li > a {
-        display: block; } }
-/**
- * @file
- * Style for views directly.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.node--type-blog.node--view-mode-full {
-  text-align: left;
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto; }
-  .node--type-blog.node--view-mode-full figcaption {
-    margin: 10px 0; }
-  .node--type-blog.node--view-mode-full figure {
-    display: inherit; }
-  .node--type-blog.node--view-mode-full .field-label ~ a {
-    margin-left: 5px; }
-  .node--type-blog.node--view-mode-full .field-name--body {
-    font-size: 1.25em; }
-    .node--type-blog.node--view-mode-full .field-name--body > *,
-    .node--type-blog.node--view-mode-full .field-name--body img {
-      margin: 0 auto 30px; }
-  .node--type-blog.node--view-mode-full .node__content {
-    max-width: 750px;
-    margin: 0 auto; }
-  .node--type-blog.node--view-mode-full .node__content > .field-name--body.field-type--text-with-summary {
-    margin-bottom: 30px; }
-  .node--type-blog.node--view-mode-full .submitted {
-    text-align: center; }
-.node--type-blog.node--view-mode-teaser {
-  text-align: left; }
-  .node--type-blog.node--view-mode-teaser .field-name--title {
-    font-size: 1.225em;
-    font-weight: bold; }
-  .node--type-blog.node--view-mode-teaser .field-label ~ a {
-    margin-left: 5px; }
-  .node--type-blog.node--view-mode-teaser .node__links {
-    text-align: center; }
+    padding: 0;
+  }
+  ul.tabs > li {
+    border-radius: 0;
+    border-width: 0 0 1px;
+    float: none;
+    margin: 0;
+  }
+  ul.tabs > li:last-child {
+    border-width: 0;
+  }
+  ul.tabs > li > a {
+    display: block;
+  }
+}
 
 /**
- * @file
- * Style for views directly.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
+ * The teaser--image area of node and term teasers.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Other classes ensure a width of 160 and min-height 160.
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.node--type-video.node--view-mode-full {
-  padding: 40px 20px;
-  max-width: 650px;
-  margin: 0 auto; }
-  .node--type-video.node--view-mode-full .node__content > .field {
-    margin-bottom: 20px; }
-  .node--type-video.node--view-mode-full iframe {
-    border: none; }
-.node--type-video.node--view-mode-teaser .field-type--video-embed-field img {
-  margin: 0 auto; }
-.node--type-video.node--view-mode-teaser.rollover,
-.node--type-video.node--view-mode-teaser .rollover {
-  margin-bottom: 40px; }
-  .node--type-video.node--view-mode-teaser.rollover h2,
-  .node--type-video.node--view-mode-teaser .rollover h2 {
-    color: #0faeb7;
-    font-size: 18px;
-    line-height: 25px;
-    margin-top: 10px; }
-    .node--type-video.node--view-mode-teaser.rollover h2 > a,
-    .node--type-video.node--view-mode-teaser .rollover h2 > a {
-      font-weight: 300; }
-  .node--type-video.node--view-mode-teaser.rollover--hover,
-  .node--type-video.node--view-mode-teaser.rollover .field-name--field-media-video-embed-field,
-  .node--type-video.node--view-mode-teaser .rollover--hover,
-  .node--type-video.node--view-mode-teaser .rollover .field-name--field-media-video-embed-field {
-    overflow: hidden;
-    font-size: 12px;
-    line-height: 16px;
-    color: #fff; }
-    .node--type-video.node--view-mode-teaser.rollover--hover .video-hover-title > a,
-    .node--type-video.node--view-mode-teaser.rollover .field-name--field-media-video-embed-field .video-hover-title > a,
-    .node--type-video.node--view-mode-teaser .rollover--hover .video-hover-title > a,
-    .node--type-video.node--view-mode-teaser .rollover .field-name--field-media-video-embed-field .video-hover-title > a {
-      color: #ffcb05;
-      font-weight: 700; }
-      .node--type-video.node--view-mode-teaser.rollover--hover .video-hover-title > a:before,
-      .node--type-video.node--view-mode-teaser.rollover .field-name--field-media-video-embed-field .video-hover-title > a:before,
-      .node--type-video.node--view-mode-teaser .rollover--hover .video-hover-title > a:before,
-      .node--type-video.node--view-mode-teaser .rollover .field-name--field-media-video-embed-field .video-hover-title > a:before {
-        content: " ";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0; }
-    .node--type-video.node--view-mode-teaser.rollover--hover .submitted,
-    .node--type-video.node--view-mode-teaser.rollover .field-name--field-media-video-embed-field .submitted,
-    .node--type-video.node--view-mode-teaser .rollover--hover .submitted,
-    .node--type-video.node--view-mode-teaser .rollover .field-name--field-media-video-embed-field .submitted {
-      color: #fff;
-      margin: 20px 0 0 0; }
-  .node--type-video.node--view-mode-teaser.rollover:hover,
-  .node--type-video.node--view-mode-teaser .rollover:hover {
-    background-color: #030303; }
+.teaser--image {
+  background: #444 url('../images/placeholder.png') center center scroll no-repeat;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+@media all and (max-width: 1023px) {
+  .teaser--image {
+    margin: 0 0 5px;
+    width: 100% !important;
+  }
+}
+.teaser--image img,
+.teaser--image svg {
+  height: 100% !important;
+  max-width: inherit;
+  position: absolute;
+  width: auto;
+}
+@media all and (max-width: 1023px) {
+  .teaser--image img,
+  .teaser--image svg {
+    height: auto !important;
+    min-height: 100%;
+    min-width: 100% !important;
+  }
+}
 
 /**
- * @file
- * Style for views directly.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
+ * Horizontally center children of the text-align--center class.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * If a parent has text-align--center while a child has a different text-align
+ * class, it may be necessary to override those classes similarly (since the
+ * specificity is higher that a bare class).
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
+.text-align--center figure,
+.text-align--center img,
+.text-align--center p,
+.text-align--center picture,
+.text-align--center svg,
+.text-align--center video,
+.text-align--justify figure,
+.text-align--justify img,
+.text-align--justify p,
+.text-align--justify picture,
+.text-align--justify svg,
+.text-align--justify video {
+  margin: 0 auto 10px;
+}
+.text-align--left figure,
+.text-align--left img,
+.text-align--left picture,
+.text-align--left svg,
+.text-align--left video,
+.text-align--right figure,
+.text-align--right img,
+.text-align--right picture,
+.text-align--right svg,
+.text-align--right video {
+  margin: 0;
+}
+.text-align--left p,
+.text-align--right p {
+  margin: 0 0 10px;
+}
+.text-align--center p:last-child,
+.text-align--justify p:last-child,
+.text-align--left p:last-child,
+.text-align--right p:last-child {
+  margin-bottom: 0;
+}
+
 /**
- * Functions.
+ * Views filters.
  */
-/* stylelint-disable */
-/* stylelint-enable */
-.views-label {
-  font-weight: bold; }
-.views-row {
-  margin: 0 0 40px; }
-.view-taxonomy-term {
-  margin: 10px auto;
-  max-width: 1200px; }
-.view-case-study .views-row {
-  padding: 40px 20px;
-  max-width: 320px; }
-  .view-case-study .views-row .views-field-field-longtext {
-    margin: 20px 0; }
-.view-blog .views-row, .view-event .views-row {
-  background-color: #f8f8f9;
-  padding: 40px 20px; }
-.view-blog .field-name--body, .view-event .field-name--body {
-  margin-top: 20px; }
-  .view-blog .field-name--body img, .view-event .field-name--body img {
-    margin: 10px auto; }
 .view-filters {
   display: inline-block;
-  max-width: none; }
-  .view-filters label {
-    display: inline-block; }
-    .view-filters label:after {
-      content: ":";
-      padding-left: 2px; }
-  .view-filters .form-select {
-    text-align: center;
-    display: inline-block; }
-    .view-filters .form-select > div {
-      display: inline-block;
-      margin: 20px; }
-    .view-filters .form-select a {
-      font-weight: 500;
-      color: #6b6b6b;
-      padding: 10px 20px;
-      border: 1px solid #6b6b6b;
-      border-radius: 4px; }
-      .view-filters .form-select a:hover {
-        color: #fff;
-        border-color: #de8b20;
-        background-color: #de8b20; }
-      .view-filters .form-select a.bef-link-active {
-        color: #fff;
-        border-color: #de8b20;
-        background-color: #de8b20; }
-.view-release p {
-  margin-left: 0; }
+  max-width: none;
+}
+.view-filters label {
+  display: inline-block;
+}
+
+/**
+ * Consistent stylings per view mode.
+ */
+.view-mode--full > .node__content > .field-name--body {
+  background-color: #fafafa;
+  font-style: italic;
+  padding: 10px;
+}
+.view-mode--small h2 {
+  font-size: 1.25em;
+}
+.view-mode--teaser h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/**
+ * Widths for flex elements.
+ */
+.width--160px {
+  width: 160px;
+}
 @media all and (min-width: 1024px) {
-  .view-release .align-self--center {
-    margin: 0 0 10px 20px; } }
-@media all and (max-width: 1023px) {
-  .view-release .display--flex {
-    display: block; } }
-.view-release .views-field {
-  margin-bottom: 10px; }
-.view-resource form {
-  max-width: none; }
-.view .vocabulary-video-type {
-  text-align: left;
-  margin-bottom: 40px; }
-
-.viewsreference--view-title {
-  border-bottom: 1px solid #e6e6e6;
-  color: #0e3e54;
-  font-weight: 400;
-  margin: 20px 0 20px;
-  padding: 10px 0;
-  text-align: left;
-  text-transform: uppercase; }
-
-.views-element-container {
-  padding: 0 10px; }
-
-/*# sourceMappingURL=components.css.map */
+  .width--30p {
+    flex: 0 1 30%;
+    width: 30%;
+  }
+}

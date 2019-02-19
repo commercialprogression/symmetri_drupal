@@ -44,6 +44,19 @@
             }
           });
         });
+
+        // Handle search icon.
+        var $trigger = $('.search-icon');
+        if ($trigger.length > 0) {
+          var $search_element = $('.search-form-wrapper');
+          var $search_input = $('.region-pre-header #edit-s');
+
+          $trigger.on("click", function () {
+            $trigger.parents('#block-searchiconblock').toggleClass('search-is-open');
+            $search_element.toggleClass('is-open');
+            $search_input.focus();
+          });
+        }
       }
     }
   };

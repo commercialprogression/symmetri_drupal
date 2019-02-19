@@ -1,11 +1,14 @@
 <div class="page layout-container">
-  <header{{ attributes.addClass(splash_classes) }}>
-    <div class="top-bar display--flex compro-headroom">
-      {{ page.header }}
-      <i class="compro-hamburger-icon"></i>
-      <div class="utility-and-nav compro-hamburger flex--auto">
-        {{ page.nav }}
-        {{ page.utility }}
+  <header class="header-and-splash">
+    <div class="top-bar compro-headroom">
+      <div class="inner">
+        <div class="display--flex">
+          {{ page.header }}
+          <div class="utility-and-nav compro-hamburger flex--auto">
+            {{ page.utility }}
+            {{ page.nav }}
+          </div>
+        </div>
       </div>
     </div>
     {{ page.splash }}
@@ -20,11 +23,9 @@
     </div>
     {{ page.post_content }}
   </main>
-  <footer class="footer-wrapper">
-    <div class="footer-top display--flex text-align--left">
-      {{ page.footer }}
-      {{ page.footer_menu }}
-    </div>
+  <footer class="footer-wrapper background-color--grey-dark color--white">
+    {{ page.footer }}
+    {{ page.footer_menu }}
     {{ page.footer_utility }}
   </footer>
 </div>

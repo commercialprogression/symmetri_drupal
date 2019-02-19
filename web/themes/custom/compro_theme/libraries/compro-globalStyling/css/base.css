@@ -1,233 +1,167 @@
 /**
  * @file
- * Variables for reuse throughout the theme.
+ * Tag-level, tables, forms, and other base styling.
  */
+
 /**
- * Common settings.
- */
-/**
- * Colors.
+ * Fonts imported early and directly.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-/**
- * @file
- * font-face decs and font-family usage for the whole application.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
+ * Only include fonts that are known to be used, since each is an asset to load.
+ * font-display: swap; is used to prevent text from being hidden on load.
+ * We list src in preference order: local, woff2, then woff
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * @see https://google-webfonts-helper.herokuapp.com/fonts
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-/* exo-100 - latin
+/* opensans-300 - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Exo Thin'), local('Exo-Thin'),
-       url('../fonts/exo/exo-v6-latin-100.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-100.woff') format('woff');
-}
-/* exo-100italic - latin
-@font-face {
-  font-family: 'Exo';
-  font-style: italic;
-  font-weight: 100;
-  src: local('Exo Thin Italic'), local('Exo-ThinItalic'),
-       url('../fonts/exo/exo-v6-latin-100italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-100italic.woff') format('woff');
-}
-/* exo-200 - latin
-@font-face {
-  font-family: 'Exo';
-  font-style: normal;
-  font-weight: 200;
-  src: local('Exo ExtraLight'), local('Exo-ExtraLight'),
-       url('../fonts/exo/exo-v6-latin-200.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-200.woff') format('woff');
-}
-/* exo-200italic - latin 
-@font-face {
-  font-family: 'Exo';
-  font-style: italic;
-  font-weight: 200;
-  src: local('Exo ExtraLight Italic'), local('Exo-ExtraLightItalic'),
-       url('../fonts/exo/exo-v6-latin-200italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-200italic.woff') format('woff');
-}
-/* exo-300 - latin */
-@font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 300;
-  src: local("Exo Light"), local("Exo-Light"), url("../fonts/exo/exo-v6-latin-300.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-300.woff") format("woff"); }
-/* exo-300italic - latin */
+  src: local('Open Sans Light'), local('OpenSans-Thin'),
+  url('../fonts/opensans/light/OpenSans-Light.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/light/OpenSans-Light.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* opensans-300italic - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: italic;
   font-weight: 300;
-  src: local("Exo Light Italic"), local("Exo-LightItalic"), url("../fonts/exo/exo-v6-latin-300italic.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-300italic.woff") format("woff"); }
-/* exo-regular - latin */
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+  url('../fonts/opensans/light-italic/OpenSans-LightItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/light-italic/OpenSans-LightItalic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* opensans-regular - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local("Exo Regular"), local("Exo-Regular"), url("../fonts/exo/exo-v6-latin-regular.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-regular.woff") format("woff"); }
-/* exo-italic - latin */
+  src: local('Open Sans'), local('OpenSans-Regular'),
+  url('../fonts/opensans/regular/OpenSans-Regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/regular/OpenSans-Regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* opensans-italic - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: italic;
   font-weight: 400;
-  src: local("Exo Italic"), local("Exo-Italic"), url("../fonts/exo/exo-v6-latin-italic.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-italic.woff") format("woff"); }
-/* exo-500 - latin */
-@font-face {
-  font-family: 'Exo';
-  font-style: normal;
-  font-weight: 500;
-  src: local("Exo Medium"), local("Exo-Medium"), url("../fonts/exo/exo-v6-latin-500.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-500.woff") format("woff"); }
-/* exo-500italic - latin
-@font-face {
-  font-family: 'Exo';
-  font-style: italic;
-  font-weight: 500;
-  src: local('Exo Medium Italic'), local('Exo-MediumItalic'),
-       url('../fonts/exo/exo-v6-latin-500italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-500italic.woff') format('woff');
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+  url('../fonts/opensans/italic/OpenSans-Italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/italic/OpenSans-Italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* exo-600 - latin */
+/* opensans-600 - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 600;
-  src: local("Exo SemiBold"), local("Exo-SemiBold"), url("../fonts/exo/exo-v6-latin-600.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-600.woff") format("woff"); }
-/* exo-600italic - latin
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+  url('../fonts/opensans/semibold/OpenSans-Semibold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/semibold/OpenSans-Semibold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* opensans-600italic - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: italic;
   font-weight: 600;
-  src: local('Exo SemiBold Italic'), local('Exo-SemiBoldItalic'),
-       url('../fonts/exo/exo-v6-latin-600italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-600italic.woff') format('woff');
+  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+  url('../fonts/opensans/semibold-italic/OpenSans-SemiboldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/semibold-italic/OpenSans-SemiboldItalic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* exo-700 - latin */
+/* opensans-800 - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Exo Bold"), local("Exo-Bold"), url("../fonts/exo/exo-v6-latin-700.woff2") format("woff2"), url("../fonts/exo/exo-v6-latin-700.woff") format("woff"); }
-/* exo-700italic - latin
-@font-face {
-  font-family: 'Exo';
-  font-style: italic;
-  font-weight: 700;
-  src: local('Exo Bold Italic'), local('Exo-BoldItalic'),
-       url('../fonts/exo/exo-v6-latin-700italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-700italic.woff') format('woff');
-}
-/* exo-800italic - latin
-@font-face {
-  font-family: 'Exo';
-  font-style: italic;
-  font-weight: 800;
-  src: local('Exo ExtraBold Italic'), local('Exo-ExtraBoldItalic'),
-       url('../fonts/exo/exo-v6-latin-800italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-800italic.woff') format('woff');
-}
-/* exo-800 - latin
-@font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 800;
-  src: local('Exo ExtraBold'), local('Exo-ExtraBold'),
-       url('../fonts/exo/exo-v6-latin-800.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-800.woff') format('woff');
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+  url('../fonts/opensans/bold/OpenSans-Bold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/bold/OpenSans-Bold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* exo-900 - latin
+/* opensans-800italic - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+  url('../fonts/opensans/bold-italic/OpenSans-BoldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/bold-italic/OpenSans-BoldItalic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* opensans-900 - latin-ext_latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 900;
-  src: local('Exo Black'), local('Exo-Black'),
-       url('../fonts/exo/exo-v6-latin-900.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-900.woff') format('woff');
+  src: local('Open Sans Black'), local('OpenSans-Black'),
+  url('../fonts/opensans/extrabold/OpenSans-ExtraBold.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/extrabold/OpenSans-ExtraBold.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* exo-900italic - latin
+/* opensans-900italic - latin-ext_latin */
 @font-face {
-  font-family: 'Exo';
+  font-display: swap;
+  font-family: 'Open Sans';
   font-style: italic;
   font-weight: 900;
-  src: local('Exo Black Italic'), local('Exo-BlackItalic'),
-       url('../fonts/exo/exo-v6-latin-900italic.woff2') format('woff2'),
-       url('../fonts/exo/exo-v6-latin-900italic.woff') format('woff');
+  src: local('Open Sans Black Italic'), local('OpenSans-BlackItalic'),
+  url('../fonts/opensans/extrabold-italic/OpenSans-ExtraBoldItalic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../fonts/opensans/extrabold-italic/OpenSans-ExtraBoldItalic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-*/
-/* font-family declarations. */
+
+/**
+ * Font family declarations, all in one place and early.
+ *
+ * Let's keep all font-family calls right here, so it's manageable. Even classes
+ * if necessary.
+ */
 html,
 button,
 input,
 select,
 textarea {
-  font-family: "Exo", Arial, sans-serif; }
+  font-family: "Open Sans", Arial, sans-serif;
+}
 
-body {
-  font-family: "Exo", Arial, sans-serif; }
+body,
+.font-family--primary {
+  font-family: "Open Sans", Arial, sans-serif;
+}
 
-pre,
+/**
+ * Often the headings and other sparing elements take a second font family.
+ *
+ * CSSLint and other tools might squawk at double-declaring <h*> tags, but this
+ * puts all the font-family declarations in one place, which feels good.
+ */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-family--secondary {
+  font-family: inherit;
+}
+
+/**
+ * Some sites have Monospace text for code samples and the like.
+ */
 code,
 kbd,
-samp {
-  font-family: "courier new", monospace; }
+pre,
+samp,
+.font-family--monospace {
+  font-family: "courier new", monospace;
+}
 
 /**
- * @file
- * HTML elements and base-level tags.
+ * Set HTML5 elements to block, in case a browser doesn't do this.
  */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
 article,
 aside,
 details,
@@ -237,19 +171,38 @@ footer,
 header,
 nav,
 section {
-  display: block; }
+  display: block;
+}
 
+/**
+ * Normalize and bugfix for some HTML5 media elements.
+ */
 audio,
 canvas,
 video {
   display: inline-block;
   *display: inline;
-  *zoom: 1; }
-
+  *zoom: 1;
+}
 audio:not([controls]),
 [hidden] {
-  display: none; }
+  display: none;
+}
+audio,
+canvas,
+embed,
+iframe,
+img,
+object,
+picture,
+svg,
+video {
+  max-width: 100%;
+}
 
+/**
+ * The HTML wrapping tag takes some very general styles. Normalize some rendering.
+ */
 html {
   font-size: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -258,381 +211,552 @@ html {
   -webkit-text-size-adjust: 100%;
   height: 100%;
   overflow-y: scroll;
-  text-rendering: optimizeLegibility; }
+  text-rendering: optimizeLegibility;
+}
 
+/**
+ * The body tag should take the site's universal styles.
+ *
+ * rem is based on this font-size dec, so only change if you're sure about the
+ * type scale.
+ * The body line-height should be one of only a handful of [unitless] line-height
+ * declarations in the CSS codebase.
+ */
 body {
   background: #fff;
-  color: #6b6b6b;
-  font-size: 14px;
-  font-weight: 300;
+  color: #222;
+  font-size: 16px;
+  font-weight: 400;
   height: 100%;
-  line-height: 1.4;
-  margin: 0; }
+  line-height: 1.375;
+  margin: 0;
+}
 
-/* Links. */
+/**
+ * Links.
+ *
+ * Links should have set, at a minimum, :link, :visited, :hover, :active, :focus
+ *
+ * We note to designers that blue links are a good signifier for the affordance.
+ * Visited links in a vacuum should look different than unvisited ones.
+ * Hover, active, and focus states should look different than stateless links.
+ */
 a:link {
-  color: #de8b20;
-  text-decoration: none;
-  font-weight: 600; }
+  color: #1a428a;
+  text-decoration: underline;
+}
 a:visited {
-  color: #df8c20; }
+  color: #421a8a;
+}
 a:hover {
-  color: black; }
+  color: #009abf;
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
 a:active {
-  color: black; }
+  color: #009abf;
+}
 a:focus {
   outline: 0 none;
-  -webkit-text-decoration: underline dotted;
-  -moz-text-decoration: underline dotted;
-  text-decoration: underline dotted; }
+  text-decoration: underline dotted;
+}
 
-/* Lists. */
-ul,
-ol {
-  margin: 0;
-  padding: 0; }
-  ul ul,
-  ol ul {
-    padding: 0 0 0 1.2em; }
-
-dd {
-  margin: 0 0 0 40px; }
-
-dfn {
-  font-style: italic; }
-
-/* Headings */
-h1 {
-  font-size: 3.4em;
-  font-weight: 300;
-  line-height: 1;
-  margin: 0 0 10px 0;
-  overflow-wrap: break-word;
-  word-wrap: break-word; }
-  @media all and (max-width: 770px) {
-    h1 {
-      font-size: 2.5em; } }
-  h1 > a:link, h1 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h1 + h2 {
-    margin-top: 0; }
-  h1.page-title {
-    color: #0e3e54; }
-
-h2 {
-  font-size: 3.4em;
-  font-weight: 300;
-  line-height: 1;
-  margin: 0 0 10px;
-  overflow-wrap: break-word;
-  word-wrap: break-word; }
-  @media all and (max-width: 770px) {
-    h2 {
-      font-size: 2.5em; } }
-  h2 > a:link, h2 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h2:first-child,
-  h2 + h3 {
-    margin-top: 0; }
-
-h3 {
-  font-size: 1.225em;
-  font-weight: bold;
-  line-height: 1;
-  margin: 30px 0 10px;
-  overflow-wrap: break-word;
-  word-wrap: break-word; }
-  h3 > a:link, h3 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h3:first-child,
-  h3 + h4 {
-    margin-top: 0; }
-
-h4 {
-  font-size: 1.125em;
-  font-weight: normal;
-  line-height: 1;
-  margin: 1.33em 0;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  font-weight: 500; }
-  h4 > a:link, h4 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h4:first-child,
-  h4 + h5 {
-    margin-top: 0; }
-
-h5 {
-  border-bottom: 1px solid;
-  font-size: 1em;
-  font-weight: normal;
-  line-height: 1;
-  margin: 1.67em 0; }
-  h5 > a:link, h5 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h5:first-child,
-  h5 + h6 {
-    margin-top: 0; }
-
-h6 {
-  font-size: 0.9em;
-  font-weight: normal;
-  line-height: 1;
-  margin: 2.33em 0; }
-  h6 > a:link, h6 > a:visited {
-    color: inherit;
-    text-decoration: inherit; }
-  h6:first-child {
-    margin-top: 0; }
-
-/* Other */
+/**
+ * Abbreviations, semi-deprecated. Used in Drupal 8 and overridden here.
+ */
 abbr[title] {
   border-bottom: 1px dotted;
   cursor: help;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
 abbr.tabledrag-changed, abbr.ajax-changed {
-  border-bottom: none; }
+  border-bottom: none;
+}
 
+/**
+ * Address elements are often italicized by the user agent, so this normalizes.
+ */
 address {
   font-style: normal;
-  text-align: left; }
+  text-align: left;
+}
 
+/**
+ * Bold text.
+ *
+ * Semantically, <b> and <strong> are different, but presentationally they are
+ * the same or similar.
+ */
 b,
 strong {
-  font-weight: bold; }
+  font-weight: bold;
+}
 
+/**
+ * Base blockquotes before classing.
+ */
 blockquote {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
   font-size: 1.4em;
-  margin: 0 auto 20px; }
-  @media all and (max-width: 960px) {
-    blockquote {
-      font-size: 1.25em; } }
+  margin: 0;
+  padding: 1em 2em;
+  position: relative;
+}
+blockquote:before,
+blockquote:after {
+  content: '\201C';
+  display: block;
+  font-size: 10em;
+  font-weight: bold;
+  line-height: 0;
+  opacity: .25;
+  position: absolute;
+  z-index: 1;
+}
+blockquote:before {
+  left: 0;
+  top: .5em;
+}
+blockquote:after {
+  bottom: .55em;
+  content: '\201E';
+  right: 0;
+}
+@media all and (max-width: 960px) {
+  blockquote {
+    font-size: 1.25em;
+    padding: 1em 0;
+  }
+}
 
-audio,
-embed,
-iframe,
-img,
-object,
-picture,
-svg,
-video {
-  max-width: 100%; }
+/**
+ * The monospace and <pre> elements.
+ *
+ * The font-family has already been declared above, so this is just the
+ * text treatments.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-size: 1em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 
+/**
+ * Definition lists. They're a big waste of time usually.
+ */
+dd {
+  margin: 0 0 0 40px;
+}
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Accordions.
+ *
+ * The <details> element has inconsistent browser support and styling, and is
+ * not readily animated, so this should only be our accordion solution for simple
+ * use cases.
+ */
+details {
+  border-bottom: 1px solid;
+  margin: 10px 0;
+  padding: 5px 15px;
+  text-align: left;
+  position: relative;
+}
+details > summary {
+  display: block;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+details > summary:focus {
+  outline: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::marker {
+  display: none;
+}
+details > summary::after {
+  color: #666;
+  content: '\2304';
+  font-size: 30px;
+  line-height: 1;
+  position: absolute;
+  right: 24px;
+  top: -5px;
+  transform: scaleY(1);
+  -moz-transform: scaleY(1);
+  -o-transform: scaleY(1);
+  -webkit-transform: scaleY(1);
+  transition: all .2s ease-in;
+}
+details[open] > summary {
+  margin-bottom: 20px;
+}
+details[open] > summary:after {
+  top: 10px;
+  transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+}
+
+/**
+ * Let's give divs box-sizing: border-box so we don't have to redeclare.
+ */
+div {
+  box-sizing: border-box;
+}
+
+/**
+ * Figures and their captions.
+ *
+ * Used as wrapping elements in media-containing components.
+ */
+figure {
+  display: inline-block;
+  min-width: 1px;
+  margin: 0;
+  max-width: 100%;
+}
+figcaption {
+  color: #666;
+  font-size: .75em;
+}
+
+/**
+ * Headings h1-h6.
+ *
+ * Each set has a main declaration (plus a class for use later), then for <h1>
+ * and <h2> there are @media queries to reduce their size for mobile, then
+ * universal decs that make the links within headings take their color rather
+ * than the default link colors.
+ * All the heading elements have no margin, so spacer components are used for
+ * vertical rhythm.
+ */
+h1,
+.heading--h1 {
+  font-size: 3.125em;
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+@media all and (max-width: 770px) {
+  h1,
+  .heading--h1 {
+    font-size: 2.5em;
+  }
+}
+h1 > a:link,
+h1 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * In practice, <h2> elements on the site are the same size as <h1>, except for
+ * the hero on the home page.
+ */
+h2,
+.heading--h2 {
+  font-size: 3.125em;
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+@media all and (max-width: 770px) {
+  h2,
+  .heading--h2 {
+    font-size: 2.5em;
+  }
+}
+h2 > a:link,
+h2 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h3,
+.heading--h3 {
+  font-size: 2.125em;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+h3 > a:link,
+h3 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h4,
+.heading--h4 {
+  font-size: 1.625em;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+h4 > a:link,
+h4 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h5,
+.heading--h5 {
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+}
+h5 > a:link,
+h5 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+h6,
+.heading--h6 {
+  font-size: 1.125em;
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 0;
+}
+h6 > a:link,
+h6 > a:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/**
+ * Horizontal rules.
+ *
+ * Link other text-level elements, the <hr> has the minimal amount of acceptable
+ * spacing, such that spacer components can be used for vertical rhythm.
+ *
+ * For cross-browser, the height is set rather than the border.
+ */
+hr {
+  background-color: #666;
+  border-width: 0;
+  color: #666;
+  height: 1px;
+  line-height: 0;
+  margin: 10px 0;
+}
+
+/**
+ * iframes.
+ *
+ * Let's put borders on 'em, unless they don't need them in the theme.
+ */
 iframe {
-  border: 1px solid #828282; }
-  .js--iframe-resize iframe {
-    border-color: transparent; }
+  border: 1px solid #ccc;
+}
 
+/**
+ * Images.
+ *
+ * Since they have a max-width of 100%, the height: auto is truly important.
+ * There's a render prop for old version of IE.
+ * And the display and line-height props are normalize-ish for spacing.
+ */
 img {
   border: 0;
   display: block;
   height: auto !important;
   -ms-interpolation-mode: bicubic;
-  line-height: 0; }
-
-svg:not(:root) {
-  overflow: hidden; }
-
-figcaption {
-  color: black;
-  font-size: .75em; }
-
-figure {
-  display: inline-block;
-  min-width: 150px;
-  margin: 0;
-  max-width: 100%; }
-
-hr {
-  background-color: black;
-  border-width: 0;
-  color: black;
-  height: 1px;
   line-height: 0;
-  margin: 50px 0; }
+}
 
 mark {
-  color: #df8c20; }
+  color: #f0ad33;
+}
 
 p {
-  margin: 0px 0px 10px;
-  max-width: 70ch;
+  margin: 0 0 10px;
+  max-width: 75ch;
   overflow-wrap: break-word;
-  word-wrap: break-word; }
-  p:last-child {
-    margin-bottom: 0; }
-  .text-align--center p {
-    margin-left: auto;
-    margin-right: auto; }
+  word-wrap: break-word;
+}
+p:last-child {
+  margin-bottom: 0;
+}
 
-pre,
-code,
-kbd,
-samp {
-  font-size: 1em; }
-
-pre {
-  white-space: pre;
-  white-space: pre-wrap;
-  word-wrap: break-word; }
-
+/**
+ * Quotes, non-block.
+ *
+ * These might not be used in any of our sites ever, so ignore and keep moving.
+ */
 q {
-  quotes: none; }
-  q::before, q::after {
-    content: ""; }
+  quotes: none;
+}
+q::before, q::after {
+  content: "";
+}
 
 small {
-  font-size: 75%; }
+  font-size: 75%;
+}
 
 sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline; }
-
+  vertical-align: baseline;
+}
 sub {
-  bottom: -0.25em; }
-
+  bottom: -0.25em;
+}
 sup {
-  top: -0.5em; }
+  top: -0.5em;
+}
 
-video {
-  height: auto; }
+/**
+ * A quick normalize for SVG that I don't really understand.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
 
 /* Table */
 table {
-  background: transparent;
-  border: 0 none;
-  border-collapse: collapse;
+  background-color: #fff;
   border-spacing: 0;
-  empty-cells: show; }
-
-caption {
-  font-size: 0.75em;
-  text-align: left; }
-
-thead {
-  color: #fff; }
-  thead a,
-  thead a:link,
-  thead a:visited {
-    color: #fff; }
-
-tr {
-  border-bottom: 1px solid #d7d7d7;
-  height: 50px; }
-  tr:last-child {
-    border: none; }
-  tr.even {
-    background: #e8e8e8; }
-    tr.even > td:nth-child(2) {
-      background: #e8e8e8; }
-
-td,
+  margin: 0;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+td, th {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
 th {
-  border-left: 0 none;
-  font-weight: normal;
-  padding: 0.5em 1em; }
-  td:first-child,
-  th:first-child {
-    border-left: 0 none; }
-  td:nth-child(2), td:nth-child(4),
-  th:nth-child(2),
-  th:nth-child(4) {
-    background: #fff; }
-  td i.fa-check-circle:before,
-  th i.fa-check-circle:before {
-    font-size: 26px; }
-
-th {
-  padding-bottom: 30px;
-  text-align: center; }
-  th p {
-    color: #6b6b6b; }
-  th:first-child {
-    text-align: left; }
-    th:first-child h2 {
-      font-weight: 300;
-      font-size: 36px;
-      margin-bottom: 40px; }
-
-td {
+  font-weight: 400;
+}
+[colspan] {
+  padding: 10px;
   text-align: center;
-  font-weight: 400; }
-  td:first-child {
-    text-align: left;
-    font-weight: 500; }
+}
+thead {
+  background-color: #222;
+  color: #fff;
+}
+thead th:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+tbody th {
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ccc;
+  color: #666;
+  padding: 5px 10px 20px;
+  vertical-align: top;
+}
+tbody td {
+  border-bottom: 1px solid #ccc;
+  vertical-align: top;
+}
+tbody td:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
 
 /**
- * @file
- * HTML form elements.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
+ * Number and bullet lists.
  *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
+ * Lists are set to hang; typographically to maintain the same vertical line as
+ * the rest of the text, and for the bullets to be left of the content container.
+ * Lists within lists (nested) are then indented so the bullets/numbers line up
+ * with the previous text, and the new text is indented.
+ *
+ * @see https://markboulton.co.uk/journal/five-simple-steps-to-better-typography-part-2
  */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+ul ul,
+ol ul {
+  padding: 0 0 0 1.2em;
+}
+
 /**
- * Functions.
+ * Ensure <video> tags are responsive like <img> tags.
  */
-/* stylelint-disable */
-/* stylelint-enable */
+video {
+  height: auto;
+}
+
+/********************************** FORMS *************************************/
+
+/**
+ * Input elements, general styling.
+ */
 button,
 input,
 select,
 textarea {
   background: #fff;
-  border: none;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 1px;
   box-sizing: border-box;
-  color: #6b6b6b;
+  color: #666;
   font-size: 100%;
   font-weight: 400;
   margin: 0;
   max-width: 100%;
   padding: 5px 10px;
-  vertical-align: middle; }
-  @media all and (max-width: 670px) {
-    button,
-    input,
-    select,
-    textarea {
-      max-width: 280px; } }
+  vertical-align: middle;
+}
+@media all and (max-width: 670px) {
+  button,
+  input,
+  select,
+  textarea {
+    max-width: 280px;
+  }
+}
 
 textarea {
   max-height: inherit;
-  padding: 5px 20px; }
+  padding: 5px 20px;
+}
 
 button,
 input {
-  line-height: 1; }
+  line-height: 1;
+}
 
 select {
-  max-width: 100%; }
-  @media all and (max-width: 670px) {
-    select {
-      max-width: 280px; } }
+  max-width: 100%;
+}
+@media all and (max-width: 670px) {
+  select {
+    max-width: 280px;
+  }
+}
 
 .child-links--as-buttons a,
 .button,
@@ -641,651 +765,171 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #de8b20;
-  border-color: transparent;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  background-color: #1a428a;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 1.1em;
+  font-size: 1em;
   font-weight: 600;
   margin: 0 20px 20px 0;
   padding: 10px 40px 10px;
-  text-decoration: none; }
-  .child-links--as-buttons a:hover,
-  .button:hover,
-  a.button:hover,
-  button:hover,
-  input[type="button"]:hover,
-  input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    background-color: #df8c20; }
-  .child-links--as-buttons a:active,
-  .button:active,
-  a.button:active,
-  button:active,
-  input[type="button"]:active,
-  input[type="reset"]:active,
-  input[type="submit"]:active {
-    background-color: rgba(222, 139, 32, 0.5); }
-  .child-links--as-buttons a:focus,
-  .button:focus,
-  a.button:focus,
-  button:focus,
-  input[type="button"]:focus,
-  input[type="reset"]:focus,
-  input[type="submit"]:focus {
-    outline: 1px dashed;
-    outline-offset: 1px; }
-  .child-links--as-buttons a.disabled, .child-links--as-buttons a[disabled],
-  .button.disabled,
-  .button[disabled],
-  a.button.disabled,
-  a.button[disabled],
-  button.disabled,
-  button[disabled],
-  input[type="button"].disabled,
-  input[type="button"][disabled],
-  input[type="reset"].disabled,
-  input[type="reset"][disabled],
-  input[type="submit"].disabled,
-  input[type="submit"][disabled] {
-    background-color: #e8e8e8;
-    color: black;
-    cursor: default; }
-  .child-links--as-buttons a.button--primary,
-  .button.button--primary,
-  a.button.button--primary,
-  button.button--primary,
-  input[type="button"].button--primary,
-  input[type="reset"].button--primary,
-  input[type="submit"].button--primary {
-    background-color: #ffcb05; }
+  text-decoration: none;
+}
+.child-links--as-buttons a:hover,
+.button:hover,
+a.button:hover,
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background-color: #009abf;
+}
+.child-links--as-buttons a:active,
+.button:active,
+a.button:active,
+button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+  background-color: #009abf;
+}
+.child-links--as-buttons a:focus,
+.button:focus,
+a.button:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  outline: 1px dashed;
+  outline-offset: 1px;
+}
+.child-links--as-buttons a.disabled, .child-links--as-buttons a[disabled],
+.button.disabled,
+.button[disabled],
+a.button.disabled,
+a.button[disabled],
+button.disabled,
+button[disabled],
+input[type="button"].disabled,
+input[type="button"][disabled],
+input[type="reset"].disabled,
+input[type="reset"][disabled],
+input[type="submit"].disabled,
+input[type="submit"][disabled] {
+  background-color: #e8e8e8;
+  color: black;
+  cursor: default;
+}
 
 input[type="checkbox"],
 input[type="radio"] {
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 input[type="file"] {
-  padding: 2px; }
+  padding: 2px;
+}
 
 input[type="file"]::-webkit-file-upload-button {
   font-size: 0.95em;
-  margin: 0; }
+  margin: 0;
+}
 
 input[type="image"] {
-  border: 0 none; }
+  border: 0 none;
+}
 
 form {
   text-align: left;
-  max-width: 550px; }
-  form .field-multiple-table {
-    margin: 0; }
-    form .field-multiple-table .field-multiple-drag {
-      width: 30px;
-      padding-right: 0; }
-      form .field-multiple-table .field-multiple-drag .tabledrag-handle {
-        padding-right: 5px; }
-  form .field-add-more-submit {
-    margin: 5px 0 0; }
+  max-width: 550px;
+}
+form .field-multiple-table {
+  margin: 0;
+}
+form .field-multiple-table .field-multiple-drag {
+  width: 30px;
+  padding-right: 0;
+}
+form .field-multiple-table .field-multiple-drag .tabledrag-handle {
+  padding-right: 5px;
+}
+form .field-add-more-submit {
+  margin: 5px 0 0;
+}
 
 label {
   display: block;
   font-size: 14px;
-  font-weight: 300; }
-  label.option {
-    display: inline;
-    font-weight: normal; }
+  font-weight: 300;
+}
+label.option {
+  display: inline;
+  font-weight: normal;
+}
 
 .description {
-  font-size: 0.85em; }
+  font-size: 0.85em;
+}
 
 .form-actions, .form-item {
   margin: 0 0 10px;
   overflow-wrap: break-word;
-  word-wrap: break-word; }
-  .form-actions input.error,
-  .form-actions textarea.error,
-  .form-actions select.error, .form-item input.error,
-  .form-item textarea.error,
-  .form-item select.error {
-    border: 2px solid #de8b20; }
-  .form-actions--error-message::before, .form-item--error-message::before {
-    content: '';
-    display: inline-block;
-    height: 14px;
-    width: 14px;
-    vertical-align: sub;
-    background: url(/core/misc/icons/e32700/error.svg) no-repeat;
-    -webkit-background-size: contain;
-    -moz-background-size: contain;
-    -o-background-size: contain;
-    background-size: contain; }
+  word-wrap: break-word;
+}
+.form-actions input.error,
+.form-actions textarea.error,
+.form-actions select.error, .form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  border: 2px solid #f0ad33;
+}
+.form-actions--error-message::before, .form-item--error-message::before {
+  content: '';
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  vertical-align: sub;
+  background: url('/core/misc/icons/e32700/error.svg') no-repeat;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
 .form-checkboxes .form-item, .form-radios .form-item {
   margin-top: 5px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+}
 .form-composite > legend {
   display: inline;
   font-size: inherit;
   font-weight: bold;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 .form-required::after {
   content: '*';
   display: inline-block;
   margin: 0 0 0 2px;
-  vertical-align: super; }
+  vertical-align: super;
+}
 .form-type-checkbox .description, .form-type-radio .description {
-  margin-left: 2.4em; }
+  margin-left: 2.4em;
+}
 .form-type-item {
-  font-weight: 700; }
-  .form-type-item label {
-    display: inline-block; }
-
-.color--inherit .entity-bundle-form {
-  position: relative; }
-  .color--inherit .entity-bundle-form .form-item {
-    position: relative; }
-    .color--inherit .entity-bundle-form .form-item.form-type-textarea, .color--inherit .entity-bundle-form .form-item.form-type-textfield, .color--inherit .entity-bundle-form .form-item.form-type-email, .color--inherit .entity-bundle-form .form-item.webform-component-email, .color--inherit .entity-bundle-form .form-item.webform-component-textfield {
-      padding: 20px 0; }
-      .color--inherit .entity-bundle-form .form-item.form-type-textarea input, .color--inherit .entity-bundle-form .form-item.form-type-textfield input, .color--inherit .entity-bundle-form .form-item.form-type-email input, .color--inherit .entity-bundle-form .form-item.webform-component-email input, .color--inherit .entity-bundle-form .form-item.webform-component-textfield input {
-        box-shadow: 1px 1px #ebebeb, -1px -1px #ebebeb; }
-      .color--inherit .entity-bundle-form .form-item.form-type-textarea > label, .color--inherit .entity-bundle-form .form-item.form-type-textfield > label, .color--inherit .entity-bundle-form .form-item.form-type-email > label, .color--inherit .entity-bundle-form .form-item.webform-component-email > label, .color--inherit .entity-bundle-form .form-item.webform-component-textfield > label {
-        line-height: 1;
-        position: absolute;
-        top: 0px;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        -ms-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s; }
-    .color--inherit .entity-bundle-form .form-item.empty-textfield > label {
-      top: 38px;
-      left: 12px;
-      color: #6b6b6b; }
-    .color--inherit .entity-bundle-form .form-item.input-focus > label {
-      top: -4px;
-      left: 0; }
-    .color--inherit .entity-bundle-form .form-item.form-type-radio {
-      display: inline-block;
-      margin-right: 20px; }
-  .color--inherit .entity-bundle-form .form-type-textarea textarea {
-    border: 1px solid #ebebeb; }
-.color--white .entity-bundle-form {
-  position: relative; }
-  .color--white .entity-bundle-form .form-item {
-    position: relative; }
-    .color--white .entity-bundle-form .form-item.form-type-textarea, .color--white .entity-bundle-form .form-item.form-type-textfield, .color--white .entity-bundle-form .form-item.form-type-email, .color--white .entity-bundle-form .form-item.webform-component-email, .color--white .entity-bundle-form .form-item.webform-component-textfield {
-      padding: 20px 0 0; }
-      .color--white .entity-bundle-form .form-item.form-type-textarea input, .color--white .entity-bundle-form .form-item.form-type-textfield input, .color--white .entity-bundle-form .form-item.form-type-email input, .color--white .entity-bundle-form .form-item.webform-component-email input, .color--white .entity-bundle-form .form-item.webform-component-textfield input {
-        box-shadow: 1px 1px #ebebeb, -1px -1px #ebebeb; }
-      .color--white .entity-bundle-form .form-item.form-type-textarea > label, .color--white .entity-bundle-form .form-item.form-type-textfield > label, .color--white .entity-bundle-form .form-item.form-type-email > label, .color--white .entity-bundle-form .form-item.webform-component-email > label, .color--white .entity-bundle-form .form-item.webform-component-textfield > label {
-        line-height: 1;
-        position: absolute;
-        top: 0px;
-        -webkit-transition: all .3s;
-        -moz-transition: all .3s;
-        -ms-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s; }
-    .color--white .entity-bundle-form .form-item.empty-textfield > label {
-      top: 38px;
-      left: 12px;
-      color: #6b6b6b; }
-    .color--white .entity-bundle-form .form-item.input-focus > label {
-      top: -4px;
-      left: 0; }
-.entity-bundle-form.form--inline .form-actions {
-  max-width: 40%;
-  clear: none;
-  display: inline-block; }
-  .entity-bundle-form.form--inline .form-actions button {
-    padding: 20px;
-    text-transform: capitalize;
-    border-radius: 0 4px 4px 0;
-    color: #40658f;
-    margin-top: 20px;
-    height: 55px; }
-.entity-bundle-form.form--inline .form-wrapper:not(.form-actions) {
-  max-width: 60%;
+  font-weight: 700;
+}
+.form-type-item label {
   display: inline-block;
-  vertical-align: top; }
-  .entity-bundle-form.form--inline .form-wrapper:not(.form-actions) .form-item {
-    height: 55px;
-    border-radius: 4px 0 0 4px;
-    max-width: 100%;
-    box-shadow: none; }
-    .entity-bundle-form.form--inline .form-wrapper:not(.form-actions) .form-item.empty-textfield > label {
-      top: 42px; }
-  .entity-bundle-form.form--inline .form-wrapper:not(.form-actions) input {
-    height: 55px;
-    border-radius: 4px 0 0 4px;
-    max-width: 100%;
-    box-shadow: none; }
-.entity-bundle-form .contact-form {
-  max-width: 400px; }
-  .entity-bundle-form .contact-form .button {
-    display: block;
-    margin-top: 20px; }
-.entity-bundle-form input {
-  height: 45px; }
+}
 
 .label {
   display: inline;
   font-size: inherit;
   font-weight: bold;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 .marker {
-  color: #e00; }
-
-/**
- * @file
- * Utility and other generalized classes, in alphabetical order.
- */
-/**
- * @file
- * Variables for reuse throughout the theme.
- */
-/**
- * Common settings.
- */
-/**
- * Colors.
- *
- * @see http://razorltd.github.io/sasscolourfunctioncalculator/
- */
-/* Named colors */
-/* Main settings. */
-/* Stateful colors. */
-/* Utility colors. */
-/**
- * Functions.
- */
-/* stylelint-disable */
-/* stylelint-enable */
-.background-color--black {
-  background-color: #303030; }
-.background-color--darkblue {
-  background-color: #00547a; }
-.background-color--darkteal {
-  background-color: #0e3e54; }
-.background-color--lightblue {
-  background-color: #3ca0ce; }
-.background-color--lightgray {
-  background-color: #ebebeb; }
-.background-color--lightteal {
-  background-color: #0faeb7; }
-.background-color--mediumgray {
-  background-color: #6b6b6b; }
-.background-color--mediumteal {
-  background-color: #0C9097; }
-.background-color--orange {
-  background-color: #de8b20; }
-.background-color--superlightgray {
-  background-color: #f8f8f9; }
-.background-color--white {
-  background-color: #fff; }
-.background-color--yellow {
-  background-color: #ffcb05; }
-@media all and (max-width: 1225px) {
-  .background-image-display-mobile--hide {
-    background-image: none; } }
-
-@media (max-width: 1225px) {
-  .has-field-image-background:not(.has-field-video-background) {
-    position: relative; }
-    .has-field-image-background:not(.has-field-video-background):before {
-      background-color: rgba(255, 255, 255, 0.9);
-      bottom: 0;
-      content: '';
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-      z-index: 0; }
-    .has-field-image-background:not(.has-field-video-background) > * {
-      z-index: 1;
-      position: relative; } }
-.blockquote--closing-include p:last-child::after {
-  content: "\201D"; }
-.blockquote--opening-include p:first-child::before {
-  content: "\201C"; }
-
-blockquote {
-  font-style: italic; }
-  blockquote + div .field-name--field-text {
-    color: #0faeb7;
-    font-weight: 600; }
-  blockquote + div + div .field-name--field-text {
-    color: #fff; }
-
-.border-bottom--1px-solid-mediumgray {
-  border-bottom: 1px solid #6b6b6b; }
-
-.color--black {
-  color: #303030; }
-.color--darkblue {
-  color: #00547a; }
-.color--darkteal {
-  color: #0e3e54; }
-.color--light-blue, .color--lightblue {
-  color: #3ca0ce; }
-.color--lightgray {
-  color: #ebebeb; }
-.color--lightteal {
-  color: #0faeb7; }
-.color--mediumgray {
-  color: #6b6b6b; }
-.color--mediumteal {
-  color: #0C9097; }
-.color--orange {
-  color: #de8b20; }
-.color--superlightgray {
-  color: #f8f8f9; }
-.color--white {
-  color: #fff; }
-.color--yellow {
-  color: #ffcb05; }
-
-.child {
-  /* Note: this contains front-page-grid-specific styling. */ }
-  .child-color--black .entity-bundle-heading.entity-bundle-heading,
-  .child-color--black .entity-bundle-text,
-  .child-color--black .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #303030; }
-  .child-color--darkblue .entity-bundle-heading.entity-bundle-heading,
-  .child-color--darkblue .entity-bundle-text,
-  .child-color--darkblue .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #00547a; }
-  .child-color--darkteal .entity-bundle-heading.entity-bundle-heading,
-  .child-color--darkteal .entity-bundle-text,
-  .child-color--darkteal .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #0e3e54; }
-  .child-color--light-blue .entity-bundle-heading.entity-bundle-heading,
-  .child-color--light-blue .entity-bundle-text,
-  .child-color--light-blue .entity-bundle-list.list-style-type--fa-check-circle > li:before, .child-color--lightblue .entity-bundle-heading.entity-bundle-heading,
-  .child-color--lightblue .entity-bundle-text,
-  .child-color--lightblue .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #3ca0ce; }
-  .child-color--lightgray .entity-bundle-heading.entity-bundle-heading,
-  .child-color--lightgray .entity-bundle-text,
-  .child-color--lightgray .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #ebebeb; }
-  .child-color--lightteal .entity-bundle-heading.entity-bundle-heading,
-  .child-color--lightteal .entity-bundle-text,
-  .child-color--lightteal .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #0faeb7; }
-  .child-color--mediumgray .entity-bundle-heading.entity-bundle-heading,
-  .child-color--mediumgray .entity-bundle-text,
-  .child-color--mediumgray .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #6b6b6b; }
-  .child-color--mediumteal .entity-bundle-heading.entity-bundle-heading,
-  .child-color--mediumteal .entity-bundle-text,
-  .child-color--mediumteal .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #0C9097; }
-  .child-color--orange .entity-bundle-heading.entity-bundle-heading,
-  .child-color--orange .entity-bundle-text,
-  .child-color--orange .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #de8b20; }
-  .child-color--scarlet .entity-bundle-heading.entity-bundle-heading,
-  .child-color--scarlet .entity-bundle-text,
-  .child-color--scarlet .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #ef4e13; }
-  .child-color--superlightgray .entity-bundle-heading.entity-bundle-heading,
-  .child-color--superlightgray .entity-bundle-text,
-  .child-color--superlightgray .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #f8f8f9; }
-  .child-color--white .entity-bundle-heading.entity-bundle-heading,
-  .child-color--white .entity-bundle-text,
-  .child-color--white .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #fff; }
-  .child-color--yellow .entity-bundle-heading.entity-bundle-heading,
-  .child-color--yellow .entity-bundle-text,
-  .child-color--yellow .entity-bundle-list.list-style-type--fa-check-circle > li:before {
-    color: #ffcb05; }
-  .child-inner-max-width--inherit.entity-bundle-stripe > .inner {
-    max-width: inherit; }
-    .child-inner-max-width--inherit.entity-bundle-stripe > .inner .flex--1 {
-      height: 50vh;
-      max-width: inherit;
-      min-height: 380px;
-      height: 50vh; }
-      .child-inner-max-width--inherit.entity-bundle-stripe > .inner .flex--1 > * {
-        margin: 0 auto;
-        max-width: 500px; }
-  .child-max-width--320px > * {
-    max-width: 320px; }
-  .child-max-width--360px > * {
-    max-width: 360px; }
-
-.columnar {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
-  -moz-column-gap: 20px;
-  -webkit-column-gap: 20px;
-  column-gap: 20px; }
-  .columnar > * {
-    -webkit-column-break-inside: avoid;
-    break-inside: avoid-column;
-    display: table;
-    page-break-inside: avoid; }
-
-.compro-globalStyling {
-  /**
-   * Right now just negative to the top, but ideally would work top and bottom
-   * of a section.
-   */ }
-  .compro-globalStyling--encroach {
-    margin-bottom: -70px !important;
-    /* This is specific to the homepage */
-    overflow: visible;
-    position: relative;
-    transform: translate(0, -50%);
-    z-index: 4; }
-
-@media all and (max-width: 1023px) {
-  .display--flex {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap; } }
-
-.heading--h1 {
-  font-size: 3.4em; }
-.heading--h2 {
-  font-size: 3.4em; }
-.heading--h3 {
-  font-size: 1.225em; }
-.heading--h4 {
-  font-size: 1.125em; }
-.heading--h5 {
-  font-size: 1em; }
-.heading--h6 {
-  font-size: 0.9em; }
-
-ul.inline li:first-child {
-  padding: 0 0.5em 0 0; }
-
-.js .revealOnScroll {
-  opacity: 0; }
-  .js .revealOnScroll.animated {
-    opacity: 1;
-    animation-duration: 2s; }
-    @media all and (max-width: 770px) {
-      .js .revealOnScroll.animated {
-        animation-duration: 0s;
-        animation-name: none; } }
-
-.menu-icon::before {
-  content: '';
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  vertical-align: middle;
-  margin-right: 1rem;
-  background-position: center right;
-  background-size: contain;
-  background-repeat: no-repeat;
-  fill: #fff; }
-.menu-icon.icon--valence-portal::before {
-  background-image: url("../images/menu-icon--laptop.svg"); }
-.menu-icon.icon--valence-portal:hover::before {
-  background-image: url("../images/menu-icon--laptop-yellow.svg"); }
-.menu-icon.icon--lowcode-app-builder::before {
-  background-image: url("../images/menu-icon--desktop.svg"); }
-.menu-icon.icon--lowcode-app-builder:hover::before {
-  background-image: url("../images/menu-icon--desktop-yellow.svg"); }
-.menu-icon.icon--developer-toolkit::before {
-  background-image: url("../images/menu-icon--toolkit.svg"); }
-.menu-icon.icon--developer-toolkit:hover::before {
-  background-image: url("../images/menu-icon--toolkit-yellow.svg"); }
-.menu-icon.icon--valence-utilities::before {
-  background-image: url("../images/menu-icon--utilities.svg"); }
-.menu-icon.icon--valence-utilities:hover::before {
-  background-image: url("../images/menu-icon--utilities-yellow.svg"); }
-
-[class*='logo--'] {
-  background-position: center right;
-  background-position: top right;
-  background-repeat: no-repeat;
-  min-height: 106px;
-  padding-right: 117px;
-  /* Vertically center headings with icons */
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -moz-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
-  @media all and (max-width: 770px) {
-    [class*='logo--'] {
-      padding-right: 0; } }
-
-@media all and (min-width: 1100px) {
-  .logo--autocode {
-    background-image: url("../images/logo--autocode.png"); }
-  .logo--file-editor {
-    background-image: url("../images/logo--file-editor.png"); }
-  .logo--iadmin {
-    background-image: url("../images/logo--iadmin.png"); }
-  .logo--nitro {
-    background-image: url("../images/logo--nitro.png"); }
-  .logo--query-runner {
-    background-image: url("../images/logo--runner.png"); }
-  .logo--source-editor {
-    background-image: url("../images/logo--source-editor.png"); }
-  .logo--universal {
-    background-image: url("../images/logo--universal.png"); }
-  .logo--valence {
-    background-image: url("../images/logo--valence.png"); } }
-/* Padding classes. */
-.padding {
-  /* Unpad an element that otherwise inherits it
-     from an earlier class or lesser selector. */ }
-  .padding--0 {
-    padding: 0; }
-    .padding--0.entity-type-section {
-      padding: 0; }
-
-.paragraph--indented {
-  margin-left: 20px; }
-
-.pipe-spaced li::after {
-  content: '|';
-  display: inline-block;
-  font-weight: 300;
-  opacity: .9;
-  padding: 0 10px;
-  vertical-align: middle; }
-.pipe-spaced li:last-child::after, .pipe-spaced li.last::after {
-  display: none; }
-
-.print-break {
-  page-break-before: always; }
-
-.rollover {
-  padding: 0;
-  position: relative; }
-  .rollover--hover {
-    background-color: rgba(56, 109, 132, 0.9);
-    bottom: 0;
-    left: 0;
-    overflow-y: hidden;
-    padding: 0 10px;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
-    -ms-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s; }
-  .rollover:hover .rollover--hover {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    top: 0; }
-
-.responsive-table-wrapper,
-.view-content.table--zebra-rows {
-  overflow-x: auto; }
-  @media all and (max-width: 767px) {
-    .responsive-table-wrapper,
-    .view-content.table--zebra-rows {
-      overflow-x: scroll; } }
-
-.submitted {
-  color: gray;
-  margin: 0 0 20px; }
-
-.table--compare-editions td, .table--compare-editions th {
-  max-width: 260px; }
-.table--compare-editions th img {
-  margin: 0 auto 10px; }
-
-.text-align--center figure {
-  margin: 0 auto;
-  text-align: center; }
-.text-align--center img {
-  margin: 0 auto; }
-.text-align--center > .inner > * {
-  margin-right: auto;
-  margin-left: auto; }
-
-.vertical-spacing-1 {
-  padding: 5px 0; }
-.vertical-spacing-2 {
-  padding: 10px 0; }
-.vertical-spacing-4 {
-  padding: 20px 0; }
-.vertical-spacing-8 {
-  padding: 40px 0; }
-  @media all and (max-width: 960px) {
-    .vertical-spacing-8 {
-      padding: 20px 0; } }
-.vertical-spacing-16 {
-  padding: 80px 0; }
-  @media all and (max-width: 960px) {
-    .vertical-spacing-16 {
-      padding: 40px 0; } }
-.vertical-spacing-32 {
-  padding: 160px 0; }
-  @media all and (max-width: 960px) {
-    .vertical-spacing-32 {
-      padding: 80px 0; } }
-
-.text-align--center .entity-bundle-rich-text p {
-  margin-left: auto;
-  margin-right: auto; }
-
-/*# sourceMappingURL=base.css.map */
+  color: #f0ad33;
+}
