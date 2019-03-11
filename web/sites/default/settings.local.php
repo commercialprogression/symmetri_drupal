@@ -11,27 +11,27 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
-ini_set('xdebug.max_nesting_level', 256);
+ini_set('xdebug.max_nesting_level', 512);
+ini_set('memory_limit', '512M');
+$config['system.logging']['error_level'] = 'verbose';
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
 
 /**
  * Local other settings.
  */
-ini_set('upload_max_filesize', '100M');
-ini_set('post_max_size', '100M');
-$conf['block_cache'] = 0;
-$conf['cache'] = 0;
-$conf['preprocess_css'] = 0;
-$conf['preprocess_js'] = 0;
-$conf['securepages_enable'] = FALSE;
-$conf['mandrill_api_key'] = FALSE;
+$settings['file_chmod_directory'] = 0755;
+$settings['file_chmod_file'] = 0644;
+$settings['hash_salt'] = 'V8xV4rh70SN0';
+$settings['skip_permissions_hardening'] = TRUE;
 
 /**
  * Databases.
  */
 $databases = array (
-  'default' => 
+  'default' =>
   array (
-    'default' => 
+    'default' =>
     array (
       'database' => 'drupal',
       'username' => 'root',
@@ -44,7 +44,10 @@ $databases = array (
   ),
 );
 
-$settings['hash_salt'] = 'V8xV4rh70SN0';
+$config['search_api.server.solr']['backend_config']['connector_config']['core'] = 'd8';
+$config['search_api.server.solr']['backend_config']['connector_config']['path'] = '/solr';
+$config['search_api.server.solr']['backend_config']['connector_config']['host'] = 'solr';
+$config['search_api.server.solr']['backend_config']['connector_config']['port'] = '8983';
 
 /**
  * General configs.
@@ -64,5 +67,5 @@ $settings['trusted_host_patterns'] = [
   'localhost',
 ];
 
-
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/local.services.yml';
