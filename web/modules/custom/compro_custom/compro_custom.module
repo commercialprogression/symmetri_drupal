@@ -140,6 +140,11 @@ function compro_custom_entity_extra_field_info() {
           'description' => t('Author attribution for the content.'),
           'weight' => 0,
         ],
+        'linked_title' => [
+          'label' => t('Linked Title'),
+          'description' => t('The title linked to the detail page.'),
+          'weight' => 0,
+        ]
       ],
       'form' => [
         'compro_submitted' => [
@@ -172,6 +177,13 @@ function compro_custom_node_view(array &$build, EntityInterface $entity, EntityV
       '#markup' => \Drupal::token()
         ->replace($sub_line, ['node' => $entity]),
       '#suffix' => '</div>',
+    ];
+  }
+  if ($display->getComponent('linked_title')) {
+    $build['compro_submitted'] = [
+      '#type' => 'link',
+      '#url' => Url::fromRoute('entity.node.canonical', ['node' => $entity->id()]),
+      '#title' => $entity->getTitle(),
     ];
   }
 }

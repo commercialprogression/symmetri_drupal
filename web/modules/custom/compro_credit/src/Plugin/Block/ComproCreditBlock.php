@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\compro_credit\Plugin\Block\ComproCreditBlock.
- */
-
 namespace Drupal\compro_credit\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
@@ -20,12 +15,13 @@ use Drupal\Core\Url;
  * )
  */
 class ComproCreditBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
   public function build() {
     // External Uri.
-    $url = Url::fromUri('http://www.commercialprogression.com',
+    $url = Url::fromUri('https://www.symmetritechnology.com/',
       array(
         'attributes' => array(
           'class' => array(
@@ -34,11 +30,11 @@ class ComproCreditBlock extends BlockBase {
         ),
       )
     );
-    $external_link = Link::fromTextAndUrl(t('Drupal website design'), $url);
+    $external_link = Link::fromTextAndUrl(t('Symmetri Technology'), $url);
     // Render array that returns link and text for block content.
     return array(
       'compro_text' => array(
-        '#markup' => $external_link->toString() . '<span class="compro-credit-text"> ' . t('by Commercial Progression') . '</span>',
+        '#markup' => '<span class="compro-credit-text"> ' . t('Drupal Web Development by ') . $external_link->toString() . '</span>',
       ),
     );
   }
