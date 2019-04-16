@@ -91,6 +91,8 @@ content:
       override_labels: true
       label_singular: SEO
       label_plural: SEOs
+      collapsible: true
+      collapsed: true
     third_party_settings: {  }
     type: inline_entity_form_simple
     region: content
