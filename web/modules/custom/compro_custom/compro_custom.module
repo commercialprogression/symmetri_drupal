@@ -367,4 +367,9 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
       $form['mail']['#title'] = t('Email Address');
     }
   }
+
+  // Add the SEO fields to the advanced fieldset.
+  if (isset($form['advanced']) && isset($form['field_seo'])) {
+    $form['field_seo']['#group'] = 'advanced';
+  }
 }
