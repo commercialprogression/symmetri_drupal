@@ -40,31 +40,31 @@ class MapBlock extends BlockBase {
     // Configuration form for map/directions block.
     $map_data = $this->getConfiguration();
 
-    $form['api_key'] = array(
+    $form['api_key'] = [
       '#title' => t('Google API key'),
       '#type' => 'textfield',
       '#required' => TRUE,
       '#default_value' => isset($map_data['api_key']) ? $map_data['api_key'] : '',
-    );
+    ];
 
-    $form['dimensions'] = array(
+    $form['dimensions'] = [
       '#title' => t('Dimensions'),
       '#type' => 'fieldset',
-    );
+    ];
 
-    $form['dimensions']['width'] = array(
+    $form['dimensions']['width'] = [
       '#title' => t('Width'),
       '#type' => 'textfield',
       '#required' => TRUE,
       '#default_value' => isset($map_data['width']) ? $map_data['width'] : '600',
-    );
+    ];
 
-    $form['dimensions']['height'] = array(
+    $form['dimensions']['height'] = [
       '#title' => t('Height'),
       '#type' => 'textfield',
       '#required' => TRUE,
       '#default_value' => isset($map_data['height']) ? $map_data['height'] : '450',
-    );
+    ];
 
     return $form;
   }
@@ -73,18 +73,18 @@ class MapBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
-    $this->configuration['api_key'] = $form_state->getValue(array('api_key'));
+    $this->configuration['api_key'] = $form_state->getValue(['api_key']);
     $this->configuration['width'] = $form_state->getValue(
-      array(
+      [
         'dimensions',
         'width',
-      )
+      ]
     );
     $this->configuration['height'] = $form_state->getValue(
-      array(
+      [
         'dimensions',
         'height',
-      )
+      ]
     );
   }
 
