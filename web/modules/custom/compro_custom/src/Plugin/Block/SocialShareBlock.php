@@ -7,10 +7,10 @@
 
 namespace Drupal\compro_custom\Plugin\Block;
 
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-use Drupal\Component\Utility\Html;
 
 /**
  * Provides current page social share links and a favorite placeholder.
@@ -21,6 +21,7 @@ use Drupal\Component\Utility\Html;
  * )
  */
 class SocialShareBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -39,25 +40,23 @@ class SocialShareBlock extends BlockBase {
       $title = Html::escape($title['#markup']);
     }
 
-    $facebook = Url::fromUri('https://www.facebook.com/sharer/sharer.php', [
+    $facebook_link = $this->buildSocialLink('https://www.facebook.com/sharer/sharer.php', 'facebook', [
       'query' => [
         'u' => $current_url,
       ],
-      'attributes' => [
-        'class' => ['icon', 'facebook'],
-      ],
     ]);
-    $facebook_link = Link::fromTextAndUrl(t('Facebook'), $facebook)->toString();
-    $linkedin = Url::fromUri('http://www.linkedin.com/shareArticle', [
+    $twitter_link = $this->buildSocialLink('https://twitter.com/intent/tweet', 'twitter', [
       'query' => [
         'url' => $current_url,
         'title' => $title,
       ],
-      'attributes' => [
-        'class' => ['icon', 'linkedin'],
+    ]);
+    $linkedin_link = $this->buildSocialLink('http://www.linkedin.com/shareArticle', 'linkedin', [
+      'query' => [
+        'url' => $current_url,
+        'title' => $title,
       ],
     ]);
-    $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin)->toString();
     $email = [
       '#type' => 'html_tag',
       '#tag' => 'a',
@@ -75,12 +74,12 @@ class SocialShareBlock extends BlockBase {
       ],
       '#type' => 'container',
       '#attributes' => [
-        'class' => ['current-page-links']
+        'class' => ['current-page-links'],
       ],
       'share' => [
         '#type' => 'container',
         '#attributes' => [
-          'class' => ['social-share']
+          'class' => ['social-share'],
         ],
         'icon' => [
           '#prefix' => '<span class="icon share">',
@@ -91,17 +90,41 @@ class SocialShareBlock extends BlockBase {
           '#theme' => 'item_list',
           '#list_type' => 'ul',
           '#items' => [
-            $linkedin_link,
             $facebook_link,
+            $twitter_link,
+            $linkedin_link,
             $email,
-          ]
+          ],
         ],
       ],
-      'favorite' => [
-        '#prefix' => '<span class="disabled icon favorite tooltip" title="Feature coming soon">',
-        '#markup' => t('Follow'),
-        '#suffix' => '</span>',
-      ],
+    ];
+  }
+
+  /**
+   * A Helper function to create the link render array for social channels.
+   *
+   * @param $share_link
+   *   The direct link to share on the specific channel.
+   * @param $share_channel
+   *   The human name of the channel so we can give it a title and class.
+   * @param $query
+   *   The specific query parameters we need to include.
+   *
+   * @return array
+   *   The link render array for this social channel.
+   */
+  private function buildSocialLink($share_link, $share_channel, $query) {
+    $channel = ucfirst($share_channel);
+    $class = Html::cleanCssIdentifier($share_channel);
+    return [
+      '#type' => 'link',
+      '#url' => Url::fromUri($share_link, [
+        'query' => $query,
+        'attributes' => [
+          'class' => ['icon', $class],
+        ],
+      ]),
+      '#title' => t('@channel', ['@channel' => $channel]),
     ];
   }
 
