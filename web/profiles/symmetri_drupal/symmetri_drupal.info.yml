@@ -36,6 +36,7 @@ dependencies:
   - field_ui
   - file
   - filter
+  - google_analytics
   - image
   - inline_entity_form
   - libraries
