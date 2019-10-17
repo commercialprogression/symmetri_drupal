@@ -43,6 +43,13 @@ class HeroTitleBlock extends BlockBase implements TitleBlockPluginInterface {
       '#cache' => [
         'contexts' => ['url'],
       ],
+      '#attributes' => [
+        'class' => [
+          'entity-bundle-stripe',
+          'color--white',
+          'text-align--center',
+        ],
+      ],
       '#type' => 'page_title',
       '#title' => $this->title,
     ];
@@ -60,6 +67,29 @@ class HeroTitleBlock extends BlockBase implements TitleBlockPluginInterface {
               'contexts' => ['url'],
             ],
             'field' => $node->get('field_hero')->view([
+              'label' => 'hidden',
+              'type' => 'entity_reference_entity_view',
+              'settings' => [
+                'view_mode' => 'default',
+                'link' => FALSE,
+              ],
+            ]),
+          ];
+        }
+      }
+    }
+
+    if (isset($parameters['taxonomy_term'])) {
+      $term = $parameters['taxonomy_term'];
+      if ($term->hasField('field_hero')) {
+        $field_hero = $term->get('field_hero')->getValue();
+        if (isset($field_hero) && count($field_hero)) {
+          // Set the block content to the hero if appropriate.
+          $return = [
+            '#cache' => [
+              'contexts' => ['url'],
+            ],
+            'field' => $term->get('field_hero')->view([
               'label' => 'hidden',
               'type' => 'entity_reference_entity_view',
               'settings' => [

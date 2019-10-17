@@ -1,0 +1,5 @@
+services:
+  compro_custom.route_subscriber:
+    class: Drupal\compro_custom\EventSubscriber\ComproCustomRequestSubscriber
+    tags:
+      - {name: event_subscriber}

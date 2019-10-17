@@ -115,12 +115,32 @@ function compro_theme_preprocess_html(&$vars) {
       $robotted = TRUE;
     }
   }
+
+  // Use standard title pattern when SEO field not populated.
+  $site = Drupal::config('system.site');
+  $site_name = $site->get('name');
+  if (isset($vars['head_title']['title'])
+    && $vars['head_title']['title'] === '| ' . $site_name
+  ) {
+    $vars['head_title']['title'] = $vars['head_title_array']['title'] . ' | ' . $site_name;
+  }
 }
 
 /**
 * Implements hook_preprocess_page() for PAGE document templates.
 */
-//function compro_theme_preprocess_page(&$vars) {}
+function compro_theme_preprocess_page(&$vars) {
+  // Include the hamburger icon as a renderable.
+  $vars['menu_toggle'] = [
+    '#allowed_tags' => [
+      'button',
+      'span',
+    ],
+    '#markup' => '<button aria-label="Menu" aria-controls="main-navigation" class="hamburger hamburger--spin js-hamburger compro-hamburger-icon" type="button">'
+      . '<span class="hamburger-box"><span class="hamburger-inner"></span></span>'
+      . '</button>',
+  ];
+}
 
 /**
  * Implements hook_preprocess_region().
@@ -138,13 +158,12 @@ function compro_theme_preprocess_region(&$vars) {
       $vars['html_tag'] = 'header';
 
       break;
+
     case 'nav':
-      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
-      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
-      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('layout--flex-row');
-      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('justify-content--center');
+      $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('font-family--secondary');
 
       break;
+
     case 'sidebar_first':
     case 'sidebar_second':
       $vars['html_tag'] = 'aside';
@@ -161,9 +180,10 @@ function compro_theme_preprocess_node(&$vars) {
 
   $vars['classes'] = [
     Html::cleanCssIdentifier('node'),
-    Html::cleanCssIdentifier('node--type-' . $node->bundle()),
-    Html::cleanCssIdentifier('node--view-mode-' . $vars['view_mode']),
+    Html::cleanCssIdentifier('node-type--' . $node->bundle()),
+    Html::cleanCssIdentifier('node-view-mode--' . $vars['view_mode']),
     Html::cleanCssIdentifier('view-mode--' . $vars['view_mode']),
+    Html::cleanCssIdentifier('node--' . $node->bundle() . '-' . $vars['view_mode']),
   ];
   if ($node->isPromoted()) {
     $vars['classes'][] = Html::cleanCssIdentifier('node--promoted');
@@ -185,25 +205,33 @@ function compro_theme_preprocess_node(&$vars) {
   $vars['teaser_attributes'] = new Attribute([
     'class' => [
       Html::cleanCssIdentifier($vars['view_mode'] . '--image'),
-      'flex--none',
+      'flex--1',
       'text-align--center',
     ],
   ]);
 
   // Classes and other preprocess by view mode.
   switch ($vars['view_mode']) {
-    case 'teaser':
-      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--row');
-      $vars['classes'][] = Html::cleanCssIdentifier('text-align--left');
-      $vars['classes'][] = Html::cleanCssIdentifier('layout--flex-row');
+    case 'small':
+      $vars['classes'][] = Html::cleanCssIdentifier('js-clickable-card');
+      $vars['classes'][] = Html::cleanCssIdentifier('border--1px-solid');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex--1');
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--column');
+      $vars['classes'][] = Html::cleanCssIdentifier('justify-content--center');
 
-      if ($node->hasField('field_image')) {
-        $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
-        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('flex--auto');
-        $vars['content_attributes']['class'][] = Html::cleanCssIdentifier('padding-horizontal--8');
-        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('width--160px');
-        $vars['teaser_attributes']['class'][] = Html::cleanCssIdentifier('min-height--160px');
-      }
+      break;
+
+    case 'teaser':
+      $vars['classes'][] = Html::cleanCssIdentifier('js-clickable-card');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex--1');
+      $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['classes'][] = Html::cleanCssIdentifier('layout--flex-row');
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--column');
+      $vars['classes'][] = Html::cleanCssIdentifier('justify-content--flex-start');
+      $vars['classes'][] = Html::cleanCssIdentifier('padding--20px');
 
       break;
   }
@@ -255,6 +283,8 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
   // Classes and other preprocess by view mode.
   switch ($vars['view_mode']) {
     case 'teaser':
+      $vars['classes'][] = Html::cleanCssIdentifier('js-clickable-card');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex--1');
       $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--row');
       $vars['classes'][] = Html::cleanCssIdentifier('text-align--left');
       $vars['classes'][] = Html::cleanCssIdentifier('layout--flex-row');
@@ -270,8 +300,13 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
       break;
 
     case 'small':
-      $vars['classes'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('js-clickable-card');
       $vars['classes'][] = Html::cleanCssIdentifier('flex--1');
+      $vars['classes'][] = Html::cleanCssIdentifier('border--1px-solid');
+      $vars['classes'][] = Html::cleanCssIdentifier('text-align--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--column');
+      $vars['classes'][] = Html::cleanCssIdentifier('justify-content--center');
 
       break;
   }
@@ -284,40 +319,30 @@ function compro_theme_preprocess_taxonomy_term(&$vars) {
 /**
  * Implements hook_preprocess_entity().
  */
-function compro_theme_preprocess_eck_entity(&$vars) {
+function compro_theme_preprocess_paragraph(&$vars) {
   $vars['html_tag'] = 'div';
-  $entity = $vars['eck_entity'];
-  $type = $entity->getEntityTypeId();
+  $entity = $vars['paragraph'];
+  $type = 'paragraph';
   $bundle = $entity->bundle();
   $view_mode = $vars['elements']['#view_mode'];
   $ref_field = $entity->_referringItem->getFieldDefinition()->getName();
 
   $vars['attributes']['class'] = array(
-    Html::cleanCssIdentifier('eck-entity'),
     Html::cleanCssIdentifier('entity-type-' . $type),
     Html::cleanCssIdentifier('entity-bundle-' . $bundle),
+    Html::cleanCssIdentifier('entity--' . $type . '-' . $bundle),
     Html::cleanCssIdentifier('view-mode--' . $view_mode),
+    Html::cleanCssIdentifier('entity--' . $type . '-' . $bundle . '-' . $view_mode),
     Html::cleanCssIdentifier('entity-' . $bundle . '-' . $entity->id()),
     Html::cleanCssIdentifier('from-parent--' . $ref_field),
   );
   $vars['attributes']['id'] = Html::cleanCssIdentifier($type . '-' . $bundle . '-' . $entity->id());
 
-  // Style classes by type.
-  switch ($type) {
-    case 'card':
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex--1');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('padding-horizontal--8');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--column');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--space-between');
-
-      break;
-  }
-
   // Style classes by bundle (where unambiguous).
   switch ($bundle) {
     case 'accordion':
       $vars['html_tag'] = 'details';
+      $vars['#attached']['library'][] =  'compro_theme/compro-details';
 
       break;
 
@@ -326,28 +351,58 @@ function compro_theme_preprocess_eck_entity(&$vars) {
 
       break;
 
+    case 'card':
+      $vars['classes'][] = Html::cleanCssIdentifier('js-clickable-card');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex--1');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--flex-start');
+
+      if ($bundle === 'biography') {
+        $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
+        $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-align--left');
+      }
+      else {
+        $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--column');
+        $vars['attributes']['class'][] = Html::cleanCssIdentifier('text-align--center');
+      }
+
+      break;
+
     case 'cards':
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
       $vars['attributes']['class'][] = HTML::cleanCssIdentifier('align-self--center');
-      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--space-around');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--center');
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('layout--flex-row');
 
       break;
 
     case 'column':
+      $vars['html_tag'] = 'aside';
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--column');
 
       // Check if column is empty or has only a spacer.
-      // @TODO Do a loop check for multiple spacers?
       if ($entity->hasField('field_components')) {
         $values = $entity->get('field_components')->getValue();
         if (!isset($values) || !count($values)) {
           $vars['attributes']['class'][] = Html::cleanCssIdentifier('column--empty');
         }
-        elseif (count($values) === 1 && isset($values[0]['target_id'])) {
-          $component = \Drupal::entityTypeManager()->getStorage('component')->load($values[0]['target_id']);
-          if ($component->bundle() === 'spacer') {
+        else if (count($values)) {
+          $column_empty = TRUE;
+          foreach ($values as $i => $value) {
+            if (isset($value['target_id'])) {
+              $component = \Drupal::entityTypeManager()->getStorage('paragraph')->load($value['target_id']);
+
+              if (is_object($component) && method_exists($component, 'bundle')) {
+                if ($component->bundle() !== 'spacer') {
+                  $vars['attributes']['class'][] = Html::cleanCssIdentifier('contains-component--' . $component->bundle());
+                  $column_empty = FALSE;
+                }
+              }
+            }
+          }
+
+          if ($column_empty) {
             $vars['attributes']['class'][] = Html::cleanCssIdentifier('column--empty');
           }
         }
@@ -363,39 +418,110 @@ function compro_theme_preprocess_eck_entity(&$vars) {
 
       break;
 
+    case 'hotspot':
+      $vars['html_tag'] = 'figcaption';
+      $vars['#attached']['library'][] =  'compro_theme/compro-tippyjs';
+      $vars['attributes']['tabindex'] = '0';
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
+
+      // Ensure anchor added in template has attributes.
+      $vars['anchor_attributes'] = new Attribute([
+        'aria-label' => t('Toggle hotspot caption'),
+        'aria-controls' => Html::cleanCssIdentifier('toggle-' . $type . '-' . $bundle . '-' . $entity->id()),
+        'class' => [
+          'hotspot-anchor',
+        ],
+        'data-tippy-interactive' => 'true',
+        'href' => '#' . Html::cleanCssIdentifier('toggle-' . $type . '-' . $bundle . '-' . $entity->id()),
+        'id' => Html::cleanCssIdentifier('anchor-' . $type . '-' . $bundle . '-' . $entity->id()),
+      ]);
+
+      // Ensure content wrapper has attributes.
+      $vars['content_attributes'] = new Attribute([
+        'class' => [
+          'hotspot-content',
+        ],
+        'id' => Html::cleanCssIdentifier('toggle-' . $type . '-' . $bundle . '-' . $entity->id()),
+      ]);
+
+      // Set the CSS to position the hotspot.
+      $xpercent = '50';
+      $ypercent = '50';
+      if ($entity->hasField('field_data_xpercent')) {
+        $xvalues = $entity->get('field_data_xpercent')->getValue();
+        if (isset($xvalues) && count($xvalues)) {
+          $xpercent = $xvalues[0]['value'];
+        }
+      }
+      if ($entity->hasField('field_data_ypercent')) {
+        $yvalues = $entity->get('field_data_ypercent')->getValue();
+        if (isset($yvalues) && count($yvalues)) {
+          $ypercent = $yvalues[0]['value'];
+        }
+      }
+      $vars['attributes']['style'] = 'left:' . $xpercent . '%;top:' . $ypercent . '%;';
+      break;
+
     case 'layout':
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
       $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
 
       break;
 
-    case 'list':
-      $vars['html_tag'] = 'ul';
-      break;
-
     case 'media':
       $vars['html_tag'] = 'figure';
+      // Add zoom library. Make this conditional for better performance.
+      $vars['#attached']['library'][] = 'compro_theme/compro-zoom';
+
+      // Check if media has captions and hotspots.
+      if ($entity->hasField('field_hotspots')) {
+        $values = $entity->get('field_hotspots')->getValue();
+        if (!isset($values) || !count($values)) {
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('lacks--hotspots');
+        }
+        else {
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('has--hotspots');
+        }
+      }
+
+      if ($entity->hasField('field_text')) {
+        $values = $entity->get('field_text')->getValue();
+        if (!isset($values) || !count($values)) {
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('lacks--caption');
+        }
+        else {
+          $vars['attributes']['class'][] = Html::cleanCssIdentifier('has--caption');
+        }
+      }
+
+      break;
+
+    case 'stripe':
+      $vars['html_tag'] = 'section';
+
+      break;
+
+    case 'table':
+      $vars['#attached']['library'][] =  'compro_theme/compro-highcharts';
 
       break;
 
     case 'term_listing':
+    case 'content_listing':
       // Set the child display mode as a class to the container.
-      $value = $entity->get('field_term_viewmode')->getValue();
+      $value = $entity->get('field_viewmode')->getValue();
       $mode = 'default';
       if (isset($value[0]['value'])) {
         $mode = $value[0]['value'];
       }
-
       $vars['child_mode'] = $mode;
-      // Set classes on the container based on the child display mode.
-      switch ($mode) {
-        case 'small':
-          $vars['attributes']['class'][] = Html::cleanCssIdentifier('display--flex');
-          $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
-          $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-wrap--wrap');
 
-          break;
-      }
+      // Class out the container to make layout CSS straightforward.
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-direction--row');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('justify-content--center');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('flex-wrap--wrap');
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('layout--flex-row');
 
       break;
   }
@@ -418,7 +544,58 @@ function compro_theme_preprocess_user(&$vars) {
     Html::cleanCssIdentifier('user-uid--' . $entity->id()),
   ];
   $vars['attributes']['id'] = Html::cleanCssIdentifier( 'user--' . $entity->id());
+
+  switch ($view_mode) {
+    case 'teaser':
+      $vars['attributes']['class'][] = Html::cleanCssIdentifier('rollover');
+      $vars['attributes']['tabindex'] = '0';
+
+      break;
+  }
 }
+
+/**
+ * Implements hook_preprocess_entity().
+ * @param $vars
+ */
+function compro_theme_preprocess_media(&$vars) {
+  $entity = $vars['media'];
+  $type = $entity->getEntityTypeId();
+  $bundle = $entity->bundle();
+  $view_mode = $vars['elements']['#view_mode'];
+
+  $base_classes = [
+    Html::cleanCssIdentifier('media'),
+    Html::cleanCssIdentifier('entity-type-' . $type),
+    Html::cleanCssIdentifier('entity-bundle-' . $bundle),
+    Html::cleanCssIdentifier('media--' . $bundle . '--' . $view_mode),
+    Html::cleanCssIdentifier('entity-' . $bundle . '-' . $entity->id()),
+  ];
+
+  // Either add to or create the base classes, whether they're used or not.
+  if (isset($vars['attributes']['class'])) {
+    $vars['attributes']['class'] += $base_classes;
+  }
+  else {
+    // Check if the attributes have been made.
+    if (!isset($vars['attributes'])) {
+      $vars['attributes'] = new Attribute([
+        'class' => [],
+      ]);
+    }
+
+    $vars['attributes']['class'] = $base_classes;
+  }
+
+  $where = &$vars['attributes']['class'];
+  _compro_theme_entity_style_classes($vars, $entity, $where);
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ * @param $vars
+ */
+function compro_theme_preprocess_menu__main(&$vars) {}
 
 /**
  * Implements hook_preprocess_block().
@@ -459,7 +636,7 @@ function compro_theme_preprocess_field(&$vars) {
       'image',
       'link',
     ])
-    || $vars['field_name'] === 'field_longtext'
+    || in_array($vars['field_name'], ['field_longtext', 'field_text'])
   ) {
     $vars['wrapped'] = FALSE;
 
@@ -470,24 +647,17 @@ function compro_theme_preprocess_field(&$vars) {
   }
 
   // Tweak the wrapper HTML tag.
-  if ($vars['entity_type'] === 'component') {
+  if ($vars['entity_type'] === 'paragraph') {
     switch ($vars['element']['#bundle']) {
       case 'accordion':
-        if ($vars['field_name'] === 'field_text') {
+        if ($vars['field_name'] === 'field_title') {
           $vars['html_tag'] = 'summary';
         }
 
         break;
 
-      case 'list':
-        if ($vars['field_name'] === 'field_longtext_multiple') {
-          $vars['html_tag'] = 'li';
-        }
-
-        break;
-
       case 'media':
-        if ($vars['field_name'] === 'field_longtext') {
+        if ($vars['field_name'] === 'field_text') {
           $vars['html_tag'] = 'figcaption';
           $vars['wrapped'] = TRUE;
         }
@@ -498,6 +668,20 @@ function compro_theme_preprocess_field(&$vars) {
 
   // Fields by field machine name.
   switch ($vars['field_name']) {
+    case 'field_category':
+      $vars['classes'][] = Html::cleanCssIdentifier('font-family--secondary');
+
+      break;
+
+    case 'field_components_cta':
+      $vars['wrapped'] = TRUE;
+      $vars['classes'][] = Html::cleanCssIdentifier('display--flex');
+      $vars['classes'][] = Html::cleanCssIdentifier('flex-direction--column');
+      $vars['classes'][] = Html::cleanCssIdentifier('justify-content--center');
+      $vars['classes'][] = Html::cleanCssIdentifier('child-links--as-buttons');
+
+      break;
+
     case 'field_style_hr':
       // Put a class on the truth value.
       $class = 'card-hr--hide';
@@ -531,6 +715,21 @@ function compro_theme_preprocess_file_video(&$vars) {
   if ($autoplay) {
     $vars['attributes']['muted'] = 'muted';
   }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ */
+function compro_theme_preprocess_video_embed_iframe(&$vars) {
+  $vars['attributes']->setAttribute('enablejsapi', 'true');
+}
+
+/**
+ * Implements hook_preprocess_template().
+ */
+function compro_theme_preprocess_image(&$vars) {
+  // Add lazy loading to all images.
+  $vars['attributes']['loading'] = 'lazy';
 }
 
 /**
@@ -600,6 +799,30 @@ function compro_theme_preprocess_views_view(&$vars) {
 
       break;
 
+    case 'location_search':
+      if ($vars['display_id'] === 'block_2') {
+        $vars['content_attributes']['class'][] = 'columnar';
+      }
+
+      break;
+
+    case 'locations_resources':
+      $vars['content_attributes']['class'][] = 'display--flex';
+      $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+      $vars['content_attributes']['class'][] = 'layout--flex-row';
+      $vars['content_attributes']['class'][] = 'justify-content--center';
+
+      break;
+
+    case 'locations_services':
+      $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+      $vars['content_attributes']['class'][] = 'layout--flex-row';
+      $vars['content_attributes']['class'][] = 'justify-content--space-around';
+      $vars['content_attributes']['class'][] = 'layout--carousel';
+
+      break;
+
+    case 'news':
     case 'taxonomy_term':
     case 'people':
       $vars['content_attributes']['class'][] = 'display--flex';
@@ -608,7 +831,113 @@ function compro_theme_preprocess_views_view(&$vars) {
       $vars['content_attributes']['class'][] = 'justify-content--space-around';
 
       break;
+
+    case 'service_categories':
+      $vars['content_attributes']['class'][] = 'display--flex';
+      $vars['content_attributes']['class'][] = 'flex-wrap--wrap';
+      $vars['content_attributes']['class'][] = 'layout--flex-row';
+      $vars['content_attributes']['class'][] = 'justify-content--space-between';
+
+      break;
   }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ * @param $vars
+ */
+function compro_theme_preprocess_views_view_unformatted(&$vars) {
+  $vars['div_attributes'] = new Attribute([
+    'class' => [
+      'view-grouping',
+    ],
+  ]);
+
+  if (isset($vars['title'])) {
+    $vars['clean_title'] = strip_tags($vars['title']);
+    $vars['div_attributes']['class'][] = Html::cleanCssIdentifier('grouping-title--' . $vars['clean_title']);
+  }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ * @param $vars
+ */
+function compro_theme_preprocess_views_view_grouping(&$vars) {
+  $vars['wrapped'] = TRUE;
+  $vars['grouping_attributes'] = new Attribute([
+    'class' => [
+      'view-grouping',
+    ],
+  ]);
+
+  if (isset($vars['title'])) {
+    $vars['clean_title'] = strip_tags($vars['title']);
+    $vars['grouping_attributes']['class'][] = Html::cleanCssIdentifier('grouping-title--' . $vars['clean_title']);
+    if (Html::cleanCssIdentifier($vars['clean_title']) === 'US') {
+      $vars['wrapped'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ * @param $vars
+ */
+function compro_theme_preprocess_views_view_fields(&$vars) {
+  $view = $vars['view'];
+  $vars['wrapped'] = TRUE;
+  if (in_array($view->id(), ['locations_services', 'locations_resources'])) {
+    $vars['wrapped'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ */
+function compro_theme_preprocess_views_exposed_form(&$vars) {
+  if (isset($vars['attributes']['data-drupal-selector'])) {
+    $vars['attributes']['class'][] = $vars['attributes']['data-drupal-selector'];
+  }
+
+  $vars['attributes']['class'][] = 'display--flex';
+  $vars['attributes']['class'][] = 'layout--flex-row';
+  $vars['attributes']['class'][] = 'flex-direction--row';
+  $vars['attributes']['class'][] = 'align-items--center';
+
+  // Don't wrap the search form so it plays nice in the header on IE.
+  if ($vars['attributes']['data-drupal-selector'] !== 'views-exposed-form-search-page') {
+    $vars['attributes']['class'][] = 'flex-wrap--wrap';
+  }
+}
+
+/**
+ * Implements hook_preprocess_element().
+ */
+function compro_theme_preprocess_facets_item_list(&$vars) {
+  $widget = $vars['facet']->get('widget');
+
+  $vars['wrapper_attributes']->addClass('facets-widget');
+  $type_class = Html::cleanCssIdentifier('facets-widget-' . $widget['type']);
+  $vars['wrapper_attributes']->addClass($type_class);
+  $vars['wrapper_attributes']->addClass('position--relative');
+  $title_class = Html::cleanCssIdentifier('facets-widget-title--' . strtolower($vars['title']));
+  $vars['wrapper_attributes']->addClass($title_class);
+
+  $has_active_class = 'lacks-active-items';
+  foreach ($vars['items'] as $key => $value) {
+    if ($value['value']['#title']['#is_active'] === TRUE) {
+      $vars['items'][$key]['attributes']->addClass('facet-active-item');
+      $has_active_class = 'has-active-items';
+    }
+    elseif ($value['value']['#title']['#value'] === 'Reset') {
+      // Do nothing.
+    }
+    else {
+      $vars['items'][$key]['attributes']->addClass('facet-inactive-item');
+    }
+  }
+  $vars['wrapper_attributes']->addClass($has_active_class);
 }
 
 /**
@@ -664,6 +993,27 @@ function compro_theme_theme_suggestions_field_alter(&$suggestions, $vars) {
 }
 
 /**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function compro_theme_theme_suggestions_page_alter(array &$suggestions, array $vars) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function compro_theme_theme_suggestions_fieldset_alter(array &$suggestions, array $vars) {
+  if (isset($vars['element']['#parents'][0])) {
+    $suggestions[] = 'fieldset--parent-' . $vars['element']['#parents'][0];
+  }
+  if (isset($vars['element']['#id'])) {
+    $suggestions[] = 'fieldset--id-' . $vars['element']['#id'];
+  }
+}
+
+/**
  * Helper function to add classes to the entity.
  * @param $vars
  */
@@ -711,6 +1061,37 @@ function _compro_theme_entity_style_classes(&$vars, $entity, &$where) {
       $value = $entity->get($name)->getValue();
       if (isset($value[0]['target_id'])) {
         $where[] = Html::cleanCssIdentifier('has-' . $name);
+      }
+    }
+    else if (in_array(Unicode::substr($name, 0, 16), [
+      'field_components',
+    ])) {
+      // Whether an image is present (especially for backgrounds).
+      $value = $entity->get($name)->referencedEntities();
+      if (count($value)) {
+        $where[] = Html::cleanCssIdentifier('has-' . $name);
+      }
+    }
+    else if (Unicode::substr($name, 0, 10) === 'field_attr') {
+      // Handle the 'open' attr separately.
+      if ($name === 'field_attr_open') {
+        $value = $entity->get($name)->getValue();
+        foreach ($value as $key => $val) {
+          if (isset($val['value']) && $val['value']) {
+            $vars['attributes']['open'] = TRUE;
+            break;
+          }
+        }
+      }
+      else {
+        // Add field_data_... as HTML data-*="" attributes using the field value.
+        $data_attr = Unicode::substr($name, 11);
+        $value = $entity->get($name)->getValue();
+        foreach ($value as $key => $val) {
+          if (isset($val['value'])) {
+            $vars['attributes'][Html::cleanCssIdentifier($data_attr)] = $val['value'];
+          }
+        }
       }
     }
     else if (Unicode::substr($name, 0, 10) === 'field_data') {

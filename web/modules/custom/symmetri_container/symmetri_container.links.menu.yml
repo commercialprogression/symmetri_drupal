@@ -1,0 +1,17 @@
+
+# Container menu items definition
+entity.container_entity.collection:
+  title: 'Container list'
+  route_name: entity.container_entity.collection
+  description: 'List Container entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Container type menu items definition
+entity.container_entity_type.collection:
+  title: 'Container type'
+  route_name: entity.container_entity_type.collection
+  description: 'List Container type (bundles)'
+  parent: system.admin_structure
+  weight: 99

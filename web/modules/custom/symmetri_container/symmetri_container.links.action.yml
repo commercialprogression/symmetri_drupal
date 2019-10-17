@@ -1,0 +1,10 @@
+entity.container_entity.add_form:
+  route_name: entity.container_entity.add_page
+  title: 'Add Container'
+  appears_on:
+    - entity.container_entity.collection
+entity.container_entity_type.add_form:
+  route_name: entity.container_entity_type.add_form
+  title: 'Add Container type'
+  appears_on:
+    - entity.container_entity_type.collection

@@ -1,0 +1,87 @@
+/* Go from zero to full opacity */
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.highcharts-root text{
+  font-family: "Montserrat", sans-serif;
+}
+.highcharts-axis-line{
+  fill: '#1c2d5a';
+  stroke: '#1c2d5a';
+}
+.highcharts-title text{
+  font-weight: bold;
+  font-size: 18px;
+}
+.highcharts-legend-item text{
+  font-size: 12px;
+  font-weight: normal;
+}
+.highcharts-axis-labels.highcharts-xaxis-labels  text{
+  font-size: 12px;
+}
+.highcharts-axis-labels.highcharts-yaxis-labels  text{
+  font-size: 12px;
+
+}
+
+.highcharts-data-table table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  background: white;
+  min-width: 100%;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+.highcharts-data-table td, .highcharts-data-table th, .highcharts-data-table caption {
+  border: 1px solid silver;
+  padding: 0.5em;
+}
+.highcharts-data-table tr:nth-child(even), .highcharts-data-table thead tr {
+  background: #f8f8f8;
+}
+.highcharts-data-table tr:hover {
+  background: #eff;
+}
+.highcharts-data-table caption {
+  border-bottom: none;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.highcharts-series .highcharts-point-select {
+  fill: #f7b141;
+  stroke: #f00;
+  stroke-dasharray: 10
+}
+
+.tablefield-export-link,
+.fs-button {
+  display: inline-block;
+  float: left;
+  margin: 0 1em 0 0;
+  top: 0;
+  vertical-align: top;
+}
+
+.fs-button a {
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  color: transparent;
+  display: inline-block;
+  min-height: 25px;
+  min-width: 25px;
+  position: relative;
+  background-image: url('../../images/optimized/fullscreen-gray.svg');
+}
+
+.tablefield-export-link a,
+.fs-button a {
+  margin: 0;
+  vertical-align: top;
+  margin-left: 1em;
+  display: block;
+}

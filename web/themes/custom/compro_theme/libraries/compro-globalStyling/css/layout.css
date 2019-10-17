@@ -56,7 +56,21 @@ main {
 @media all and (max-width: 767px) {
   .entity-bundle-layout,
   .layout--flex-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
+  }
+}
+@media all and (max-width: 767px) and (-ms-high-contrast: active),
+all and (max-width: 767px) and (-ms-high-contrast: none) {
+  /* IE hack to avoid column spacing issues for responsive. */
+  .entity-bundle-layout,
+  .layout--flex-row {
+    display: block;
   }
 }
 
@@ -66,16 +80,18 @@ main {
  * Place the overriding class after it in order for cascade purposes.
  */
 .entity-bundle-stripe {
-  padding: 80px 20px;
+  padding: 100px 20px;
 }
 @media all and (max-width: 767px) {
   .entity-bundle-stripe {
     padding: 60px 20px;
   }
 }
-.entity-bundle-stripe > .inner {
+.entity-bundle-stripe > .inner,
+.node--view-mode-full .node__content > .field,
+.appear-as-stripe {
   margin: 0 auto;
-  max-width: 1440px;
+  max-width: 1160px;
 }
 .child-inner-max-width--inherit > .inner {
   margin: 0;
@@ -84,10 +100,17 @@ main {
 .padding--0 {
   padding: 0;
 }
-@media all and (max-width: 767px) {
+@media all and (max-width: 1200px) {
   .padding--0 {
     padding: 0 20px;
   }
+}
+
+/**
+ * Override the property--value flex--1 class.
+ */
+.flex--1 {
+  max-width: inherit;
 }
 
 /**
@@ -98,25 +121,6 @@ main {
  */
 .footer-wrapper {
   padding: 45px 0 20px;
-}
-.footer-wrapper a {
-  color: #fff;
-}
-.footer-wrapper a:hover,
-.footer-wrapper a:active,
-.footer-wrapper a:focus {
-  color: #a3b3d0;
-}
-
-/**
- * The wrapper for both the top bar and the splash.
- *
- * Applying a default background at this level, which will be covered entirely
- * by a splash.
- */
-.header-and-splash {
-  background: #1a428a url('../images/bg_hero_default.jpg') center center scroll no-repeat;
-  background-size: cover;
 }
 
 /**
@@ -139,6 +143,19 @@ main {
 }
 
 /**
+ * Content and term listing layout classes.
+ */
+.layout--horizontal,
+.layout--carousel {
+  /* https://github.com/philipwalton/flexbugs */
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/**
  * Styles that apply at the global scope of the page but not the body.
  */
 .page {}
@@ -152,7 +169,7 @@ main {
  * Styles specific to the lack of field_hero (body stripes) on a page.
  */
 .page-lacks--field-sections {}
-.page-lacks--field-sections .view-mode--full > .node__content {
+.page-lacks--field-sections .region--content {
   font-size: 1.25em;
 }
 
@@ -171,8 +188,9 @@ main {
 .region {}
 .region > .inner {
   margin: 0 auto;
-  max-width: 1440px;
-  padding: 0 20px;
+  max-width: 1160px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .page-has--field-hero .region--splash > .inner,
 .page-has--field-sections .region--content > .inner {
@@ -189,9 +207,15 @@ main {
  * Utility region (usually just utility menu).
  */
 .region--utility {}
-
-.menu--utility {
-  display: inline-block;
+@media all and (max-width: 1023px) {
+  .region--utility > .inner,
+  .region--nav > .inner {
+    display: block;
+    margin: 0 auto;
+    max-width: 960px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /**
@@ -223,8 +247,7 @@ main {
 .region--content {}
 .page-lacks--field-sections .region--content > .inner {
   /* @see .page-lacks--field-sections */
-  max-width: 960px;
-  max-width: 75ch;
+  max-width: 1160px;
   padding: 40px 20px 80px;
 }
 
@@ -242,11 +265,6 @@ main {
  * Footer region (Footer logo, socials, perhaps copyright or other blocks).
  */
 .region--footer {}
-
-/**
- * Footer menu region (repeat of main menu).
- */
-.region--footer-menu {}
 
 /**
  * Footer utility region (Often for copyright and such. Small text).
@@ -273,50 +291,19 @@ main {
 }
 
 /**
- * Top bar. Everything in the header that's not the splash. Often fixed.
+ * Layouts for the top-bar class.
  */
-.top-bar {
-  background-color: #1a428a;
+.top-bar > .inner {
+  margin: 0 auto;
+  max-width: 1440px;
 }
-  @media all and (min-width: 1024px) {
-    .js .top-bar {
-      background-color: transparent;
-    }
-  }
+@media all and (max-width: 1023px) {
   .top-bar > .inner {
-    margin: 0 auto;
-    max-width: 1440px;
+    display: block;
   }
-.top-bar a {
-  color: #fff;
-}
-.top-bar a:hover,
-.top-bar a:active,
-.top-bar a:focus {
-  color: #666;
 }
 
 /**
  * The menu areas inside the top bar.
  */
 .utility-and-nav {}
-
-/**
- * Consistent stylings per view mode.
- */
-.view-mode--full {}
-.view-mode--full > .node__content > .submitted,
-.view-mode--full > .node__content > img {
-  margin-bottom: 30px;
-}
-.view-mode--small {
-  margin-bottom: 40px;
-}
-@media all and (min-width: 768px) {
-  .view-mode--small {
-    min-width: 280px;
-  }
-}
-.view-mode--teaser {
-  margin-bottom: 80px;
-}

@@ -12,6 +12,7 @@ $config['system.logging']['error_level'] = 'verbose';
 $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
 
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/default/local.services.yml';
 $settings['file_chmod_directory'] = 0755;
 $settings['file_chmod_file'] = 0644;
@@ -36,6 +37,11 @@ $config['search_api.server.solr']['backend_config']['connector_config']['core'] 
 $config['search_api.server.solr']['backend_config']['connector_config']['path'] = '/solr';
 $config['search_api.server.solr']['backend_config']['connector_config']['host'] = 'solr';
 $config['search_api.server.solr']['backend_config']['connector_config']['port'] = '8983';
+
+// Configure private and temporary file paths.
+if (!isset($settings['file_private_path'])) {
+  $settings['file_private_path'] = '../private';
+}
 
 assert_options(ASSERT_ACTIVE, TRUE);
 \Drupal\Component\Assertion\Handle::register();

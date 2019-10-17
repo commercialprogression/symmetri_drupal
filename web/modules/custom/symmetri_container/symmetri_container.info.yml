@@ -1,0 +1,5 @@
+name: 'Symmetri Container'
+type: module
+description: 'Define an entity type for holding other content'
+core: 8.x
+package: 'Custom'

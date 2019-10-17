@@ -80,6 +80,7 @@ class ComproCustomFileLink extends FormatterBase {
       $url = Url::fromUri($file->url(),
         array(
           'attributes' => array(
+            'download' => TRUE,
             'class' => array(
               $this->getSetting('compro_custom_link_class') !== NULL ? $this->getSetting('compro_custom_link_class') : '',
             ),

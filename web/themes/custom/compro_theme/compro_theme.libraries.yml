@@ -9,6 +9,7 @@ compro-globalStyling:
       libraries/compro-globalStyling/css/components.css: {}
   js:
     libraries/compro-globalStyling/compro-globalStyling.js: {}
+    'https://www.youtube.com/iframe_api': {}
   dependencies:
     - core/jquery
     - core/drupal.ajax
@@ -31,8 +32,6 @@ compro-autotrack:
   js:
     libraries/compro-autotrack/autotrack/autotrack.js: {}
     libraries/compro-autotrack/compro-autotrack.js: {}
-  dependencies:
-    - google_analytics/google_analytics
 
 compro-details:
   version: 0.1.x
@@ -61,6 +60,21 @@ compro-headroom:
     libraries/compro-headroom/headroom/dist/jQuery.headroom.min.js: {}
     libraries/compro-headroom/compro-headroom.js: {}
 
+compro-highcharts:
+  version: 6.1.4
+  license:
+    name: CC-BY-NC-3.0
+    gpl-compatible: false
+  css:
+    component:
+      libraries/compro-highcharts/compro-highcharts.css: {}
+  js:
+    libraries/compro-highcharts/highcharts/code/highcharts.js: {}
+    libraries/compro-highcharts/highcharts/code/modules/data.js: {}
+    libraries/compro-highcharts/highcharts/code/modules/exporting.js: {}
+    libraries/compro-highcharts/highcharts/code/modules/export-data.js: {}
+    libraries/compro-highcharts/compro-highcharts.js: {}
+
 compro-hoverIntent:
   version: 1.9.x
   js:
@@ -72,6 +86,17 @@ compro-iframeResizer:
     libraries/compro-iframeResizer/iframe-resize/iframeResizer.min.js: {}
     libraries/compro-iframeResizer/compro-iframeResizer.js: {}
 
+compro-menus:
+  version: 1.4.0
+  css:
+    component:
+      libraries/compro-menus/compro-menus.css: {}
+  js:
+    libraries/compro-menus/superfish/dist/js/superfish.min.js: {}
+    libraries/compro-menus/compro-menus.js: {}
+  dependencies:
+    - compro_theme/compro-hoverIntent
+
 compro-propertyValue:
   version: 0.1.x
   css:
@@ -82,9 +107,9 @@ compro-slick:
   version: 1.7.x
   css:
     component:
-      libraries/compro-slick/slick/slick.css: {}
+      libraries/compro-slick/slick/slick/slick.css: {}
   js:
-    libraries/compro-slick/slick/slick.min.js: {}
+    libraries/compro-slick/slick/slick/slick.min.js: {}
     libraries/compro-slick/compro-slick.js: {}
 
 compro-superfish:
@@ -96,7 +121,8 @@ compro-superfish:
     - compro_theme/compro-hoverIntent
 
 compro-tippyjs:
-  version: 2.0.x
+  version: 5.0.x
   js:
-    libraries/compro-tippyjs/tippyjs/dist/tippy.all.min.js: {}
+    "https://unpkg.com/popper.js@1": { type: external, minified: true }
+    "https://unpkg.com/tippy.js@5": { type: external, minified: true }
     libraries/compro-tippyjs/compro-tippyjs.js: {}

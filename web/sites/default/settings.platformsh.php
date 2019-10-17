@@ -36,6 +36,18 @@ if (isset($_ENV['PLATFORM_RELATIONSHIPS'])) {
       }
     }
   }
+
+  // Solr configuration.
+  $solr = 'solr';
+  if (!empty($relationships[$solr][0])) {
+    $solr_server_name = 'solr';
+    $solr = $relationships[$solr][0];
+    $core = substr($solr['path'], 5) ? : 'collection1';
+    $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['core'] = $core;
+    $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['path'] = '/solr';
+    $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['host'] = $solr['host'];
+    $config['search_api.server.' . $solr_server_name]['backend_config']['connector_config']['port'] = $solr['port'];
+  }
 }
 
 if (isset($_ENV['PLATFORM_APP_DIR'])) {
@@ -65,9 +77,7 @@ if (isset($_ENV['PLATFORM_ROUTES']) && !isset($settings['trusted_host_patterns']
   foreach ($routes as $url => $route) {
     $host = parse_url($url, PHP_URL_HOST);
     if ($host !== FALSE && $route['type'] == 'upstream' && $route['upstream'] == $_ENV['PLATFORM_APPLICATION_NAME']) {
-      // Replace asterisk wildcards with a regular expression.
-      $host_pattern = str_replace('\*', '[^\.]+', preg_quote($host));
-      $settings['trusted_host_patterns'][] = '^' . $host_pattern . '$';
+      $settings['trusted_host_patterns'][] = '^' . preg_quote($host) . '$';
     }
   }
   $settings['trusted_host_patterns'] = array_unique($settings['trusted_host_patterns']);

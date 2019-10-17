@@ -24,7 +24,7 @@ class CopyrightBlock extends BlockBase {
     $site_name = Xss::filterAdmin(\Drupal::config('system.site')->get('name'));
     return [
       'copyright' => [
-        '#markup' => '&copy; ' . date('Y') . ' ' . $site_name,
+        '#markup' => '&copy; Copyright ' . date('Y') . ' US Ecology, Inc. All rights reserved' ,
       ],
     ];
   }

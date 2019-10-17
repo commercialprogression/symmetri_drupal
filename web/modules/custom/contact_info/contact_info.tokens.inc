@@ -160,29 +160,29 @@ function contact_info_tokens($type, $tokens, array $data, array $options, Bubble
 
   if ($type == 'contact_info') {
     // Grab contact info data.
-    $contact_info = \Drupal::config('contact_info.setup');
-    $renderer = \Drupal::service('renderer');
+    $contact_info = Drupal::config('contact_info.setup');
+    $renderer = Drupal::service('renderer');
     // Loop through available tokens.
     foreach ($tokens as $name => $original) {
       switch ($name) {
         case 'address':
           $create_address = contact_info_create_address($contact_info);
-          $replacements[$original] = $renderer->render($create_address);
+          $replacements[$original] = $renderer->renderPlain($create_address);
           break;
 
         case 'phone':
           $create_phone = contact_info_create_phone($contact_info);
-          $replacements[$original] = $renderer->render($create_phone);
+          $replacements[$original] = $renderer->renderPlain($create_phone);
           break;
 
         case 'fax':
           $create_fax = contact_info_create_fax($contact_info);
-          $replacements[$original] = $renderer->render($create_fax);
+          $replacements[$original] = $renderer->renderPlain($create_fax);
           break;
 
         case 'email':
           $create_email = contact_info_create_email($contact_info);
-          $replacements[$original] = $renderer->render($create_email);
+          $replacements[$original] = $renderer->renderPlain($create_email);
           break;
 
         case 'social_seo':
@@ -191,17 +191,17 @@ function contact_info_tokens($type, $tokens, array $data, array $options, Bubble
 
         case 'social':
           $social_block = contact_info_create_social($contact_info);
-          $replacements[$original] = $renderer->render($social_block);
+          $replacements[$original] = $renderer->renderPlain($social_block);
           break;
 
         case 'map':
           $map = contact_info_create_map($contact_info);
-          $replacements[$original] = $renderer->render($map);
+          $replacements[$original] = $renderer->renderPlain($map);
       }
     }
 
     // Chained tokens.
-    $token_service = \Drupal::token();
+    $token_service = Drupal::token();
     $addresses = $token_service->findWithPrefix($tokens, 'address');
     foreach ($addresses as $name => $original) {
       $replacements[$original] = $contact_info->get('address')[$name];

@@ -1,0 +1,33 @@
+add container entities:
+  title: 'Create new Container entities'
+
+administer container entities:
+  title: 'Administer Container entities'
+  description: 'Allow to access the administration form to configure Container entities.'
+  restrict access: true
+
+delete container entities:
+  title: 'Delete Container entities'
+
+edit container entities:
+  title: 'Edit Container entities'
+
+view published container entities:
+  title: 'View published Container entities'
+
+view unpublished container entities:
+  title: 'View unpublished Container entities'
+
+view all container revisions:
+  title: 'View all Container revisions'
+
+revert all container revisions:
+  title: 'Revert all Container revisions'
+  description: 'Role requires permission <em>view Container revisions</em> and <em>edit rights</em> for container entities in question or <em>administer container entities</em>.'
+
+delete all container revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Container revisions</em> and <em>delete rights</em> for container entities in question or <em>administer container entities</em>.'
+
+permission_callbacks:
+  - \Drupal\symmetri_container\ContainerEntityPermissions::generatePermissions

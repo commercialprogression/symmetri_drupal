@@ -14,6 +14,8 @@ use Drupal\Component\Utility\Unicode;
 use Drupal\Component\Utility\Xss;
 use Drupal\node\Entity\NodeType;
 use Drupal\node\NodeInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 
 /**
  * Helper function to get options (all or available).
@@ -26,6 +28,7 @@ function _compro_custom_get_options() {
     'h4' => t('Heading 4'),
     'h5' => t('Heading 5'),
     'h6' => t('Heading 6'),
+    'span' => t('Regular text'),
   ];
 }
 
@@ -83,6 +86,19 @@ function compro_custom_preprocess_block(&$variables) {
     $variables['logo_path'] = '/';
 
     $variables['logo_title'] = Html::escape($compro_custom->get('logo.title') !== NULL ? $compro_custom->get('logo.title') : $site_name . ' home');
+  }
+}
+
+/**
+ * Removes title field from icon view mode
+ *
+ */
+function compro_custom_preprocess(&$variables, $hook) {
+
+  if ($hook == 'node') {
+    if ( $variables['elements']['#view_mode'] == 'icon' ) {
+      $variables['page'] = true;
+    }
   }
 }
 
@@ -158,6 +174,12 @@ function compro_custom_entity_extra_field_info() {
     ];
   }
 
+  $extra['node']['resource']['display']['filetype_icon'] = [
+    'label' => t('Filetype icon'),
+    'description' => t('Additional display of the document field.'),
+    'weight' => 0,
+  ];
+
   return $extra;
 }
 
@@ -179,12 +201,66 @@ function compro_custom_node_view(array &$build, EntityInterface $entity, EntityV
       '#suffix' => '</div>',
     ];
   }
+
+  // Linked title.
   if ($display->getComponent('linked_title')) {
-    $build['compro_submitted'] = [
+    $linked_title_url = Url::fromRoute('entity.node.canonical', ['node' => $entity->id()]);
+    $attributes = [];
+
+    // Link directly to PDF if available.
+    if ($entity->bundle() === 'resource' && $entity->hasField('field_document')) {
+      $document = $entity->get('field_document')->referencedEntities();
+      if (isset($document[0])) {
+        $pdf_file = $document[0]->get('field_media_file')->getValue();
+        if (isset($pdf_file[0]['target_id'])) {
+          $file = \Drupal::entityTypeManager()->getStorage('file')->load($pdf_file[0]['target_id']);
+          $private_uri = $file->getFileUri();
+          $linked_title_url = file_create_url($private_uri);
+          $linked_title_url = Url::fromUri($linked_title_url);
+          $attributes['target'] = '_blank';
+        }
+      }
+    }
+
+    $build['linked_title'] = [
+      '#prefix' => '<h2>',
       '#type' => 'link',
-      '#url' => Url::fromRoute('entity.node.canonical', ['node' => $entity->id()]),
+      '#url' => $linked_title_url,
       '#title' => $entity->getTitle(),
+      '#attributes' => $attributes,
+      '#suffix' => '</h2>',
     ];
+  }
+
+  // Filetype icon.
+  if ($display->getComponent('filetype_icon')) {
+    // Determine the type of file and class a div for it.
+    $document = $entity->get('field_document')->referencedEntities();
+    $mimetype = 'default';
+
+    foreach ($document as $key => $value) {
+      $mimetype = $value->get('field_mimetype')->getValue()[0]['value'];
+    }
+    $build['filetype_icon'] = [
+      '#type' => 'html_tag',
+      '#tag' => 'div',
+      '#attributes' => [
+        'class' => [
+          'filetype-icon',
+          Html::cleanCssIdentifier('filetype--' . $mimetype),
+        ],
+      ],
+      '#value' => $mimetype,
+    ];
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function compro_custom_media_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($entity->bundle() === 'image' && $view_mode == 'stripe_bg') {
+    $build['#cache']['max-age'] = 0;
   }
 }
 
@@ -383,5 +459,61 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
   // Add the SEO fields to the advanced fieldset.
   if (isset($form['advanced']) && isset($form['field_seo'])) {
     $form['field_seo']['#group'] = 'advanced';
+  }
+
+  if ($form_id === 'views_exposed_form') {
+    if (isset($form['service_cats'])) {
+      $form['service_cats']['#attributes'] = [
+        'data-placeholder' => 'All Services',
+      ];
+    }
+    if (isset($form['field_geocode_proximity'])) {
+      hide($form['field_geocode_proximity']['value']);
+
+      if ($form['field_geocode_proximity']['#type'] === 'fieldset') {
+        unset($form['field_geocode_proximity']['#type']);
+        unset($form['field_geocode_proximity']['source_configuration']['#type']);
+        unset($form['field_geocode_proximity']['source_configuration']['origin_address']['#description']);
+        $form['field_geocode_proximity']['source_configuration']['origin_address']['#title'] = 'Search location';
+        $form['field_geocode_proximity']['source_configuration']['origin_address']['#placeholder'] = 'City, State, Zip';
+      }
+
+    }
+  }
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function compro_custom_views_query_alter(ViewExecutable $view, QueryPluginBase $query) {
+  if ($view->id() === 'location_search') {
+    $canada_query = '( 3959 * ACOS( LEAST(1, COS( RADIANS(44.459869)) * COS( RADIANS(node__field_geocode.field_geocode_lat) ) * COS( RADIANS(node__field_geocode.field_geocode_lon) - RADIANS(-78.632288) ) + SIN( RADIANS(44.459869) ) * SIN( RADIANS(node__field_geocode.field_geocode_lat) ) ) ) )';
+    $canada = FALSE;
+
+    // Conditions to determine if it's a generic Canada query.
+    $params = \Drupal::request()->query->get('field_geocode_proximity');
+    if (isset($params['source_configuration']['origin_address'])) {
+      $search = trim(strtolower($params['source_configuration']['origin_address']));
+      $canada_search_strings = ['canada', 'on', 'ontario', 'ontario, canada'];
+      if (in_array($search, $canada_search_strings)) {
+        $canada = TRUE;
+      }
+    }
+
+    // Loop through the filters.
+    if ($canada && isset($query->where[1]['conditions'])) {
+      foreach ($query->where[1]['conditions'] as $key => $where) {
+        // Find the proximity filter.
+        if (isset($where['operator']) && $where['operator'] === 'formula') {
+          // Switch the query to somewhere vaguely near Ottawa.
+          $query->where[1]['conditions'][$key]['field'] = $canada_query . ' <= 500';
+
+          // Do the same for the proximity sort.
+          if (isset($query->fields['node__field_geocode_field_geocode_proximity']['field'])) {
+            $query->fields['node__field_geocode_field_geocode_proximity']['field'] = $canada_query;
+          }
+        }
+      }
+    }
   }
 }

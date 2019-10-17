@@ -1,0 +1,435 @@
+/**
+ * @file All menus and their functions put into this one file.
+ *
+ * # README
+ *
+ * This file contains menu classes and items related to the hamburgers and other toggles.
+ * This file does _not_ contain sticky headers, region layout/stying, etc.
+ *
+ * The "day one" or default configuration for menus:
+ *   * The compro-superfish class, applied to a parent element like a block, will enable
+ *     superfish dropdowns and have basic styling defined in this file.
+ *   * Per compro_theme.theme and page.html.twig, the header area has a region for the logo, a hamburger toggle
+ *     toggle button, and a wrapped area (#main-navigation) that displays normal on desktop but as a sliding
+ *     off-canvas menu at viewports narrower than 1024px.
+ *
+ * Whenever possible, we use "mobile first" (@media min-width rather than max-width) CSS to build styles up. Things
+ * like superfish make this a bit of a pain, which is why we fork out library CSS whenever possible.
+ */
+
+/**
+ * Slide-out panel tray from the hamburger, if applicable.
+ */
+.compro-hamburger {
+  -webkit-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+}
+@media (prefers-reduced-motion: reduce) {
+  .compro-hamburger {
+    -webkit-transition: unset;
+    -o-transition: unset;
+    -moz-transition: unset;
+    transition: unset;
+  }
+}
+@media all and (max-width: 1023px) {
+  .compro-hamburger {
+    bottom: 0;
+    display: none;
+    height: 100%;
+    left: -200px;
+    overflow: auto;
+    position: fixed;
+    right: auto;
+    top: 0;
+    width: 200px;
+    z-index: 9999;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+.compro-hamburger.is-active {
+  background-color: #1a428a;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  box-shadow: 0 0 10px #000;
+  color: #fff;
+  display: block;
+  height: 100%;
+  left: -200px;
+  overflow: auto;
+  position: fixed;
+  right: auto;
+  top: 0;
+  width: 200px;
+  z-index: 9999;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translate3d(200px, 0, 0);
+  -moz-transform: translate3d(200px, 0, 0);
+  -ms-transform: translate3d(200px, 0, 0);
+  -o-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+/**
+ * Hamburger icon positioning.
+ */
+.compro-hamburger-icon {
+  background-color: transparent;
+  border: 0;
+  bottom: 0;
+  cursor: pointer;
+  margin: 0;
+  max-width: 65px;
+  overflow: visible;
+  padding: 15px 15px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  -o-transition-property: opacity, filter;
+  -moz-transition-property: opacity, filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  z-index: 50;
+}
+.compro-hamburger-icon:hover,
+.compro-hamburger-icon:active,
+.compro-hamburger-icon:focus {
+  background-color: #0a1a37;
+}
+@media (prefers-reduced-motion: reduce) {
+  .compro-hamburger-icon {
+    -webkit-transition: unset;
+    -o-transition: unset;
+    -moz-transition: unset;
+    transition: unset;
+  }
+}
+@media all and (min-width: 1024px) {
+  .compro-hamburger-icon {
+    display: none;
+  }
+  .compro-hamburger-icon.is-active {
+    display: block;
+  }
+}
+.has--compro-hamburger-icon {
+  padding-right: 85px;
+}
+
+/**
+ * Superfish dropdown menus and overrides.
+ */
+.compro-superfish li.menu-item--expanded {
+  position: relative;
+}
+.compro-superfish li.menu-item--expanded > ul {
+  background-color: rgba(10, 26, 55, 0.95);
+  display: none;
+  text-align: left;
+}
+@media all and (min-width: 1024px) {
+  .compro-superfish li.menu-item--expanded > ul {
+    left: 0;
+    min-width: 17em;
+    position: absolute;
+    top: 100%;
+    top: -webkit-calc(100% - 11px);
+    top: -moz-calc(100% - 11px);
+    top: calc(100% - 11px);
+    z-index: 99;
+  }
+}
+.compro-superfish li.menu-item--expanded > ul a {
+  border-bottom: 1px solid;
+  display: block;
+  padding: 16px 32px;
+}
+.compro-superfish li.menu-item--expanded > ul a:last-child {
+  border-bottom: 0 none;
+}
+.compro-superfish li.menu-item--expanded:hover > ul,
+.compro-superfish li.menu-item--expanded.sfHover > ul {
+  display: block;
+}
+.sf-arrows .sf-with-ul {
+  position: relative;
+}
+.sf-arrows .sf-with-ul::after {
+  border: 5px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.8);
+  content: '';
+  display: inline-block;
+  height: 0;
+  margin: -4px 0 0 5px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+.sf-arrows .sfHover .sf-with-ul::after {
+  margin-top: -.6em;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+/**
+ * Inner hamburger button elements.
+ */
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px;
+}
+.hamburger-inner,
+.hamburger-inner::before,
+.hamburger-inner::after {
+  width: 40px;
+  height: 4px;
+  background-color: #333;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: -o-transform;
+  -moz-transition-property: transform, -moz-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform, -moz-transform, -o-transform;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+.hamburger-inner::before,
+.hamburger-inner::after {
+  content: "";
+  display: block;
+}
+.hamburger-inner::before {
+  top: -10px;
+}
+.hamburger-inner::after {
+  bottom: -10px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after{
+    -webkit-transition: unset;
+    -o-transition: unset;
+    -moz-transition: unset;
+    transition: unset;
+  }
+}
+
+/**
+ * Spin animation for hamburger.
+ */
+.hamburger--spin .hamburger-inner {
+  -webkit-transition-duration: 0.22s;
+  -moz-transition-duration: 0.22s;
+  -o-transition-duration: 0.22s;
+  transition-duration: 0.22s;
+  -webkit-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+.hamburger--spin .hamburger-inner::before {
+  -webkit-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  -o-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  -moz-transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+  transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in;
+}
+.hamburger--spin .hamburger-inner::after {
+  -webkit-transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -o-transition: bottom 0.1s 0.25s ease-in, -o-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  -moz-transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -moz-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -webkit-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -moz-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19), -o-transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger--spin.is-active .hamburger-inner {
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+  -webkit-transition-delay: 0.12s;
+  -moz-transition-delay: 0.12s;
+  -o-transition-delay: 0.12s;
+  transition-delay: 0.12s;
+  -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  -webkit-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  -o-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  -moz-transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+  transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out;
+}
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: bottom 0.1s ease-out, -o-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -moz-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -moz-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1), -o-transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .hamburger--spin .hamburger-inner,
+  .hamburger--spin .hamburger-inner::before,
+  .hamburger--spin .hamburger-inner::after,
+  .hamburger--spin.is-active .hamburger-inner,
+  .hamburger--spin.is-active .hamburger-inner::before,
+  .hamburger--spin.is-active .hamburger-inner::after {
+    -webkit-transition: unset;
+    -o-transition: unset;
+    -moz-transition: unset;
+    transition: unset;
+  }
+}
+
+/**
+ * Override flex row layouts that are inside active panels.
+ */
+.is-active .layout--flex-row,
+.is-active .layout--tablet-row {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -moz-box-orient: vertical;
+  -moz-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/**
+ * Body modifications for headroom to work.
+ */
+@media all and (min-width: 1024px) {
+  .js-disable-headroom .headroom {
+    position: absolute;
+    -webkit-transform: unset;
+    -moz-transform: unset;
+    -ms-transform: unset;
+    -o-transform: unset;
+    transform: unset;
+  }
+}
+
+/**
+ * Disable scrolling on the body when the panel is open.
+ */
+.js-hamburger-is-active {
+  overflow: hidden;
+  position: fixed;
+}
+
+/**
+ * Core classes for the main menu (typically the header one).
+ */
+.menu--main {
+  text-transform: lowercase;
+}
+.menu--main .menu {
+  margin: 5px 0;
+}
+.menu--main .menu > li > a:hover,
+.menu--main .menu > li > a:active,
+.menu--main .menu > li > a.active,
+.menu--main .menu > li > a.active-trail {
+  color: #a3b3d0;
+}
+@media all and (max-width: 1280px) {
+  .menu--main .menu > li > a {
+    padding: 16px 16px;
+  }
+}
+
+/**
+ * Core menu class. Common styles for all front-end menus on the site.
+ *
+ * Same styling applies to header and footer, so only put common styles here.
+ */
+ul.menu {
+  list-style: none outside;
+  padding: 0;
+}
+ul.menu a[href*="tel:"] {
+  cursor: text;
+}
+ul.menu a[href*="tel:"]:hover {
+  text-decoration: none;
+}
+ul.menu > li {
+  display: inline-block;
+}
+ul.menu > li > a {
+  display: inline-block;
+  margin: 0;
+  padding: 16px 32px;
+  text-decoration: none;
+}
+
+/**
+ * Modal overlay.
+ */
+.modal-overlay {
+  background-color: #666;
+  background-color: rgba(0,0,0,.5);
+  bottom: 0;
+  display: none;
+  filter: blur(4px);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+.js-hamburger-is-active .modal-overlay {
+  display: block;
+}

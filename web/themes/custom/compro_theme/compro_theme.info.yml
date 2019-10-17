@@ -9,18 +9,17 @@ ckeditor_stylesheets:
 libraries:
   - compro_theme/compro-propertyValue
   - compro_theme/compro-animate
-  - compro_theme/compro-autotrack
   - compro_theme/compro-headroom
-  - compro_theme/compro-superfish
-  - compro_theme/compro-tippyjs
+  - compro_theme/compro-slick
+  - compro_theme/compro-menus
   - compro_theme/compro-globalStyling
-  - compro_theme/compro-hamburger
 regions:
   page_top: Page top
   header: Header
   utility: Utility
   nav: Nav
   splash: Splash
+  landing_page_header: Landing page header
   pre_content: Pre-content
   content_top: Content top
   content: Content

@@ -8,7 +8,7 @@
     attach: function (context, settings) {
       if (context === document) {
         /**
-         * Function to tweak swoosh padding.
+         * Function to pad the element after the header.
          */
         var headroomPadder = function() {
           // Top-pad the next sibling to the header plus change.
@@ -17,14 +17,30 @@
               thisHeight = $this.height();
 
             if (window.innerWidth >= 1024) {
-              $this.next().find('.entity-bundle-stripe').css({
-                'padding-top': (thisHeight + 80) + 'px'
-              });
+              if ($this.next().find('.hero--less-padding').length) {
+                $this.next().find('.hero--less-padding').css({
+                  'padding-top': (thisHeight + 20) + 'px'
+                });
+              }
+              else {
+                $this.next().find('.entity-bundle-stripe').css({
+                  'padding-top': (thisHeight + 80) + 'px'
+                });
+              }
+
+
             }
             else {
-              $this.next().find('.entity-bundle-stripe').css({
-                'padding-top': '60px'
-              });
+              if ($this.next().find('.hero--less-padding').length) {
+                $this.next().find('.hero--less-padding').css({
+                  'padding-top': '40px'
+                });
+              }
+              else {
+                $this.next().find('.entity-bundle-stripe').css({
+                  'padding-top': '60px'
+                });
+              }
             }
           });
         };

@@ -1,0 +1,12 @@
+symmetri_container.container_entity_type.*:
+  type: config_entity
+  label: 'Container type config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string

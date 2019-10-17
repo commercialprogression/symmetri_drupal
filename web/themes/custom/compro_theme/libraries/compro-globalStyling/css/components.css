@@ -4,55 +4,82 @@
  */
 
 /**
+ * Ensure editing pencils are as close to their elements as possible.
+ */
+[data-quickedit-entity-id] {
+  position: relative;
+}
+
+/**
  * Background-color classes for the settings dropdowns. Add here as needed.
  */
-.background-color--black {
+.background-color--black,
+.background-color--black.has-field-image-background .hover--bg:hover {
   background-color: #222;
 }
-.background-color--grey-dark {
+.background-color--grey-dark,
+.background-color--grey-dark.has-field-image-background .hover--bg:hover {
   background-color: #444;
 }
-.background-color--grey {
+.background-color--grey,
+.background-color--grey.has-field-image-background .hover--bg:hover {
   background-color: #999;
 }
-.background-color--grey-light {
-  background-color: #f5f5f5;
+.background-color--grey-light,
+.background-color--grey-light.has-field-image-background .hover--bg:hover {
+  background-color: #f0f0f0;
 }
 .background-color--white {
   background-color: #fff;
 }
+.background-color--white.has-field-image-background .hover--bg:hover {
+  background-color: #e7faff;
+}
 .background-color--main,
-.background-color--blue {
-  background-color: #1a428a;
+.background-color--main.has-field-image-background .hover--bg:hover,
+.background-color--blue,
+.background-color--blue.has-field-image-background .hover--bg:hover {
+  background-color: #256DD2;
 }
 .background-color--main-dark,
-.background-color--blue-dark {
-  background-color: #0a1a37;
+.background-color--main-dark.has-field-image-background .hover--bg:hover,
+.background-color--blue-dark,
+.background-color--blue-dark.has-field-image-background .hover--bg:hover {
+  background-color: #0A5083;
 }
 .background-color--main-light,
-.background-color--blue-light {
-  background-color: #a3b3d0;
+.background-color--main-light.has-field-image-background .hover--bg:hover,
+.background-color--blue-light,
+.background-color--blue-light.has-field-image-background .hover--bg:hover {
+  background-color: #2B7BB7;
 }
-.background-color--second {
-  background-color: #009abf;
+.background-color--second,
+.background-color--second.has-field-image-background .hover--bg:hover {
+  background-color: #3D8122;
 }
-.background-color--second-dark {
+.background-color--second-dark,
+.background-color--second-dark.has-field-image-background .hover--bg:hover {
   background-color: #003e4c;
 }
-.background-color--second-light {
-  background-color: #99d7e5 ;
+.background-color--second-light,
+.background-color--second-light.has-field-image-background .hover--bg:hover {
+  background-color: #89AF3F;
 }
-.background-color--third {
-  background-color: #f0ad33;
+.background-color--third,
+.background-color--third.has-field-image-background .hover--bg:hover {
+  background-color: #E5711E;
 }
-.background-color--third-dark {
-  background-color: #604514;
+.background-color--third-dark,
+.background-color--third-dark.has-field-image-background .hover--bg:hover {
+  background-color: #996F02;
 }
-.background-color--third-light {
-  background-color: #f9dead;
+.background-color--third-light,
+.background-color--third-light.has-field-image-background .hover--bg:hover {
+  background-color: #FF721F;
 }
-.background-color--accent {
-  background-color: #c4d701;
+.background-color--accent,
+.background-color--accent.has-field-image-background .hover--bg:hover {
+  background-color: #297384;
 }
 
 /**
@@ -69,6 +96,8 @@
  */
 .block-system-branding-block {}
 .block-system-branding-block a {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   padding: 18px 0 16px;
@@ -83,23 +112,35 @@
  * Especially useful if the opening/closing quotes have to look different than
  * the text in some way.
  */
-.blockquote--closing-include p:last-child::after {
-  content: "\201D";
+.blockquote--closing-include {
+  min-height: 80px;
+  padding-right: 80px;
 }
-.blockquote--opening-include p:first-child::before {
+.blockquote--closing-include::after {
+  bottom: -.17ch;
+  content: "\201D";
+  display: block;
+  right: -.1ch;
+}
+.blockquote--opening-include {
+  min-height: 80px;
+  padding-left: 80px;
+}
+.blockquote--opening-include::before {
   content: "\201C";
+  display: block;
+  left: -.1ch;
+  top: .65ch;
 }
 
 /**
- * Default lines for cards (under image or faux top border).
+ * Generic borders.
  */
-.card-hr--show {
-  background-color: #666;
-  height: 4px;
-  line-height: 0;
+.border--1px-solid {
+  border: 1px solid;
 }
-.card-hr--hide {
-  display: none;
+.border-bottom--1px-solid {
+  border-bottom: 1px solid;
 }
 
 /**
@@ -120,29 +161,34 @@
 .child-element-background-color--grey-light > *,
 .child-links-background-color--grey-light a {
   background-color: #f5f5f5;
+  color: #0A5083;
 }
 .child-element-background-color--white > *,
 .child-links-background-color--white a {
   background-color: #fff;
+  color: #0A5083;
 }
-.background-color--main,
+.child-element-background-color--main > *,
+.child-links-background-color--main a,
 .child-element-background-color--blue > *,
 .child-links-background-color--blue a {
-  background-color: #1a428a;
+  background-color: #256DD2;
 }
-.background-color--main-dark,
+.child-element-background-color--main-dark > *,
+.child-links-background-color--main-dark a,
 .child-element-background-color--blue-dark > *,
 .child-links-background-color--blue-dark a {
-  background-color: #0a1a37;
+  background-color: #0A5083;
 }
-.background-color--main-light,
+.child-element-background-color--main-light > *,
+.child-links-background-color--main-light a,
 .child-element-background-color--blue-light > *,
 .child-links-background-color--blue-light a {
-  background-color: #a3b3d0;
+  background-color: #2B7BB7;
 }
 .child-element-background-color--second > *,
 .child-links-background-color--second a {
-  background-color: #009abf;
+  background-color: #3D8122;
 }
 .child-element-background-color--second-dark > *,
 .child-links-background-color--second-dark a {
@@ -150,23 +196,85 @@
 }
 .child-element-background-color--second-light > *,
 .child-links-background-color--second-light a {
-  background-color: #99d7e5 ;
+  background-color: #89AF3F;
 }
 .child-element-background-color--third > *,
 .child-links-background-color--third a {
-  background-color: #f0ad33;
+  background-color: #E5711E;
 }
 .child-element-background-color--third-dark > *,
 .child-links-background-color--third-dark a {
-  background-color: #604514;
+  background-color: #996F02;
 }
 .child-element-background-color--third-light > *,
 .child-links-background-color--third-light a {
-  background-color: #f9dead;
+  background-color: #FF721F;
 }
 .child-element-background-color--accent > *,
 .child-links-background-color--accent a {
-  background-color: #c4d701;
+  background-color: #297384;
+}
+
+/**
+ * Overrides to chosen dropdowns.
+ */
+.chosen-container {
+  font-size: 16px;
+}
+.chosen-container-single .chosen-single {
+  padding: 0 0 0 10px;
+  height: 40px;
+  border: 1px solid #57a0d7;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  background: #fff;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  color: #333;
+  line-height: 1.35;
+}
+.chosen-container-active.chosen-with-drop .chosen-single {
+  background-image: none;
+  border: 1px solid #57a0d7;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.chosen-container-multi {
+  background: #fff;
+  border: 1px solid #57a0d7;
+  padding: 6px 5px 5px 0;
+}
+.chosen-container-multi .chosen-choices {
+  background: #fff url("../images/select-handle.svg") no-repeat scroll right center;
+  border: 0 none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  padding: 0 26px 0 10px;
+}
+.chosen-container-multi .chosen-choices li.search-field input[type="text"] {
+  color: #333;
+}
+.chosen-container-single .chosen-single span {
+  margin: 9px 26px 9px 0;
+}
+.chosen-container-single .chosen-single div {
+  padding: 0 5px 0 0;
+}
+.chosen-container-single .chosen-single div b {
+  background: transparent url("../images/select-handle.svg") no-repeat center center;
+}
+.chosen-container .chosen-drop {
+  border: 1px solid #57a0d7;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 
 /**
@@ -190,134 +298,79 @@
 .color--white a {
   color: #fff;
 }
-.color--white a:hover,
-.color--white a:active {
-  color: #999;
-}
 .color--main,
 .color--blue {
-  color: #1a428a;
+  color: #256DD2
 }
 .color--main-dark,
 .color--blue-dark {
-  color: #0a1a37;
+  color: #0A5083;
 }
 .color--main-light,
 .color--blue-light {
-  color: #a3b3d0;
+  color: #2B7BB7;
 }
 .color--second {
-  color: #009abf;
+  color: #3D8122;
 }
 .color--second-dark {
   color: #003e4c;
 }
 .color--second-light {
-  color: #99d7e5 ;
+  color: #89AF3F;
 }
 .color--third {
-  color: #f0ad33;
+  color: #E5711E;
 }
 .color--third-dark {
-  color: #604514;
+  color: #996F02;
 }
 .color--third-light {
-  color: #f9dead;
+  color: #FF721F;
 }
 .color--accent {
-  color: #c4d701;
+  color: #297384;
 }
 
 /**
  * When you need to set text in columns that auto-adjust to their container.
  */
-.columnar {
+.columnar--2-column,
+.columnar--3-column,
+.columnar--4-column {
   -moz-column-count: 2;
   -webkit-column-count: 2;
   column-count: 2;
-  -moz-column-gap: 20px;
-  -webkit-column-gap: 20px;
-  column-gap: 20px;
+  -moz-column-gap: 40px;
+  -webkit-column-gap: 40px;
+  column-gap: 40px;
 }
-.columnar > * {
+.columnar--3-column {
+  -moz-column-count: 3;
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+.columnar--4-column {
+  -moz-column-count: 4;
+  -webkit-column-count: 4;
+  column-count: 4;
+}
+.columnar--2-column > *,
+.columnar--3-column > *,
+.columnar--4-column > * {
   -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
   break-inside: avoid-column;
   page-break-inside: avoid;
 }
 @media all and (max-width: 767px) {
-  .columnar {
+  .columnar--2-column,
+  .columnar--3-column,
+  .columnar--4-column {
     -moz-column-count: 1;
     -webkit-column-count: 1;
     column-count: 1;
   }
-}
-
-/**
- * Slide-out panel tray from the hamburger, if applicable.
- */
-.compro-hamburger-panel {
-  display: none;
-  -webkit-box-flex: 1;
-  -webkit-flex: auto;
-  -moz-box-flex: 1;
-  -ms-flex: auto;
-  flex: auto;
-  text-align: left;
-}
-.compro-hamburger-panel > .content {
-  display: none;
-}
-.compro-hamburger-panel.open > .content {
-  display: block;
-}
-
-/**
- * Superfish dropdown menus and overrides.
- */
-.compro-superfish li.menu-item--expanded {
-  position: relative;
-}
-.compro-superfish li.menu-item--expanded > ul {
-  background-color: rgba(10, 26, 55, 0.95);
-  display: none;
-  left: 0;
-  min-width: 17em;
-  position: absolute;
-  text-align: left;
-  top: 100%;
-  top: calc(100% - 11px);
-  z-index: 99;
-}
-.compro-superfish li.menu-item--expanded > ul a {
-  border-bottom: 1px solid;
-  display: block;
-  padding: 16px 32px;
-}
-.compro-superfish li.menu-item--expanded > ul a:last-child {
-  border-bottom: 0 none;
-}
-.compro-superfish li.menu-item--expanded:hover > ul,
-.compro-superfish li.menu-item--expanded.sfHover > ul {
-  display: block;
-}
-.sf-arrows .sf-with-ul::after {
-  border: 5px solid transparent;
-  border-top-color: rgba(255, 255, 255, 0.8);
-  content: '';
-  display: inline-block;
-  height: 0;
-  margin: -4px 0 0 5px;
-  position: absolute;
-  top: 50%;
-  width: 0;
-}
-.sf-arrows .sfHover .sf-with-ul::after {
-  margin-top: -.6em;
-  -moz-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 /**
@@ -329,9 +382,15 @@
 }
 
 /**
- * Style and layout for cards components.
+ * Link components.
  */
-.entity-bundle-cards {}
+.entity-bundle-link a {
+  display: inline-block;
+  margin: 0 20px 20px 0;
+}
+.entity-bundle-link a:last-child {
+  margin: 0 0 20px 0;
+}
 
 /**
  * Rich text markup styles.
@@ -367,10 +426,111 @@
 }
 
 /**
+ * Cards (standard).
+ */
+.entity--card-standard {
+  border: 1px solid;
+  margin: 0 30px 30px 0;
+  max-width: 355px;
+  padding: 30px 30px;
+}
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Browser targeting hack to make max-width work in flex. */
+  .entity--card-standard {
+    flex-basis: 355px;
+  }
+}
+@media all and (min-width: 768px) {
+  .entity--card-standard {
+    min-width: 207px;
+  }
+}
+@media all and (max-width: 767px) {
+  .entity--card-standard {
+    margin: 0 auto 30px;
+  }
+}
+.entity--card-standard h2 {
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.entity--card-standard img + h2 {
+  margin-top: 20px;
+}
+.entity--card-standard > .field {
+  margin-bottom: 30px;
+}
+.entity--card-standard > .field:last-child {
+  margin-bottom: 0;
+}
+/* When a card has an image, the extra bottom padding is accounted for in the comps. */
+.entity--card-standard.has-field-image > .field:last-child {
+  margin-bottom: 30px;
+}
+
+/**
  * Hide RSS icons while leaving them present for discovery.
  */
 .feed-icons {
   display: none;
+}
+
+/**
+ * Ensure vertical spacing from video fields.
+ */
+.field-formatter--file-video {
+  line-height: 0;
+}
+
+/**
+ * Video background field for stripes.
+ */
+.field-name--field-video-background {
+  display: none;
+}
+@media all and (min-width: 768px) {
+  .field-name--field-video-background {
+    bottom: 0;
+    display: block;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+
+  .field-name--field-video-background > video {
+    left: 50%;
+    margin: 0;
+    min-height: 650px;
+    min-width: 1920px;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+}
+@media all and (min-width: 1920px) {
+  .field-name--field-video-background > video {
+    min-width: 100vw !important;
+  }
+}
+
+/**
+ * IE11 doesn't play nice with flex columns containing images and videos, so let's blow it away.
+ */
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Browser targeting hack to make max-width work in flex. */
+  .entity-bundle-column.contains-component--media.flex-direction--column,
+  .teaser--image.flex-direction--column,
+  .entity--card-standard {
+    display: block;
+  }
 }
 
 /**
@@ -387,6 +547,85 @@
 .flex--initial svg,
 .flex--initial img {
   max-width: 780px;
+}
+
+
+/**
+ * Font size multiplier classes, like property--value but bad and client-specific.
+ */
+.font-size--p375em {
+  font-size: .375em;
+}
+.font-size--p5em {
+  font-size: .5em;
+}
+.font-size--p625em {
+  font-size: .625em;
+}
+.font-size--p75em {
+  font-size: .75em;
+}
+.font-size--p875em {
+  font-size: .875em;
+}
+.font-size--1em {}
+.font-size--1-125em {
+  font-size: 1.125em;
+}
+.font-size--1-25em {
+  font-size: 1.25em;
+}
+.font-size--1-375em {
+  font-size: 1.375em;
+}
+.font-size--1-5em {
+  font-size: 1.5em;
+}
+.font-size--1-625em {
+  font-size: 1.625em;
+}
+.font-size--1-75em {
+  font-size: 1.75em;
+}
+.font-size--1-875em {
+  font-size: 1.875em;
+}
+.font-size--2em {
+  font-size: 2em;
+}
+
+/**
+ * Video backgrounds for stripes/heroes.
+ */
+.has-field-video-background {
+  position: relative;
+}
+@media all and (min-width: 768px) {
+  .has-field-video-background .contextual-region {
+    position: static;
+  }
+  .has-field-video-background .entity-type-component {
+    position: relative;
+    z-index: 3;
+  }
+  .has-field-video-background .field-name--field-video-background {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+/**
+ * The wrapper for both the top bar and the splash.
+ *
+ * Applying a default background at this level, which will be covered entirely
+ * by a splash.
+ */
+.header-and-splash {
+  background: #1a428a url('../images/bg_hero_default.jpg') center center scroll no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /**
@@ -411,13 +650,6 @@
     -o-transform: translateY(0%);
     transform: translateY(0%);
   }
-  .js .headroom--pinned {
-    background-color: #222;
-    background-color: rgba(34, 34, 34, 0.95);
-  }
-  .js .headroom--top {
-    background-color: transparent;
-  }
   .headroom--unpinned {
     -webkit-transform: translateY(-100%);
     -moz-transform: translateY(-100%);
@@ -425,6 +657,75 @@
     -o-transform: translateY(-100%);
     transform: translateY(-100%);
   }
+}
+.top-bar {
+  background-color: #fff;
+}
+
+/**
+ * Hotspots.
+ */
+.hotspot {}
+.has--hotspots {
+  position: relative;
+}
+.has--hotspots > img {
+  margin-bottom: 0 !important;
+}
+.has--hotspots > .field-name--field-text {
+  background-color: #444;
+  background-color: rgba(34,34,34,.9);
+  bottom: 0;
+  color: #fff;
+  left: 0;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+}
+.hotspot-anchor,
+.hotspot-anchor:link {
+  background-color: #830;
+  border-radius: 50%;
+  color: #fff;
+  display: none;
+  font-weight: bold;
+  height: 1em;
+  line-height: 1;
+  padding: 5px;
+  text-decoration: none;
+  transition: all .3s ease-in;
+  width: 1em;
+}
+.hotspot-anchor:hover,
+.hotspot-anchor:active,
+.hotspot-anchor:focus {
+  background-color: #0a5083;
+  transform: rotate(45deg);
+}
+.js .hotspot-anchor {
+  display: block;
+}
+.hotspot-content {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 5px #000;
+  color: #333;
+  padding: 5px 10px;
+}
+.js .hotspot-content {
+  display: none;
+}
+.entity-bundle-hotspot {
+  position: absolute;
+}
+.entity-bundle-hotspot:focus .hotspot-content,
+.entity-bundle-hotspot:focus-within .hotspot-content,
+.entity-bundle-hotspot .hotspot-content:target {
+  display: block;
+}
+.js .entity-bundle-hotspot:focus .hotspot-content,
+.js .entity-bundle-hotspot:focus-within .hotspot-content {
+  display: none;
 }
 
 /**
@@ -442,11 +743,20 @@ ul.inline li:first-child {
 }
 .js .revealOnScroll.animated {
   opacity: 1;
+  -webkit-animation-duration: 2s;
+  -moz-animation-duration: 2s;
+  -o-animation-duration: 2s;
   animation-duration: 2s;
 }
 @media all and (max-width: 770px) {
   .js .revealOnScroll.animated {
+    -webkit-animation-duration: 0s;
+    -moz-animation-duration: 0s;
+    -o-animation-duration: 0s;
     animation-duration: 0s;
+    -webkit-animation-name: none;
+    -moz-animation-name: none;
+    -o-animation-name: none;
     animation-name: none;
   }
 }
@@ -464,51 +774,13 @@ ul.inline li:first-child {
 .max-height--56px {
   max-height: 56px;
 }
-
-/**
- * Core classes for the main menu (typically the header one).
- */
-.menu--main {
-  text-transform: lowercase;
+.max-height--400px {
+  max-height: 400px;
 }
-.menu--main .menu {
-  margin: 5px 0;
-}
-.menu--main .menu > li > a:hover,
-.menu--main .menu > li > a:active,
-.menu--main .menu > li > a.active,
-.menu--main .menu > li > a.active-trail {
-  color: #a3b3d0;
-}
-@media all and (max-width: 1280px) {
-  .menu--main .menu > li > a {
-    padding: 16px 16px;
+@media all and (max-width: 768px) {
+  .max-height--400px {
+    max-height: none;
   }
-}
-
-/**
- * Core menu class. Common styles for all front-end menus on the site.
- *
- * Same styling applies to header and footer, so only put common styles here.
- */
-ul.menu {
-  list-style: none outside;
-  padding: 0;
-}
-ul.menu a[href*="tel:"] {
-  cursor: text;
-}
-ul.menu a[href*="tel:"]:hover {
-  text-decoration: none;
-}
-ul.menu > li {
-  display: inline-block;
-}
-ul.menu > li > a {
-  display: inline-block;
-  margin: 0;
-  padding: 16px 32px;
-  text-decoration: none;
 }
 
 /**
@@ -570,6 +842,22 @@ ul.menu > li > a {
 }
 
 /**
+ * Overflow classes a la property--value.
+ */
+.overflow-y--auto {
+  overflow-y: auto;
+}
+.overflow-y--scroll {
+  overflow-y: scroll;
+}
+@media all and (max-width: 768px) {
+  .overflow-y--auto,
+  .overflow-y--scroll {
+    overflow-y: visible;
+  }
+}
+
+/**
  * Padding classes.
  *
  * Horizontal for column section entities. At the mobile breakpoint the padding
@@ -577,6 +865,9 @@ ul.menu > li > a {
  *
  * Columns are then vertically spaced using flex classes from property--value.
  */
+.padding--20px {
+  padding: 20px;
+}
 .padding-horizontal--0 {
   padding-left: 0;
   padding-right: 0;
@@ -610,6 +901,10 @@ ul.menu > li > a {
     padding-left: 0;
     padding-right: 0;
   }
+  [class*="border"].padding-horizontal--4 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .padding-horizontal--8 {
   padding-left: 40px;
@@ -640,6 +935,9 @@ ul.menu > li > a {
     padding-left: 0;
     padding-right: 0;
   }
+}
+.padding-right--16 {
+  padding-right: 40px;
 }
 .padding-vertical--0 {
   padding-bottom: 0;
@@ -738,34 +1036,24 @@ ul.menu > li > a {
  * The front page often has some strange overrides.
  */
 .path-frontpage {}
-.path-frontpage .region--splash h1 {
-  font-size: 5.625rem;
-}
-@media all and (max-width: 767px) {
-  .path-frontpage .region--splash h1 {
-    font-size: 2.25rem;
-  }
-}
 
 /**
  * Add stylistic pipes to lists.
  */
-.pipe-spaced {}
-.pipe-spaced ul.menu > li > a,
-.pipe-spaced ul.menu > li > span {
-  padding: 10px 0;
-}
-.pipe-spaced li::after {
-  content: '|';
-  display: inline-block;
-  font-weight: 300;
-  opacity: .9;
-  padding: 0 10px;
-  vertical-align: middle;
-}
-.pipe-spaced li:last-child::after,
-.pipe-spaced li.last::after {
-  display: none;
+ @media all and (min-width: 768px) {
+  .pipe-spaced {}
+  .pipe-spaced li::after {
+    content: '|';
+    display: inline-block;
+    font-weight: 300;
+    opacity: .9;
+    padding: 0 2px;
+    vertical-align: middle;
+  }
+  .pipe-spaced li:last-child::after,
+  .pipe-spaced li.last::after {
+    display: none;
+  }
 }
 
 /**
@@ -773,6 +1061,61 @@ ul.menu > li > a {
  */
 .print-break {
   page-break-before: always;
+}
+
+/**
+ * Rollovers for the bio cards.
+ */
+.rollover {
+  padding: 0;
+  position: relative;
+}
+.rollover--hover {
+  background-color: #222;
+  background-color: rgba(34, 34, 34, 0.75);
+  bottom: 0;
+  left: 0;
+  overflow-y: hidden;
+  padding: 0 30px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rollover--hover {
+    -webkit-transition: unset;
+    -o-transition: unset;
+    -moz-transition: unset;
+    transition: unset;
+  }
+}
+@media all and (min-width: 1024px) {
+  .rollover--hover {
+    background-color: rgba(26, 66, 138, 1);
+    top: 100%;
+  }
+  .rollover:hover .rollover--hover,
+  .rollover:active .rollover--hover,
+  .rollover:focus .rollover--hover,
+  .rollover .rollover--hover:focus,
+  .rollover .rollover--hover:focus-within {
+    background-color: rgba(34, 34, 34, 0.75);
+    top: 0;
+  }
+}
+
+/**
+ * Site slogan.
+ */
+.site-slogan {
+  color: #0a5083;
+  font-size: 15px;
+  font-weight: 600;
+  margin: -6px 0 0;
 }
 
 /**
@@ -805,16 +1148,150 @@ ul.menu > li > a {
  * Compro-slick slideshow base classes.
  */
 .slick-arrow {
+  background-color: transparent;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
   bottom: 50%;
-  padding: 10px;
+  font-size: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
   position: absolute;
+  width: 0;
   z-index: 4;
 }
 .slick-next {
-  right: -20px;
+  border-left: 30px solid #fff;
+  right: -90px;
+}
+.slick-next:hover,
+.slick-next:active {
+  background-color: transparent;
+  border-left-color: #2B7BB7;
+}
+.slick-next.slick-disabled:hover,
+.slick-next.slick-disabled:active {
+  border-left-color: #ccc;
+}
+@media all and (max-width: 1320px) {
+  .slick-next {
+    right: -3px;
+  }
+}
+@media all and (max-width: 767px) {
+  .slick-next {
+    right: -30px;
+  }
 }
 .slick-prev {
-  left: -20px;
+  border-right: 30px solid #fff;
+  left: -90px;
+}
+.slick-prev:hover,
+.slick-prev:active {
+  background-color: transparent;
+  border-right-color: #2B7BB7;
+}
+.slick-prev.slick-disabled:hover,
+.slick-prev.slick-disabled:active {
+  border-right-color: #ccc;
+}
+@media all and (max-width: 1320px) {
+  .slick-prev {
+    left: 20px;
+  }
+}
+@media all and (max-width: 767px) {
+  .slick-prev {
+    left: -10px;
+  }
+}
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+  display: none !important;
+}
+.slick-slide {
+  margin: 0 20px;
+}
+.slick-slide > div {
+  display: contents;
+  height: 100%;
+}
+.slick-slider article {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -moz-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  height: 100%;
+  margin: 0;
+  min-height: 270px; /* Hack for slideshows. Wish there was a better way. */
+  min-width: inherit;
+}
+.slick-slider article article {
+  height: auto;
+  min-height: 0;
+}
+
+/**
+ * Slick dots.
+ */
+.slick-dots {
+  list-style: none;
+  margin: 5px auto 10px;
+  text-align: center;
+}
+.slick-dots > li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.slick-dots button {
+  background-color: #fff;
+  border: 1px solid;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: #535859;
+  font-size: 10px;
+  margin: 0;
+  padding: 1px 3px;
+}
+.slick-dots .slick-active button,
+.slick-dots button:hover {
+  background-color: #0A5083;
+  border-color: #0A5083;
+  color: #fff;
+}
+/* Attempt to override slick to use flex instead of float. */
+.slick-track {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.slick-track:before,
+.slick-track:after {
+  display: none;
+}
+.slick-slide {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: inherit;
+  max-width: 780px;
+  -webkit-flex-shrink: 1;
+  -ms-flex-negative: 1;
+  flex-shrink: 1;
+  float: none;
+}
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Browser targeting hack to make max-width work in flex. */
+  .slick-slide {
+    flex-basis: 780px;
+  }
 }
 
 /**
@@ -824,6 +1301,8 @@ ul.menu > li > a {
   margin: 20px 0 0;
 }
 .social a[href]:before {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   border-radius: 50%;
   margin: 0 5px 5px 0;
   min-height: 16px;
@@ -842,7 +1321,6 @@ ul.menu > li > a {
  * Byline base class.
  */
 .submitted {
-  color: #ccc;
   margin: 0 0 10px;
 }
 
@@ -886,6 +1364,8 @@ ul.tabs > li > a.active {
     padding: 0;
   }
   ul.tabs > li {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
     border-radius: 0;
     border-width: 0 0 1px;
     float: none;
@@ -905,7 +1385,7 @@ ul.tabs > li > a.active {
  * Other classes ensure a width of 160 and min-height 160.
  */
 .teaser--image {
-  background: #444 url('../images/placeholder.png') center center scroll no-repeat;
+  background: #436 url('../images/placeholder.png') center center scroll no-repeat;
   overflow: hidden;
   position: relative;
   text-align: center;
@@ -918,8 +1398,11 @@ ul.tabs > li > a.active {
 }
 .teaser--image img,
 .teaser--image svg {
-  height: 100% !important;
+  display: inline;
+  margin: 0 auto 0 -10px !important;
   max-width: inherit;
+  min-height: 100% !important;
+  min-width: 100% !important;
   position: absolute;
   width: auto;
 }
@@ -929,6 +1412,12 @@ ul.tabs > li > a.active {
     height: auto !important;
     min-height: 100%;
     min-width: 100% !important;
+  }
+}
+@media all and (max-width: 768px) {
+  .teaser--image img,
+  .teaser--image svg {
+    margin: 0 !important;
   }
 }
 
@@ -950,7 +1439,8 @@ ul.tabs > li > a.active {
 .text-align--justify p,
 .text-align--justify picture,
 .text-align--justify svg,
-.text-align--justify video {
+.text-align--justify video,
+[class*="text-align--"] .text-align--center img {
   margin: 0 auto 10px;
 }
 .text-align--left figure,
@@ -977,30 +1467,46 @@ ul.tabs > li > a.active {
 }
 
 /**
- * Views filters.
+ * User cards (rollover).
  */
-.view-filters {
-  display: inline-block;
-  max-width: none;
+.user.view-mode--teaser {
+  margin: 0 auto;
+  max-width: 480px;
 }
-.view-filters label {
-  display: inline-block;
+@media all and (min-width: 768px) {
+  .user.view-mode--teaser {
+    min-width: 355px;
+  }
+}
+.user.view-mode--teaser img {
+  margin: 0;
+}
+
+/**
+ * View headers.
+ */
+.view-header {
+  margin: 0 0 20px;
 }
 
 /**
  * Consistent stylings per view mode.
  */
-.view-mode--full > .node__content > .field-name--body {
-  background-color: #fafafa;
-  font-style: italic;
-  padding: 10px;
+.view-mode--small {}
+
+/**
+ * Search page.
+ */
+.view-search .views-row {
+  margin: 0 0 40px;
+  max-width: 960px;
+  max-width: 75ch;
 }
-.view-mode--small h2 {
-  font-size: 1.25em;
-}
-.view-mode--teaser h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
+@media all and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  /* Browser targeting hack. */
+  .view-search .views-row {
+    max-width: 100ch;
+  }
 }
 
 /**
@@ -1011,6 +1517,10 @@ ul.tabs > li > a.active {
 }
 @media all and (min-width: 1024px) {
   .width--30p {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 30%;
+    -moz-box-flex: 0;
+    -ms-flex: 0 1 30%;
     flex: 0 1 30%;
     width: 30%;
   }

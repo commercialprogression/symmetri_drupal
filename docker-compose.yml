@@ -32,7 +32,7 @@ services:
     ports:
       - 8983
     volumes:
-      - ./solr-conf/conf:/solr-conf/conf
+      - ./.platform/solr-conf/6.x:/solr-conf/conf
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate

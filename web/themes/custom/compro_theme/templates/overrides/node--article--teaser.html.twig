@@ -1,0 +1,14 @@
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+  {% if content.field_image %}
+    <div{{ teaser_attributes }}>
+      {{ content.field_image }}
+    </div>
+  {% endif %}
+  <div{{ content_attributes }}>
+    {{ title_prefix }}
+    {{ title_suffix }}
+    {{ content.compro_submitted }}
+    {{ content |without('field_image') }}
+  </div>
+</article>

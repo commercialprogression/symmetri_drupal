@@ -393,7 +393,7 @@
   content: '\1f13b';
 }
 .social a[href*="linkedin.com"]:hover:before {
-  background-color: 1007bb6;
+  background-color: #1007bb;
 }
 .social a[href*="meetup.com"]:before {
   content: '\2133';
@@ -423,7 +423,7 @@
   content: '\1f426';
 }
 .social a[href*="twitter.com"]:hover:before {
-  background-color: 100aced;
+  background-color: #00aced;
 }
 .social a[href*="vimeo.com"]:before {
   content: '\24b1';

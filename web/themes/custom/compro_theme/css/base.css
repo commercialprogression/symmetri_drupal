@@ -1,0 +1,6 @@
+/**
+ * @file
+ * Reference to actual base.css for CKEditor.
+ */
+
+@import "../libraries/compro-globalStyling/css/base.css";

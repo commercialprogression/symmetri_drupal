@@ -1,13 +1,12 @@
 <div class="page layout-container">
   <header class="header-and-splash">
     <div class="top-bar compro-headroom">
-      <div class="inner">
-        <div class="display--flex">
-          {{ page.header }}
-          <div class="utility-and-nav compro-hamburger flex--auto">
-            {{ page.utility }}
-            {{ page.nav }}
-          </div>
+      <div class="inner display--flex position--relative has--compro-hamburger-icon">
+        {{ page.header }}
+        {{ menu_toggle }}
+        <div id="main-navigation" class="utility-and-nav compro-hamburger flex--auto">
+          {{ page.utility }}
+          {{ page.nav }}
         </div>
       </div>
     </div>
@@ -23,9 +22,15 @@
     </div>
     {{ page.post_content }}
   </main>
-  <footer class="footer-wrapper background-color--grey-dark color--white">
-    {{ page.footer }}
-    {{ page.footer_menu }}
-    {{ page.footer_utility }}
+  <footer class="footer-wrapper background-color--grey-light font-family--secondary">
+    <div class="appear-as-stripe layout--flex-row display--flex">
+      <div class="flex--1 padding-horizontal--4">
+        {{ page.footer }}
+      </div>
+      <div class="flex--2 display--flex flex-direction--column justify-content--space-between">
+        {{ page.footer_menu }}
+        {{ page.footer_utility }}
+      </div>
+    </div>
   </footer>
 </div>
