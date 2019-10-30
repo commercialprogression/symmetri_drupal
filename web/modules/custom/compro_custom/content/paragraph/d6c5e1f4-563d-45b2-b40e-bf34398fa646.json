@@ -1,0 +1,99 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/blockquote"
+        }
+    },
+    "id": [
+        {
+            "value": 244
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d6c5e1f4-563d-45b2-b40e-bf34398fa646"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 595
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "blockquote"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T15:02:50+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "198"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_style_quoteclose": [
+        {
+            "value": true
+        }
+    ],
+    "field_style_quoteopen": [
+        {
+            "value": true
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<h3>Blockquote can contain non-paragraph text.<\/h3>\r\n\r\n<p>Lorem ipsum dolor sit amet, sit verear bonorum fabellas ea, ea autem invidunt has. Pri at tibique ocurreret. Sea populo signiferumque necessitatibus cu, cum eu erat debitis. Ex odio quando torquatos nec, te his noluisse singulis consequat. Ius in zril officiis ocurreret.<\/p>\r\n\r\n<p>Id aliquid oportere nec. Eu duo adipisci dissentiet ullamcorper, pro eu nobis partiendo definitiones, habemus commune prodesset pro ad. Ius saperet ancillae id, nec apeirian conclusionemque an, te vis conceptam complectitur. Ut pri facer denique consectetuer, ius no modus petentium efficiantur, sit putant postulant ne. Graece eripuit vel ei. Nec an ocurreret mnesarchum, duo cu propriae gubergren theophrastus, per probo iudicabit id.<\/p>\r\n\r\n<p>Vis nemore putant eu, eam volumus expetenda ne. Albucius consetetur vituperata sit cu. Ad sit odio maluisset. Prima blandit no sea. Iudico invenire consequuntur eu cum. Ex nam delectus accommodare intellegebat, scaevola explicari cu vel.<\/p>\r\n\r\n<p>Copiosae quaerendum has at. Ne odio delicatissimi mea, homero veritus appellantur cum id, ne mel impetus salutatus. Ad mundi oporteat sit, sea ea inani dolore integre. Id timeam appetere lucilius vix, tritani detracto pericula qui ei, omnis dissentiunt ei eum.<\/p>\r\n\r\n<p>Ex has voluptua recusabo qualisque. Vero petentium nam te. In iisque nominavi consequat pro. Est an civibus nominati, sea ei commodo detraxit repudiare, esse clita impetus eum no. Novum dolore nec ex, maiorum omnesque deserunt mei ei, veniam mucius omittam est an.<\/p>\r\n\r\n<p><code>This blockquote ends with a code tag, just to throw a wrench in the works.<\/code><\/p>\r\n",
+            "format": "full_html",
+            "processed": "<h3>Blockquote can contain non-paragraph text.<\/h3>\n<p>Lorem ipsum dolor sit amet, sit verear bonorum fabellas ea, ea autem invidunt has. Pri at tibique ocurreret. Sea populo signiferumque necessitatibus cu, cum eu erat debitis. Ex odio quando torquatos nec, te his noluisse singulis consequat. Ius in zril officiis ocurreret.<\/p>\n<p>Id aliquid oportere nec. Eu duo adipisci dissentiet ullamcorper, pro eu nobis partiendo definitiones, habemus commune prodesset pro ad. Ius saperet ancillae id, nec apeirian conclusionemque an, te vis conceptam complectitur. Ut pri facer denique consectetuer, ius no modus petentium efficiantur, sit putant postulant ne. Graece eripuit vel ei. Nec an ocurreret mnesarchum, duo cu propriae gubergren theophrastus, per probo iudicabit id.<\/p>\n<p>Vis nemore putant eu, eam volumus expetenda ne. Albucius consetetur vituperata sit cu. Ad sit odio maluisset. Prima blandit no sea. Iudico invenire consequuntur eu cum. Ex nam delectus accommodare intellegebat, scaevola explicari cu vel.<\/p>\n<p>Copiosae quaerendum has at. Ne odio delicatissimi mea, homero veritus appellantur cum id, ne mel impetus salutatus. Ad mundi oporteat sit, sea ea inani dolore integre. Id timeam appetere lucilius vix, tritani detracto pericula qui ei, omnis dissentiunt ei eum.<\/p>\n<p>Ex has voluptua recusabo qualisque. Vero petentium nam te. In iisque nominavi consequat pro. Est an civibus nominati, sea ei commodo detraxit repudiare, esse clita impetus eum no. Novum dolore nec ex, maiorum omnesque deserunt mei ei, veniam mucius omittam est an.<\/p>\n<p><code>This blockquote ends with a code tag, just to throw a wrench in the works.<\/code><\/p>\n",
+            "lang": "en"
+        }
+    ]
+}

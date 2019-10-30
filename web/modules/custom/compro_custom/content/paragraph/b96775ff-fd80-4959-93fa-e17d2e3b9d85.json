@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 122
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b96775ff-fd80-4959-93fa-e17d2e3b9d85"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 314
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:01:26+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "123"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We securely store your data within this site's database, only removing it via SSL-enabled means to secure servers.<\/p>\r\n\r\n<p>We will keep your personal identification information indefinitely.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We securely store your data within this site's database, only removing it via SSL-enabled means to secure servers.<\/p>\n\n<p>We will keep your personal identification information indefinitely.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

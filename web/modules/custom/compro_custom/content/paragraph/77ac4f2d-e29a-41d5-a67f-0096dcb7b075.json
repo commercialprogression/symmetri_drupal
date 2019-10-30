@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hotspot"
+        }
+    },
+    "id": [
+        {
+            "value": 343
+        }
+    ],
+    "uuid": [
+        {
+            "value": "77ac4f2d-e29a-41d5-a67f-0096dcb7b075"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1067
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "hotspot"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:28:42+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "344"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_hotspots"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_data_xpercent": [
+        {
+            "value": "50.00"
+        }
+    ],
+    "field_data_ypercent": [
+        {
+            "value": "40.00"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Brad has a nosering. No, not really.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Brad has a nosering. No, not really.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

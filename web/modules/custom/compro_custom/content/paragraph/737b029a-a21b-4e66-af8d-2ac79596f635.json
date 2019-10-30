@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 400
+        }
+    ],
+    "uuid": [
+        {
+            "value": "737b029a-a21b-4e66-af8d-2ac79596f635"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1362
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T21:02:18+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "403"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>A User listing lets you add in biographies just like all the other \"listing\" components. See the example below:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>A User listing lets you add in biographies just like all the other \"listing\" components. See the example below:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

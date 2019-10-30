@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 303
+        }
+    ],
+    "uuid": [
+        {
+            "value": "83b6c2cc-e52f-4fed-982e-a15cd7eb361a"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 865
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:00:04+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "304"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>This column has a light [second] background, an animation, lots of horizontal padding, and center-aligned text.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>This column has a light [second] background, an animation, lots of horizontal padding, and center-aligned text.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

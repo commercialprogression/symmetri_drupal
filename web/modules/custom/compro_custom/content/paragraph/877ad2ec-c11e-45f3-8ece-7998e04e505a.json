@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/blockquote"
+        }
+    },
+    "id": [
+        {
+            "value": 199
+        }
+    ],
+    "uuid": [
+        {
+            "value": "877ad2ec-c11e-45f3-8ece-7998e04e505a"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 585
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "blockquote"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T01:51:40+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "198"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_style_quoteclose": [
+        {
+            "value": true
+        }
+    ],
+    "field_style_quoteopen": [
+        {
+            "value": true
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>When you reach the end of your rope, tie a knot in it and hang on.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>When you reach the end of your rope, tie a knot in it and hang on.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

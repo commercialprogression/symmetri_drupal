@@ -1,0 +1,86 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/block"
+        }
+    },
+    "id": [
+        {
+            "value": 211
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ef7d847d-20ed-4094-a42a-286e9b62e2cd"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 498
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "block"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T01:57:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "210"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_block": [
+        {
+            "plugin_id": "social",
+            "settings": {
+                "id": "social",
+                "label": "Social",
+                "provider": "contact_info",
+                "label_display": false
+            }
+        }
+    ]
+}

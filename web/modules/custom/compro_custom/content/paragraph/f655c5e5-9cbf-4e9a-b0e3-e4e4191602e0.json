@@ -1,0 +1,94 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/accordion"
+        }
+    },
+    "id": [
+        {
+            "value": 192
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f655c5e5-9cbf-4e9a-b0e3-e4e4191602e0"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 434
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "accordion"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:46:13+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "59"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_attr_open": [
+        {
+            "value": true
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The checkbox in the Settings tab lets you set this per accordion.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The checkbox in the Settings tab lets you set this per accordion.<\/p>",
+            "lang": "en"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "But this one is open by default",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 396
+        }
+    ],
+    "uuid": [
+        {
+            "value": "27ec7f86-d32f-48de-a18e-ee318a23adcb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1341
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T21:00:46+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "397"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>A Term listing component works just like a Content or User listing component (and honestly, just like Cards too) -- you choose or create some content, in this case tags and terms, and lay it out side-by-side or in a carousel.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>A Term listing component works just like a Content or User listing component (and honestly, just like Cards too) -- you choose or create some content, in this case tags and terms, and lay it out side-by-side or in a carousel.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

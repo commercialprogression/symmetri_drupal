@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 106
+        }
+    ],
+    "uuid": [
+        {
+            "value": "eb829fcd-2cea-4c30-8197-17aaaf27dc7f"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 300
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:58:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "107"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We collect the following data:<\/p>\r\n\r\n<ul>\r\n\t<li>Personal identification information (Name, email address, phone number, etc.)<\/li>\r\n<\/ul>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We collect the following data:<\/p>\n\n<ul><li>Personal identification information (Name, email address, phone number, etc.)<\/li>\n<\/ul>",
+            "lang": "en"
+        }
+    ]
+}

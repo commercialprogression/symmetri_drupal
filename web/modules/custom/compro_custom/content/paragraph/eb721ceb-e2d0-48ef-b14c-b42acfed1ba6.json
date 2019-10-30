@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/seo"
+        }
+    },
+    "id": [
+        {
+            "value": 52
+        }
+    ],
+    "uuid": [
+        {
+            "value": "eb721ceb-e2d0-48ef-b14c-b42acfed1ba6"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 378
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "seo"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-11T20:21:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "6"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_seo"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_seo_description": [
+        {
+            "value": "We are\u00a0committed to protecting your personal information. The purpose of this Privacy Policy is to outline how we deal with any personal information you provide to us"
+        }
+    ],
+    "field_seo_nofollow": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_noindex": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_title": [
+        {
+            "value": "Privacy Policy"
+        }
+    ]
+}

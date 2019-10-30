@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/blockquote"
+        }
+    },
+    "id": [
+        {
+            "value": 204
+        }
+    ],
+    "uuid": [
+        {
+            "value": "dcd49762-5fbd-4068-9e8a-00cc8c0d6785"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 590
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "blockquote"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T01:53:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "198"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_style_quoteclose": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_quoteopen": [
+        {
+            "value": false
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The most difficult thing is the decision to act, the rest is merely tenacity. The fears are paper tigers. You can do anything you decide to do. You can act to change and control your life; and the procedure, the process is its own reward.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The most difficult thing is the decision to act, the rest is merely tenacity. The fears are paper tigers. You can do anything you decide to do. You can act to change and control your life; and the procedure, the process is its own reward.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,197 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/stripe\/field_components": [
+            {
+                "href": "",
+                "lang": "en"
+            },
+            {
+                "href": "",
+                "lang": "en"
+            },
+            {
+                "href": "",
+                "lang": "en"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 78
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d496116b-bc4a-4e22-bc51-8033aaceb71c"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 219
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "stripe"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:19:18+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "7"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_sections"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/stripe\/field_components": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "f8e64338-f885-44bb-a160-e4370f7e1376"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "176"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/spacer"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "15af462e-1006-49d9-b4a2-5bc5f0515b00"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "177"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3f5de63e-8a5c-47b7-a41e-33ff8817f3db"
+                    }
+                ],
+                "lang": "en",
+                "target_revision_id": "178"
+            }
+        ]
+    },
+    "field_style_bgcolor": [
+        {
+            "value": "background-color--grey-light",
+            "lang": "en"
+        }
+    ],
+    "field_style_bghide": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_bgpx": [
+        {
+            "value": "background-position-x--center"
+        }
+    ],
+    "field_style_bgpy": [
+        {
+            "value": "background-position-y--center"
+        }
+    ],
+    "field_style_bgrepeat": [
+        {
+            "value": "background-repeat--no-repeat"
+        }
+    ],
+    "field_style_bgsize": [
+        {
+            "value": "background-size--cover"
+        }
+    ],
+    "field_style_color": [
+        {
+            "value": "color--inherit",
+            "lang": "en"
+        }
+    ],
+    "field_style_fullwidth": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_textalign": [
+        {
+            "value": "text-align--left",
+            "lang": "en"
+        }
+    ],
+    "field_style_unpad": [
+        {
+            "value": false
+        }
+    ]
+}

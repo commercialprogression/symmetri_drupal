@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 362
+        }
+    ],
+    "uuid": [
+        {
+            "value": "cee35c2d-e7bd-4a15-a209-184ba00c9474"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1109
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:36:17+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "363"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>This is rich text. It's a WYSIWYG that can take a bunch of text of your choosing.<\/p>\r\n\r\n<p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.&nbsp;<\/p>\r\n\r\n<p>The rich text WYSIWYG includes the ability to include&nbsp;<strong>bold text<\/strong>, as well as&nbsp;<em>italic text<\/em>, superscripts<sup>squared<\/sup>, plus subscripts<sub>below<\/sub>.<\/p>\r\n\r\n<p>You can insert horizontal rules:<\/p>\r\n\r\n<hr \/>\r\n<p>And within the text you can&nbsp;<a href=\"https:\/\/www.bing.com\/\">add links<\/a>, though this is surprisingly rare in this design system.<\/p>\r\n\r\n<p>Additionally, you can add bulleted lists:<\/p>\r\n\r\n<ul>\r\n\t<li>First<\/li>\r\n\t<li>Second<\/li>\r\n\t<li>Third<\/li>\r\n<\/ul>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>Plus! Here's a numbered list:<\/p>\r\n\r\n<ol>\r\n\t<li>One<\/li>\r\n\t<li>Two<\/li>\r\n\t<li>Three<\/li>\r\n<\/ol>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>The WYSIWYG also includes some utility buttons, including one to insert symbols like \u2666.<\/p>\r\n",
+            "format": "full_html",
+            "processed": "<p>This is rich text. It's a WYSIWYG that can take a bunch of text of your choosing.<\/p>\n<p>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.\u00a0<\/p>\n<p>The rich text WYSIWYG includes the ability to include\u00a0<strong>bold text<\/strong>, as well as\u00a0<em>italic text<\/em>, superscripts<sup>squared<\/sup>, plus subscripts<sub>below<\/sub>.<\/p>\n<p>You can insert horizontal rules:<\/p>\n<hr \/><p>And within the text you can\u00a0<a href=\"https:\/\/www.bing.com\/\">add links<\/a>, though this is surprisingly rare in this design system.<\/p>\n<p>Additionally, you can add bulleted lists:<\/p>\n<ul><li>First<\/li>\n<li>Second<\/li>\n<li>Third<\/li>\n<\/ul><p>\u00a0<\/p>\n<p>Plus! Here's a numbered list:<\/p>\n<ol><li>One<\/li>\n<li>Two<\/li>\n<li>Three<\/li>\n<\/ol><p>\u00a0<\/p>\n<p>The WYSIWYG also includes some utility buttons, including one to insert symbols like \u2666.<\/p>\n",
+            "lang": "en"
+        }
+    ]
+}

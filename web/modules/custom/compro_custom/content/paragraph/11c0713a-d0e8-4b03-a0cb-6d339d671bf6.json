@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 313
+        }
+    ],
+    "uuid": [
+        {
+            "value": "11c0713a-d0e8-4b03-a0cb-6d339d671bf6"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 981
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:10:39+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "273"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The Link component lets you enter links in a way that helps preserve paths on the site (in case the URLs for pages change, the links will auto-update). It also has a couple Settings that allow you to display links as buttons.<\/p>\r\n\r\n<p>Here's a link as it displays by default:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The Link component lets you enter links in a way that helps preserve paths on the site (in case the URLs for pages change, the links will auto-update). It also has a couple Settings that allow you to display links as buttons.<\/p>\n\n<p>Here's a link as it displays by default:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

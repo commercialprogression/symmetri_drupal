@@ -1,0 +1,86 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+        }
+    },
+    "id": [
+        {
+            "value": 45
+        }
+    ],
+    "uuid": [
+        {
+            "value": "eb41d11f-8d20-4dd7-bf7b-8f9af41712b6"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 134
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "heading"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-08T20:10:05+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "46"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_heading": [
+        {
+            "value": "Test the background functionality.",
+            "wrapper": "h1"
+        }
+    ],
+    "field_style_texttransform": [
+        {
+            "value": "text-transform--none"
+        }
+    ]
+}

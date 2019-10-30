@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 223
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b2706f1c-dc3a-43e7-ac81-fced5f1cb689"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 607
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "225"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The content listing special type lets you show snippets of other content on the site, whether it be news articles, events, services, service categories, industries, or others. You can mix and match them. And with the settings you can choose how they're laid out and whether to show a larger teaser or a small chiclet.<\/p>\r\n\r\n<p>Below is side-by-side listing of teasers for various content types:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The content listing special type lets you show snippets of other content on the site, whether it be news articles, events, services, service categories, industries, or others. You can mix and match them. And with the settings you can choose how they're laid out and whether to show a larger teaser or a small chiclet.<\/p>\n\n<p>Below is side-by-side listing of teasers for various content types:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

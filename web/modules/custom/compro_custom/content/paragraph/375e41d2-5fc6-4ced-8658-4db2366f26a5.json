@@ -1,0 +1,139 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/table"
+        }
+    },
+    "id": [
+        {
+            "value": 377
+        }
+    ],
+    "uuid": [
+        {
+            "value": "375e41d2-5fc6-4ced-8658-4db2366f26a5"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1260
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "table"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:45:09+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "375"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_data_charttitle": [
+        {
+            "value": "Analysis of breakfasts by column"
+        }
+    ],
+    "field_data_yaxis": [
+        {
+            "value": "Column"
+        }
+    ],
+    "field_style_graph": [
+        {
+            "value": "js-chart-horizontal-bar"
+        }
+    ],
+    "field_style_table_replace": [
+        {
+            "value": false
+        }
+    ],
+    "field_table": [
+        {
+            "value": {
+                "0": [
+                    "Breakfast",
+                    "Column 1",
+                    "Column 2",
+                    "Column 3",
+                    "Column 4"
+                ],
+                "1": [
+                    "Pop tarts",
+                    "10",
+                    "4",
+                    "4",
+                    "6"
+                ],
+                "2": [
+                    "Cheerios",
+                    "7",
+                    "9",
+                    "1",
+                    "3"
+                ],
+                "3": [
+                    "English muffin",
+                    "2",
+                    "2",
+                    "8",
+                    "6"
+                ],
+                "4": [
+                    "Honeydew",
+                    "4",
+                    "7",
+                    "5",
+                    "3"
+                ],
+                "caption": "Analysis of breakfasts by column"
+            },
+            "format": null,
+            "caption": "Analysis of breakfasts by column"
+        }
+    ]
+}

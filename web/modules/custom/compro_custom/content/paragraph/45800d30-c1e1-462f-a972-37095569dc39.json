@@ -1,0 +1,86 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+        }
+    },
+    "id": [
+        {
+            "value": 104
+        }
+    ],
+    "uuid": [
+        {
+            "value": "45800d30-c1e1-462f-a972-37095569dc39"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 298
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "heading"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:58:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "107"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_heading": [
+        {
+            "value": "What data do we collect?",
+            "wrapper": "h3"
+        }
+    ],
+    "field_style_texttransform": [
+        {
+            "value": "text-transform--none"
+        }
+    ]
+}

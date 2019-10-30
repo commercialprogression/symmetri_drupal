@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 185
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7e326a8b-f421-492a-99de-8cbda16f5aaf"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 414
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:43:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "186"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>An overview of all the items available for creating in the stripes, along with sufficient examples for performing meaningful functional\/stylistic tests against them.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>An overview of all the items available for creating in the stripes, along with sufficient examples for performing meaningful functional\/stylistic tests against them.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 347
+        }
+    ],
+    "uuid": [
+        {
+            "value": "e58b0d6d-5650-4685-8641-65ba0d6008cb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1070
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:30:19+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "345"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>As you can see, the image is really big. Images are responsive on this site, so inserting the same image into a layout causes it to be constrained. You can also upload smaller images and they will max out at their natural width.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>As you can see, the image is really big. Images are responsive on this site, so inserting the same image into a layout causes it to be constrained. You can also upload smaller images and they will max out at their natural width.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

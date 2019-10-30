@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 196
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8208b747-f623-42e9-8e16-3c4240f4fbec"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 583
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "198"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The blockquote component allows you to show a quotation in a semantically-meaningful way in the HTML markup, and also makes the quotation stylized. It's best used in conjunction with a Heading&nbsp;component (set to regular text for semantics) as the byline below it, as illustrated below:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The blockquote component allows you to show a quotation in a semantically-meaningful way in the HTML markup, and also makes the quotation stylized. It's best used in conjunction with a Heading\u00a0component (set to regular text for semantics) as the byline below it, as illustrated below:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

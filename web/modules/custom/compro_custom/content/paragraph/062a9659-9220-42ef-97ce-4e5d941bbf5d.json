@@ -1,0 +1,118 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card\/field_image": [
+            {
+                "href": "http:\/\/default\/media\/6\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 217
+        }
+    ],
+    "uuid": [
+        {
+            "value": "062a9659-9220-42ef-97ce-4e5d941bbf5d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 531
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "card"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T13:18:24+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "220"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_cards"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/card\/field_image": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/6\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "68018f4f-dfaa-477b-9850-2f24ae5858a5"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_link": [
+        {
+            "uri": "http:\/\/www.symmetrimarketing.com",
+            "title": "Symmetri",
+            "options": []
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Here is some text for the card.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Here is some text for the card.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Card 1 (blocks)"
+        }
+    ]
+}

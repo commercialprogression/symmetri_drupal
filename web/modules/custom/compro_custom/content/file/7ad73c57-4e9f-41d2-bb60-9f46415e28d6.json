@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/oembed_thumbnails\/oQKaD0uQjdNyW0Bh6gZJxNBy9eWZrT6PPu-CiWWnfXA.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 10
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7ad73c57-4e9f-41d2-bb60-9f46415e28d6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86c1e473-4105-444d-b551-bd7ca79229ae"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "oQKaD0uQjdNyW0Bh6gZJxNBy9eWZrT6PPu-CiWWnfXA.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/oembed_thumbnails\/oQKaD0uQjdNyW0Bh6gZJxNBy9eWZrT6PPu-CiWWnfXA.jpg",
+            "url": "\/sites\/default\/files\/oembed_thumbnails\/oQKaD0uQjdNyW0Bh6gZJxNBy9eWZrT6PPu-CiWWnfXA.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 21506
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:34:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-17T20:34:16+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

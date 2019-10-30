@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 181
+        }
+    ],
+    "uuid": [
+        {
+            "value": "eef194c3-55b1-44bb-810c-cc4a835fffa9"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 409
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:30:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "182"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We assessed the accessibility of this site by the following approaches:<\/p>\r\n\r\n<ul>\r\n\t<li>Self-evaluation<\/li>\r\n\t<li>External evaluation<\/li>\r\n\t<li>Developer contract organization and its subcontractors evaluation and Quality Assurance<\/li>\r\n<\/ul>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We assessed the accessibility of this site by the following approaches:<\/p>\n\n<ul><li>Self-evaluation<\/li>\n\t<li>External evaluation<\/li>\n\t<li>Developer contract organization and its subcontractors evaluation and Quality Assurance<\/li>\n<\/ul>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,140 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/column"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/column\/field_components": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 268
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3902a150-3da4-479e-8b97-6fac2e1eb7b9"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 862
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "column"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T17:15:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "269"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_columns"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/column\/field_components": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "01df166b-7583-488d-8d13-e3b74db29fc2"
+                    }
+                ],
+                "target_revision_id": "861"
+            }
+        ]
+    },
+    "field_data_animation": [
+        {
+            "value": "slideInUp"
+        }
+    ],
+    "field_style_animate": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_bgcolor": [
+        {
+            "value": "background-color--grey-dark"
+        }
+    ],
+    "field_style_color": [
+        {
+            "value": "color--white"
+        }
+    ],
+    "field_style_flex": [
+        {
+            "value": "flex--1"
+        }
+    ],
+    "field_style_justifycontent": [
+        {
+            "value": "justify-content--center"
+        }
+    ],
+    "field_style_paddingh": [
+        {
+            "value": "padding-horizontal--2"
+        }
+    ],
+    "field_style_textalign": [
+        {
+            "value": "text-align--left"
+        }
+    ]
+}

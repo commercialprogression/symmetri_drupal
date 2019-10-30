@@ -1,0 +1,135 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/media"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_hotspots": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_media": [
+            {
+                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 344
+        }
+    ],
+    "uuid": [
+        {
+            "value": "71e8779b-24fe-445c-a2f4-aadc62f02fb1"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1068
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "media"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:27:03+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "345"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_hotspots": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hotspot"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "77ac4f2d-e29a-41d5-a67f-0096dcb7b075"
+                    }
+                ],
+                "target_revision_id": "1067"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_media": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2e10b056-1a5e-446b-b5f7-0d30f5c79d66"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_style_zoom": [
+        {
+            "value": false
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Brad Czerniak made a lot of the base-level components in this system.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Brad Czerniak made a lot of the base-level components in this system.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

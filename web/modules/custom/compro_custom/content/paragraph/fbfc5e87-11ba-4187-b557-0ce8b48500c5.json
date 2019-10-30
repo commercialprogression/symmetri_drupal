@@ -1,0 +1,94 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/card"
+        }
+    },
+    "id": [
+        {
+            "value": 219
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fbfc5e87-11ba-4187-b557-0ce8b48500c5"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 533
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "card"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T13:19:55+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "220"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_cards"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "https:\/\/www.symmetritechnology.com",
+            "title": "SymTech",
+            "options": []
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>This card has a title, text, and a link, but no image. It shows what cards look like and their vertical alignment because variation is so allowable in the system.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>This card has a title, text, and a link, but no image. It shows what cards look like and their vertical alignment because variation is so allowable in the system.<\/p>"
+        }
+    ],
+    "field_title": [
+        {
+            "value": "Card with no image"
+        }
+    ]
+}

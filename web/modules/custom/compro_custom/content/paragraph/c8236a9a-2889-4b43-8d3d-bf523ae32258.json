@@ -1,0 +1,86 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+        }
+    },
+    "id": [
+        {
+            "value": 257
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c8236a9a-2889-4b43-8d3d-bf523ae32258"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 792
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "heading"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T17:08:09+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "239"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_heading": [
+        {
+            "value": "Heading level 1",
+            "wrapper": "h1"
+        }
+    ],
+    "field_style_texttransform": [
+        {
+            "value": "text-transform--none"
+        }
+    ]
+}

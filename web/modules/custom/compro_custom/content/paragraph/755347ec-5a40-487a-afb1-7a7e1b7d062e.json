@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 144
+        }
+    ],
+    "uuid": [
+        {
+            "value": "755347ec-5a40-487a-afb1-7a7e1b7d062e"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 358
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:10:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "145"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>There are a number of different types of cookies, however, our website uses:<\/p>\r\n\r\n<ul>\r\n\t<li>Functionality \u2013 We use these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.<\/li>\r\n\t<li>Analytics \u2013 We use these cookies to collect information about your visit to our website, the content you viewed, the links you followed and information about your browser, device, and your [anonymized] IP address.<\/li>\r\n<\/ul>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>There are a number of different types of cookies, however, our website uses:<\/p>\n\n<ul><li>Functionality \u2013 We use these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.<\/li>\n\t<li>Analytics \u2013 We use these cookies to collect information about your visit to our website, the content you viewed, the links you followed and information about your browser, device, and your [anonymized] IP address.<\/li>\n<\/ul>",
+            "lang": "en"
+        }
+    ]
+}

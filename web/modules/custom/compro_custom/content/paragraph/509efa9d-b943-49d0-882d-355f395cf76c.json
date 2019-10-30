@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 237
+        }
+    ],
+    "uuid": [
+        {
+            "value": "509efa9d-b943-49d0-882d-355f395cf76c"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 790
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "239"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The heading component inserts HTML &lt;h*&gt; tags and allows for styling. See below for the base heading type scale, as compared against this body text:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The heading component inserts HTML &lt;h*&gt; tags and allows for styling. See below for the base heading type scale, as compared against this body text:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,88 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        }
+    },
+    "id": [
+        {
+            "value": 272
+        }
+    ],
+    "uuid": [
+        {
+            "value": "374001ae-3af0-4509-8bdc-3b3b0d2b8f58"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 982
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T17:17:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "273"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "http:\/\/bradczerniak.com",
+            "title": "Brad's website",
+            "options": [],
+            "lang": "en"
+        }
+    ],
+    "field_style_button": [
+        {
+            "value": false
+        }
+    ]
+}

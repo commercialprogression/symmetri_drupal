@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 151
+        }
+    ],
+    "uuid": [
+        {
+            "value": "49de60f8-147f-4eed-b891-4ca6e9dea2e1"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 364
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:09:51+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "152"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We use cookies in a range of ways to improve your experience on our website, including:<\/p>\r\n\r\n<ul>\r\n\t<li>Keeping you signed in<\/li>\r\n\t<li>Understanding how you use our website<\/li>\r\n<\/ul>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We use cookies in a range of ways to improve your experience on our website, including:<\/p>\n\n<ul><li>Keeping you signed in<\/li>\n\t<li>Understanding how you use our website<\/li>\n<\/ul>",
+            "lang": "en"
+        }
+    ]
+}

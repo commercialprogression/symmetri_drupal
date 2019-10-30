@@ -1,0 +1,130 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/layout"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/layout\/field_columns": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 146
+        }
+    ],
+    "uuid": [
+        {
+            "value": "054528bd-2b29-4069-8218-8a91873c9e0f"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 360
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "layout"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:09:20+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "147"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/layout\/field_columns": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/column"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "eec799f2-6bf5-4dc7-a19d-f3fb69d66573"
+                    }
+                ],
+                "target_revision_id": "355"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/column"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "aa78aaca-4b1d-47c7-8708-364c523c01fd"
+                    }
+                ],
+                "target_revision_id": "359"
+            }
+        ]
+    },
+    "field_style_flexdirection": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_justifycontent": [
+        {
+            "value": "justify-content--center",
+            "lang": "en"
+        }
+    ]
+}

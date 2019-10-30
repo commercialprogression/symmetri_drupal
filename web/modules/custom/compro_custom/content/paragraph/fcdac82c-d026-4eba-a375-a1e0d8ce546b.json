@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/seo"
+        }
+    },
+    "id": [
+        {
+            "value": 166
+        }
+    ],
+    "uuid": [
+        {
+            "value": "fcdac82c-d026-4eba-a375-a1e0d8ce546b"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 411
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "seo"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:29:01+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "11"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_seo"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_seo_description": [
+        {
+            "value": "We are committed to making our website as accessible as possible to people with special needs, including those with visual, hearing, cognitive and motor impairments."
+        }
+    ],
+    "field_seo_nofollow": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_noindex": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_title": [
+        {
+            "value": "Accessibility Statement"
+        }
+    ]
+}

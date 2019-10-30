@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 177
+        }
+    ],
+    "uuid": [
+        {
+            "value": "5710bf8d-1b93-4985-aa1a-abbe69cc597c"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 400
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:30:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "178"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Accessibility on this site relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:<\/p>\r\n\r\n<ul>\r\n\t<li>HTML<\/li>\r\n\t<li>WAI-ARIA<\/li>\r\n\t<li>CSS<\/li>\r\n\t<li>JavaScript<\/li>\r\n<\/ul>\r\n\r\n<p>These technologies are relied upon for conformance with the accessibility standards used.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Accessibility on this site relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:<\/p>\n\n<ul><li>HTML<\/li>\n\t<li>WAI-ARIA<\/li>\n\t<li>CSS<\/li>\n\t<li>JavaScript<\/li>\n<\/ul><p>These technologies are relied upon for conformance with the accessibility standards used.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 298
+        }
+    ],
+    "uuid": [
+        {
+            "value": "156ae521-0b33-4a48-809e-f75423ed06f0"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 859
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T19:58:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "270"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>What's cool about layouts is that you can mix and match all the other components on this page, and place them into logical layouts of infinite configurability.<\/p>\r\n\r\n<p>The way you do that is by making a Layout component (a 'row') and then placing columns within it. The Layout row only has two options:<\/p>\r\n\r\n<ul>\r\n\t<li>Column spacing - what to do with any remaining space between columns, which is rare<\/li>\r\n\t<li>Reverse? - Allowing you to make a row appear in reverse order for creating alternating rows<\/li>\r\n<\/ul>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>Each column has a lot more Settings:<\/p>\r\n\r\n<ul>\r\n\t<li>Animate - whether you want an animation to reveal the column as a user scrolls down to it<\/li>\r\n\t<li>Animation type - A bunch of effects to choose from that activate when you click the Animate checkbox<\/li>\r\n\t<li>Background color - Theme colors you can use to add some color to the column<\/li>\r\n\t<li>Padding (horizontal) - How much left-right space to introduce to either side of the content<\/li>\r\n\t<li>Text alignment - Left\/Right\/Center\/Justified text within the column<\/li>\r\n\t<li>Text color - either Dark or light, depending on the background color you choose<\/li>\r\n\t<li>Vertical alignment - how you want the content of the column to align with content in other columns<\/li>\r\n\t<li>Width - the relative width of the column compared to the others. If you make a Small column and a medium column in a layout row, the result will be a 1\/3-2\/3 layout, which is pretty common<\/li>\r\n<\/ul>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>Here's that very layout for your testing.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>What's cool about layouts is that you can mix and match all the other components on this page, and place them into logical layouts of infinite configurability.<\/p>\n\n<p>The way you do that is by making a Layout component (a 'row') and then placing columns within it. The Layout row only has two options:<\/p>\n\n<ul><li>Column spacing - what to do with any remaining space between columns, which is rare<\/li>\n\t<li>Reverse? - Allowing you to make a row appear in reverse order for creating alternating rows<\/li>\n<\/ul><p>\u00a0<\/p>\n\n<p>Each column has a lot more Settings:<\/p>\n\n<ul><li>Animate - whether you want an animation to reveal the column as a user scrolls down to it<\/li>\n\t<li>Animation type - A bunch of effects to choose from that activate when you click the Animate checkbox<\/li>\n\t<li>Background color - Theme colors you can use to add some color to the column<\/li>\n\t<li>Padding (horizontal) - How much left-right space to introduce to either side of the content<\/li>\n\t<li>Text alignment - Left\/Right\/Center\/Justified text within the column<\/li>\n\t<li>Text color - either Dark or light, depending on the background color you choose<\/li>\n\t<li>Vertical alignment - how you want the content of the column to align with content in other columns<\/li>\n\t<li>Width - the relative width of the column compared to the others. If you make a Small column and a medium column in a layout row, the result will be a 1\/3-2\/3 layout, which is pretty common<\/li>\n<\/ul><p>\u00a0<\/p>\n\n<p>Here's that very layout for your testing.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 383
+        }
+    ],
+    "uuid": [
+        {
+            "value": "7f44dc9a-3a22-4529-82ab-2549a8da794f"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1266
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:49:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "375"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Here's a pie chart. Notice that we're only using one column of numbers; we can actually put in more, but the chart looks weird if you do that. Charts are fault-tolerant, but are best when the right data is entered:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Here's a pie chart. Notice that we're only using one column of numbers; we can actually put in more, but the chart looks weird if you do that. Charts are fault-tolerant, but are best when the right data is entered:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

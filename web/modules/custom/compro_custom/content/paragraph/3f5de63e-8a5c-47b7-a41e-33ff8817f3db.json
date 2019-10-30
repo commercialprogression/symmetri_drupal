@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 77
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3f5de63e-8a5c-47b7-a41e-33ff8817f3db"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 178
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:19:51+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "78"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>This Agreement shall begin on the date hereof.<\/p>\r\n\r\n<p>Certain parts of this website offer the opportunity for users to post and exchange opinions, information, material and data ('Comments') in areas of the website. We do not screen, edit, publish or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of us or our agents or affiliates. Comments reflect the view and opinion of the person who posts such view or opinion. To the extent permitted by applicable laws we shall not be responsible or liable for the Comments or for any loss cost, liability, damages or expenses caused and or suffered as a result of any use of and\/or posting of and\/or appearance of the Comments on this website.<\/p>\r\n\r\n<p>We reserve the right to monitor all Comments and to remove any Comments which we consider in our absolute discretion to be inappropriate, offensive or otherwise in breach of these Terms and Conditions.<\/p>\r\n\r\n<p>You warrant and represent that:<\/p>\r\n\r\n<ol>\r\n\t<li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;<\/li>\r\n\t<li>The Comments do not infringe any intellectual property right, including without limitation copyright, patent or trademark, or other proprietary right of any third party;<\/li>\r\n\t<li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material or material which is an invasion of privacy<\/li>\r\n\t<li>The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.<\/li>\r\n<\/ol>\r\n\r\n<p>You hereby grant to us a non-exclusive royalty-free license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>This Agreement shall begin on the date hereof.<\/p>\n\n<p>Certain parts of this website offer the opportunity for users to post and exchange opinions, information, material and data ('Comments') in areas of the website. We do not screen, edit, publish or review Comments prior to their appearance on the website and Comments do not reflect the views or opinions of us or our agents or affiliates. Comments reflect the view and opinion of the person who posts such view or opinion. To the extent permitted by applicable laws we shall not be responsible or liable for the Comments or for any loss cost, liability, damages or expenses caused and or suffered as a result of any use of and\/or posting of and\/or appearance of the Comments on this website.<\/p>\n\n<p>We reserve the right to monitor all Comments and to remove any Comments which we consider in our absolute discretion to be inappropriate, offensive or otherwise in breach of these Terms and Conditions.<\/p>\n\n<p>You warrant and represent that:<\/p>\n\n<ol><li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do so;<\/li>\n\t<li>The Comments do not infringe any intellectual property right, including without limitation copyright, patent or trademark, or other proprietary right of any third party;<\/li>\n\t<li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material or material which is an invasion of privacy<\/li>\n\t<li>The Comments will not be used to solicit or promote business or custom or present commercial activities or unlawful activity.<\/li>\n<\/ol><p>You hereby grant to us a non-exclusive royalty-free license to use, reproduce, edit and authorize others to use, reproduce and edit any of your Comments in any and all forms, formats or media.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

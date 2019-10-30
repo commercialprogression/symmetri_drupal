@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        }
+    },
+    "id": [
+        {
+            "value": 320
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3d4a7dc5-4664-474d-b482-5e953ca906e1"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 986
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:16:09+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "273"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "entity:node\/8",
+            "title": "Learn about us",
+            "options": [],
+            "lang": "en"
+        }
+    ],
+    "field_style_button": [
+        {
+            "value": true
+        }
+    ],
+    "field_style_childbgcolor": [
+        {
+            "value": "child-links-background-color--main"
+        }
+    ]
+}

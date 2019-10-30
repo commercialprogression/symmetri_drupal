@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 275
+        }
+    ],
+    "uuid": [
+        {
+            "value": "0b325486-14f0-489b-8d13-008bfd76dfa4"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 800
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T19:04:51+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "239"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Headings have a number of optional settings:<\/p>\r\n\r\n<ul>\r\n\t<li>Font weight<\/li>\r\n\t<li>Size - any heading level can look like any other heading level<\/li>\r\n\t<li>Text color - full suite of colors from the theme<\/li>\r\n\t<li>Text transform - take regular-case text and style it as ALL-CAPS or other casing<\/li>\r\n<\/ul>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>Below is a heading level 2 styled to look like a heading level 3 with a color.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Headings have a number of optional settings:<\/p>\n\n<ul><li>Font weight<\/li>\n\t<li>Size - any heading level can look like any other heading level<\/li>\n\t<li>Text color - full suite of colors from the theme<\/li>\n\t<li>Text transform - take regular-case text and style it as ALL-CAPS or other casing<\/li>\n<\/ul><p>\u00a0<\/p>\n\n<p>Below is a heading level 2 styled to look like a heading level 3 with a color.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

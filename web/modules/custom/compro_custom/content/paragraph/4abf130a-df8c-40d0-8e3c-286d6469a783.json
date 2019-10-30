@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 118
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4abf130a-df8c-40d0-8e3c-286d6469a783"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 310
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:58:59+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "119"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We collect your data so that we can:<\/p>\r\n\r\n<ul>\r\n\t<li>Process your order and manage your account.<\/li>\r\n\t<li>Email you with special offers on other products and services we think you might like.<\/li>\r\n<\/ul>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We collect your data so that we can:<\/p>\n\n<ul><li>Process your order and manage your account.<\/li>\n\t<li>Email you with special offers on other products and services we think you might like.<\/li>\n<\/ul>",
+            "lang": "en"
+        }
+    ]
+}

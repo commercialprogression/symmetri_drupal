@@ -1,0 +1,135 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/media"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_hotspots": [
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_media": [
+            {
+                "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 352
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d40cb314-587b-4b69-baf3-cb3729bd6556"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1075
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "media"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:31:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "353"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_hotspots": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/hotspot"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "897d896f-08cf-4c65-a24d-d5392872b3c7"
+                    }
+                ],
+                "target_revision_id": "1074"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/media\/field_media": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/media\/1\/edit?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/media\/image"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "2e10b056-1a5e-446b-b5f7-0d30f5c79d66"
+                    }
+                ]
+            }
+        ]
+    },
+    "field_style_zoom": [
+        {
+            "value": false
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Smaller brad caption.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Smaller brad caption.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 379
+        }
+    ],
+    "uuid": [
+        {
+            "value": "67c162f5-9c91-4c3d-8abf-9c70acdd69cb"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1262
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:48:31+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "375"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Here's a vertical bar (column) chart, using the same data as the horizontal one, though you can't see because we hide the table and just represent the data as a chart visually:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Here's a vertical bar (column) chart, using the same data as the horizontal one, though you can't see because we hide the table and just represent the data as a chart visually:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 132
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6a21ff8a-75e3-43bf-a5f1-622f90879d28"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 326
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:03:44+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "133"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:<\/p>\r\n\r\n<p><strong>The right to access<\/strong> \u2013 You have the right to request from us copies of your personal data. We may charge you a small fee for this service.<\/p>\r\n\r\n<p><strong>The right to rectification<\/strong> \u2013 You have the right to request that we correct any information you believe is inaccurate. You also have the right to request we complete the information you believe is incomplete.<\/p>\r\n\r\n<p><strong>The right to erasure<\/strong> \u2013 You have the right to request that we erase your personal data, under certain conditions.<\/p>\r\n\r\n<p><strong>The right to restrict processing<\/strong> \u2013 You have the right to request that we restrict the processing of your personal data, under certain conditions.<\/p>\r\n\r\n<p><strong>The right to object to processing<\/strong> \u2013 You have the right to object to our processing of your personal data, under certain conditions.<\/p>\r\n\r\n<p><strong>The right to data portability<\/strong> \u2013 You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.<\/p>\r\n\r\n<p>If you make a request, we have one month to respond to you.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:<\/p>\n\n<p><strong>The right to access<\/strong> \u2013 You have the right to request from us copies of your personal data. We may charge you a small fee for this service.<\/p>\n\n<p><strong>The right to rectification<\/strong> \u2013 You have the right to request that we correct any information you believe is inaccurate. You also have the right to request we complete the information you believe is incomplete.<\/p>\n\n<p><strong>The right to erasure<\/strong> \u2013 You have the right to request that we erase your personal data, under certain conditions.<\/p>\n\n<p><strong>The right to restrict processing<\/strong> \u2013 You have the right to request that we restrict the processing of your personal data, under certain conditions.<\/p>\n\n<p><strong>The right to object to processing<\/strong> \u2013 You have the right to object to our processing of your personal data, under certain conditions.<\/p>\n\n<p><strong>The right to data portability<\/strong> \u2013 You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.<\/p>\n\n<p>If you make a request, we have one month to respond to you.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

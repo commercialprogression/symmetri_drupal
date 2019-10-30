@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 202
+        }
+    ],
+    "uuid": [
+        {
+            "value": "30ea4eb6-346e-4cd1-8520-ccaea284db64"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 588
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T01:52:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "198"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The blockquote component has Settings for the inclusion of the opening and closing quotes separately, with both checked to include them by default, in case you want have or not have the stylized marks. See below for a blockquote without marks.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The blockquote component has Settings for the inclusion of the opening and closing quotes separately, with both checked to include them by default, in case you want have or not have the stylized marks. See below for a blockquote without marks.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

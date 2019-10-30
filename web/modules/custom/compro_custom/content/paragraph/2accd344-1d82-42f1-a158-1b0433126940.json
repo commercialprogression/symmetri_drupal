@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/seo"
+        }
+    },
+    "id": [
+        {
+            "value": 60
+        }
+    ],
+    "uuid": [
+        {
+            "value": "2accd344-1d82-42f1-a158-1b0433126940"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1533
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "seo"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-11T20:28:08+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "10"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_seo"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_seo_description": [
+        {
+            "value": "An overview of all the items available for creating in the stripes, along with sufficient examples for performing meaningful functional\/stylistic tests against them."
+        }
+    ],
+    "field_seo_nofollow": [
+        {
+            "value": true
+        }
+    ],
+    "field_seo_noindex": [
+        {
+            "value": true
+        }
+    ],
+    "field_seo_title": [
+        {
+            "value": "Component Guide"
+        }
+    ]
+}

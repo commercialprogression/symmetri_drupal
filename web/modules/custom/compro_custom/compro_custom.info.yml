@@ -3,3 +3,5 @@ description: Site-specific tweaks
 package: compro
 type: module
 core: 8.x
+dependencies:
+  - default_content

@@ -1,0 +1,178 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/column"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/column\/field_components": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ]
+    },
+    "id": [
+        {
+            "value": 119
+        }
+    ],
+    "uuid": [
+        {
+            "value": "98871f72-01cf-4aea-b6f6-5ac27a5466ff"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 311
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "column"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:58:30+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "124"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_columns"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/paragraph\/column\/field_components": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/heading"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "e70f60c9-00d8-4645-b188-4df95a4b055b"
+                    }
+                ],
+                "target_revision_id": "308"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/spacer"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "90555ed8-21f7-451a-9ad8-a08cfcd83887"
+                    }
+                ],
+                "target_revision_id": "309"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "4abf130a-df8c-40d0-8e3c-286d6469a783"
+                    }
+                ],
+                "target_revision_id": "310"
+            }
+        ]
+    },
+    "field_data_animation": [
+        {
+            "value": "slideInUp"
+        }
+    ],
+    "field_style_animate": [
+        {
+            "value": false
+        }
+    ],
+    "field_style_bgcolor": [
+        {
+            "value": "background-color--transparent"
+        }
+    ],
+    "field_style_color": [
+        {
+            "value": "color--inherit"
+        }
+    ],
+    "field_style_flex": [
+        {
+            "value": "flex--1"
+        }
+    ],
+    "field_style_justifycontent": [
+        {
+            "value": "justify-content--flex-start"
+        }
+    ],
+    "field_style_paddingh": [
+        {
+            "value": "padding-horizontal--2"
+        }
+    ],
+    "field_style_textalign": [
+        {
+            "value": "text-align--left"
+        }
+    ]
+}

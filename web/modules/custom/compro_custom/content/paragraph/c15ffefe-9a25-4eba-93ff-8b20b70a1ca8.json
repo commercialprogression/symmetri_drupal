@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 341
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c15ffefe-9a25-4eba-93ff-8b20b70a1ca8"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1065
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:27:36+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "345"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The media component lets you enter images, videos, video embeds, audio, and documents. Below I will insert an image with a caption and hotspots:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The media component lets you enter images, videos, video embeds, audio, and documents. Below I will insert an image with a caption and hotspots:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

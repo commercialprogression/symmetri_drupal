@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/link"
+        }
+    },
+    "id": [
+        {
+            "value": 324
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4910917e-45f1-4879-a853-5bf310587adc"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 990
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "link"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:16:57+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "273"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_link": [
+        {
+            "uri": "https:\/\/www.google.com\/",
+            "title": "Black",
+            "options": [],
+            "lang": "en"
+        }
+    ],
+    "field_style_button": [
+        {
+            "value": true
+        }
+    ],
+    "field_style_childbgcolor": [
+        {
+            "value": "child-links-background-color--black"
+        }
+    ]
+}

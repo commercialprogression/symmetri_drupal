@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 371
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d6a4837f-4400-4e04-8b20-6ba687ea730a"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1255
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:39:06+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "375"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The Table component lets you insert semantic data tables on the site. Only simple numeric and plain-text data is allowed in the tables, so as to avoid using tables in an unsemantic manner. As we'll see, this limitation is also a way to allow us to make cool charts!<\/p>\r\n\r\n<p>Here's a plain table of data that we'll reuse a bunch of times thereafter:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The Table component lets you insert semantic data tables on the site. Only simple numeric and plain-text data is allowed in the tables, so as to avoid using tables in an unsemantic manner. As we'll see, this limitation is also a way to allow us to make cool charts!<\/p>\n\n<p>Here's a plain table of data that we'll reuse a bunch of times thereafter:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

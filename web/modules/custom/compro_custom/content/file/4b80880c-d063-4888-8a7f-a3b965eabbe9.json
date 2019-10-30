@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2019-10\/adeolu-eletu-E7RLgUjjazc-unsplash.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4b80880c-d063-4888-8a7f-a3b965eabbe9"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86c1e473-4105-444d-b551-bd7ca79229ae"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "adeolu-eletu-E7RLgUjjazc-unsplash.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-10\/adeolu-eletu-E7RLgUjjazc-unsplash.jpg",
+            "url": "\/sites\/default\/files\/2019-10\/adeolu-eletu-E7RLgUjjazc-unsplash.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 998943
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-08T23:10:38+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-08T23:10:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}

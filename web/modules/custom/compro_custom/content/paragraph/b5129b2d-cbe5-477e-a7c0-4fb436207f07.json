@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 189
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b5129b2d-cbe5-477e-a7c0-4fb436207f07"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 431
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "59"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The accordion component is useful for when a brief string of text can describe a longer passage of text that is optional enough to be hidden by default.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The accordion component is useful for when a brief string of text can describe a longer passage of text that is optional enough to be hidden by default.<\/p>",
+            "lang": "en"
+        }
+    ]
+}

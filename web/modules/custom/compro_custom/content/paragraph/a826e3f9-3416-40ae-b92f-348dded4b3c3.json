@@ -1,0 +1,95 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/seo"
+        }
+    },
+    "id": [
+        {
+            "value": 54
+        }
+    ],
+    "uuid": [
+        {
+            "value": "a826e3f9-3416-40ae-b92f-348dded4b3c3"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 234
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "seo"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-11T20:21:19+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "7"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "node"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_seo"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_seo_description": [
+        {
+            "value": "These terms and conditions outline the rules and regulations for the use of this website."
+        }
+    ],
+    "field_seo_nofollow": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_noindex": [
+        {
+            "value": false
+        }
+    ],
+    "field_seo_title": [
+        {
+            "value": "Terms & Conditions"
+        }
+    ]
+}

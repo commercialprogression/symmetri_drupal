@@ -1,0 +1,88 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/iframe"
+        }
+    },
+    "id": [
+        {
+            "value": 265
+        }
+    ],
+    "uuid": [
+        {
+            "value": "f7d90faf-da3b-4327-8e4b-d080c1931849"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 907
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "iframe"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T17:12:32+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "266"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_iframe": [
+        {
+            "url": "https:\/\/blueaccounting.github.io\/charts\/",
+            "title": "Blue Accounting charts",
+            "width": "960",
+            "height": "640",
+            "class": "",
+            "frameborder": "0",
+            "scrolling": "",
+            "transparency": "0",
+            "tokensupport": "0"
+        }
+    ]
+}

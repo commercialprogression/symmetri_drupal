@@ -1,0 +1,374 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/page\/terms-conditions?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/node\/page"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_sections": [
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            },
+            {
+                "href": ""
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_seo": [
+            {
+                "href": ""
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 7
+        }
+    ],
+    "uuid": [
+        {
+            "value": "8fb1515d-0746-4979-b7b2-737af8f6520d"
+        }
+    ],
+    "vid": [
+        {
+            "value": 33
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2019-10-16T19:25:51+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86c1e473-4105-444d-b551-bd7ca79229ae"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86c1e473-4105-444d-b551-bd7ca79229ae"
+                    }
+                ],
+                "lang": "en"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_sections": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "5cc07d0d-5882-432a-afa7-72b89116643c"
+                    }
+                ],
+                "target_revision_id": "216"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "7af7af44-3e57-4e92-8d95-00a097e0a1ae"
+                    }
+                ],
+                "target_revision_id": "217"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "79deae3e-e196-47b1-9c15-31d7f3135963"
+                    }
+                ],
+                "target_revision_id": "218"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "d496116b-bc4a-4e22-bc51-8033aaceb71c"
+                    }
+                ],
+                "target_revision_id": "219"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "64649589-ad59-4638-a59f-ea6527789336"
+                    }
+                ],
+                "target_revision_id": "220"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "78ac1989-714a-4f3d-9b35-2a6f41b04d3e"
+                    }
+                ],
+                "target_revision_id": "221"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "eeed0d38-116b-479c-a461-36d5976638b2"
+                    }
+                ],
+                "target_revision_id": "225"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "74f2e101-287a-4b0f-aa5b-073fc6227d44"
+                    }
+                ],
+                "target_revision_id": "229"
+            },
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/stripe"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "3770024e-5d77-4c61-a2e7-a910f95a9819"
+                    }
+                ],
+                "target_revision_id": "233"
+            }
+        ],
+        "http:\/\/drupal.org\/rest\/relation\/node\/page\/field_seo": [
+            {
+                "_links": {
+                    "self": {
+                        "href": ""
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/seo"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "a826e3f9-3416-40ae-b92f-348dded4b3c3"
+                    }
+                ],
+                "target_revision_id": "234"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "Terms & Conditions",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-11T20:21:10+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-16T19:25:51+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "value": {
+                "title": "Terms & Conditions | Humanetics ATD",
+                "canonical_url": "http:\/\/default\/page\/terms-conditions",
+                "og_site_name": "Humanetics ATD",
+                "description": "These terms and conditions outline the rules and regulations for the use of this website.",
+                "og_url": "http:\/\/default\/page\/home",
+                "og_title": "Terms & Conditions",
+                "og_description": "These terms and conditions outline the rules and regulations for the use of this website.",
+                "og_locality": "Farmington Hills",
+                "og_region": "MI",
+                "og_postal_code": "48335",
+                "og_country_name": "US",
+                "og_email": "mkulwicki@humaneticsatd.com",
+                "og_phone_number": "734-451-7878"
+            }
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/page\/terms-conditions",
+            "pid": 15,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "body": [
+        {
+            "value": "<p>These terms and conditions outline the rules and regulations for the use of this website.<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>These terms and conditions outline the rules and regulations for the use of this website.<\/p>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

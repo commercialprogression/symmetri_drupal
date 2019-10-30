@@ -1,0 +1,89 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 406
+        }
+    ],
+    "uuid": [
+        {
+            "value": "015a3963-003d-46f8-a0d2-433f43b00c8f"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1458
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T21:08:28+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "407"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>Stripes have a bunch of options, and this stripe has lots of them selected.<\/p>\r\n\r\n<ul>\r\n\t<li><strong>Background color<\/strong> \u2060\u2014 Theme colors you can set. If you use a background image, please set a color that similar to the darkness of the image being used<\/li>\r\n\t<li><strong>Background image<\/strong> \u2060\u2014 Reusable images that appear as the background<\/li>\r\n\t<li><strong>Background image alignment (horizontal)<\/strong> \u2060\u2014 A focal point horizontally<\/li>\r\n\t<li><strong>Background image alignment (vertical)<\/strong> \u2060\u2014 Focal point vertically in image<\/li>\r\n\t<li><strong>Background repeat<\/strong> \u2060\u2014 If you use a tiny image, you can tile it as a pattern<\/li>\r\n\t<li><strong>Background sizing<\/strong> \u2060\u2014 Usually fill the whole area. Can also do tricky things<\/li>\r\n\t<li><strong>Full width<\/strong> \u2060\u2014 Eliminate the maximum content area width, and have the stripe go all the way to the screen edges on big screens<\/li>\r\n\t<li><strong>Hide background image on mobile<\/strong> \u2060\u2014 If the background image is 'busy', hide it on narrow screens<\/li>\r\n\t<li><strong>Text alignment<\/strong> \u2060\u2014 Left, right, center, justify. Please never use justify<\/li>\r\n\t<li><strong>Text color<\/strong> \u2060\u2014 Light or dark. Please match it to the background color you choose (the one that matches the darkness of any background images used)<\/li>\r\n\t<li><strong>Unpad <\/strong>\u2060\u2014 Remove the top and bottom padding from the stripe so it's short and has less breathing room<\/li>\r\n<\/ul>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>We hope you enjoy this stripey system as much as we enjoyed making it!<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>Stripes have a bunch of options, and this stripe has lots of them selected.<\/p>\n\n<ul><li><strong>Background color<\/strong> \u2060\u2014 Theme colors you can set. If you use a background image, please set a color that similar to the darkness of the image being used<\/li>\n\t<li><strong>Background image<\/strong> \u2060\u2014 Reusable images that appear as the background<\/li>\n\t<li><strong>Background image alignment (horizontal)<\/strong> \u2060\u2014 A focal point horizontally<\/li>\n\t<li><strong>Background image alignment (vertical)<\/strong> \u2060\u2014 Focal point vertically in image<\/li>\n\t<li><strong>Background repeat<\/strong> \u2060\u2014 If you use a tiny image, you can tile it as a pattern<\/li>\n\t<li><strong>Background sizing<\/strong> \u2060\u2014 Usually fill the whole area. Can also do tricky things<\/li>\n\t<li><strong>Full width<\/strong> \u2060\u2014 Eliminate the maximum content area width, and have the stripe go all the way to the screen edges on big screens<\/li>\n\t<li><strong>Hide background image on mobile<\/strong> \u2060\u2014 If the background image is 'busy', hide it on narrow screens<\/li>\n\t<li><strong>Text alignment<\/strong> \u2060\u2014 Left, right, center, justify. Please never use justify<\/li>\n\t<li><strong>Text color<\/strong> \u2060\u2014 Light or dark. Please match it to the background color you choose (the one that matches the darkness of any background images used)<\/li>\n\t<li><strong>Unpad <\/strong>\u2060\u2014 Remove the top and bottom padding from the stripe so it's short and has less breathing room<\/li>\n<\/ul><p>\u00a0<\/p>\n\n<p>We hope you enjoy this stripey system as much as we enjoyed making it!<\/p>",
+            "lang": "en"
+        }
+    ]
+}

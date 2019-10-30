@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 374
+        }
+    ],
+    "uuid": [
+        {
+            "value": "3012e15d-2135-459b-9488-509b4574c43b"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 1258
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-17T20:41:54+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "375"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>We can display table data (with some limitations) as a few different chart types:<\/p>\r\n\r\n<ul>\r\n\t<li>Bar<\/li>\r\n\t<li>Column<\/li>\r\n\t<li>Pie<\/li>\r\n\t<li>Line<\/li>\r\n\t<li>Stacked<\/li>\r\n<\/ul>\r\n\r\n<p>...along with some additional options like labels and replacing the table with the chart.<\/p>\r\n\r\n<p>&nbsp;<\/p>\r\n\r\n<p>Here's the breakfast table with a bar chart:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>We can display table data (with some limitations) as a few different chart types:<\/p>\n\n<ul><li>Bar<\/li>\n\t<li>Column<\/li>\n\t<li>Pie<\/li>\n\t<li>Line<\/li>\n\t<li>Stacked<\/li>\n<\/ul><p>...along with some additional options like labels and replacing the table with the chart.<\/p>\n\n<p>\u00a0<\/p>\n\n<p>Here's the breakfast table with a bar chart:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

@@ -1,0 +1,83 @@
+{
+    "_links": {
+        "self": {
+            "href": ""
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/paragraph\/rich_text"
+        }
+    },
+    "id": [
+        {
+            "value": 208
+        }
+    ],
+    "uuid": [
+        {
+            "value": "4da52323-5034-483f-b4d3-6e7c6df6802d"
+        }
+    ],
+    "revision_id": [
+        {
+            "value": 496
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "rich_text"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T20:45:23+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "parent_id": [
+        {
+            "value": "210"
+        }
+    ],
+    "parent_type": [
+        {
+            "value": "paragraph"
+        }
+    ],
+    "parent_field_name": [
+        {
+            "value": "field_components"
+        }
+    ],
+    "behavior_settings": [
+        {
+            "value": []
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "field_text": [
+        {
+            "value": "<p>The 'Block' flavor of component lets you insert system blocks. This is useful for dropping in social icons, forms for search and other listings, or filling in some blanks throughout the site when it comes to functionality other components don't handle. When in doubt, stay away from this component; it's used sparingly in day-to-day content entry.<\/p>\r\n\r\n<p>Below is the social icons block:<\/p>\r\n",
+            "format": "filtered_html",
+            "processed": "<p>The 'Block' flavor of component lets you insert system blocks. This is useful for dropping in social icons, forms for search and other listings, or filling in some blanks throughout the site when it comes to functionality other components don't handle. When in doubt, stay away from this component; it's used sparingly in day-to-day content entry.<\/p>\n\n<p>Below is the social icons block:<\/p>",
+            "lang": "en"
+        }
+    ]
+}

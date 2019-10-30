@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/sites\/default\/files\/2019-10\/franck-v-n56WptG3O9M-unsplash_hero-mask.jpg"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/file\/file"
+        },
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "href": "http:\/\/default\/user\/1?_format=hal_json"
+            }
+        ]
+    },
+    "fid": [
+        {
+            "value": 8
+        }
+    ],
+    "uuid": [
+        {
+            "value": "910229f6-5481-46dc-8426-8bd3c7722c0e"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/drupal.org\/rest\/relation\/file\/file\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/default\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/drupal.org\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "86c1e473-4105-444d-b551-bd7ca79229ae"
+                    }
+                ]
+            }
+        ]
+    },
+    "filename": [
+        {
+            "value": "franck-v-n56WptG3O9M-unsplash_hero-mask.jpg"
+        }
+    ],
+    "uri": [
+        {
+            "value": "public:\/\/2019-10\/franck-v-n56WptG3O9M-unsplash_hero-mask.jpg",
+            "url": "\/sites\/default\/files\/2019-10\/franck-v-n56WptG3O9M-unsplash_hero-mask.jpg"
+        }
+    ],
+    "filemime": [
+        {
+            "value": "image\/jpeg"
+        }
+    ],
+    "filesize": [
+        {
+            "value": 75697
+        }
+    ],
+    "status": [
+        {
+            "value": true
+        }
+    ],
+    "created": [
+        {
+            "value": "2019-10-16T19:31:57+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2019-10-16T19:32:14+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ]
+}
