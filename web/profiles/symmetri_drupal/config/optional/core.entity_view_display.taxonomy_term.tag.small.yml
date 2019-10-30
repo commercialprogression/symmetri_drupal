@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.small
+    - taxonomy.vocabulary.tag
+id: taxonomy_term.tag.small
+targetEntityType: taxonomy_term
+bundle: tag
+mode: small
+content: {  }
+hidden:
+  description: true
+  search_api_excerpt: true

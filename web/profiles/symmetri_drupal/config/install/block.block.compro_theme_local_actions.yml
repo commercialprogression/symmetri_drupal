@@ -6,7 +6,7 @@ dependencies:
 id: compro_theme_local_actions
 theme: compro_theme
 region: pre_content
-weight: -3
+weight: 0
 provider: null
 plugin: local_actions_block
 settings:

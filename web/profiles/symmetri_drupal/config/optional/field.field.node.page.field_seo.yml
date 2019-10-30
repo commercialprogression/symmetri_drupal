@@ -2,9 +2,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.attachment.seo
     - field.storage.node.field_seo
     - node.type.page
+    - paragraphs.paragraphs_type.seo
+  module:
+    - entity_reference_revisions
 id: node.page.field_seo
 field_name: field_seo
 entity_type: node
@@ -16,12 +18,13 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:attachment'
+  handler: 'default:paragraph'
   handler_settings:
+    negate: 0
     target_bundles:
       seo: seo
-    sort:
-      field: _none
-    auto_create: true
-    auto_create_bundle: ''
-field_type: entity_reference
+    target_bundles_drag_drop:
+      seo:
+        enabled: true
+        weight: 2
+field_type: entity_reference_revisions

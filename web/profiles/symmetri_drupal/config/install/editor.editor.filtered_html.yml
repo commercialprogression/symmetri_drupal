@@ -16,8 +16,8 @@ settings:
           items:
             - Bold
             - Italic
-            - Subscript
             - Superscript
+            - Subscript
             - HorizontalRule
         -
           name: Links
@@ -30,16 +30,16 @@ settings:
             - BulletedList
             - NumberedList
         -
-          name: Special
+          name: Tools
           items:
             - PasteFromWord
             - SpecialChar
             - Source
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
     linkit:
       linkit_profile: ''
 image_upload:

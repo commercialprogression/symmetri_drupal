@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_frontend_ui
+id: paragraph_set.small
+label: Small
+targetEntityType: paragraph_set
+cache: true

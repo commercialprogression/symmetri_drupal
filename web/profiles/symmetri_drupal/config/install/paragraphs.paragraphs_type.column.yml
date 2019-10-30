@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:08a8bcff-ef10-4796-959f-436a9a111726'
+id: column
+label: Column
+icon_uuid: 08a8bcff-ef10-4796-959f-436a9a111726
+description: 'A single column within a layout'
+behavior_plugins: {  }

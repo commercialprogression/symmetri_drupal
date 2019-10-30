@@ -6,72 +6,106 @@ core: 8.x
 # Required modules.
 dependencies:
   - address
-  - automated_cron
   - admin_toolbar
   - admin_toolbar_tools
-  - adminimal_admin_toolbar
+  - better_exposed_filters
   - bg_image_formatter
   - block
   - block_class
-  - block_content
+  - block_field
   - breakpoint
-  - chosen_field
+  - chosen
+  - chosen_lib
   - ckeditor
   - compro_custom
+  - config
+  - config_filter
   - contact
   - contact_info
-  - contact_storage
+  - contextual
+  - ctools
+  - datetime
+  - datetime_range
   - dblog
+  - default_content
   - diff
+  - dynamic_page_cache
   - easy_breadcrumb
-  - eck
   - editor
-  - entity_browser
-  - entity_browser_entity_form
+  - entity
   - entity_reference_display
-  - entityqueue
+  - entity_reference_revisions
   - field
   - field_formatter_class
   - field_group
   - field_ui
   - file
   - filter
-  - google_analytics
+  - hal
+  - honeypot
+  - iframe
   - image
+  - imageapi_optimize
+  - imageapi_optimize_binaries
   - inline_entity_form
+  - inline_form_errors
+  - jsonapi
   - libraries
   - link
-  - linkit
   - linked_field
+  - linkit
   - media
+  - media_library
   - menu_link_attributes
   - menu_link_content
+  - menu_trail_by_path
   - menu_ui
   - metatag
+  - metatag_open_graph
   - node
   - options
+  - page_cache
+  - paragraphs
+  - paragraphs_edit
+  - paragraphs_features
+  - paragraphs_frontend_ui
   - path
+  - path_redirect_import
   - pathauto
+  - quick_node_clone
+  - quickedit
   - redirect
   - redirect_404
   - redirect_domain
+  - rest
   - search_api
   - search_api_solr
-  - simple_sitemap
+  - serialization
+  - settings_tray
+  - similarterms
+  - styleguide
+  - subpathauto
+  - symmetri_container
   - system
+  - tablefield
   - taxonomy
   - telephone
   - text
+  - token
   - toolbar
+  - update
   - user
   - video_embed_field
   - video_embed_media
   - views
+  - views_block_filter_block
   - views_ui
   - viewsreference
+  - webform
+  - webform_config_ignore
+  - webform_ui
 themes:
-- stable
-- classy
-- adminimal_theme
-- compro_adminimal
-- compro_theme
+  - stable
+  - classy
+  - claro
+  - compro_theme

@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: rfc2822
-label: 'RFC 2822 date'
-locked: false
-pattern: r

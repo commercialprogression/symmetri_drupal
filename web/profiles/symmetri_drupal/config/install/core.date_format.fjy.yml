@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: fjy
-label: 'Month D, YYYY'
-locked: false
-pattern: 'F j, Y'

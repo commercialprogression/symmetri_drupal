@@ -3,5 +3,8 @@ status: true
 dependencies: {  }
 id: editor
 label: Editor
-weight: -6
+weight: 4
 is_admin: null
+permissions:
+  - 'use text format filtered_html'
+  - 'use text format full_html'

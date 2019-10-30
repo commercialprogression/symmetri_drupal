@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: human_long
-label: 'Human long'
-locked: false
-pattern: 'F j, Y \a\t g:i A'

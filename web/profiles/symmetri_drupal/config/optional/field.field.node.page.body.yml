@@ -10,8 +10,8 @@ id: node.page.body
 field_name: body
 entity_type: node
 bundle: page
-label: Teaser
-description: 'Short descriptive text for listings. Doesn''t display when page is viewed as a page.'
+label: 'Teaser text'
+description: 'The text appears when this content is in a listing, like a news page or blog listing.'
 required: false
 translatable: true
 default_value: {  }

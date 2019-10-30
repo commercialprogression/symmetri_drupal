@@ -1,0 +1,125 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_components
+    - paragraphs.paragraphs_type.accordion
+    - paragraphs.paragraphs_type.block
+    - paragraphs.paragraphs_type.blockquote
+    - paragraphs.paragraphs_type.cards
+    - paragraphs.paragraphs_type.column
+    - paragraphs.paragraphs_type.content_listing
+    - paragraphs.paragraphs_type.heading
+    - paragraphs.paragraphs_type.iframe
+    - paragraphs.paragraphs_type.layout
+    - paragraphs.paragraphs_type.link
+    - paragraphs.paragraphs_type.media
+    - paragraphs.paragraphs_type.rich_text
+    - paragraphs.paragraphs_type.spacer
+    - paragraphs.paragraphs_type.table
+    - paragraphs.paragraphs_type.term_listing
+    - paragraphs.paragraphs_type.user_listing
+    - paragraphs.paragraphs_type.view
+    - paragraphs.paragraphs_type.webform
+  module:
+    - entity_reference_revisions
+id: paragraph.column.field_components
+field_name: field_components
+entity_type: paragraph
+bundle: column
+label: Components
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordion: accordion
+      block: block
+      blockquote: blockquote
+      cards: cards
+      content_listing: content_listing
+      heading: heading
+      iframe: iframe
+      layout: layout
+      link: link
+      media: media
+      rich_text: rich_text
+      spacer: spacer
+      table: table
+      term_listing: term_listing
+      user_listing: user_listing
+      view: view
+      webform: webform
+    target_bundles_drag_drop:
+      accordion:
+        enabled: true
+        weight: -45
+      block:
+        enabled: true
+        weight: -44
+      blockquote:
+        enabled: true
+        weight: -43
+      card:
+        weight: -42
+        enabled: false
+      cards:
+        enabled: true
+        weight: -41
+      column:
+        weight: -40
+        enabled: false
+      content_listing:
+        enabled: true
+        weight: -39
+      heading:
+        enabled: true
+        weight: -38
+      hotspot:
+        weight: -37
+        enabled: false
+      iframe:
+        enabled: true
+        weight: -36
+      layout:
+        enabled: true
+        weight: -35
+      link:
+        enabled: true
+        weight: -34
+      media:
+        enabled: true
+        weight: -33
+      rich_text:
+        enabled: true
+        weight: -32
+      seo:
+        weight: -31
+        enabled: false
+      spacer:
+        enabled: true
+        weight: -30
+      stripe:
+        weight: -29
+        enabled: false
+      table:
+        enabled: true
+        weight: -28
+      term_listing:
+        enabled: true
+        weight: -27
+      user_listing:
+        enabled: true
+        weight: -26
+      view:
+        enabled: true
+        weight: -25
+      webform:
+        enabled: true
+        weight: -24
+field_type: entity_reference_revisions

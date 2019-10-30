@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'FIltered HTML'
+name: 'Filtered HTML'
 format: filtered_html
 weight: 0
 filters:

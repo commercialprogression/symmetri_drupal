@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:78f89308-757d-4cd0-a878-cefac748b24f'
+id: block
+label: Block
+icon_uuid: 78f89308-757d-4cd0-a878-cefac748b24f
+description: ''
+behavior_plugins: {  }

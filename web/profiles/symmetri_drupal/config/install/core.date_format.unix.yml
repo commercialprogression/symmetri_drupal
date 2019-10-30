@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: unix
-label: 'Unix time'
-locked: false
-pattern: U

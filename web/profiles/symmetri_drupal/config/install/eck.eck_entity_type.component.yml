@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: component
-label: Component
-created: true
-changed: true
-uid: true
-title: false

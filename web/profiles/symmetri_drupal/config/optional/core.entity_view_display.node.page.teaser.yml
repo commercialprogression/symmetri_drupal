@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_sections
     - field.field.node.page.field_seo
-    - field.field.node.page.field_tag
     - node.type.page
   module:
     - text
@@ -19,19 +18,23 @@ mode: teaser
 content:
   body:
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 1
-    settings:
-      trim_length: 600
+    type: text_default
+    weight: 2
+    settings: {  }
     third_party_settings: {  }
     region: content
   compro_submitted:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  linked_title:
     weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }
   links:
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -39,4 +42,4 @@ hidden:
   field_hero: true
   field_sections: true
   field_seo: true
-  field_tag: true
+  search_api_excerpt: true

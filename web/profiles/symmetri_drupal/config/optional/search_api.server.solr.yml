@@ -4,17 +4,17 @@ dependencies:
   module:
     - search_api_solr
 id: solr
-name: 'Solr server'
+name: Solr
 description: ''
 backend: search_api_solr
 backend_config:
   connector: standard
   connector_config:
     scheme: http
-    host: 127.0.0.1
+    host: localhost
     port: '8983'
     path: /solr
-    core: maincore
+    core: d8
     timeout: 5
     index_timeout: 5
     optimize_timeout: 10
@@ -23,7 +23,7 @@ backend_config:
     http_method: AUTO
   retrieve_data: false
   highlight_data: false
-  excerpt: false
+  excerpt: true
   skip_schema_check: false
   site_hash: false
   suggest_suffix: true

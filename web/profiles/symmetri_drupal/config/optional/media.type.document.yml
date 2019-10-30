@@ -11,5 +11,5 @@ source_configuration:
   source_field: field_media_file
 field_map:
   name: name
-  mimetype: field_mimetype
-  filesize: field_filesize
+  mimetype: field_media_mimetype
+  filesize: field_media_filesize

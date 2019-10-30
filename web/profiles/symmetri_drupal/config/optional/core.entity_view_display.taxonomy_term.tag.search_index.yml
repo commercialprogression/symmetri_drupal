@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.search_index
+    - field.field.taxonomy_term.tag.field_seo
+    - taxonomy.vocabulary.tag
+  module:
+    - text
+id: taxonomy_term.tag.search_index
+targetEntityType: taxonomy_term
+bundle: tag
+mode: search_index
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_seo: true
+  search_api_excerpt: true

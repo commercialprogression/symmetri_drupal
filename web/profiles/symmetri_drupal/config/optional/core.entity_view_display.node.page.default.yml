@@ -6,9 +6,9 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_sections
     - field.field.node.page.field_seo
-    - field.field.node.page.field_tag
     - node.type.page
   module:
+    - entity_reference_revisions
     - user
 id: node.page.default
 targetEntityType: node
@@ -16,18 +16,19 @@ bundle: page
 mode: default
 content:
   field_sections:
+    type: entity_reference_revisions_entity_view
     weight: 0
     label: hidden
     settings:
-      link: true
       view_mode: default
+      link: ''
     third_party_settings: {  }
-    type: entity_reference_entity_view
     region: content
 hidden:
   body: true
   compro_submitted: true
   field_hero: true
   field_seo: true
-  field_tag: true
+  linked_title: true
   links: true
+  search_api_excerpt: true

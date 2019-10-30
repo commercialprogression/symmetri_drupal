@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: utility
-label: Utility
-description: 'Secondary nav that''s usually near the top and less visually-prominent than the main navigation.'
-locked: false

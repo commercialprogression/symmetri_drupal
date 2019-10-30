@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:302013f8-893d-4588-b5ad-8c7680dcf735'
+id: stripe
+label: Stripe
+icon_uuid: 302013f8-893d-4588-b5ad-8c7680dcf735
+description: ''
+behavior_plugins: {  }

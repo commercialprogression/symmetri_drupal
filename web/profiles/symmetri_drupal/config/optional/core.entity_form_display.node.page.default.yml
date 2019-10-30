@@ -6,34 +6,12 @@ dependencies:
     - field.field.node.page.field_hero
     - field.field.node.page.field_sections
     - field.field.node.page.field_seo
-    - field.field.node.page.field_tag
     - node.type.page
   module:
-    - field_group
-    - inline_entity_form
+    - paragraphs
+    - paragraphs_features
     - path
     - text
-third_party_settings:
-  field_group:
-    group_tagging:
-      children:
-        - field_brand
-        - field_certification
-        - field_company
-        - field_expertise
-        - field_industry
-        - field_product_category
-        - field_solution
-        - field_tag
-      parent_name: ''
-      weight: 5
-      format_type: details
-      format_settings:
-        id: edit-tagging
-        classes: seven-details
-        open: false
-        required_fields: false
-      label: Tagging
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -41,80 +19,96 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 3
+    weight: 2
     settings:
-      rows: 5
+      rows: 9
+      summary_rows: 3
       placeholder: ''
-      summary_rows: 1
     third_party_settings: {  }
     region: content
   compro_submitted:
-    weight: 6
+    weight: 12
     region: content
     settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 8
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
   field_hero:
+    type: paragraphs
     weight: 1
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Hero
-      label_plural: Heroes
-      allow_new: true
-      match_operator: CONTAINS
-      allow_existing: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
+      title: Hero
+      title_plural: Heroes
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: stripe
+      features:
+        collapse_edit_all: collapse_edit_all
+        duplicate: '0'
+        add_above: '0'
+    third_party_settings:
+      paragraphs_features:
+        delete_confirmation: true
+        add_in_between: false
+        split_text: false
     region: content
   field_sections:
-    weight: 2
+    type: paragraphs
+    weight: 3
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: Section
-      label_plural: Sections
-      allow_new: true
-      match_operator: CONTAINS
-      allow_existing: false
-      collapsible: false
-      collapsed: false
-      allow_duplicate: false
-    third_party_settings: {  }
-    type: inline_entity_form_complex
+      title: Stripe
+      title_plural: Stripes
+      edit_mode: closed
+      closed_mode: summary
+      autocollapse: all
+      closed_mode_threshold: 1
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: stripe
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
+        add_above: add_above
+    third_party_settings:
+      paragraphs_features:
+        delete_confirmation: true
+        add_in_between: false
+        split_text: false
     region: content
   field_seo:
+    type: paragraphs
     weight: 4
     settings:
-      form_mode: default
-      override_labels: true
-      label_singular: SEO
-      label_plural: SEOs
-      collapsible: true
-      collapsed: true
-    third_party_settings: {  }
-    type: inline_entity_form_simple
-    region: content
-  field_tag:
-    weight: 21
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+      title: SEO
+      title_plural: SEOs
+      edit_mode: open
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: seo
+      features:
+        duplicate: '0'
+        collapse_edit_all: '0'
+        add_above: '0'
+    third_party_settings:
+      paragraphs_features:
+        delete_confirmation: false
+        add_in_between: false
+        split_text: false
     region: content
   path:
     type: path
-    weight: 11
+    weight: 9
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,21 +116,21 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 9
+    weight: 7
     region: content
     third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 13
+    weight: 11
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 10
+    weight: 8
     region: content
     third_party_settings: {  }
   title:
@@ -149,7 +143,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 7
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -157,7 +151,7 @@ content:
     region: content
     third_party_settings: {  }
   url_redirects:
-    weight: 12
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }

@@ -4,11 +4,12 @@ dependencies: {  }
 name: content_area
 label: 'Content Area'
 effects:
-  deef41b8-2021-4d9f-89d0-d6785ca1db90:
-    uuid: deef41b8-2021-4d9f-89d0-d6785ca1db90
+  a8b2662a-db2a-4dbf-952a-77fcbc4506b6:
+    uuid: a8b2662a-db2a-4dbf-952a-77fcbc4506b6
     id: image_scale
     weight: 1
     data:
       width: 1440
       height: null
       upscale: false
+pipeline: __default__

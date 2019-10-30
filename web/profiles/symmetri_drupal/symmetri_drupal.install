@@ -14,33 +14,4 @@ use Drupal\eck\EckEntityTypeInterface;
  *
  * @see system_install()
  */
-function symmetri_drupal_install() {
-  // Since EntityDefinitionUpdateManager::applyUpdates() was deprecated, we need
-  // to do this manually at some point in time. This is not currently working
-  // in ECK and the existing patch didn't fix the problem.
-  // @see https://www.drupal.org/project/eck/issues/3055007
-  $complete_change_list = \Drupal::entityDefinitionUpdateManager()->getChangeList();
-  if ($complete_change_list) {
-    Drupal::entityTypeManager()->clearCachedDefinitions();
-    Drupal::service('entity_field.manager')->clearCachedFieldDefinitions();
-    foreach ($complete_change_list as $entity_type_id => $change_list) {
-      if (!empty($change_list['entity_type'])) {
-        $entity_type = Drupal::entityTypeManager()->getDefinition($entity_type_id);
-        if ($entity_type->getClass() == 'Drupal\eck\Entity\EckEntityBundle') {
-          switch ($change_list['entity_type']) {
-            // Created.
-            case 1:
-              Drupal::service('entity_type.listener')->onEntityTypeCreate($entity_type);
-              break;
-
-            // Updated.
-            case 2:
-              $original = Drupal::entityTypeManager()->getLastInstalledDefinition($entity_type_id);
-              Drupal::service('entity_type.listener')->onEntityTypeUpdate($entity_type, $original);
-              break;
-          }
-        }
-      }
-    }
-  }
-}
+function symmetri_drupal_install() {}

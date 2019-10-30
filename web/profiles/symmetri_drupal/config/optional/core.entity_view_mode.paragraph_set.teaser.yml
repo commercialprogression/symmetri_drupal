@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - paragraphs_frontend_ui
+id: paragraph_set.teaser
+label: Teaser
+targetEntityType: paragraph_set
+cache: true

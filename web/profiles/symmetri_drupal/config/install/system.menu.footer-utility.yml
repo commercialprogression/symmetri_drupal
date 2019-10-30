@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: footer-utility
-label: 'Footer utility'
-description: 'Privacy policy and other ancillary links'
-locked: false
