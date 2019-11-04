@@ -4,6 +4,10 @@ description: 'Drupal 8 installation profile based on composer and tailored for p
 core: 8.x
 
 # Required modules.
+install:
+  - symmetri_container
+  - compro_custom
+  - contact_info
 dependencies:
   - address
   - admin_toolbar
@@ -17,11 +21,9 @@ dependencies:
   - chosen
   - chosen_lib
   - ckeditor
-  - compro_custom
   - config
   - config_filter
   - contact
-  - contact_info
   - contextual
   - ctools
   - datetime
@@ -85,7 +87,6 @@ dependencies:
   - similarterms
   - styleguide
   - subpathauto
-  - symmetri_container
   - system
   - tablefield
   - taxonomy
@@ -104,6 +105,7 @@ dependencies:
   - webform
   - webform_config_ignore
   - webform_ui
+
 themes:
   - stable
   - classy

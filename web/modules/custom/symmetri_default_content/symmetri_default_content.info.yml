@@ -1,0 +1,7 @@
+name: Symmetri Default Content
+description: Default content common between most sites
+package: compro
+type: module
+core: 8.x
+dependencies:
+  - default_content
