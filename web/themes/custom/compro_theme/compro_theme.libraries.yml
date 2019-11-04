@@ -69,6 +69,7 @@ compro-highcharts:
     component:
       libraries/compro-highcharts/compro-highcharts.css: {}
   js:
+    libraries/compro-highcharts/color-scheme.min.js: {}
     libraries/compro-highcharts/highcharts/code/highcharts.js: {}
     libraries/compro-highcharts/highcharts/code/modules/data.js: {}
     libraries/compro-highcharts/highcharts/code/modules/exporting.js: {}

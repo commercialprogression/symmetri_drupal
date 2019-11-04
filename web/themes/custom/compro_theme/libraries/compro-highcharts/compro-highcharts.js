@@ -15,6 +15,16 @@ var comproHighchartsInit = false;
             incrementer = 0; // Increment table id attributes because tablefield renders duplicate IDs.
 
           if ($charts.length) {
+            // Set color scheme to a tetrade off the main theme color.
+            var styles = getComputedStyle(document.documentElement);
+            var colorValue = styles.getPropertyValue('--color--main'),
+              cvNoHex = colorValue.substr(2);
+            var scheme = new ColorScheme;
+              scheme.from_hex(cvNoHex)
+                .scheme('tetrade');
+            var colors = scheme.colors();
+            colors = colors.map(x => "#" + x);
+
             $charts.each(function(){
               var $this = $(this),
                 $table = $this.find('table'),
@@ -66,13 +76,10 @@ var comproHighchartsInit = false;
               // Instantiate the chart using table data.
 
               var this_chart = {
-                colors: ['#afdfe4', '#7eb4d2', '#7ed3f7', '#188ccc', '#00b0e6', '#1c2d5a',
-             '#1b75ba', '#FF0000', '#3cb44b', '#ffe119', '#f58231', '#911eb4', '#f032e6',
-            '#bfef45', '#fabebe', '#469990', '#e6beff', '#9A6324', '#fffac8', '#800000', '#aaffc3', '#808000',
-          '#ffd8b1', '#a9a9a9'],
                 chart: {
                   type: 'column'
                 },
+                colors: colors,
                 title: {
                   text: charttitle,
                 },
@@ -118,7 +125,7 @@ var comproHighchartsInit = false;
                 data: {
                   table: $table.attr('id')
                 }
-              }
+              };
 
               // Generate a Pie Graph
               if ($this.hasClass('js-chart-pie')) {
